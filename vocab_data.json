@@ -1,0 +1,3892 @@
+[
+  {
+    "theme": "🟢 主题一：身份认同 (Identities)",
+    "templates": [
+      "在快节奏的现代社会中，如何保持身心健康并建立积极的生活方式**，不仅是个人选择，更是塑造良好个人身份认同的基石。**",
+      "个人的信仰与价值观**是衡量一个社会道德水准的尺度，面对形形色色的物质诱惑，我们绝不能对道德底线做出妥协。**",
+      "方言作为承载乡音的重要媒介，不仅是沟通工具，更是连接个人与民族文化历史的身份认同纽带**。**"
+    ],
+    "idioms": [
+      {
+        "word": "劳逸结合",
+        "meaning": "balance work and rest",
+        "usage": "高中生课业繁重，但也必须注意**劳逸结合**。"
+      },
+      {
+        "word": "返璞归真",
+        "meaning": "return to simplicity and truth",
+        "usage": "看惯了都市的喧嚣，极简主义的生活方式能让人**返璞归真**。"
+      },
+      {
+        "word": "顺其自然",
+        "meaning": "let nature take its course",
+        "usage": "面对不确定性，保持豁达的心态，**顺其自然**即可。"
+      },
+      {
+        "word": "问心无愧",
+        "meaning": "have a clear conscience",
+        "usage": "做任何选择，只要无损他人利益、无违道德，便能**问心无愧**。"
+      }
+    ],
+    "subtopics": [
+      {
+        "title": "💡 主题写作备考引擎",
+        "core_words": [],
+        "all_words": []
+      },
+      {
+        "title": "1. 生活方式 (Lifestyles)",
+        "core_words": [
+          {
+            "word": "极简主义",
+            "pinyin": "jíjiǎn zhǔyì",
+            "meaning": "minimalism",
+            "collocation": "倡导极简主义、践行极简主义",
+            "example": "许多年轻人开始**践行极简主义**，通过减少物质消费来追求精神的充实。"
+          },
+          {
+            "word": "劳逸结合",
+            "pinyin": "láoyì jiéhé",
+            "meaning": "balance work and rest",
+            "collocation": "注意劳逸结合、合理安排时间",
+            "example": "备考期间，同学们必须注意**劳逸结合**，以免过度疲劳。"
+          },
+          {
+            "word": "亚健康",
+            "pinyin": "yàjiànkāng",
+            "meaning": "sub-health",
+            "collocation": "处于亚健康状态、改善亚健康",
+            "example": "长期久坐和缺乏运动，导致现代人普遍处于**亚健康状态**。"
+          }
+        ],
+        "all_words": [
+          {
+            "word": "饮食起居",
+            "meaning": "daily life/routine"
+          },
+          {
+            "word": "极简主义",
+            "meaning": "minimalism"
+          },
+          {
+            "word": "循规蹈矩",
+            "meaning": "stick to conventions"
+          },
+          {
+            "word": "丰富多彩",
+            "meaning": "rich and colorful"
+          },
+          {
+            "word": "养生",
+            "meaning": "maintain health/wellness"
+          },
+          {
+            "word": "快节奏",
+            "meaning": "fast-paced"
+          },
+          {
+            "word": "慢生活",
+            "meaning": "slow living"
+          },
+          {
+            "word": "碎片化",
+            "meaning": "fragmented"
+          },
+          {
+            "word": "熬夜",
+            "meaning": "stay up late"
+          },
+          {
+            "word": "暴饮暴食",
+            "meaning": "binge eating/drinking"
+          },
+          {
+            "word": "挑食",
+            "meaning": "picky eating"
+          },
+          {
+            "word": "劳逸结合",
+            "meaning": "balance work and rest"
+          },
+          {
+            "word": "亚健康",
+            "meaning": "sub-health"
+          },
+          {
+            "word": "久坐",
+            "meaning": "sedentary"
+          },
+          {
+            "word": "沉淀",
+            "meaning": "to settle/accumulate"
+          },
+          {
+            "word": "充实",
+            "meaning": "fulfilling"
+          },
+          {
+            "word": "浑浑噩噩",
+            "meaning": "muddle along"
+          },
+          {
+            "word": "顺其自然",
+            "meaning": "let nature take its course"
+          },
+          {
+            "word": "规律",
+            "meaning": "regular/pattern"
+          },
+          {
+            "word": "消费观",
+            "meaning": "concept of consumption"
+          },
+          {
+            "word": "攀比",
+            "meaning": "unrealistic comparison"
+          },
+          {
+            "word": "月光族",
+            "meaning": "living paycheck to paycheck"
+          },
+          {
+            "word": "节俭",
+            "meaning": "frugal"
+          },
+          {
+            "word": "挥霍",
+            "meaning": "squander"
+          },
+          {
+            "word": "断舍离",
+            "meaning": "decluttering"
+          },
+          {
+            "word": "返璞归真",
+            "meaning": "return to original purity"
+          },
+          {
+            "word": "追求",
+            "meaning": "pursuit"
+          },
+          {
+            "word": "标新立异",
+            "meaning": "unconventional"
+          },
+          {
+            "word": "随波逐流",
+            "meaning": "go with the flow blindly"
+          },
+          {
+            "word": "习以为常",
+            "meaning": "be accustomed to"
+          }
+        ]
+      },
+      {
+        "title": "2. 健康与幸福 (Health and Wellbeing)",
+        "core_words": [
+          {
+            "word": "焦虑",
+            "pinyin": "jiāolǜ",
+            "meaning": "anxiety",
+            "collocation": "缓解焦虑、考试焦虑",
+            "example": "面对即将到来的IB考试，我们应当学会通过运动来**缓解焦虑**。"
+          },
+          {
+            "word": "容貌焦虑",
+            "pinyin": "róngmào jiāolǜ",
+            "meaning": "appearance anxiety",
+            "collocation": "摆脱容貌焦虑、产生容貌焦虑",
+            "example": "社交媒体上过度的美颜滤镜，容易让青少年产生**容貌焦虑**。"
+          },
+          {
+            "word": "幸福感",
+            "pinyin": "xìngfúgǎn",
+            "meaning": "sense of happiness",
+            "collocation": "提升幸福感、增强幸福感",
+            "example": "参与公益活动不仅能帮助他人，也能显著提升自己的**幸福感**。"
+          }
+        ],
+        "all_words": [
+          {
+            "word": "抑郁",
+            "meaning": "depression"
+          },
+          {
+            "word": "焦虑",
+            "meaning": "anxiety"
+          },
+          {
+            "word": "疏导",
+            "meaning": "psychological guidance"
+          },
+          {
+            "word": "心理阴影",
+            "meaning": "psychological trauma"
+          },
+          {
+            "word": "释放",
+            "meaning": "release"
+          },
+          {
+            "word": "减压",
+            "meaning": "relieve stress"
+          },
+          {
+            "word": "疲惫不堪",
+            "meaning": "exhausted"
+          },
+          {
+            "word": "焕发",
+            "meaning": "shine/glow"
+          },
+          {
+            "word": "活力",
+            "meaning": "vitality"
+          },
+          {
+            "word": "均衡",
+            "meaning": "balanced"
+          },
+          {
+            "word": "免疫力",
+            "meaning": "immunity"
+          },
+          {
+            "word": "疾病",
+            "meaning": "disease"
+          },
+          {
+            "word": "预防",
+            "meaning": "prevention"
+          },
+          {
+            "word": "康复",
+            "meaning": "recovery"
+          },
+          {
+            "word": "乐观",
+            "meaning": "optimistic"
+          },
+          {
+            "word": "悲观",
+            "meaning": "pessimistic"
+          },
+          {
+            "word": "情绪化",
+            "meaning": "emotional"
+          },
+          {
+            "word": "容貌焦虑",
+            "meaning": "appearance anxiety"
+          },
+          {
+            "word": "自卑",
+            "meaning": "inferiority complex"
+          },
+          {
+            "word": "自信",
+            "meaning": "self-confidence"
+          },
+          {
+            "word": "挫败感",
+            "meaning": "sense of frustration"
+          },
+          {
+            "word": "幸福感",
+            "meaning": "sense of happiness"
+          },
+          {
+            "word": "治愈",
+            "meaning": "cure/heal"
+          },
+          {
+            "word": "倾诉",
+            "meaning": "pour out one's heart"
+          },
+          {
+            "word": "瓶颈",
+            "meaning": "bottleneck"
+          },
+          {
+            "word": "冥想",
+            "meaning": "meditation"
+          },
+          {
+            "word": "精神寄托",
+            "meaning": "spiritual sustenance"
+          },
+          {
+            "word": "崩溃",
+            "meaning": "breakdown"
+          },
+          {
+            "word": "抑郁症",
+            "meaning": "depression illness"
+          },
+          {
+            "word": "心态",
+            "meaning": "mentality"
+          }
+        ]
+      },
+      {
+        "title": "3. 信仰与价值观 (Beliefs and values)",
+        "core_words": [
+          {
+            "word": "价值观",
+            "pinyin": "jiàzhíguān",
+            "meaning": "values",
+            "collocation": "塑造价值观、树立正确的价值观",
+            "example": "学校教育对青少年**树立正确的价值观**具有潜移默化的影响。"
+          },
+          {
+            "word": "担当",
+            "pinyin": "dāndāng",
+            "meaning": "take on responsibility",
+            "collocation": "有担当、勇于担当",
+            "example": "作为社会的一员，我们应当在关键时刻**勇于担当**，回报社会。"
+          },
+          {
+            "word": "妥协",
+            "pinyin": "tuǒxié",
+            "meaning": "compromise",
+            "collocation": "做出妥协、绝不妥协",
+            "example": "在原则问题和道德底线面前，我们绝不能**做出妥协**。"
+          }
+        ],
+        "all_words": [
+          {
+            "word": "道德",
+            "meaning": "morality"
+          },
+          {
+            "word": "准则",
+            "meaning": "norm/standard"
+          },
+          {
+            "word": "信仰",
+            "meaning": "belief/faith"
+          },
+          {
+            "word": "敬畏",
+            "meaning": "awe/revere"
+          },
+          {
+            "word": "奉献",
+            "meaning": "dedicate/contribution"
+          },
+          {
+            "word": "索取",
+            "meaning": "demand/ask for"
+          },
+          {
+            "word": "物质主义",
+            "meaning": "materialism"
+          },
+          {
+            "word": "精神财富",
+            "meaning": "spiritual wealth"
+          },
+          {
+            "word": "崇高",
+            "meaning": "lofty/sublime"
+          },
+          {
+            "word": "卑劣",
+            "meaning": "despicable"
+          },
+          {
+            "word": "虚荣心",
+            "meaning": "vanity"
+          },
+          {
+            "word": "责任心",
+            "meaning": "sense of responsibility"
+          },
+          {
+            "word": "担当",
+            "meaning": "take on responsibility"
+          },
+          {
+            "word": "妥协",
+            "meaning": "compromise"
+          },
+          {
+            "word": "底线",
+            "meaning": "bottom line"
+          },
+          {
+            "word": "原则",
+            "meaning": "principle"
+          },
+          {
+            "word": "迷茫",
+            "meaning": "confused/lost"
+          },
+          {
+            "word": "坚定不移",
+            "meaning": "firm and unwavering"
+          },
+          {
+            "word": "动摇",
+            "meaning": "waver"
+          },
+          {
+            "word": "价值观",
+            "meaning": "values"
+          },
+          {
+            "word": "人生观",
+            "meaning": "outlook on life"
+          },
+          {
+            "word": "世界观",
+            "meaning": "worldview"
+          },
+          {
+            "word": "偏见",
+            "meaning": "prejudice"
+          },
+          {
+            "word": "包容",
+            "meaning": "inclusive/tolerant"
+          },
+          {
+            "word": "歧视",
+            "meaning": "discrimination"
+          },
+          {
+            "word": "尊重",
+            "meaning": "respect"
+          },
+          {
+            "word": "核心",
+            "meaning": "core"
+          },
+          {
+            "word": "衡量",
+            "meaning": "measure/weigh"
+          },
+          {
+            "word": "追求卓越",
+            "meaning": "pursue excellence"
+          },
+          {
+            "word": "问心无愧",
+            "meaning": "have a clear conscience"
+          }
+        ]
+      },
+      {
+        "title": "4. 次文化 (Subcultures)",
+        "core_words": [
+          {
+            "word": "归属感",
+            "pinyin": "guīshǔgǎn",
+            "meaning": "sense of belonging",
+            "collocation": "获得归属感、缺乏归属感",
+            "example": "加入志同道合的学校社团，让许多留学生在校园中找到了**归属感**。"
+          },
+          {
+            "word": "盲目跟风",
+            "pinyin": "mángmù gēnfēng",
+            "meaning": "follow blindly",
+            "collocation": "拒绝盲目跟风、随波逐流",
+            "example": "我们在消费时应保持理智，**拒绝盲目跟风**，购买不需要的奢侈品。"
+          },
+          {
+            "word": "共鸣",
+            "pinyin": "gòngmíng",
+            "meaning": "resonance/sympathy",
+            "collocation": "产生共鸣、引起共鸣",
+            "example": "这部探讨青少年心理健康的微电影在师生中**引起了强烈共鸣**。"
+          }
+        ],
+        "all_words": [
+          {
+            "word": "追星",
+            "meaning": "follow celebrities"
+          },
+          {
+            "word": "粉丝",
+            "meaning": "fans"
+          },
+          {
+            "word": "偶像",
+            "meaning": "idol"
+          },
+          {
+            "word": "盲目跟风",
+            "meaning": "follow blindly"
+          },
+          {
+            "word": "理智",
+            "meaning": "rational"
+          },
+          {
+            "word": "疯狂",
+            "meaning": "crazy/frantic"
+          },
+          {
+            "word": "狂热",
+            "meaning": "fanatical"
+          },
+          {
+            "word": "动漫",
+            "meaning": "anime and manga"
+          },
+          {
+            "word": "二次元",
+            "meaning": "two-dimensional space/ACGN"
+          },
+          {
+            "word": "电竞",
+            "meaning": "e-sports"
+          },
+          {
+            "word": "虚拟",
+            "meaning": "virtual"
+          },
+          {
+            "word": "沉迷",
+            "meaning": "addicted to"
+          },
+          {
+            "word": "圈子",
+            "meaning": "circle/community"
+          },
+          {
+            "word": "归属感",
+            "meaning": "sense of belonging"
+          },
+          {
+            "word": "认同感",
+            "meaning": "sense of identity"
+          },
+          {
+            "word": "边缘化",
+            "meaning": "marginalized"
+          },
+          {
+            "word": "主流",
+            "meaning": "mainstream"
+          },
+          {
+            "word": "碰撞",
+            "meaning": "collision/clash"
+          },
+          {
+            "word": "融合",
+            "meaning": "integration"
+          },
+          {
+            "word": "潮流",
+            "meaning": "trend"
+          },
+          {
+            "word": "标新立异",
+            "meaning": "unconventional"
+          },
+          {
+            "word": "志同道合",
+            "meaning": "like-minded"
+          },
+          {
+            "word": "叛逆",
+            "meaning": "rebellious"
+          },
+          {
+            "word": "个性",
+            "meaning": "individuality"
+          },
+          {
+            "word": "迎合",
+            "meaning": "cater to"
+          },
+          {
+            "word": "猎奇",
+            "meaning": "seek novelty"
+          },
+          {
+            "word": "亚文化",
+            "meaning": "subculture"
+          },
+          {
+            "word": "流行语",
+            "meaning": "buzzwords"
+          },
+          {
+            "word": "共鸣",
+            "meaning": "resonance/sympathy"
+          },
+          {
+            "word": "标签",
+            "meaning": "label/tag"
+          }
+        ]
+      },
+      {
+        "title": "5. 语言与身份 (Language and identity)",
+        "core_words": [
+          {
+            "word": "母语",
+            "pinyin": "mǔyǔ",
+            "meaning": "mother tongue",
+            "collocation": "传承母语、热爱母语",
+            "example": "保护并**传承母语**，是维护少数民族文化身份认同的核心。"
+          },
+          {
+            "word": "潜移默化",
+            "pinyin": "qiányímòhuà",
+            "meaning": "imperceptible influence",
+            "collocation": "潜移默化的影响、潜移默化地塑造",
+            "example": "语言环境会在**潜移默化中**塑造我们的思维习惯与沟通方式。"
+          },
+          {
+            "word": "凝聚力",
+            "pinyin": "níngjùlì",
+            "meaning": "cohesion",
+            "collocation": "增强凝聚力、团队凝聚力",
+            "example": "共同的母语和文化背景，能够大大增强海外华人群体的**凝聚力**。"
+          }
+        ],
+        "all_words": [
+          {
+            "word": "母语",
+            "meaning": "mother tongue"
+          },
+          {
+            "word": "乡音",
+            "meaning": "local accent"
+          },
+          {
+            "word": "方言",
+            "meaning": "dialect"
+          },
+          {
+            "word": "沟通",
+            "meaning": "communication"
+          },
+          {
+            "word": "隔阂",
+            "meaning": "barrier/estrangement"
+          },
+          {
+            "word": "桥梁",
+            "meaning": "bridge"
+          },
+          {
+            "word": "词不达意",
+            "meaning": "unable to express oneself clearly"
+          },
+          {
+            "word": "畅所欲言",
+            "meaning": "speak freely"
+          },
+          {
+            "word": "语境",
+            "meaning": "context"
+          },
+          {
+            "word": "翻译",
+            "meaning": "translation"
+          },
+          {
+            "word": "传承",
+            "meaning": "inherit and pass on"
+          },
+          {
+            "word": "流失",
+            "meaning": "loss/drain"
+          },
+          {
+            "word": "危机",
+            "meaning": "crisis"
+          },
+          {
+            "word": "身份认同",
+            "meaning": "identity"
+          },
+          {
+            "word": "凝聚力",
+            "meaning": "cohesion"
+          },
+          {
+            "word": "普及",
+            "meaning": "popularize"
+          },
+          {
+            "word": "濒危",
+            "meaning": "endangered"
+          },
+          {
+            "word": "捍卫",
+            "meaning": "defend/safeguard"
+          },
+          {
+            "word": "表达",
+            "meaning": "expression"
+          },
+          {
+            "word": "媒介",
+            "meaning": "medium"
+          },
+          {
+            "word": "潜移默化",
+            "meaning": "imperceptible influence"
+          },
+          {
+            "word": "根深蒂固",
+            "meaning": "deep-rooted"
+          },
+          {
+            "word": "融入",
+            "meaning": "integrate into"
+          },
+          {
+            "word": "语言障碍",
+            "meaning": "language barrier"
+          },
+          {
+            "word": "语码转换",
+            "meaning": "code-switching"
+          },
+          {
+            "word": "双语",
+            "meaning": "bilingual"
+          },
+          {
+            "word": "骄傲",
+            "meaning": "pride"
+          },
+          {
+            "word": "寻根",
+            "meaning": "search for one's roots"
+          },
+          {
+            "word": "纽带",
+            "meaning": "link/tie"
+          },
+          {
+            "word": "渊源",
+            "meaning": "origin/source"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "theme": "🟡 主题二：体验 (Experiences)",
+    "templates": [
+      "正如古人所云“读万卷书，行万里路”，旅行的终极意义不仅在于游山玩水**，更在于通过亲历异国风情来打破成见、拓展人生视野。**",
+      "传统节日所蕴含的仪式感是世代相传的文化精髓**，在现代都市的滚滚洪流中，弘扬并守护这些习俗是青年人的时代使命。**",
+      "那次刻骨铭心的经历让我深刻认识到，逆境**是锤炼坚韧品质的最佳熔炉，唯有克服困难才能迎来人生的破茧成蝶。**"
+    ],
+    "idioms": [
+      {
+        "word": "读万卷书，行万里路",
+        "meaning": "Read ten thousand books and travel ten thousand miles (knowledge comes from both study and experience)",
+        "usage": "多去异国交流实习正是**读万卷书，行万里路**的生动体现。"
+      },
+      {
+        "word": "流连忘返",
+        "meaning": "linger on, forgetting to return",
+        "usage": "当地淳朴的民风与壮丽的自然景观令人**流连忘返**。"
+      },
+      {
+        "word": "刻骨铭心",
+        "meaning": "engraved in the bones and heart (unforgettable)",
+        "usage": "在贫困山区小学担任支教老师的两个星期是一次**刻骨铭心**的磨练。"
+      },
+      {
+        "word": "历历在目",
+        "meaning": "remain vivid in one's mind",
+        "usage": "每当翻开旧相册，那段欢快无忧的童年时光便**历历在目**。"
+      }
+    ],
+    "subtopics": [
+      {
+        "title": "💡 主题写作备考引擎",
+        "core_words": [],
+        "all_words": []
+      },
+      {
+        "title": "1. 休闲活动 (Leisure activities)",
+        "core_words": [
+          {
+            "word": "陶冶情操",
+            "pinyin": "táoyě qíngcāo",
+            "meaning": "cultivate one's taste",
+            "collocation": "陶冶情操、丰富闲暇生活",
+            "example": "课余时间学习书法，不仅能**陶冶情操**，还能锻炼个人的专注力。"
+          },
+          {
+            "word": "团队精神",
+            "pinyin": "tuánduì jīngshén",
+            "meaning": "team spirit",
+            "collocation": "培养团队精神、发挥团队精神",
+            "example": "参加学校足球队的经历，极大地培养了我的**团队精神**与沟通能力。"
+          },
+          {
+            "word": "挑战自我",
+            "pinyin": "tiǎozhàn zìwǒ",
+            "meaning": "challenge oneself",
+            "collocation": "勇敢挑战自我、不断挑战自我",
+            "example": "户外攀岩活动虽然艰苦，但它让我学会了**勇敢挑战自我**，克服内心恐惧。"
+          }
+        ],
+        "all_words": [
+          {
+            "word": "琴棋书画",
+            "meaning": "traditional arts"
+          },
+          {
+            "word": "陶冶情操",
+            "meaning": "cultivate one's taste"
+          },
+          {
+            "word": "培养",
+            "meaning": "cultivate"
+          },
+          {
+            "word": "爱好",
+            "meaning": "hobby"
+          },
+          {
+            "word": "闲暇",
+            "meaning": "leisure time"
+          },
+          {
+            "word": "丰富阅历",
+            "meaning": "enrich experience"
+          },
+          {
+            "word": "拓展",
+            "meaning": "expand"
+          },
+          {
+            "word": "劳逸结合",
+            "meaning": "balance work and rest"
+          },
+          {
+            "word": "消遣",
+            "meaning": "pastime"
+          },
+          {
+            "word": "沉浸",
+            "meaning": "immerse"
+          },
+          {
+            "word": "俱乐部",
+            "meaning": "club"
+          },
+          {
+            "word": "社团",
+            "meaning": "school society"
+          },
+          {
+            "word": "团队精神",
+            "meaning": "team spirit"
+          },
+          {
+            "word": "竞技",
+            "meaning": "competition"
+          },
+          {
+            "word": "强身健体",
+            "meaning": "keep fit"
+          },
+          {
+            "word": "毅力",
+            "meaning": "perseverance"
+          },
+          {
+            "word": "坚持不懈",
+            "meaning": "unremitting"
+          },
+          {
+            "word": "半途而废",
+            "meaning": "give up halfway"
+          },
+          {
+            "word": "挫折",
+            "meaning": "setback"
+          },
+          {
+            "word": "挑战自我",
+            "meaning": "challenge oneself"
+          },
+          {
+            "word": "激发",
+            "meaning": "stimulate"
+          },
+          {
+            "word": "潜能",
+            "meaning": "potential"
+          },
+          {
+            "word": "释放压力",
+            "meaning": "release stress"
+          },
+          {
+            "word": "益智",
+            "meaning": "educational/puzzle"
+          },
+          {
+            "word": "枯燥",
+            "meaning": "dull/boring"
+          },
+          {
+            "word": "趣味",
+            "meaning": "fun/interest"
+          },
+          {
+            "word": "充实",
+            "meaning": "fulfilled"
+          },
+          {
+            "word": "热情",
+            "meaning": "enthusiasm"
+          },
+          {
+            "word": "投入",
+            "meaning": "devotion"
+          },
+          {
+            "word": "乐在其中",
+            "meaning": "find pleasure in it"
+          }
+        ]
+      },
+      {
+        "title": "2. 假日与旅行 (Holidays and travel)",
+        "core_words": [
+          {
+            "word": "文化冲击",
+            "pinyin": "wénhuà chōngjī",
+            "meaning": "culture shock",
+            "collocation": "面对文化冲击、缓解文化冲击",
+            "example": "初到中国留学，我经历了一段**文化冲击**，但这也让我学会了包容不同文化。"
+          },
+          {
+            "word": "流连忘返",
+            "pinyin": "liúlián wàngfǎn",
+            "meaning": "linger, forget to return",
+            "collocation": "令人流连忘返、美景让人流连忘返",
+            "example": "桂林那秀美的山水和独特的民俗风情，令来自世界各地的游客**流连忘返**。"
+          },
+          {
+            "word": "大开眼界",
+            "pinyin": "dàkāi yǎnjiè",
+            "meaning": "broaden horizons",
+            "collocation": "令人大开眼界、拓宽视野大开眼界",
+            "example": "参观北京故宫的数字科技展，真是让我**大开眼界**，叹为观止。"
+          }
+        ],
+        "all_words": [
+          {
+            "word": "游山玩水",
+            "meaning": "enjoy the scenery"
+          },
+          {
+            "word": "名胜古迹",
+            "meaning": "historical sites"
+          },
+          {
+            "word": "风土人情",
+            "meaning": "local customs"
+          },
+          {
+            "word": "走马观花",
+            "meaning": "give a quick glance"
+          },
+          {
+            "word": "深度游",
+            "meaning": "in-depth travel"
+          },
+          {
+            "word": "自由行",
+            "meaning": "independent travel"
+          },
+          {
+            "word": "攻略",
+            "meaning": "travel guide"
+          },
+          {
+            "word": "跋山涉水",
+            "meaning": "cross mountains and rivers"
+          },
+          {
+            "word": "穷游",
+            "meaning": "budget travel"
+          },
+          {
+            "word": "体验",
+            "meaning": "experience"
+          },
+          {
+            "word": "震撼",
+            "meaning": "shock/awe"
+          },
+          {
+            "word": "流连忘返",
+            "meaning": "linger, forget to return"
+          },
+          {
+            "word": "大开眼界",
+            "meaning": "broaden horizons"
+          },
+          {
+            "word": "见闻",
+            "meaning": "what one sees and hears"
+          },
+          {
+            "word": "异国他乡",
+            "meaning": "foreign land"
+          },
+          {
+            "word": "伴手礼",
+            "meaning": "souvenir"
+          },
+          {
+            "word": "宾至如归",
+            "meaning": "feel at home"
+          },
+          {
+            "word": "舟车劳顿",
+            "meaning": "exhausted from journey"
+          },
+          {
+            "word": "不虚此行",
+            "meaning": "worthwhile trip"
+          },
+          {
+            "word": "走南闯北",
+            "meaning": "travel extensively"
+          },
+          {
+            "word": "领略",
+            "meaning": "appreciate"
+          },
+          {
+            "word": "拓展视野",
+            "meaning": "broaden vision"
+          },
+          {
+            "word": "文化冲击",
+            "meaning": "culture shock"
+          },
+          {
+            "word": "探索",
+            "meaning": "explore"
+          },
+          {
+            "word": "陌生",
+            "meaning": "unfamiliar"
+          },
+          {
+            "word": "惬意",
+            "meaning": "cozy/comfortable"
+          },
+          {
+            "word": "旺季",
+            "meaning": "peak season"
+          },
+          {
+            "word": "淡季",
+            "meaning": "off-season"
+          },
+          {
+            "word": "行囊",
+            "meaning": "luggage/backpack"
+          },
+          {
+            "word": "目的地",
+            "meaning": "destination"
+          }
+        ]
+      },
+      {
+        "title": "3. 生活故事 (Life stories)",
+        "core_words": [
+          {
+            "word": "刻骨铭心",
+            "pinyin": "kègǔ míngxīn",
+            "meaning": "unforgettable",
+            "collocation": "刻骨铭心的经历、令人刻骨铭心",
+            "example": "去年暑假在敬老院照顾孤寡老人的经历，对我来说是一次**刻骨铭心的体验**。"
+          },
+          {
+            "word": "转折点",
+            "pinyin": "zhuǎnzhédiǎn",
+            "meaning": "turning point",
+            "collocation": "迎来转折点、成为人生的转折点",
+            "example": "那次英文辩论比赛的失败成为了我学习道路上的**转折点**，促使我更加虚心努力。"
+          },
+          {
+            "word": "获益匪浅",
+            "pinyin": "huòyì fěiqiǎn",
+            "meaning": "benefit greatly",
+            "collocation": "令人获益匪浅、让我获益匪浅",
+            "example": "听完这位杰出学长的海外求学经验分享，在座的同学们都表示**获益匪浅**。"
+          }
+        ],
+        "all_words": [
+          {
+            "word": "刻骨铭心",
+            "meaning": "unforgettable"
+          },
+          {
+            "word": "记忆犹新",
+            "meaning": "fresh in memory"
+          },
+          {
+            "word": "历历在目",
+            "meaning": "vivid in mind"
+          },
+          {
+            "word": "恍然大悟",
+            "meaning": "suddenly realize"
+          },
+          {
+            "word": "难能可贵",
+            "meaning": "rare and commendable"
+          },
+          {
+            "word": "遗憾",
+            "meaning": "regret"
+          },
+          {
+            "word": "庆幸",
+            "meaning": "rejoice"
+          },
+          {
+            "word": "挫折",
+            "meaning": "setback"
+          },
+          {
+            "word": "跌宕起伏",
+            "meaning": "ups and downs"
+          },
+          {
+            "word": "转折点",
+            "meaning": "turning point"
+          },
+          {
+            "word": "逆境",
+            "meaning": "adversity"
+          },
+          {
+            "word": "顺境",
+            "meaning": "favorable circumstances"
+          },
+          {
+            "word": "磨炼",
+            "meaning": "temper/hone"
+          },
+          {
+            "word": "启发",
+            "meaning": "inspiration"
+          },
+          {
+            "word": "感触",
+            "meaning": "thoughts and feelings"
+          },
+          {
+            "word": "经历",
+            "meaning": "experience"
+          },
+          {
+            "word": "沧桑",
+            "meaning": "vicissitudes of life"
+          },
+          {
+            "word": "见证",
+            "meaning": "witness"
+          },
+          {
+            "word": "回忆",
+            "meaning": "memories"
+          },
+          {
+            "word": "缅怀",
+            "meaning": "cherish the memory of"
+          },
+          {
+            "word": "憧憬",
+            "meaning": "long for/look forward to"
+          },
+          {
+            "word": "刻苦",
+            "meaning": "hardworking"
+          },
+          {
+            "word": "奋斗",
+            "meaning": "struggle/strive"
+          },
+          {
+            "word": "蜕变",
+            "meaning": "transformation"
+          },
+          {
+            "word": "启蒙",
+            "meaning": "enlightenment"
+          },
+          {
+            "word": "刻画",
+            "meaning": "depict"
+          },
+          {
+            "word": "叙述",
+            "meaning": "narrate"
+          },
+          {
+            "word": "铭记",
+            "meaning": "engrave in mind"
+          },
+          {
+            "word": "终生难忘",
+            "meaning": "unforgettable for life"
+          },
+          {
+            "word": "获益匪浅",
+            "meaning": "benefit greatly"
+          }
+        ]
+      },
+      {
+        "title": "4. 习俗与传统 (Customs and traditions)",
+        "core_words": [
+          {
+            "word": "仪式感",
+            "pinyin": "yíshìgǎn",
+            "meaning": "sense of ritual",
+            "collocation": "充满仪式感、注重仪式感",
+            "example": "中秋佳节阖家团聚吃月饼，给现代忙碌的生活带来了一份温馨的**仪式感**。"
+          },
+          {
+            "word": "弘扬",
+            "pinyin": "hóngyáng",
+            "meaning": "promote",
+            "collocation": "弘扬传统文化、大力弘扬",
+            "example": "面对现代西方文化的冲击，我们应当积极**弘扬中华传统节日**的文化内涵。"
+          },
+          {
+            "word": "世代相传",
+            "pinyin": "shìdài xiāngchuán",
+            "meaning": "passed down through generations",
+            "collocation": "世代相传的瑰宝、在民间世代相传",
+            "example": "皮影戏是一门**世代相传**的民间艺术，亟需现代年轻人进行抢救性传承。"
+          }
+        ],
+        "all_words": [
+          {
+            "word": "渊源",
+            "meaning": "origin"
+          },
+          {
+            "word": "传承",
+            "meaning": "pass down"
+          },
+          {
+            "word": "弘扬",
+            "meaning": "promote"
+          },
+          {
+            "word": "遗弃",
+            "meaning": "abandon"
+          },
+          {
+            "word": "淘汰",
+            "meaning": "eliminate"
+          },
+          {
+            "word": "节日",
+            "meaning": "festival"
+          },
+          {
+            "word": "庆典",
+            "meaning": "celebration"
+          },
+          {
+            "word": "仪式感",
+            "meaning": "sense of ritual"
+          },
+          {
+            "word": "祭祀",
+            "meaning": "offer sacrifices to"
+          },
+          {
+            "word": "祈福",
+            "meaning": "pray for blessings"
+          },
+          {
+            "word": "团聚",
+            "meaning": "reunite"
+          },
+          {
+            "word": "拜访",
+            "meaning": "visit"
+          },
+          {
+            "word": "礼仪",
+            "meaning": "etiquette"
+          },
+          {
+            "word": "禁忌",
+            "meaning": "taboo"
+          },
+          {
+            "word": "迷信",
+            "meaning": "superstition"
+          },
+          {
+            "word": "民俗",
+            "meaning": "folk customs"
+          },
+          {
+            "word": "瑰宝",
+            "meaning": "treasure"
+          },
+          {
+            "word": "衰退",
+            "meaning": "decline"
+          },
+          {
+            "word": "现代化",
+            "meaning": "modernization"
+          },
+          {
+            "word": "冲击",
+            "meaning": "impact"
+          },
+          {
+            "word": "保留",
+            "meaning": "retain"
+          },
+          {
+            "word": "世代相传",
+            "meaning": "passed down through generations"
+          },
+          {
+            "word": "浓厚",
+            "meaning": "strong/thick atmosphere"
+          },
+          {
+            "word": "气氛",
+            "meaning": "atmosphere"
+          },
+          {
+            "word": "习俗",
+            "meaning": "customs"
+          },
+          {
+            "word": "象征",
+            "meaning": "symbolize"
+          },
+          {
+            "word": "寓意",
+            "meaning": "implied meaning"
+          },
+          {
+            "word": "守岁",
+            "meaning": "stay up on New Year's Eve"
+          },
+          {
+            "word": "迎新",
+            "meaning": "welcome the new year"
+          },
+          {
+            "word": "欢聚一堂",
+            "meaning": "gather happily under one roof"
+          }
+        ]
+      },
+      {
+        "title": "5. 迁徙 (Migration)",
+        "core_words": [
+          {
+            "word": "融入",
+            "pinyin": "róngrù",
+            "meaning": "integrate",
+            "collocation": "融入主流社会、融入当地生活",
+            "example": "主动结交当地朋友并学习他们的日常习俗，是新移民**融入当地生活**的第一步。"
+          },
+          {
+            "word": "跨文化",
+            "pinyin": "kuàwénhuà",
+            "meaning": "cross-cultural",
+            "collocation": "跨文化交流、跨文化理解",
+            "example": "在全球化时代，我们必须提升自己的**跨文化沟通能力**，减少文化隔阂。"
+          },
+          {
+            "word": "落叶归根",
+            "pinyin": "luòyè guīgēn",
+            "meaning": "return to roots",
+            "collocation": "渴望落叶归根、游子落叶归根的愿望",
+            "example": "尽管在异国他乡漂泊多年，这位老华侨心中依然保留着**落叶归根**的深厚情感。"
+          }
+        ],
+        "all_words": [
+          {
+            "word": "移民",
+            "meaning": "immigrant/migrate"
+          },
+          {
+            "word": "留学",
+            "meaning": "study abroad"
+          },
+          {
+            "word": "漂泊",
+            "meaning": "drift/wander"
+          },
+          {
+            "word": "扎根",
+            "meaning": "take root"
+          },
+          {
+            "word": "融入",
+            "meaning": "integrate"
+          },
+          {
+            "word": "排斥",
+            "meaning": "reject/exclude"
+          },
+          {
+            "word": "适应",
+            "meaning": "adapt"
+          },
+          {
+            "word": "思乡",
+            "meaning": "homesickness"
+          },
+          {
+            "word": "乡愁",
+            "meaning": "nostalgia"
+          },
+          {
+            "word": "孤单",
+            "meaning": "lonely"
+          },
+          {
+            "word": "独立",
+            "meaning": "independent"
+          },
+          {
+            "word": "克服",
+            "meaning": "overcome"
+          },
+          {
+            "word": "障碍",
+            "meaning": "obstacle"
+          },
+          {
+            "word": "隔阂",
+            "meaning": "barrier"
+          },
+          {
+            "word": "差异",
+            "meaning": "difference"
+          },
+          {
+            "word": "融合",
+            "meaning": "fusion"
+          },
+          {
+            "word": "多元文化",
+            "meaning": "multiculturalism"
+          },
+          {
+            "word": "冲突",
+            "meaning": "conflict"
+          },
+          {
+            "word": "寻根",
+            "meaning": "search for roots"
+          },
+          {
+            "word": "故土",
+            "meaning": "homeland"
+          },
+          {
+            "word": "谋生",
+            "meaning": "make a living"
+          },
+          {
+            "word": "安居乐业",
+            "meaning": "live and work in peace"
+          },
+          {
+            "word": "异乡",
+            "meaning": "foreign land"
+          },
+          {
+            "word": "边缘化",
+            "meaning": "marginalization"
+          },
+          {
+            "word": "跨文化",
+            "meaning": "cross-cultural"
+          },
+          {
+            "word": "挑战",
+            "meaning": "challenge"
+          },
+          {
+            "word": "机遇",
+            "meaning": "opportunity"
+          },
+          {
+            "word": "汇聚",
+            "meaning": "gather/converge"
+          },
+          {
+            "word": "迁徙",
+            "meaning": "migrate"
+          },
+          {
+            "word": "落叶归根",
+            "meaning": "fallen leaves return to their roots"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "theme": "🔵 主题三：人类发明创造 (Human Ingenuity)",
+    "templates": [
+      "科技的高速发展如同一把双刃剑**：在为我们提供大数据的智能便利之余，如果不加规范，极易侵犯个人隐私，导致信息茧房的产生。**",
+      "社交媒体是促进现代人跨地理交流的桥梁，但网络欺凌和假新闻泛滥的现象，正警示着我们必须提高媒介素养，克制冷静**地使用媒体。**",
+      "艺术与科学创新均是人类灵感的璀璨结晶，它们以独特、严谨的方式打破未知瓶颈，不仅造福大众，更引领社会前行。"
+    ],
+    "idioms": [
+      {
+        "word": "日新月异",
+        "meaning": "change with each passing day (make rapid progress)",
+        "usage": "在这个信息爆炸的时代，高新科技的发展可谓是**日新月异**。"
+      },
+      {
+        "word": "突飞猛进",
+        "meaning": "advance by leaps and bounds",
+        "usage": "近十年来，移动支付和电子商务的发展速度可以说是**突飞猛进**。"
+      },
+      {
+        "word": "双刃剑",
+        "meaning": "double-edged sword",
+        "usage": "网络社交软件是一把**双刃剑**，拉近了距离也拉远了人情。"
+      },
+      {
+        "word": "匠心独运",
+        "meaning": "show exquisite workmanship or ingenuity",
+        "usage": "这幅科技海报的设计**匠心独运**，成功地把中华古汉字与集成电路板融合在一起。"
+      }
+    ],
+    "subtopics": [
+      {
+        "title": "💡 主题写作备考引擎",
+        "core_words": [],
+        "all_words": []
+      },
+      {
+        "title": "1. 娱乐 (Entertainment)",
+        "core_words": [
+          {
+            "word": "沉迷",
+            "pinyin": "chénmí",
+            "meaning": "addicted to",
+            "collocation": "沉迷于电子游戏、沉迷网络",
+            "example": "家长和学校应当合理引导，防止青少年因**沉迷于虚无的网络游戏**而荒废学业。"
+          },
+          {
+            "word": "寓教于乐",
+            "pinyin": "yùjiào yúlè",
+            "meaning": "edutainment",
+            "collocation": "达到寓教于乐的目的、寓教于乐的教学",
+            "example": "这款教育类软件将历史典故融入互动关卡，真正做到了**寓教于乐**。"
+          },
+          {
+            "word": "喜闻乐见",
+            "pinyin": "xǐwén lèjiàn",
+            "meaning": "love to see and hear",
+            "collocation": "喜闻乐见的形式、广大群众喜闻乐见",
+            "example": "采用生动的动漫形式科普科学知识，是当下青少年**喜闻乐见**的。"
+          }
+        ],
+        "all_words": [
+          {
+            "word": "视听盛宴",
+            "meaning": "visual and auditory feast"
+          },
+          {
+            "word": "票房",
+            "meaning": "box office"
+          },
+          {
+            "word": "偶像剧",
+            "meaning": "idol drama"
+          },
+          {
+            "word": "综艺",
+            "meaning": "variety show"
+          },
+          {
+            "word": "泛娱乐化",
+            "meaning": "pan-entertainment"
+          },
+          {
+            "word": "流量",
+            "meaning": "web traffic/exposure"
+          },
+          {
+            "word": "炒作",
+            "meaning": "hype"
+          },
+          {
+            "word": "迎合",
+            "meaning": "cater to"
+          },
+          {
+            "word": "粗制滥造",
+            "meaning": "shoddily made"
+          },
+          {
+            "word": "精品",
+            "meaning": "masterpiece"
+          },
+          {
+            "word": "审核",
+            "meaning": "censor/review"
+          },
+          {
+            "word": "限制",
+            "meaning": "restrict"
+          },
+          {
+            "word": "沉迷",
+            "meaning": "addict to"
+          },
+          {
+            "word": "虚拟",
+            "meaning": "virtual"
+          },
+          {
+            "word": "逃避",
+            "meaning": "escape"
+          },
+          {
+            "word": "现实",
+            "meaning": "reality"
+          },
+          {
+            "word": "互动",
+            "meaning": "interact"
+          },
+          {
+            "word": "直播",
+            "meaning": "live stream"
+          },
+          {
+            "word": "打赏",
+            "meaning": "tip/reward online"
+          },
+          {
+            "word": "疯狂",
+            "meaning": "crazy"
+          },
+          {
+            "word": "追捧",
+            "meaning": "chase after/flatter"
+          },
+          {
+            "word": "寓教于乐",
+            "meaning": "edutainment"
+          },
+          {
+            "word": "堕落",
+            "meaning": "degenerate"
+          },
+          {
+            "word": "消遣",
+            "meaning": "pastime"
+          },
+          {
+            "word": "宣泄",
+            "meaning": "vent"
+          },
+          {
+            "word": "剧透",
+            "meaning": "spoiler"
+          },
+          {
+            "word": "粉丝经济",
+            "meaning": "fan economy"
+          },
+          {
+            "word": "轰动",
+            "meaning": "sensation"
+          },
+          {
+            "word": "潮流",
+            "meaning": "trend"
+          },
+          {
+            "word": "喜闻乐见",
+            "meaning": "love to see and hear"
+          }
+        ]
+      },
+      {
+        "title": "2. 艺术表达 (Artistic expressions)",
+        "core_words": [
+          {
+            "word": "灵感",
+            "pinyin": "línggǎn",
+            "meaning": "inspiration",
+            "collocation": "激发灵感、寻找艺术灵感",
+            "example": "作家们常常深入大自然中**寻找创作灵感**，以此来丰富小说的情感和画面感。"
+          },
+          {
+            "word": "审美",
+            "pinyin": "shěnměi",
+            "meaning": "aesthetics",
+            "collocation": "提升审美能力、审美观念的变化",
+            "example": "经常观赏经典艺术作品是学校培养学生多元思维、**提升艺术审美**的重要手段。"
+          },
+          {
+            "word": "匠心独运",
+            "pinyin": "jiàngxīn dúyù",
+            "meaning": "show great ingenuity",
+            "collocation": "设计匠心独运、匠心独运的构思",
+            "example": "这座现代化艺术馆的采光设计**匠心独运**，充分利用了自然光的投射效果。"
+          }
+        ],
+        "all_words": [
+          {
+            "word": "灵感",
+            "meaning": "inspiration"
+          },
+          {
+            "word": "创作",
+            "meaning": "create"
+          },
+          {
+            "word": "杰作",
+            "meaning": "masterpiece"
+          },
+          {
+            "word": "展览",
+            "meaning": "exhibition"
+          },
+          {
+            "word": "博物馆",
+            "meaning": "museum"
+          },
+          {
+            "word": "画廊",
+            "meaning": "gallery"
+          },
+          {
+            "word": "欣赏",
+            "meaning": "appreciate"
+          },
+          {
+            "word": "品鉴",
+            "meaning": "savor and evaluate"
+          },
+          {
+            "word": "抽象",
+            "meaning": "abstract"
+          },
+          {
+            "word": "写实",
+            "meaning": "realistic"
+          },
+          {
+            "word": "雕塑",
+            "meaning": "sculpture"
+          },
+          {
+            "word": "旋律",
+            "meaning": "melody"
+          },
+          {
+            "word": "节奏",
+            "meaning": "rhythm"
+          },
+          {
+            "word": "震撼",
+            "meaning": "shocking/stunning"
+          },
+          {
+            "word": "共鸣",
+            "meaning": "resonance"
+          },
+          {
+            "word": "传递",
+            "meaning": "transmit/convey"
+          },
+          {
+            "word": "表达",
+            "meaning": "express"
+          },
+          {
+            "word": "媒介",
+            "meaning": "medium"
+          },
+          {
+            "word": "审美",
+            "meaning": "aesthetics"
+          },
+          {
+            "word": "独特",
+            "meaning": "unique"
+          },
+          {
+            "word": "匠心独运",
+            "meaning": "show great ingenuity"
+          },
+          {
+            "word": "栩栩如生",
+            "meaning": "lifelike"
+          },
+          {
+            "word": "雅俗共赏",
+            "meaning": "appeal to both refined and popular tastes"
+          },
+          {
+            "word": "前卫",
+            "meaning": "avant-garde"
+          },
+          {
+            "word": "传统",
+            "meaning": "traditional"
+          },
+          {
+            "word": "颠覆",
+            "meaning": "subvert"
+          },
+          {
+            "word": "融合",
+            "meaning": "blend"
+          },
+          {
+            "word": "艺术品",
+            "meaning": "artwork"
+          },
+          {
+            "word": "感染力",
+            "meaning": "appeal/infectiousness"
+          },
+          {
+            "word": "陶醉",
+            "meaning": "intoxicated/fascinated"
+          }
+        ]
+      },
+      {
+        "title": "3. 交流与媒体 (Communication and media)",
+        "core_words": [
+          {
+            "word": "信息茧房",
+            "pinyin": "xìnxī jiǎnfáng",
+            "meaning": "information cocoon",
+            "collocation": "陷入信息茧房、打破信息茧房",
+            "example": "大数据的个性化推荐容易让我们**陷入信息茧房**，导致视野变得狭隘。"
+          },
+          {
+            "word": "网络欺凌",
+            "pinyin": "wǎngluò qīlíng",
+            "meaning": "cyberbullying",
+            "collocation": "抵制网络欺凌、受到网络欺凌",
+            "example": "学校应当开设媒介素养课，引导学生共同**坚决抵制网络欺凌**。"
+          },
+          {
+            "word": "舆论",
+            "pinyin": "yúlùn",
+            "meaning": "public opinion",
+            "collocation": "引导舆论走向、社会舆论的关注",
+            "example": "媒体在传播热点新闻时必须追求客观公正，不能为了流量而刻意煽动**社会舆论**。"
+          }
+        ],
+        "all_words": [
+          {
+            "word": "资讯",
+            "meaning": "information"
+          },
+          {
+            "word": "传播",
+            "meaning": "disseminate"
+          },
+          {
+            "word": "渠道",
+            "meaning": "channel"
+          },
+          {
+            "word": "社交媒体",
+            "meaning": "social media"
+          },
+          {
+            "word": "朋友圈",
+            "meaning": "social circle/Moments"
+          },
+          {
+            "word": "点赞",
+            "meaning": "like"
+          },
+          {
+            "word": "转发",
+            "meaning": "share/forward"
+          },
+          {
+            "word": "评论",
+            "meaning": "comment"
+          },
+          {
+            "word": "网络欺凌",
+            "meaning": "cyberbullying"
+          },
+          {
+            "word": "键盘侠",
+            "meaning": "keyboard warrior"
+          },
+          {
+            "word": "舆论",
+            "meaning": "public opinion"
+          },
+          {
+            "word": "引导",
+            "meaning": "guide"
+          },
+          {
+            "word": "辟谣",
+            "meaning": "refute a rumor"
+          },
+          {
+            "word": "假新闻",
+            "meaning": "fake news"
+          },
+          {
+            "word": "信息茧房",
+            "meaning": "information cocoon"
+          },
+          {
+            "word": "碎片化",
+            "meaning": "fragmented"
+          },
+          {
+            "word": "标题党",
+            "meaning": "clickbait"
+          },
+          {
+            "word": "炒作",
+            "meaning": "sensationalize"
+          },
+          {
+            "word": "曝光",
+            "meaning": "expose"
+          },
+          {
+            "word": "隐私",
+            "meaning": "privacy"
+          },
+          {
+            "word": "泄露",
+            "meaning": "leak"
+          },
+          {
+            "word": "透明",
+            "meaning": "transparent"
+          },
+          {
+            "word": "互动",
+            "meaning": "interaction"
+          },
+          {
+            "word": "桥梁",
+            "meaning": "bridge"
+          },
+          {
+            "word": "鸿沟",
+            "meaning": "gap"
+          },
+          {
+            "word": "畅通",
+            "meaning": "unimpeded"
+          },
+          {
+            "word": "封锁",
+            "meaning": "block"
+          },
+          {
+            "word": "审查",
+            "meaning": "censorship"
+          },
+          {
+            "word": "普及",
+            "meaning": "popularize"
+          },
+          {
+            "word": "畅所欲言",
+            "meaning": "speak freely"
+          }
+        ]
+      },
+      {
+        "title": "4. 科技 (Technology)",
+        "core_words": [
+          {
+            "word": "双刃剑",
+            "pinyin": "shuāngrènjiàn",
+            "meaning": "double-edged sword",
+            "collocation": "是一把双刃剑、科技双刃剑的属性",
+            "example": "智能手机是一把**双刃剑**，在极大便利日常沟通的同时，也削弱了人们面对面的情感交流。"
+          },
+          {
+            "word": "日新月异",
+            "pinyin": "rìxīn yuèyì",
+            "meaning": "change with each passing day",
+            "collocation": "科技日新月异、日新月异的发展",
+            "example": "面对**日新月异的科技变革**，我们应主动拥抱变化，积极掌握数字化新工具。"
+          },
+          {
+            "word": "隐私",
+            "pinyin": "yǐnsī",
+            "meaning": "privacy",
+            "collocation": "保护个人隐私、泄露用户隐私",
+            "example": "在使用各种手机软件时，我们必须时刻提高警惕，注意**保护个人隐私数据**。"
+          }
+        ],
+        "all_words": [
+          {
+            "word": "日新月异",
+            "meaning": "change with each passing day"
+          },
+          {
+            "word": "突飞猛进",
+            "meaning": "advance by leaps and bounds"
+          },
+          {
+            "word": "革命",
+            "meaning": "revolution"
+          },
+          {
+            "word": "颠覆",
+            "meaning": "subvert/overturn"
+          },
+          {
+            "word": "智能",
+            "meaning": "smart/intelligent"
+          },
+          {
+            "word": "人工智能",
+            "meaning": "AI"
+          },
+          {
+            "word": "算法",
+            "meaning": "algorithm"
+          },
+          {
+            "word": "大数据",
+            "meaning": "big data"
+          },
+          {
+            "word": "云端",
+            "meaning": "cloud"
+          },
+          {
+            "word": "自动化",
+            "meaning": "automation"
+          },
+          {
+            "word": "效率",
+            "meaning": "efficiency"
+          },
+          {
+            "word": "捷径",
+            "meaning": "shortcut"
+          },
+          {
+            "word": "依赖",
+            "meaning": "rely on"
+          },
+          {
+            "word": "懒惰",
+            "meaning": "lazy"
+          },
+          {
+            "word": "双刃剑",
+            "meaning": "double-edged sword"
+          },
+          {
+            "word": "弊端",
+            "meaning": "drawback"
+          },
+          {
+            "word": "利弊",
+            "meaning": "pros and cons"
+          },
+          {
+            "word": "普及",
+            "meaning": "widespread"
+          },
+          {
+            "word": "淘汰",
+            "meaning": "eliminate"
+          },
+          {
+            "word": "创新",
+            "meaning": "innovate"
+          },
+          {
+            "word": "研发",
+            "meaning": "R&D"
+          },
+          {
+            "word": "专利",
+            "meaning": "patent"
+          },
+          {
+            "word": "侵权",
+            "meaning": "infringement"
+          },
+          {
+            "word": "黑客",
+            "meaning": "hacker"
+          },
+          {
+            "word": "漏洞",
+            "meaning": "loophole"
+          },
+          {
+            "word": "升级",
+            "meaning": "upgrade"
+          },
+          {
+            "word": "兼容",
+            "meaning": "compatible"
+          },
+          {
+            "word": "虚拟现实",
+            "meaning": "VR"
+          },
+          {
+            "word": "便捷",
+            "meaning": "convenient"
+          },
+          {
+            "word": "触手可及",
+            "meaning": "within reach"
+          }
+        ]
+      },
+      {
+        "title": "5. 科学创新 (Scientific innovation)",
+        "core_words": [
+          {
+            "word": "突破",
+            "pinyin": "tūpò",
+            "meaning": "breakthrough",
+            "collocation": "取得重大突破、科技突破",
+            "example": "科研团队在量子计算机研究领域**取得了里程碑式的突破**，震惊了全球学界。"
+          },
+          {
+            "word": "伦理",
+            "pinyin": "lúnlǐ",
+            "meaning": "ethics",
+            "collocation": "科学伦理道德、面临伦理争议",
+            "example": "克隆技术在带来医学奇迹的同时，也触及了人类生命的本源，面临重重**伦理拷问**。"
+          },
+          {
+            "word": "争议",
+            "pinyin": "zhēngyì",
+            "meaning": "controversy",
+            "collocation": "引起广泛争议、充满争议的话题",
+            "example": "是否应当允许人工智能全面代写论文，目前在教育界和学术界**引起了广泛争议**。"
+          }
+        ],
+        "all_words": [
+          {
+            "word": "突破",
+            "meaning": "breakthrough"
+          },
+          {
+            "word": "探索",
+            "meaning": "explore"
+          },
+          {
+            "word": "未知",
+            "meaning": "unknown"
+          },
+          {
+            "word": "航天",
+            "meaning": "aerospace"
+          },
+          {
+            "word": "基因",
+            "meaning": "gene"
+          },
+          {
+            "word": "克隆",
+            "meaning": "clone"
+          },
+          {
+            "word": "伦理",
+            "meaning": "ethics"
+          },
+          {
+            "word": "争议",
+            "meaning": "controversy"
+          },
+          {
+            "word": "突破性",
+            "meaning": "groundbreaking"
+          },
+          {
+            "word": "实验",
+            "meaning": "experiment"
+          },
+          {
+            "word": "假设",
+            "meaning": "hypothesis"
+          },
+          {
+            "word": "论证",
+            "meaning": "prove/demonstrate"
+          },
+          {
+            "word": "严谨",
+            "meaning": "rigorous"
+          },
+          {
+            "word": "基础",
+            "meaning": "foundation"
+          },
+          {
+            "word": "应用",
+            "meaning": "application"
+          },
+          {
+            "word": "转化",
+            "meaning": "transform"
+          },
+          {
+            "word": "成果",
+            "meaning": "achievement"
+          },
+          {
+            "word": "进步",
+            "meaning": "progress"
+          },
+          {
+            "word": "贡献",
+            "meaning": "contribution"
+          },
+          {
+            "word": "造福",
+            "meaning": "bring benefit to"
+          },
+          {
+            "word": "毁灭",
+            "meaning": "destroy"
+          },
+          {
+            "word": "探索精神",
+            "meaning": "spirit of exploration"
+          },
+          {
+            "word": "攻克",
+            "meaning": "overcome a challenge"
+          },
+          {
+            "word": "难题",
+            "meaning": "difficult problem"
+          },
+          {
+            "word": "瓶颈",
+            "meaning": "bottleneck"
+          },
+          {
+            "word": "跨界",
+            "meaning": "crossover"
+          },
+          {
+            "word": "前沿",
+            "meaning": "frontier"
+          },
+          {
+            "word": "尖端",
+            "meaning": "cutting-edge"
+          },
+          {
+            "word": "科学家",
+            "meaning": "scientist"
+          },
+          {
+            "word": "实验室",
+            "meaning": "laboratory"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "theme": "🟠 主题四：社会组织 (Social Organization)",
+    "templates": [
+      "现代教育不应当是千篇一律的应试灌输，而应注重因材施教**，培养学生的批判性思维和全面发展的健全人格。**",
+      "在职场竞争与社会运转中，早期的职业规划**以及出色的团队合作精神，是青少年步入社会时不可或缺的核心软实力。**",
+      "关爱社会弱势群体、积极参与社区志愿服务，不仅是每个公民应尽的责任义务，更是凝聚人心、构建和谐社会的重要基石。"
+    ],
+    "idioms": [
+      {
+        "word": "因材施教",
+        "meaning": "teach students in accordance with their aptitude",
+        "usage": "贯彻**因材施教**的原则，有利于发掘每一个孩子身上的闪光点。"
+      },
+      {
+        "word": "拔苗助长",
+        "meaning": "pull up seedlings to help them grow (spoil things through excessive enthusiasm or haste)",
+        "usage": "周末给孩子报过多的补习班是典型的**拔苗助长**，往往适得其反。"
+      },
+      {
+        "word": "望子成龙",
+        "meaning": "hope one's son becomes a dragon (expect one's children to be very successful)",
+        "usage": "绝大多数家长都是**望子成龙**，却忽视了倾听孩子真正的精神诉求。"
+      },
+      {
+        "word": "和睦相处",
+        "meaning": "live together in peace and harmony",
+        "usage": "虽然我们来自不同的文化背景，但在同一个宿舍里大家一直**和睦相处**。"
+      }
+    ],
+    "subtopics": [
+      {
+        "title": "💡 主题写作备考引擎",
+        "core_words": [],
+        "all_words": []
+      },
+      {
+        "title": "1. 社会关系 (Social relationships)",
+        "core_words": [
+          {
+            "word": "代沟",
+            "pinyin": "dàigōu",
+            "meaning": "generation gap",
+            "collocation": "消除代沟、跨越代沟",
+            "example": "父母和孩子都应当放下成见，通过平等的沟通来**消除代沟**、达成和解。"
+          },
+          {
+            "word": "同辈压力",
+            "pinyin": "tóngbèi yālì",
+            "meaning": "peer pressure",
+            "collocation": "面对同辈压力、应对同辈压力",
+            "example": "中学生应当培养自信自强的品格，学会正确看待并**妥善应对同辈压力**。"
+          },
+          {
+            "word": "融洽",
+            "pinyin": "róngqià",
+            "meaning": "on good terms",
+            "collocation": "关系融洽、相处融洽",
+            "example": "在一个**相处融洽**的班级环境里，学生们的学习动力和幸福感往往更高。"
+          }
+        ],
+        "all_words": [
+          {
+            "word": "代沟",
+            "meaning": "generation gap"
+          },
+          {
+            "word": "隔阂",
+            "meaning": "estrangement"
+          },
+          {
+            "word": "摩擦",
+            "meaning": "friction"
+          },
+          {
+            "word": "和睦",
+            "meaning": "harmonious"
+          },
+          {
+            "word": "融洽",
+            "meaning": "on good terms"
+          },
+          {
+            "word": "疏远",
+            "meaning": "drift apart"
+          },
+          {
+            "word": "亲密",
+            "meaning": "intimate"
+          },
+          {
+            "word": "攀比",
+            "meaning": "unrealistic comparison"
+          },
+          {
+            "word": "嫉妒",
+            "meaning": "jealousy"
+          },
+          {
+            "word": "宽容",
+            "meaning": "tolerance"
+          },
+          {
+            "word": "谅解",
+            "meaning": "understanding/forgiveness"
+          },
+          {
+            "word": "互助",
+            "meaning": "mutual help"
+          },
+          {
+            "word": "人脉",
+            "meaning": "network/connections"
+          },
+          {
+            "word": "社交",
+            "meaning": "socializing"
+          },
+          {
+            "word": "圈子",
+            "meaning": "circle"
+          },
+          {
+            "word": "虚伪",
+            "meaning": "hypocritical"
+          },
+          {
+            "word": "真诚",
+            "meaning": "sincere"
+          },
+          {
+            "word": "敷衍",
+            "meaning": "perfunctory"
+          },
+          {
+            "word": "陪伴",
+            "meaning": "accompany"
+          },
+          {
+            "word": "倾听",
+            "meaning": "listen attentively"
+          },
+          {
+            "word": "沟通",
+            "meaning": "communication"
+          },
+          {
+            "word": "矛盾",
+            "meaning": "contradiction"
+          },
+          {
+            "word": "化解",
+            "meaning": "resolve"
+          },
+          {
+            "word": "冲突",
+            "meaning": "conflict"
+          },
+          {
+            "word": "妥协",
+            "meaning": "compromise"
+          },
+          {
+            "word": "尊重",
+            "meaning": "respect"
+          },
+          {
+            "word": "平等",
+            "meaning": "equality"
+          },
+          {
+            "word": "尊老爱幼",
+            "meaning": "respect the old, love the young"
+          },
+          {
+            "word": "门当户对",
+            "meaning": "be well-matched in social/economic status"
+          },
+          {
+            "word": "志同道合",
+            "meaning": "share the same ideals"
+          }
+        ]
+      },
+      {
+        "title": "2. 社区 (Community)",
+        "core_words": [
+          {
+            "word": "归属感",
+            "pinyin": "guīshǔgǎn",
+            "meaning": "sense of belonging",
+            "collocation": "增强社区归属感、获得归属感",
+            "example": "通过积极参加街道组织的志愿巡逻，我逐渐对这个新社区产生了一份特别的**归属感**。"
+          },
+          {
+            "word": "弱势群体",
+            "pinyin": "ruòshì qúntǐ",
+            "meaning": "vulnerable groups",
+            "collocation": "关爱弱势群体、帮助弱势群体",
+            "example": "在寒潮来临时，社区工作人员为孤寡老人等**弱势群体送去了御寒物资**。"
+          },
+          {
+            "word": "志愿服务",
+            "pinyin": "zhìyuàn fúwù",
+            "meaning": "volunteer service",
+            "collocation": "参加志愿服务、志愿服务活动",
+            "example": "在社区图书馆提供**志愿服务**的经历，不仅锻炼了我的能力，也让我体味到奉献的乐趣。"
+          }
+        ],
+        "all_words": [
+          {
+            "word": "归属感",
+            "meaning": "sense of belonging"
+          },
+          {
+            "word": "凝聚力",
+            "meaning": "cohesion"
+          },
+          {
+            "word": "邻里",
+            "meaning": "neighborhood"
+          },
+          {
+            "word": "互助",
+            "meaning": "help each other"
+          },
+          {
+            "word": "志愿",
+            "meaning": "volunteer"
+          },
+          {
+            "word": "奉献",
+            "meaning": "dedicate"
+          },
+          {
+            "word": "公益",
+            "meaning": "public welfare"
+          },
+          {
+            "word": "筹款",
+            "meaning": "fundraising"
+          },
+          {
+            "word": "设施",
+            "meaning": "facilities"
+          },
+          {
+            "word": "完善",
+            "meaning": "perfect/improve"
+          },
+          {
+            "word": "破旧",
+            "meaning": "shabby"
+          },
+          {
+            "word": "改造",
+            "meaning": "renovate"
+          },
+          {
+            "word": "治安",
+            "meaning": "public security"
+          },
+          {
+            "word": "巡逻",
+            "meaning": "patrol"
+          },
+          {
+            "word": "纠纷",
+            "meaning": "dispute"
+          },
+          {
+            "word": "调解",
+            "meaning": "mediate"
+          },
+          {
+            "word": "倡议",
+            "meaning": "proposal/initiative"
+          },
+          {
+            "word": "参与",
+            "meaning": "participate"
+          },
+          {
+            "word": "融入",
+            "meaning": "integrate"
+          },
+          {
+            "word": "孤寡老人",
+            "meaning": "childless and widowed elders"
+          },
+          {
+            "word": "弱势群体",
+            "meaning": "vulnerable groups"
+          },
+          {
+            "word": "关爱",
+            "meaning": "care for"
+          },
+          {
+            "word": "捐赠",
+            "meaning": "donate"
+          },
+          {
+            "word": "基础设施",
+            "meaning": "infrastructure"
+          },
+          {
+            "word": "改善",
+            "meaning": "improve"
+          },
+          {
+            "word": "繁华",
+            "meaning": "bustling/prosperous"
+          },
+          {
+            "word": "宜居",
+            "meaning": "livable"
+          },
+          {
+            "word": "喧嚣",
+            "meaning": "noisy"
+          },
+          {
+            "word": "宁静",
+            "meaning": "tranquil"
+          },
+          {
+            "word": "核心",
+            "meaning": "core/center"
+          }
+        ]
+      },
+      {
+        "title": "3. 教育 (Education)",
+        "core_words": [
+          {
+            "word": "应试教育",
+            "pinyin": "yìngshì jiāoyù",
+            "meaning": "exam-oriented education",
+            "collocation": "摆脱应试教育、传统应试教育",
+            "example": "我们应该逐步**摆脱单一应试教育的禁锢**，转而注重学生的综合素质和身心健康。"
+          },
+          {
+            "word": "因材施教",
+            "pinyin": "yīncái shījiào",
+            "meaning": "teach according to aptitude",
+            "collocation": "贯彻因材施教的原则、因材施教的模式",
+            "example": "优秀的教育者应当善于发现每个学生的潜能，因人而异地**实施因材施教**。"
+          },
+          {
+            "word": "批判性思维",
+            "pinyin": "pìpànxìng sīwéi",
+            "meaning": "critical thinking",
+            "collocation": "培养批判性思维、独立思考与批判性思维",
+            "example": "IB课程的精髓不仅在于知识的积累，更在于**培养学生的批判性思维能力**。"
+          }
+        ],
+        "all_words": [
+          {
+            "word": "应试教育",
+            "meaning": "exam-oriented education"
+          },
+          {
+            "word": "素质教育",
+            "meaning": "holistic education"
+          },
+          {
+            "word": "填鸭式",
+            "meaning": "spoon-feeding"
+          },
+          {
+            "word": "启发式",
+            "meaning": "heuristic/inspiring"
+          },
+          {
+            "word": "因材施教",
+            "meaning": "teach according to aptitude"
+          },
+          {
+            "word": "拔苗助长",
+            "meaning": "spoil things by excessive enthusiasm"
+          },
+          {
+            "word": "望子成龙",
+            "meaning": "expect one's child to succeed"
+          },
+          {
+            "word": "竞争",
+            "meaning": "competition"
+          },
+          {
+            "word": "激烈",
+            "meaning": "fierce"
+          },
+          {
+            "word": "内卷",
+            "meaning": "involution/hyper-competition"
+          },
+          {
+            "word": "减负",
+            "meaning": "reduce burden"
+          },
+          {
+            "word": "补习班",
+            "meaning": "cram school"
+          },
+          {
+            "word": "成绩",
+            "meaning": "grades"
+          },
+          {
+            "word": "衡量",
+            "meaning": "measure"
+          },
+          {
+            "word": "标准",
+            "meaning": "standard"
+          },
+          {
+            "word": "创新能力",
+            "meaning": "innovation ability"
+          },
+          {
+            "word": "批判性思维",
+            "meaning": "critical thinking"
+          },
+          {
+            "word": "辍学",
+            "meaning": "drop out"
+          },
+          {
+            "word": "欺凌",
+            "meaning": "bullying"
+          },
+          {
+            "word": "纪律",
+            "meaning": "discipline"
+          },
+          {
+            "word": "规范",
+            "meaning": "regulate"
+          },
+          {
+            "word": "榜样",
+            "meaning": "role model"
+          },
+          {
+            "word": "潜移默化",
+            "meaning": "imperceptible influence"
+          },
+          {
+            "word": "引导",
+            "meaning": "guide"
+          },
+          {
+            "word": "塑造",
+            "meaning": "shape"
+          },
+          {
+            "word": "德育",
+            "meaning": "moral education"
+          },
+          {
+            "word": "全面发展",
+            "meaning": "all-round development"
+          },
+          {
+            "word": "奖学金",
+            "meaning": "scholarship"
+          },
+          {
+            "word": "负担",
+            "meaning": "burden"
+          },
+          {
+            "word": "评估",
+            "meaning": "assessment"
+          }
+        ]
+      },
+      {
+        "title": "4. 职场 (The working world)",
+        "core_words": [
+          {
+            "word": "职业规划",
+            "pinyin": "zhíyè guīhuà",
+            "meaning": "career planning",
+            "collocation": "明确的职业规划、制定职业规划",
+            "example": "学校在高中阶段开设职业探索课程，能够指导学生**建立科学的职业规划**。"
+          },
+          {
+            "word": "兼职",
+            "pinyin": "jiānzhí",
+            "meaning": "part-time job",
+            "collocation": "做兼职打工、寻找兼职工作",
+            "example": "利用假期进行**适当的兼职打工**，可以让学生提前接触社会，积累社会实践经验。"
+          },
+          {
+            "word": "竞争力",
+            "pinyin": "jìngzhēnglì",
+            "meaning": "competitiveness",
+            "collocation": "提高职场竞争力、核心竞争力",
+            "example": "掌握两门以上的外语，能在全球化的人才市场上大大**增强你的核心竞争力**。"
+          }
+        ],
+        "all_words": [
+          {
+            "word": "谋生",
+            "meaning": "make a living"
+          },
+          {
+            "word": "简历",
+            "meaning": "resume"
+          },
+          {
+            "word": "面试",
+            "meaning": "interview"
+          },
+          {
+            "word": "录取",
+            "meaning": "hire/admit"
+          },
+          {
+            "word": "淘汰",
+            "meaning": "eliminate"
+          },
+          {
+            "word": "竞争",
+            "meaning": "competition"
+          },
+          {
+            "word": "晋升",
+            "meaning": "promotion"
+          },
+          {
+            "word": "薪酬",
+            "meaning": "salary"
+          },
+          {
+            "word": "福利",
+            "meaning": "benefits"
+          },
+          {
+            "word": "剥削",
+            "meaning": "exploit"
+          },
+          {
+            "word": "加班",
+            "meaning": "work overtime"
+          },
+          {
+            "word": "过劳",
+            "meaning": "overwork"
+          },
+          {
+            "word": "压力",
+            "meaning": "pressure"
+          },
+          {
+            "word": "辞职",
+            "meaning": "resign"
+          },
+          {
+            "word": "跳槽",
+            "meaning": "job-hopping"
+          },
+          {
+            "word": "创业",
+            "meaning": "start a business"
+          },
+          {
+            "word": "风险",
+            "meaning": "risk"
+          },
+          {
+            "word": "团队合作",
+            "meaning": "teamwork"
+          },
+          {
+            "word": "领导力",
+            "meaning": "leadership"
+          },
+          {
+            "word": "执行力",
+            "meaning": "execution ability"
+          },
+          {
+            "word": "效率",
+            "meaning": "efficiency"
+          },
+          {
+            "word": "怠工",
+            "meaning": "slack off"
+          },
+          {
+            "word": "职业规划",
+            "meaning": "career planning"
+          },
+          {
+            "word": "瓶颈",
+            "meaning": "bottleneck"
+          },
+          {
+            "word": "退休",
+            "meaning": "retire"
+          },
+          {
+            "word": "兼职",
+            "meaning": "part-time job"
+          },
+          {
+            "word": "实习",
+            "meaning": "internship"
+          },
+          {
+            "word": "经验",
+            "meaning": "experience"
+          },
+          {
+            "word": "职场",
+            "meaning": "workplace"
+          },
+          {
+            "word": "人际关系",
+            "meaning": "interpersonal relationships"
+          }
+        ]
+      },
+      {
+        "title": "5. 法律与秩序 (Law and order)",
+        "core_words": [
+          {
+            "word": "遵守",
+            "pinyin": "zūnshǒu",
+            "meaning": "comply with",
+            "collocation": "遵守法律法规、自觉遵守秩序",
+            "example": "做一名合格公民的前提，是必须在日常生活中**自觉遵守各项规则与秩序**。"
+          },
+          {
+            "word": "维权",
+            "pinyin": "wéiquán",
+            "meaning": "defend one's rights",
+            "collocation": "依法维权、维权意识",
+            "example": "当我们在消费时遭遇不公平对待，应当勇于保留证据，利用合法途径**依法维权**。"
+          },
+          {
+            "word": "公平与正义",
+            "pinyin": "gōngpíng yǔ zhèngyì",
+            "meaning": "fairness and justice",
+            "collocation": "维护公平正义、追求公平与正义",
+            "example": "法治社会的终极目标，就是要在每一个司法案件中都体现出**公平与正义**。"
+          }
+        ],
+        "all_words": [
+          {
+            "word": "规则",
+            "meaning": "rules"
+          },
+          {
+            "word": "约束",
+            "meaning": "restrict/bind"
+          },
+          {
+            "word": "遵守",
+            "meaning": "comply with"
+          },
+          {
+            "word": "违背",
+            "meaning": "violate"
+          },
+          {
+            "word": "惩罚",
+            "meaning": "punish"
+          },
+          {
+            "word": "制裁",
+            "meaning": "sanction"
+          },
+          {
+            "word": "犯罪",
+            "meaning": "crime"
+          },
+          {
+            "word": "盗窃",
+            "meaning": "theft"
+          },
+          {
+            "word": "欺诈",
+            "meaning": "fraud"
+          },
+          {
+            "word": "警戒",
+            "meaning": "alert/warn"
+          },
+          {
+            "word": "巡逻",
+            "meaning": "patrol"
+          },
+          {
+            "word": "公平",
+            "meaning": "fairness"
+          },
+          {
+            "word": "正义",
+            "meaning": "justice"
+          },
+          {
+            "word": "权利",
+            "meaning": "rights"
+          },
+          {
+            "word": "义务",
+            "meaning": "obligations"
+          },
+          {
+            "word": "侵犯",
+            "meaning": "infringe"
+          },
+          {
+            "word": "维权",
+            "meaning": "defend one's rights"
+          },
+          {
+            "word": "纠纷",
+            "meaning": "dispute"
+          },
+          {
+            "word": "诉讼",
+            "meaning": "lawsuit"
+          },
+          {
+            "word": "法庭",
+            "meaning": "court"
+          },
+          {
+            "word": "审判",
+            "meaning": "trial"
+          },
+          {
+            "word": "秩序",
+            "meaning": "order"
+          },
+          {
+            "word": "混乱",
+            "meaning": "chaos"
+          },
+          {
+            "word": "道德",
+            "meaning": "morality"
+          },
+          {
+            "word": "底线",
+            "meaning": "bottom line"
+          },
+          {
+            "word": "法律盲区",
+            "meaning": "legal blind spot"
+          },
+          {
+            "word": "严惩",
+            "meaning": "punish severely"
+          },
+          {
+            "word": "宽大",
+            "meaning": "lenient"
+          },
+          {
+            "word": "预防",
+            "meaning": "prevent"
+          },
+          {
+            "word": "治安",
+            "meaning": "public security"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "theme": "🟤 主题五：共享地球 (Sharing the Planet)",
+    "templates": [
+      "保护地球生态环境与减缓全球变暖已是迫在眉睫、刻不容缓**的任务，每一位社会成员都应当从拒绝一次性塑料制品、践行垃圾分类做起。**",
+      "全球化趋势作为经济和文化交融的引擎，在让全球供应链紧密接轨的同时，也对本土非物质文化遗产带来了重大的同化冲击**。**",
+      "消除各阶层的性别与种族歧视，积极扶助边缘化弱势群体，是跨越贫富鸿沟、实现社会公平与长治久安的核心必修课。"
+    ],
+    "idioms": [
+      {
+        "word": "刻不容缓",
+        "meaning": "allow of no delay; be of extreme urgency",
+        "usage": "控制城市白色垃圾的蔓延已经到了**刻不容缓**的地步。"
+      },
+      {
+        "word": "迫在眉睫",
+        "meaning": "imminent; pressingly close",
+        "usage": "气温持续升高导致的海平面上升，对于低地国家来说是**迫在眉睫**的灾难。"
+      },
+      {
+        "word": "携手共进",
+        "meaning": "join hands and advance together",
+        "usage": "面对气候变化这道全球性考题，唯有各国**携手共进**才能共度难关。"
+      },
+      {
+        "word": "互利共赢",
+        "meaning": "mutually beneficial and win-win",
+        "usage": "建立多元包容的全球贸易体系，能够为南北国家创造**互利共赢**的局面。"
+      }
+    ],
+    "subtopics": [
+      {
+        "title": "💡 主题写作备考引擎",
+        "core_words": [],
+        "all_words": []
+      },
+      {
+        "title": "1. 环境 (The environment)",
+        "core_words": [
+          {
+            "word": "可持续发展",
+            "pinyin": "kěchíxù fāzhǎn",
+            "meaning": "sustainable development",
+            "collocation": "倡导可持续发展、可持续发展的战略",
+            "example": "我们不能以牺牲后代生存环境为代价换取一时的经济增长，必须坚持**可持续发展**。"
+          },
+          {
+            "word": "垃圾分类",
+            "pinyin": "lājī fēnlèi",
+            "meaning": "garbage sorting",
+            "collocation": "推广垃圾分类、落实垃圾分类",
+            "example": "学校通过定期举行讲座，让全体师生认识到**实行垃圾分类的紧迫性**。"
+          },
+          {
+            "word": "迫在眉睫",
+            "pinyin": "pòzài méijié",
+            "meaning": "imminent",
+            "collocation": "任务迫在眉睫、行动迫在眉睫",
+            "example": "遏制全球温室气体排放，已经是一项**迫在眉睫的世界性课题**。"
+          }
+        ],
+        "all_words": [
+          {
+            "word": "恶化",
+            "meaning": "deteriorate"
+          },
+          {
+            "word": "污染",
+            "meaning": "pollution"
+          },
+          {
+            "word": "排放",
+            "meaning": "emit"
+          },
+          {
+            "word": "废气",
+            "meaning": "exhaust gas"
+          },
+          {
+            "word": "废水",
+            "meaning": "wastewater"
+          },
+          {
+            "word": "垃圾分类",
+            "meaning": "garbage sorting"
+          },
+          {
+            "word": "回收",
+            "meaning": "recycle"
+          },
+          {
+            "word": "降解",
+            "meaning": "degrade"
+          },
+          {
+            "word": "白色污染",
+            "meaning": "white/plastic pollution"
+          },
+          {
+            "word": "植被",
+            "meaning": "vegetation"
+          },
+          {
+            "word": "破坏",
+            "meaning": "destroy"
+          },
+          {
+            "word": "砍伐",
+            "meaning": "deforestation"
+          },
+          {
+            "word": "荒漠化",
+            "meaning": "desertification"
+          },
+          {
+            "word": "治理",
+            "meaning": "control/treat"
+          },
+          {
+            "word": "绿化",
+            "meaning": "afforestation"
+          },
+          {
+            "word": "环保",
+            "meaning": "environmental protection"
+          },
+          {
+            "word": "意识",
+            "meaning": "awareness"
+          },
+          {
+            "word": "倡导",
+            "meaning": "advocate"
+          },
+          {
+            "word": "节能减排",
+            "meaning": "energy saving and emission reduction"
+          },
+          {
+            "word": "低碳",
+            "meaning": "low carbon"
+          },
+          {
+            "word": "碳中和",
+            "meaning": "carbon neutral"
+          },
+          {
+            "word": "可持续",
+            "meaning": "sustainable"
+          },
+          {
+            "word": "严峻",
+            "meaning": "severe"
+          },
+          {
+            "word": "刻不容缓",
+            "meaning": "delay is not an option"
+          },
+          {
+            "word": "迫在眉睫",
+            "meaning": "imminent"
+          },
+          {
+            "word": "呼吁",
+            "meaning": "appeal"
+          },
+          {
+            "word": "携手",
+            "meaning": "hand in hand"
+          },
+          {
+            "word": "保护",
+            "meaning": "protect"
+          },
+          {
+            "word": "污染源",
+            "meaning": "source of pollution"
+          },
+          {
+            "word": "净化",
+            "meaning": "purify"
+          }
+        ]
+      },
+      {
+        "title": "2. 气候与自然地理 (Climate & Physical geography)",
+        "core_words": [
+          {
+            "word": "全球变暖",
+            "pinyin": "quánqiú biànnuǎn",
+            "meaning": "global warming",
+            "collocation": "应对全球变暖、减缓全球变暖",
+            "example": "极地冰川大面积融化是**全球变暖的明证**，急需国际社会通力合作进行减缓。"
+          },
+          {
+            "word": "栖息地",
+            "pinyin": "qīxīdì",
+            "meaning": "habitat",
+            "collocation": "保护野生动物栖息地、栖息地破坏",
+            "example": "随着人类城市的无节制扩张，很多珍稀候鸟的**湿地栖息地正面临被割裂和破坏的危险**。"
+          },
+          {
+            "word": "濒危动物",
+            "pinyin": "bīnwēi dòngwù",
+            "meaning": "endangered species/animals",
+            "collocation": "保护濒危动物、濒危动物拯救计划",
+            "example": "各国政府应当联合严打野生动物制品非法贸易，全面**拯救处于崩溃边缘的濒危动物**。"
+          }
+        ],
+        "all_words": [
+          {
+            "word": "变暖",
+            "meaning": "warming"
+          },
+          {
+            "word": "温室效应",
+            "meaning": "greenhouse effect"
+          },
+          {
+            "word": "极端",
+            "meaning": "extreme"
+          },
+          {
+            "word": "天气",
+            "meaning": "weather"
+          },
+          {
+            "word": "灾害",
+            "meaning": "disaster"
+          },
+          {
+            "word": "频发",
+            "meaning": "occur frequently"
+          },
+          {
+            "word": "旱灾",
+            "meaning": "drought"
+          },
+          {
+            "word": "洪涝",
+            "meaning": "flood"
+          },
+          {
+            "word": "台风",
+            "meaning": "typhoon"
+          },
+          {
+            "word": "海啸",
+            "meaning": "tsunami"
+          },
+          {
+            "word": "冰川",
+            "meaning": "glacier"
+          },
+          {
+            "word": "融化",
+            "meaning": "melt"
+          },
+          {
+            "word": "海平面",
+            "meaning": "sea level"
+          },
+          {
+            "word": "上升",
+            "meaning": "rise"
+          },
+          {
+            "word": "威胁",
+            "meaning": "threat"
+          },
+          {
+            "word": "适应",
+            "meaning": "adapt"
+          },
+          {
+            "word": "减缓",
+            "meaning": "mitigate"
+          },
+          {
+            "word": "栖息地",
+            "meaning": "habitat"
+          },
+          {
+            "word": "丧失",
+            "meaning": "loss"
+          },
+          {
+            "word": "濒危",
+            "meaning": "endangered"
+          },
+          {
+            "word": "灭绝",
+            "meaning": "extinction"
+          },
+          {
+            "word": "保护区",
+            "meaning": "reserve/sanctuary"
+          },
+          {
+            "word": "壮丽",
+            "meaning": "magnificent"
+          },
+          {
+            "word": "辽阔",
+            "meaning": "vast"
+          },
+          {
+            "word": "险峻",
+            "meaning": "steep"
+          },
+          {
+            "word": "独特",
+            "meaning": "unique"
+          },
+          {
+            "word": "地貌",
+            "meaning": "landform"
+          },
+          {
+            "word": "资源",
+            "meaning": "resources"
+          },
+          {
+            "word": "枯竭",
+            "meaning": "dry up/exhaust"
+          },
+          {
+            "word": "挖掘",
+            "meaning": "excavate/mine"
+          }
+        ]
+      },
+      {
+        "title": "3. 全球化 (Globalization)",
+        "core_words": [
+          {
+            "word": "跨国",
+            "pinyin": "kuàguó",
+            "meaning": "transnational",
+            "collocation": "跨国企业、跨国文化交流",
+            "example": "频繁的**跨国青年学者交流**，能够有效消除由于地理隔离而产生的文化成见。"
+          },
+          {
+            "word": "文化融合",
+            "pinyin": "wénhuà rónghé",
+            "meaning": "cultural integration",
+            "collocation": "促进文化融合、多元文化融合",
+            "example": "全球化绝不等于文化同化，而应当是在求同存异的前提下，**推动深层次的文化融合**。"
+          },
+          {
+            "word": "冲击",
+            "pinyin": "chōngjí",
+            "meaning": "impact",
+            "collocation": "带来巨大冲击、受到强烈冲击",
+            "example": "西方快餐和节日的大范围渗透，对中国本土的饮食习惯和传统节日**带来了巨大冲击**。"
+          }
+        ],
+        "all_words": [
+          {
+            "word": "融合",
+            "meaning": "integration"
+          },
+          {
+            "word": "交流",
+            "meaning": "exchange"
+          },
+          {
+            "word": "贸易",
+            "meaning": "trade"
+          },
+          {
+            "word": "跨国",
+            "meaning": "transnational"
+          },
+          {
+            "word": "冲击",
+            "meaning": "impact"
+          },
+          {
+            "word": "垄断",
+            "meaning": "monopoly"
+          },
+          {
+            "word": "竞争",
+            "meaning": "competition"
+          },
+          {
+            "word": "机遇",
+            "meaning": "opportunity"
+          },
+          {
+            "word": "挑战",
+            "meaning": "challenge"
+          },
+          {
+            "word": "多元",
+            "meaning": "diverse"
+          },
+          {
+            "word": "单一",
+            "meaning": "single/homogeneous"
+          },
+          {
+            "word": "同化",
+            "meaning": "assimilation"
+          },
+          {
+            "word": "本土化",
+            "meaning": "localization"
+          },
+          {
+            "word": "抵制",
+            "meaning": "boycott"
+          },
+          {
+            "word": "依赖",
+            "meaning": "dependence"
+          },
+          {
+            "word": "互利共赢",
+            "meaning": "mutually beneficial"
+          },
+          {
+            "word": "摩擦",
+            "meaning": "friction"
+          },
+          {
+            "word": "关税",
+            "meaning": "tariff"
+          },
+          {
+            "word": "供应链",
+            "meaning": "supply chain"
+          },
+          {
+            "word": "繁荣",
+            "meaning": "prosperity"
+          },
+          {
+            "word": "衰退",
+            "meaning": "recession"
+          },
+          {
+            "word": "趋势",
+            "meaning": "trend"
+          },
+          {
+            "word": "席卷",
+            "meaning": "sweep across"
+          },
+          {
+            "word": "视野",
+            "meaning": "vision/horizon"
+          },
+          {
+            "word": "桥梁",
+            "meaning": "bridge"
+          },
+          {
+            "word": "接轨",
+            "meaning": "integrate with"
+          },
+          {
+            "word": "互联互通",
+            "meaning": "interconnectivity"
+          },
+          {
+            "word": "差距",
+            "meaning": "gap"
+          },
+          {
+            "word": "缩小",
+            "meaning": "narrow down"
+          },
+          {
+            "word": "扩大",
+            "meaning": "widen"
+          }
+        ]
+      },
+      {
+        "title": "4. 平等 (Equality)",
+        "core_words": [
+          {
+            "word": "消除歧视",
+            "pinyin": "xiāochú qíshì",
+            "meaning": "eliminate discrimination",
+            "collocation": "消除性别歧视、消除偏见与歧视",
+            "example": "建设平等和谐的学校环境，其首要任务就是**消除对学习困难学生的隐性歧视**。"
+          },
+          {
+            "word": "贫富悬殊",
+            "pinyin": "pínfù xuánshū",
+            "meaning": "huge gap between rich and poor",
+            "collocation": "缩小贫富悬殊、贫富悬殊问题",
+            "example": "通过优化税收政策和普及免费教育，国家正在努力**缓解地区之间的贫富悬殊**。"
+          },
+          {
+            "word": "边缘化",
+            "pinyin": "biānyuánhuà",
+            "meaning": "marginalized",
+            "collocation": "被边缘化、边缘化群体的权益",
+            "example": "如果数字科技的发展不向下兼容老幼群体，就会导致他们在这个智能时代中**被彻底边缘化**。"
+          }
+        ],
+        "all_words": [
+          {
+            "word": "歧视",
+            "meaning": "discrimination"
+          },
+          {
+            "word": "偏见",
+            "meaning": "prejudice"
+          },
+          {
+            "word": "刻板印象",
+            "meaning": "stereotype"
+          },
+          {
+            "word": "弱势",
+            "meaning": "vulnerable"
+          },
+          {
+            "word": "贫富悬殊",
+            "meaning": "huge gap between rich and poor"
+          },
+          {
+            "word": "差距",
+            "meaning": "gap"
+          },
+          {
+            "word": "公平",
+            "meaning": "fairness"
+          },
+          {
+            "word": "机会",
+            "meaning": "opportunity"
+          },
+          {
+            "word": "均等",
+            "meaning": "equal"
+          },
+          {
+            "word": "性别",
+            "meaning": "gender"
+          },
+          {
+            "word": "种族",
+            "meaning": "race"
+          },
+          {
+            "word": "阶层",
+            "meaning": "social class"
+          },
+          {
+            "word": "跨越",
+            "meaning": "bridge/cross over"
+          },
+          {
+            "word": "扶贫",
+            "meaning": "poverty alleviation"
+          },
+          {
+            "word": "援助",
+            "meaning": "aid"
+          },
+          {
+            "word": "呼吁",
+            "meaning": "appeal"
+          },
+          {
+            "word": "争取",
+            "meaning": "strive for"
+          },
+          {
+            "word": "权利",
+            "meaning": "rights"
+          },
+          {
+            "word": "尊重",
+            "meaning": "respect"
+          },
+          {
+            "word": "包容",
+            "meaning": "inclusiveness"
+          },
+          {
+            "word": "倾听",
+            "meaning": "listen"
+          },
+          {
+            "word": "忽视",
+            "meaning": "ignore"
+          },
+          {
+            "word": "边缘化",
+            "meaning": "marginalize"
+          },
+          {
+            "word": "剥夺",
+            "meaning": "deprive"
+          },
+          {
+            "word": "享有",
+            "meaning": "enjoy rights"
+          },
+          {
+            "word": "保障",
+            "meaning": "guarantee"
+          },
+          {
+            "word": "完善",
+            "meaning": "perfect/improve"
+          },
+          {
+            "word": "消除",
+            "meaning": "eliminate"
+          },
+          {
+            "word": "鸿沟",
+            "meaning": "chasm/gap"
+          },
+          {
+            "word": "待遇",
+            "meaning": "treatment"
+          }
+        ]
+      },
+      {
+        "title": "5. 和平与冲突 (Peace and conflict)",
+        "core_words": [
+          {
+            "word": "争端",
+            "pinyin": "zhēngduān",
+            "meaning": "dispute",
+            "collocation": "化解领土争端、贸易争端",
+            "example": "我们应当倡导通过外交谈判而非武力手段，来**和平化解两国之间的边界争端**。"
+          },
+          {
+            "word": "难民",
+            "pinyin": "nànmín",
+            "meaning": "refugee",
+            "collocation": "难民危机、安置流离失所的难民",
+            "example": "战火重创了该地区的社会秩序，导致数十万**战争难民越过边境流离失所**。"
+          },
+          {
+            "word": "互信",
+            "pinyin": "hùxìn",
+            "meaning": "mutual trust",
+            "collocation": "建立互信机制、增进两国互信",
+            "example": "唯有在相互尊重的基础上**重建政治互信**，各国才能有效应对跨国公共危机。"
+          }
+        ],
+        "all_words": [
+          {
+            "word": "争端",
+            "meaning": "dispute"
+          },
+          {
+            "word": "摩擦",
+            "meaning": "friction"
+          },
+          {
+            "word": "谈判",
+            "meaning": "negotiation"
+          },
+          {
+            "word": "妥协",
+            "meaning": "compromise"
+          },
+          {
+            "word": "调解",
+            "meaning": "mediation"
+          },
+          {
+            "word": "冲突",
+            "meaning": "conflict"
+          },
+          {
+            "word": "战争",
+            "meaning": "war"
+          },
+          {
+            "word": "灾难",
+            "meaning": "disaster"
+          },
+          {
+            "word": "难民",
+            "meaning": "refugee"
+          },
+          {
+            "word": "流离失所",
+            "meaning": "destitute and homeless"
+          },
+          {
+            "word": "援助",
+            "meaning": "assistance"
+          },
+          {
+            "word": "捐赠",
+            "meaning": "donation"
+          },
+          {
+            "word": "谴责",
+            "meaning": "condemn"
+          },
+          {
+            "word": "制裁",
+            "meaning": "sanction"
+          },
+          {
+            "word": "倡导",
+            "meaning": "advocate"
+          },
+          {
+            "word": "和谐",
+            "meaning": "harmony"
+          },
+          {
+            "word": "稳定",
+            "meaning": "stability"
+          },
+          {
+            "word": "动荡",
+            "meaning": "turbulence"
+          },
+          {
+            "word": "动乱",
+            "meaning": "turmoil"
+          },
+          {
+            "word": "恐怖主义",
+            "meaning": "terrorism"
+          },
+          {
+            "word": "威胁",
+            "meaning": "threat"
+          },
+          {
+            "word": "安全",
+            "meaning": "security"
+          },
+          {
+            "word": "防范",
+            "meaning": "prevent"
+          },
+          {
+            "word": "协议",
+            "meaning": "agreement"
+          },
+          {
+            "word": "缔结",
+            "meaning": "conclude a treaty"
+          },
+          {
+            "word": "联盟",
+            "meaning": "alliance"
+          },
+          {
+            "word": "共存",
+            "meaning": "coexistence"
+          },
+          {
+            "word": "互信",
+            "meaning": "mutual trust"
+          },
+          {
+            "word": "破裂",
+            "meaning": "breakdown"
+          },
+          {
+            "word": "牺牲",
+            "meaning": "sacrifice"
+          }
+        ]
+      },
+      {
+        "title": "💡 考场高分应用指南 (How to Master This Vocabulary List)",
+        "core_words": [],
+        "all_words": []
+      }
+    ]
+  }
+]

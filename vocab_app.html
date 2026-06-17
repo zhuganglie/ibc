@@ -1,0 +1,2072 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IB Chinese B SL 备考神助攻 | 交互分类词汇表</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --surface-color: #151c2c;
+            --surface-hover: #1e293b;
+            --border-color: #334155;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --primary: #3b82f6;
+            
+            /* Theme Color Accents */
+            --identities-color: #10b981;
+            --identities-bg: rgba(16, 185, 129, 0.1);
+            --experiences-color: #f59e0b;
+            --experiences-bg: rgba(245, 158, 11, 0.1);
+            --ingenuity-color: #06b6d4;
+            --ingenuity-bg: rgba(6, 182, 212, 0.1);
+            --organization-color: #f97316;
+            --organization-bg: rgba(249, 115, 22, 0.1);
+            --planet-color: #84cc16;
+            --planet-bg: rgba(132, 204, 22, 0.1);
+        }
+
+        [data-theme="light"] {
+            --bg-color: #f8fafc;
+            --surface-color: #ffffff;
+            --surface-hover: #f1f5f9;
+            --border-color: #cbd5e1;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --text-muted: #64748b;
+            --primary: #2563eb;
+            
+            --identities-bg: rgba(16, 185, 129, 0.15);
+            --experiences-bg: rgba(245, 158, 11, 0.15);
+            --ingenuity-bg: rgba(6, 182, 212, 0.15);
+            --organization-bg: rgba(249, 115, 22, 0.15);
+            --planet-bg: rgba(132, 204, 22, 0.15);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            user-select: none;
+        }
+
+        body {
+            font-family: 'Outfit', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Ambient Glow in Background */
+        .ambient-glow {
+            position: fixed;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, rgba(0,0,0,0) 70%);
+            top: -200px;
+            right: -200px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .ambient-glow-left {
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(6, 182, 212, 0.05) 0%, rgba(0,0,0,0) 70%);
+            bottom: -150px;
+            left: -150px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Navigation Layout */
+        header {
+            background-color: rgba(21, 28, 44, 0.7);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 0.75rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s;
+        }
+
+        [data-theme="light"] header {
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo-icon {
+            font-size: 1.75rem;
+        }
+
+        .logo-text h1 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: -0.025em;
+        }
+
+        .logo-text p {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        nav {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .nav-btn {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-family: inherit;
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.2s ease;
+        }
+
+        .nav-btn:hover {
+            color: var(--text-primary);
+            background-color: var(--surface-hover);
+        }
+
+        .nav-btn.active {
+            color: var(--text-primary);
+            background-color: var(--primary);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+        }
+
+        .theme-toggle-btn {
+            background: none;
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            width: 2.25rem;
+            height: 2.25rem;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .theme-toggle-btn:hover {
+            background-color: var(--surface-hover);
+        }
+
+        /* Container Main */
+        main {
+            max-width: 1400px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 10;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Views management */
+        .view-section {
+            display: none;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .view-section.active {
+            display: flex;
+            flex-direction: column;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Global Stats Bar */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .stat-icon {
+            position: absolute;
+            font-size: 3rem;
+            right: 0.5rem;
+            bottom: 0.25rem;
+            opacity: 0.06;
+            color: var(--text-primary);
+        }
+
+        /* Theme Cards Grid */
+        .themes-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media (min-width: 1024px) {
+            .themes-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .theme-card {
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .theme-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            border-top-left-radius: 1.25rem;
+            border-top-right-radius: 1.25rem;
+        }
+
+        /* Theme Accents mapping */
+        .theme-card[data-theme-idx="0"]::before { background-color: var(--identities-color); }
+        .theme-card[data-theme-idx="1"]::before { background-color: var(--experiences-color); }
+        .theme-card[data-theme-idx="2"]::before { background-color: var(--ingenuity-color); }
+        .theme-card[data-theme-idx="3"]::before { background-color: var(--organization-color); }
+        .theme-card[data-theme-idx="4"]::before { background-color: var(--planet-color); }
+
+        .theme-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .theme-card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .theme-progress {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .progress-bar-bg {
+            width: 100px;
+            height: 8px;
+            background-color: var(--border-color);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+
+        .theme-card[data-theme-idx="0"] .progress-bar-fill { background-color: var(--identities-color); }
+        .theme-card[data-theme-idx="1"] .progress-bar-fill { background-color: var(--experiences-color); }
+        .theme-card[data-theme-idx="2"] .progress-bar-fill { background-color: var(--ingenuity-color); }
+        .theme-card[data-theme-idx="3"] .progress-bar-fill { background-color: var(--organization-color); }
+        .theme-card[data-theme-idx="4"] .progress-bar-fill { background-color: var(--planet-color); }
+
+        .theme-card-body {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .theme-card-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .theme-subtopics-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .subtopic-badge {
+            background-color: var(--surface-hover);
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            padding: 0.35rem 0.75rem;
+            border-radius: 9999px;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .subtopic-badge:hover {
+            color: var(--text-primary);
+            border-color: var(--text-secondary);
+        }
+
+        .theme-card-footer {
+            margin-top: auto;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            background-color: var(--surface-hover);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            font-family: inherit;
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 0.6rem 1.2rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            transition: all 0.2s;
+            flex: 1;
+        }
+
+        .btn:hover {
+            background-color: var(--border-color);
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            border: none;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+        }
+
+        .btn-primary:hover {
+            background-color: #2563eb;
+            transform: translateY(-1px);
+        }
+
+        /* Vocabulary Browser styling */
+        .browser-filter-bar {
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .browser-filter-bar {
+                grid-template-columns: 2fr 1fr 1fr;
+            }
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .filter-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .filter-input {
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            border-radius: 0.5rem;
+            padding: 0.6rem;
+            font-family: inherit;
+            font-size: 0.9rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .filter-input:focus {
+            border-color: var(--primary);
+        }
+
+        .toggle-switch-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            align-self: flex-end;
+            margin-top: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .toggle-switch-wrapper {
+                margin-top: 0;
+            }
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 44px;
+            height: 24px;
+        }
+
+        .switch input { 
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: var(--border-color);
+            transition: .4s;
+            border-radius: 24px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: var(--primary);
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(20px);
+        }
+
+        .toggle-label {
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Vocab Grid & Cards */
+        .vocab-list-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .subtopic-group-header {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .vocab-cards-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        @media (min-width: 640px) {
+            .vocab-cards-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .vocab-cards-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* Words styling */
+        .vocab-mini-card {
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 0.75rem;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .vocab-mini-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--text-secondary);
+        }
+
+        .mini-card-chinese {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .mini-card-english {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            text-align: right;
+            max-width: 60%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .vocab-detail-card {
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.2s;
+        }
+
+        .vocab-detail-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.05);
+        }
+
+        .detail-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .detail-chinese-pinyin {
+            display: flex;
+            flex-direction: column;
+            gap: 0.1rem;
+        }
+
+        .detail-chinese {
+            font-size: 1.35rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+        }
+
+        .detail-pinyin {
+            font-size: 0.85rem;
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        .detail-english {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            background-color: var(--bg-color);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+        }
+
+        .detail-meta-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+            margin-top: 0.5rem;
+        }
+
+        .detail-meta-title {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .detail-meta-value {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+
+        .detail-meta-value strong {
+            color: var(--text-primary);
+        }
+
+        .speaker-icon-btn {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 1.1rem;
+            padding: 0.25rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.2s;
+        }
+
+        .speaker-icon-btn:hover {
+            color: var(--primary);
+        }
+
+        .mastery-checkbox {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            width: 1.25rem;
+            height: 1.25rem;
+            cursor: pointer;
+        }
+
+        /* Flashcard Mode Styling */
+        .flashcard-layout {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+            max-width: 650px;
+            width: 100%;
+            margin: 0 auto;
+            flex-grow: 1;
+            justify-content: center;
+        }
+
+        .flashcard-settings {
+            width: 100%;
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.25rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .card-container {
+            width: 100%;
+            height: 380px;
+            perspective: 1000px;
+            cursor: pointer;
+        }
+
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+
+        .card-inner.flipped {
+            transform: rotateY(180deg);
+        }
+
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 1.5rem;
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-front {
+            background-color: var(--surface-color);
+        }
+
+        .card-back {
+            background-color: var(--surface-color);
+            transform: rotateY(180deg);
+            justify-content: space-between;
+        }
+
+        .card-front-chinese {
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+        }
+
+        .card-front-hint {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 2rem;
+            border: 1px dashed var(--border-color);
+            padding: 0.4rem 0.8rem;
+            border-radius: 0.5rem;
+        }
+
+        .card-back-title-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .card-back-chinese-pinyin {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .card-back-chinese {
+            font-size: 1.75rem;
+            font-weight: 700;
+        }
+
+        .card-back-pinyin {
+            font-size: 1rem;
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        .card-back-english {
+            font-size: 1rem;
+            font-weight: 600;
+            background-color: var(--bg-color);
+            padding: 0.35rem 0.75rem;
+            border-radius: 0.5rem;
+        }
+
+        .card-back-details {
+            width: 100%;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 1rem;
+            padding: 1.5rem 0;
+        }
+
+        .card-back-detail-item {
+            text-align: left;
+            width: 100%;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .card-back-detail-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-bottom: 0.2rem;
+        }
+
+        .card-back-detail-content {
+            color: var(--text-secondary);
+        }
+
+        .card-back-footer {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .flashcard-actions {
+            display: flex;
+            width: 100%;
+            gap: 1rem;
+        }
+
+        .flashcard-action-btn {
+            flex: 1;
+            padding: 0.8rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border-radius: 0.75rem;
+            cursor: pointer;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            color: white;
+            transition: transform 0.2s;
+        }
+
+        .flashcard-action-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-red {
+            background-color: #ef4444;
+            box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2);
+        }
+
+        .btn-green {
+            background-color: #10b981;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+        }
+
+        .flashcard-nav-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        .nav-arrow {
+            background: none;
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .nav-arrow:hover {
+            background-color: var(--surface-hover);
+        }
+
+        /* Smart Quiz Mode */
+        .quiz-container {
+            max-width: 600px;
+            width: 100%;
+            margin: 0 auto;
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            position: relative;
+        }
+
+        .quiz-progress-bar {
+            width: 100%;
+            height: 6px;
+            background-color: var(--border-color);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .quiz-progress-fill {
+            height: 100%;
+            background-color: var(--primary);
+            width: 0%;
+            transition: width 0.3s;
+        }
+
+        .quiz-question-type {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .quiz-question-text {
+            font-size: 1.4rem;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
+        .quiz-options-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .quiz-option-btn {
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 1rem 1.25rem;
+            border-radius: 0.75rem;
+            text-align: left;
+            font-family: inherit;
+            font-size: 0.95rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            outline: none;
+        }
+
+        .quiz-option-btn:hover {
+            background-color: var(--surface-hover);
+            border-color: var(--text-secondary);
+        }
+
+        .quiz-option-btn.correct {
+            background-color: rgba(16, 185, 129, 0.15);
+            border-color: #10b981;
+            color: #10b981;
+        }
+
+        .quiz-option-btn.incorrect {
+            background-color: rgba(239, 68, 68, 0.15);
+            border-color: #ef4444;
+            color: #ef4444;
+            animation: shake 0.4s;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-6px); }
+            75% { transform: translateX(6px); }
+        }
+
+        /* Export Hub Styling */
+        .export-hub-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .export-hub-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .export-card {
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .export-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .export-title {
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .export-desc {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        /* Drawer Overlay */
+        .drawer-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 200;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            backdrop-filter: blur(4px);
+        }
+
+        .drawer-content {
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
+            max-width: 500px;
+            width: 100%;
+            border-radius: 1.5rem;
+            padding: 2rem;
+            position: relative;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .drawer-content.shake {
+            animation: shake 0.4s;
+        }
+
+        .drawer-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Confetti canvas */
+        #confetti-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 999;
+            display: none;
+        }
+
+        /* Keyboard hint badge */
+        .kbd-badge {
+            background-color: var(--surface-hover);
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            font-family: 'Fira Code', monospace;
+            font-size: 0.75rem;
+            padding: 0.1rem 0.4rem;
+            border-radius: 4px;
+            box-shadow: 0 1px 0 var(--border-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="ambient-glow"></div>
+    <div class="ambient-glow-left"></div>
+    <canvas id="confetti-canvas"></canvas>
+
+    <header>
+        <div class="logo-area">
+            <span class="logo-icon">📘</span>
+            <div class="logo-text">
+                <h1>IB Chinese B SL</h1>
+                <p>分类词汇交互式学习系统</p>
+            </div>
+        </div>
+        <nav>
+            <button class="nav-btn active" onclick="switchView('dashboard')">📊 仪表盘</button>
+            <button class="nav-btn" onclick="switchView('browser')">🔍 词汇浏览</button>
+            <button class="nav-btn" onclick="switchView('flashcards')">🃏 卡片记忆</button>
+            <button class="nav-btn" onclick="switchView('quiz')">✍️ 智能自测</button>
+            <button class="nav-btn" onclick="switchView('export')">📤 导出集</button>
+        </nav>
+        <button class="theme-toggle-btn" onclick="toggleTheme()" title="切换明暗模式">🌓</button>
+    </header>
+
+    <main>
+        <!-- Dashboard View -->
+        <section id="dashboard-view" class="view-section active">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-value" id="global-total-words">750</span>
+                    <span class="stat-label">词汇库总词量</span>
+                    <span class="stat-icon">📚</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="global-mastered-words">0</span>
+                    <span class="stat-label">已熟练掌握词汇</span>
+                    <span class="stat-icon">✅</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="global-mastery-rate">0%</span>
+                    <span class="stat-label">综合掌握率</span>
+                    <span class="stat-icon">📈</span>
+                </div>
+            </div>
+
+            <div class="themes-grid" id="themes-dashboard-grid">
+                <!-- Theme cards will be rendered by JS -->
+            </div>
+        </section>
+
+        <!-- Vocabulary Browser View -->
+        <section id="browser-view" class="view-section">
+            <div class="browser-filter-bar">
+                <div class="filter-group">
+                    <label class="filter-label">关键词搜索 (中文/拼音/英文)</label>
+                    <input type="text" id="search-input" class="filter-input" placeholder="输入搜索词..." oninput="filterVocab()">
+                </div>
+                <div class="filter-group">
+                    <label class="filter-label">按主题筛选</label>
+                    <select id="theme-filter" class="filter-input" onchange="filterVocab()">
+                        <option value="all">显示全部主题</option>
+                    </select>
+                </div>
+                <div class="toggle-switch-wrapper">
+                    <label class="switch">
+                        <input type="checkbox" id="core-only-toggle" onchange="filterVocab()">
+                        <span class="slider"></span>
+                    </label>
+                    <span class="toggle-label">仅看 Criterion A 核心精讲词 (75词)</span>
+                </div>
+            </div>
+
+            <div class="vocab-list-container" id="vocab-browser-list">
+                <!-- Word lists group by subtopic will be rendered by JS -->
+            </div>
+        </section>
+
+        <!-- Flashcards View -->
+        <section id="flashcards-view" class="view-section">
+            <div class="flashcard-layout">
+                <div class="flashcard-settings">
+                    <div class="filter-group" style="grid-column: span 2;">
+                        <label class="filter-label">学习主题范围</label>
+                        <select id="flashcard-theme-select" class="filter-input" onchange="initFlashcards()">
+                            <!-- Generated by JS -->
+                        </select>
+                    </div>
+                </div>
+
+                <div class="card-container" onclick="flipCard()">
+                    <div class="card-inner" id="flashcard-inner">
+                        <div class="card-front">
+                            <div class="card-front-chinese" id="card-front-chinese">极简主义</div>
+                            <span class="speaker-icon-btn" style="font-size: 1.5rem;" onclick="speakCurrentWord(event)">🔊</span>
+                            <div class="card-front-hint">点击卡片翻面</div>
+                        </div>
+                        <div class="card-back">
+                            <div class="card-back-title-row">
+                                <div class="card-back-chinese-pinyin">
+                                    <span class="card-back-chinese" id="card-back-chinese">极简主义</span>
+                                    <span class="card-back-pinyin" id="card-back-pinyin">jíjiǎn zhǔyì</span>
+                                </div>
+                                <span class="card-back-english" id="card-back-english">minimalism</span>
+                            </div>
+                            <div class="card-back-details" style="padding: 0.5rem 0;">
+                                <div class="card-back-detail-item" style="margin-bottom:0.4rem;">
+                                    <div class="card-back-detail-label">搭配与最适文体</div>
+                                    <div class="card-back-detail-content" id="card-back-collocation" style="font-size:0.85rem;">-</div>
+                                </div>
+                                <div class="card-back-detail-item">
+                                    <div class="card-back-detail-label">大白话替换 & 提分句式对比</div>
+                                    <div class="card-back-detail-content" id="card-back-example" style="font-size:0.8rem; background-color:var(--bg-color); padding:0.5rem; border-radius:6px; display:flex; flex-direction:column; gap:0.2rem;">
+                                        -
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-back-footer">
+                                <span>按 <kbd class="kbd-badge">Space</kbd> 翻转 | <kbd class="kbd-badge">←</kbd> <kbd class="kbd-badge">→</kbd> 切换</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flashcard-actions">
+                    <button class="flashcard-action-btn btn-red" onclick="markFlashcardReview(event)">❌ 需再复习 <kbd class="kbd-badge">R</kbd></button>
+                    <button class="flashcard-action-btn btn-green" onclick="markFlashcardMastered(event)">💚 熟练掌握 <kbd class="kbd-badge">M</kbd></button>
+                </div>
+
+                <div class="flashcard-nav-controls">
+                    <button class="nav-arrow" onclick="prevFlashcard(event)" title="上一个">←</button>
+                    <span id="flashcard-progress-text">1 / 75</span>
+                    <button class="nav-arrow" onclick="nextFlashcard(event)" title="下一个">→</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Smart Quiz View -->
+        <section id="quiz-view" class="view-section">
+            <div class="quiz-container" id="quiz-box">
+                <!-- Rendered dynamically by JS -->
+            </div>
+        </section>
+
+        <!-- Export Hub View -->
+        <section id="export-view" class="view-section">
+            <div class="export-hub-grid" id="export-hub-grid">
+                <!-- Rendered dynamically by JS -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Word Detail Modal/Drawer -->
+    <div class="drawer-overlay" id="word-detail-drawer" onclick="closeWordDrawer(event)">
+        <div class="drawer-content" onclick="event.stopPropagation()">
+            <button class="drawer-close" onclick="closeWordDrawer(event)">×</button>
+            <div class="detail-header" style="border-bottom: 1px solid var(--border-color); padding-bottom: 1rem;">
+                <div class="detail-chinese-pinyin">
+                    <span class="detail-chinese" id="drawer-chinese" style="font-size: 1.8rem;">极简主义</span>
+                    <span class="detail-pinyin" id="drawer-pinyin" style="font-size: 1rem;">jíjiǎn zhǔyì</span>
+                </div>
+                <span class="detail-english" id="drawer-english" style="font-size: 1rem;">minimalism</span>
+            </div>
+            <div class="detail-meta-group">
+                <span class="detail-meta-title">常用搭配 (Collocations)</span>
+                <span class="detail-meta-value" id="drawer-collocation" style="font-size: 0.95rem; font-weight: 500;">-</span>
+            </div>
+            <div class="detail-meta-group">
+                <span class="detail-meta-title">考场高分例句 (Sample Sentence)</span>
+                <span class="detail-meta-value" id="drawer-example" style="font-size: 0.95rem; line-height: 1.5; color: var(--text-primary);">-</span>
+            </div>
+            <button class="btn btn-primary" id="drawer-master-btn" onclick="toggleDrawerWordMastery()" style="margin-top: 1rem;">标记为已掌握</button>
+        </div>
+    </div>
+
+    <!-- Data Injection -->
+    <script>
+        // Inject the vocabulary JSON from python compilation
+        const vocabData = [{"theme": "🟢 主题一：身份认同 (Identities)", "templates": ["在快节奏的现代社会中，如何保持身心健康并建立积极的**生活方式**，不仅是个人选择，更是塑造良好个人身份认同的基石。", "个人的信仰与**价值观**是衡量一个社会道德水准的尺度，面对形形色色的物质诱惑，我们绝不能对道德底线做出妥协。", "方言作为承载乡音的重要媒介，不仅是沟通工具，更是连接个人与民族文化历史的**身份认同纽带**。"], "idioms": [{"idiom": "劳逸结合", "meaning": "balance work and rest", "usage": "高中生课业繁重，但也必须注意**劳逸结合**。"}, {"idiom": "返璞归真", "meaning": "return to simplicity and truth", "usage": "看惯了都市的喧嚣，极简主义的生活方式能让人**返璞归真**。"}, {"idiom": "顺其自然", "meaning": "let nature take its course", "usage": "面对不确定性，保持豁达的心态，**顺其自然**即可。"}, {"idiom": "问心无愧", "meaning": "have a clear conscience", "usage": "做任何选择，只要无损他人利益、无违道德，便能**问心无愧**。"}], "subtopics": [{"title": "1. 生活方式 (Lifestyles)", "core_words": [{"word": "极简主义", "pinyin": "jíjiǎn zhǔyì", "meaning": "minimalism", "collocation": "践行极简主义、倡导极简主义", "replacement": "代替“省钱、不买东西”", "text_type": "博客/日记", "before": "我现在不买不必要的东西，来省钱。", "after": "我开始**践行极简主义**，通过控制不必要的物质消费来追求精神的充实。"}, {"word": "劳逸结合", "pinyin": "láoyì jiéhé", "meaning": "balance work and rest", "collocation": "注意劳逸结合、学会劳逸结合", "replacement": "代替“一边学习一边休息”", "text_type": "演讲稿/书信", "before": "备考的时候，我们应该学习也休息，不要太累。", "after": "在紧张的复习阶段，同学们应当注意**劳逸结合**，以饱满的精神状态迎接考试。"}, {"word": "亚健康", "pinyin": "yàjiànkāng", "meaning": "sub-health", "collocation": "处于亚健康状态、改善亚健康", "replacement": "代替“身体不好但没生病”", "text_type": "文章/演讲稿", "before": "很多人天天熬夜，身体变得很差，经常觉得累。", "after": "长期缺乏运动与作息不规律，导致许多都市人普遍处于**亚健康状态**。"}, {"word": "消费观", "pinyin": "xiāofèiguān", "meaning": "consumption view", "collocation": "理性的消费观、扭曲的消费观", "replacement": "代替“花钱的想法”", "text_type": "辩论稿/评论文章", "before": "青少年的花钱想法很容易受到广告的影响。", "after": "引导青少年树立理性的**消费观**，是抵制盲目跟风和攀比之风的有效手段。"}, {"word": "规律", "pinyin": "guīlǜ", "meaning": "regular pattern", "collocation": "作息规律、生活规律", "replacement": "代替“每天按时生活”", "text_type": "日记/书信", "before": "我以后每天都要早睡早起，让生活很健康。", "after": "为了保持充足的精力，我决定调整作息，让生活变得更加**规律**。"}], "all_words": [{"word": "饮食起居", "meaning": "daily life/routine"}, {"word": "极简主义", "meaning": "minimalism"}, {"word": "循规蹈矩", "meaning": "stick to conventions"}, {"word": "丰富多彩", "meaning": "rich and colorful"}, {"word": "养生", "meaning": "maintain health/wellness"}, {"word": "快节奏", "meaning": "fast-paced"}, {"word": "慢生活", "meaning": "slow living"}, {"word": "碎片化", "meaning": "fragmented"}, {"word": "熬夜", "meaning": "stay up late"}, {"word": "暴饮暴食", "meaning": "binge eating/drinking"}, {"word": "挑食", "meaning": "picky eating"}, {"word": "劳逸结合", "meaning": "balance work and rest"}, {"word": "亚健康", "meaning": "sub-health"}, {"word": "久坐", "meaning": "sedentary"}, {"word": "沉淀", "meaning": "to settle/accumulate"}, {"word": "充实", "meaning": "fulfilling"}, {"word": "浑浑噩噩", "meaning": "muddle along"}, {"word": "顺其自然", "meaning": "let nature take its course"}, {"word": "规律", "meaning": "regular/pattern"}, {"word": "消费观", "meaning": "concept of consumption"}, {"word": "攀比", "meaning": "unrealistic comparison"}, {"word": "月光族", "meaning": "living paycheck to paycheck"}, {"word": "节俭", "meaning": "frugal"}, {"word": "挥霍", "meaning": "squander"}, {"word": "断舍离", "meaning": "decluttering"}, {"word": "返璞归真", "meaning": "return to original purity"}, {"word": "追求", "meaning": "pursuit"}, {"word": "标新立异", "meaning": "unconventional"}, {"word": "随波逐流", "meaning": "go with the flow blindly"}, {"word": "习以为常", "meaning": "be accustomed to"}]}, {"title": "2. 健康与幸福 (Health and Wellbeing)", "core_words": [{"word": "焦虑", "pinyin": "jiāolǜ", "meaning": "anxiety", "collocation": "缓解焦虑、感到焦虑", "replacement": "代替“很着急、压力大”", "text_type": "日记/私人信函", "before": "面对IB考试，我最近特别着急，睡不好觉。", "after": "面对即将到来的IB考试，我常常感到**焦虑**，必须学会自我疏导。"}, {"word": "容貌焦虑", "pinyin": "róngmào jiāolǜ", "meaning": "appearance anxiety", "collocation": "摆脱容貌焦虑、产生容貌焦虑", "replacement": "代替“觉得自己长得不好看”", "text_type": "文章/博客", "before": "网上好看的人太多了，很多年轻人觉得自己长得很丑。", "after": "社交媒体上的虚假美颜，让不少青少年产生了严重的**容貌焦虑**。"}, {"word": "幸福感", "pinyin": "xìngfúgǎn", "meaning": "sense of happiness", "collocation": "提升幸福感、增强幸福感", "replacement": "代替“觉得很高兴、很舒服”", "text_type": "文章/演讲稿", "before": "多帮助别人，会让自己觉得天天都很高兴。", "after": "参与社区志愿服务不仅能回馈社会，也能显著提升个人的**幸福感**。"}, {"word": "释放", "pinyin": "shìfàng", "meaning": "release (stress)", "collocation": "释放压力、释放情绪", "replacement": "代替“让压力变小、扔掉坏情绪”", "text_type": "演讲稿/博客", "before": "周末跑步可以帮我把大压力变小。", "after": "运动不仅能强身健体，更是**释放学习压力**的绝佳途径。"}, {"word": "疲惫不堪", "pinyin": "píbèi bùkān", "meaning": "exhausted", "collocation": "感到疲惫不堪、身体疲惫不堪", "replacement": "代替“非常累”", "text_type": "日记/私人信函", "before": "昨晚我复习到深夜，今天觉得非常累。", "after": "连日来的挑灯夜战让我感到**疲惫不堪**，效率反而大打折扣。"}], "all_words": [{"word": "抑郁", "meaning": "depression"}, {"word": "焦虑", "meaning": "anxiety"}, {"word": "疏导", "meaning": "psychological guidance"}, {"word": "心理阴影", "meaning": "psychological trauma"}, {"word": "释放", "meaning": "release"}, {"word": "减压", "meaning": "relieve stress"}, {"word": "疲惫不堪", "meaning": "exhausted"}, {"word": "焕发", "meaning": "shine/glow"}, {"word": "活力", "meaning": "vitality"}, {"word": "极度疲劳", "meaning": "extreme fatigue"}, {"word": "免疫力", "meaning": "immunity"}, {"word": "疾病", "meaning": "disease"}, {"word": "预防", "meaning": "prevention"}, {"word": "康复", "meaning": "recovery"}, {"word": "乐观", "meaning": "optimistic"}, {"word": "悲观", "meaning": "pessimistic"}, {"word": "情绪化", "meaning": "emotional"}, {"word": "容貌焦虑", "meaning": "appearance anxiety"}, {"word": "自卑", "meaning": "inferiority complex"}, {"word": "自信", "meaning": "self-confidence"}, {"word": "挫败感", "meaning": "sense of frustration"}, {"word": "幸福感", "meaning": "sense of happiness"}, {"word": "治愈", "meaning": "cure/heal"}, {"word": "倾诉", "meaning": "pour out one's heart"}, {"word": "瓶颈", "meaning": "bottleneck"}, {"word": "阻碍", "meaning": "hindrance"}, {"word": "精神寄托", "meaning": "spiritual sustenance"}, {"word": "崩溃", "meaning": "breakdown"}, {"word": "抑郁症", "meaning": "depression illness"}, {"word": "心态", "meaning": "mentality"}]}, {"title": "3. 信仰与价值观 (Beliefs and values)", "core_words": [{"word": "价值观", "pinyin": "jiàzhíguān", "meaning": "values", "collocation": "塑造价值观、树立正确的价值观", "replacement": "代替“看事情的想法”", "text_type": "文章/演讲稿", "before": "学校应该教学生怎么做一个好人。", "after": "学校教育在青少年**树立正确价值观**的过程中起着决定性作用。"}, {"word": "担当", "pinyin": "dāndāng", "meaning": "take on responsibility", "collocation": "勇于担当、有担当", "replacement": "代替“不怕困难负责任”", "text_type": "演讲稿/辩论稿", "before": "年轻人面对困难，应该负起责任来。", "after": "作为新时代的青年，我们应当在社会需要时**勇于担当**。"}, {"word": "妥协", "pinyin": "tuǒxié", "meaning": "compromise", "collocation": "做出妥协、绝不妥协", "replacement": "代替“让步、听别人的”", "text_type": "文章/演讲稿", "before": "我们不能为了钱，就放弃好品行。", "after": "面对物质主义的冲击，我们绝不能对道德底线**做出妥协**。"}, {"word": "问心无愧", "pinyin": "wènxīn wúkuì", "meaning": "clear conscience", "collocation": "做到问心无愧、问心无愧的选择", "replacement": "代替“心里很安稳，没做错事”", "text_type": "日记/书信", "before": "我只要做对的事情，心里就很舒服。", "after": "在人生的十字路口，做出让自己**问心无愧**的选择才是最重要的。"}, {"word": "道德底线", "pinyin": "dàodé dǐxiàn", "meaning": "moral bottom line", "collocation": "触碰道德底线、守住道德底线", "replacement": "代替“最基本的好坏标准”", "text_type": "文章/辩论稿", "before": "在网上骂人是触犯了最基本的做人标准。", "after": "网络欺凌行为已经严重触碰了互联网文明的**道德底线**。"}], "all_words": [{"word": "道德", "meaning": "morality"}, {"word": "准则", "meaning": "norm/standard"}, {"word": "信仰", "meaning": "belief/faith"}, {"word": "敬畏", "meaning": "awe/revere"}, {"word": "奉献", "meaning": "dedicate/contribution"}, {"word": "索取", "meaning": "demand/ask for"}, {"word": "物质主义", "meaning": "materialism"}, {"word": "精神财富", "meaning": "spiritual wealth"}, {"word": "崇高", "meaning": "lofty/sublime"}, {"word": "卑劣", "meaning": "despicable"}, {"word": "虚荣心", "meaning": "vanity"}, {"word": "责任心", "meaning": "sense of responsibility"}, {"word": "担当", "meaning": "take on responsibility"}, {"word": "妥协", "meaning": "compromise"}, {"word": "底线", "meaning": "bottom line"}, {"word": "原则", "meaning": "principle"}, {"word": "迷茫", "meaning": "confused/lost"}, {"word": "坚定不移", "meaning": "firm and unwavering"}, {"word": "动摇", "meaning": "waver"}, {"word": "价值观", "meaning": "values"}, {"word": "人生观", "meaning": "outlook on life"}, {"word": "世界观", "meaning": "worldview"}, {"word": "偏见", "meaning": "prejudice"}, {"word": "包容", "meaning": "inclusive/tolerant"}, {"word": "歧视", "meaning": "discrimination"}, {"word": "尊重", "meaning": "respect"}, {"word": "核心", "meaning": "core"}, {"word": "衡量", "meaning": "measure/weigh"}, {"word": "追求卓越", "meaning": "pursue excellence"}, {"word": "问心无愧", "meaning": "have a clear conscience"}]}, {"title": "4. 次文化 (Subcultures)", "core_words": [{"word": "归属感", "pinyin": "guīshǔgǎn", "meaning": "sense of belonging", "collocation": "获得归属感、缺乏归属感", "replacement": "代替“觉得属于这个家或地方”", "text_type": "博客/演讲稿", "before": "参加动漫社团，让我觉得学校像家一样温暖。", "after": "在志同道合的亚文化社团中，许多青少年找到了强烈的**归属感**。"}, {"word": "盲目跟风", "pinyin": "mángmù gēnfēng", "meaning": "follow blindly", "collocation": "拒绝盲目跟风、随波逐流", "replacement": "代替“别人买什么自己也买”", "text_type": "文章/辩论稿", "before": "现在的学生喜欢追明星穿的衣服，别人买什么自己就买什么。", "after": "中学生应当培养独立思考能力，**拒绝盲目跟风**的偶像消费潮流。"}, {"word": "共鸣", "pinyin": "gòngmíng", "meaning": "resonance", "collocation": "引起共鸣、产生情感共鸣", "replacement": "代替“觉得别人说得很对”", "text_type": "博客/评论文章", "before": "这篇文章写出了留学生的心里话，大家觉得很对。", "after": "这篇关于留学生生活经历的文章，在读者中**引起了广泛的共鸣**。"}, {"word": "志同道合", "pinyin": "zhìtóng dàohé", "meaning": "like-minded", "collocation": "志同道合的朋友、寻找志同道合的人", "replacement": "代替“兴趣一样的人”", "text_type": "日记/演讲稿", "before": "我很幸运在学校里交到了几个兴趣一样的朋友。", "after": "能与几位**志同道合**的伙伴共同创办学校电竞社，我感到十分荣幸。"}, {"word": "标新立异", "pinyin": "biāoxīn lìyì", "meaning": "unconventional/stubbornly original", "collocation": "刻意标新立异、追求标新立异", "replacement": "代替“想让自己看起来特别”", "text_type": "文章/博客", "before": "有些青少年穿奇奇怪怪的衣服，只是想让自己看起来很特别。", "after": "青少年追求个性是正常的，但不应为了**标新立异**而触碰社会公序良俗。"}], "all_words": [{"word": "追星", "meaning": "follow celebrities"}, {"word": "粉丝", "meaning": "fans"}, {"word": "偶像", "meaning": "idol"}, {"word": "盲目跟风", "meaning": "follow blindly"}, {"word": "理智", "meaning": "rational"}, {"word": "疯狂", "meaning": "crazy/frantic"}, {"word": "狂热", "meaning": "fanatical"}, {"word": "动漫", "meaning": "anime and manga"}, {"word": "二次元", "meaning": "two-dimensional space/ACGN"}, {"word": "电竞", "meaning": "e-sports"}, {"word": "虚拟", "meaning": "virtual"}, {"word": "沉迷", "meaning": "addicted to"}, {"word": "圈子", "meaning": "circle/community"}, {"word": "归属感", "meaning": "sense of belonging"}, {"word": "认同感", "meaning": "sense of identity"}, {"word": "边缘化", "meaning": "marginalized"}, {"word": "主流", "meaning": "mainstream"}, {"word": "碰撞", "meaning": "collision/clash"}, {"word": "融合", "meaning": "integration"}, {"word": "潮流", "meaning": "trend"}, {"word": "标新立异", "meaning": "unconventional"}, {"word": "志同道合", "meaning": "like-minded"}, {"word": "叛逆", "meaning": "rebellious"}, {"word": "个性", "meaning": "individuality"}, {"word": "迎合", "meaning": "cater to"}, {"word": "猎奇", "meaning": "seek novelty"}, {"word": "亚文化", "meaning": "subculture"}, {"word": "流行语", "meaning": "buzzwords"}, {"word": "共鸣", "meaning": "resonance/sympathy"}, {"word": "标签", "meaning": "label/tag"}]}, {"title": "5. 语言与身份 (Language and identity)", "core_words": [{"word": "母语", "pinyin": "mǔyǔ", "meaning": "mother tongue", "collocation": "传承母语、热爱母语", "replacement": "代替“从小学的语言”", "text_type": "演讲稿/文章", "before": "保护好我们从小说的方言和语言，很重要。", "after": "保护并**传承母语**，是维系海外华人文化认同的核心纽带。"}, {"word": "潜移默化", "pinyin": "qiányímòhuà", "meaning": "imperceptible influence", "collocation": "潜移默化的影响、潜移默化地改变", "replacement": "代替“慢慢地、不知不觉地改变”", "text_type": "文章/书信", "before": "在外国生活久了，不知不觉就改变了我的想法。", "after": "长期的跨文化生活背景，正在**潜移默化地**改变着我的思维方式。"}, {"word": "凝聚力", "pinyin": "níngjùlì", "meaning": "cohesion", "collocation": "增强凝聚力、社会凝聚力", "replacement": "代替“大家团结在一起的力量”", "text_type": "提案/演讲稿", "before": "学校多办一些文化节，能让大家更团结。", "after": "举办校园文化节可以促进多民族融合，进而**增强学校的凝聚力**。"}, {"word": "根深蒂固", "pinyin": "gēnshēn dìgù", "meaning": "deep-rooted", "collocation": "根深蒂固的观念、影响根深蒂固", "replacement": "代替“不容易改变的想法”", "text_type": "辩论稿/评论", "before": "男主外女主内是不容易改变的旧思想。", "after": "要消除社会上**根深蒂固的性别偏见**，依然任重而道远。"}, {"word": "沟通桥梁", "pinyin": "gōutōng qiáoliáng", "meaning": "bridge of communication", "collocation": "搭建沟通桥梁、作为沟通桥梁", "replacement": "代替“互相说话和理解的工具”", "text_type": "演讲稿/信函", "before": "学外语是让我们能跟外国人说话的工具。", "after": "熟练掌握第二外语，能为我们与世界各地的青年**搭建起沟通的桥梁**。"}], "all_words": [{"word": "母语", "meaning": "mother tongue"}, {"word": "乡音", "meaning": "local accent"}, {"word": "方言", "meaning": "dialect"}, {"word": "沟通", "meaning": "communication"}, {"word": "隔阂", "meaning": "barrier/estrangement"}, {"word": "桥梁", "meaning": "bridge"}, {"word": "词不达意", "meaning": "unable to express oneself clearly"}, {"word": "畅所欲言", "meaning": "speak freely"}, {"word": "语境", "meaning": "context"}, {"word": "翻译", "meaning": "translation"}, {"word": "传承", "meaning": "inherit and pass on"}, {"word": "流失", "meaning": "loss/drain"}, {"word": "危机", "meaning": "crisis"}, {"word": "身份认同", "meaning": "identity"}, {"word": "凝聚力", "meaning": "cohesion"}, {"word": "普及", "meaning": "popularize"}, {"word": "濒危", "meaning": "endangered"}, {"word": "捍卫", "meaning": "defend/safeguard"}, {"word": "表达", "meaning": "expression"}, {"word": "媒介", "meaning": "medium"}, {"word": "潜移默化", "meaning": "imperceptible influence"}, {"word": "根深蒂固", "meaning": "deep-rooted"}, {"word": "融入", "meaning": "integrate into"}, {"word": "语言障碍", "meaning": "language barrier"}, {"word": "语码转换", "meaning": "code-switching"}, {"word": "双语", "meaning": "bilingual"}, {"word": "骄傲", "meaning": "pride"}, {"word": "寻根", "meaning": "search for one's roots"}, {"word": "纽带", "meaning": "link/tie"}, {"word": "渊源", "meaning": "origin/source"}]}]}, {"theme": "🟡 主题二：体验 (Experiences)", "templates": ["正如古人所云“读万卷书，行万里路”，旅行的终极意义不仅在于**游山玩水**，更在于通过亲历异国风情来打破成见、拓展人生视野。", "传统节日所蕴含的仪式感是世代相传的**文化精髓**，在现代都市的滚滚洪流中，弘扬并守护这些习俗是青年人的时代使命。", "那次刻骨铭心的经历让我深刻认识到，**逆境**是锤炼坚韧品质的最佳熔炉，唯有克服困难才能迎来人生的破茧成蝶。"], "idioms": [{"idiom": "读万卷书，行万里路", "meaning": "Read ten thousand books and travel ten thousand miles (knowledge comes from both study and experience)", "usage": "多去异国交流实习正是**读万卷书，行万里路**的生动体现。"}, {"idiom": "流连忘返", "meaning": "linger on, forgetting to return", "usage": "当地淳朴的民风与壮丽的自然景观令人**流连忘返**。"}, {"idiom": "刻骨铭心", "meaning": "engraved in the bones and heart (unforgettable)", "usage": "在贫困山区小学担任支教老师的两个星期是一次**刻骨铭心**的磨练。"}, {"idiom": "历历在目", "meaning": "remain vivid in one's mind", "usage": "每当翻开旧相册，那段欢快无忧的童年时光便**历历在目**。"}], "subtopics": [{"title": "1. 休闲活动 (Leisure activities)", "core_words": [{"word": "陶冶情操", "pinyin": "táoyě qíngcāo", "meaning": "cultivate taste", "collocation": "陶冶情操、丰富生活陶冶情操", "replacement": "代替“让心情变好，培养高雅爱好”", "text_type": "演讲稿/博客", "before": "听古典音乐能让我心情变好，学到美的东西。", "after": "课余时间欣赏中国古典书画，不仅能放松身心，更能**陶冶情操**。"}, {"word": "团队精神", "pinyin": "tuánduì jīngshén", "meaning": "team spirit", "collocation": "培养团队精神、发挥团队精神", "replacement": "代替“大家一起合作的精神”", "text_type": "自荐信/演讲稿", "before": "打篮球能让我们学到跟队友合作的精神。", "after": "集体运动是**培养团队精神**与沟通协作能力的绝佳方式。"}, {"word": "挑战自我", "pinyin": "tiǎozhàn zìwǒ", "meaning": "challenge oneself", "collocation": "勇敢挑战自我、不断挑战自我", "replacement": "代替“做自己不敢做或没做过的事”", "text_type": "日记/演讲稿", "before": "虽然爬山很累，但我还是去了，我想试试自己行不行。", "after": "这次野外生存体验虽然极其艰苦，但它激发了我**挑战自我**的决心。"}, {"word": "劳逸结合", "pinyin": "láoyì jiéhé", "meaning": "balance rest and work", "collocation": "注重劳逸结合、合理安排劳逸结合", "replacement": "代替“多休息，少累着”", "text_type": "书信/日记", "before": "学习太累了，我们应该也做做运动放松一下。", "after": "丰富的课外休闲活动是**劳逸结合**的最好方式，有助于提高后续的学习效率。"}, {"word": "丰富多彩", "pinyin": "fēngfù duōcǎi", "meaning": "rich and colorful", "collocation": "丰富多彩的校园生活、丰富多彩的体验", "replacement": "代替“很有趣，有很多好玩的活动”", "text_type": "宣传海报/博客", "before": "我们学校有非常多有趣的课外俱乐部。", "after": "学校提供了种类繁多的社团活动，力求为同学们打造**丰富多彩**的校园生活。"}], "all_words": [{"word": "琴棋书画", "meaning": "traditional arts"}, {"word": "陶冶情操", "meaning": "cultivate one's taste"}, {"word": "培养", "meaning": "cultivate"}, {"word": "爱好", "meaning": "hobby"}, {"word": "闲暇", "meaning": "leisure time"}, {"word": "丰富阅历", "meaning": "enrich experience"}, {"word": "拓展", "meaning": "expand"}, {"word": "劳逸结合", "meaning": "balance work and rest"}, {"word": "消遣", "meaning": "pastime"}, {"word": "沉浸", "meaning": "immerse"}, {"word": "俱乐部", "meaning": "club"}, {"word": "社团", "meaning": "school society"}, {"word": "团队精神", "meaning": "team spirit"}, {"word": "竞技", "meaning": "competition"}, {"word": "强身健体", "meaning": "keep fit"}, {"word": "毅力", "meaning": "perseverance"}, {"word": "坚持不懈", "meaning": "unremitting"}, {"word": "半途而废", "meaning": "give up halfway"}, {"word": "挫折", "meaning": "setback"}, {"word": "挑战自我", "meaning": "challenge oneself"}, {"word": "激发", "meaning": "stimulate"}, {"word": "潜能", "meaning": "potential"}, {"word": "释放压力", "meaning": "release stress"}, {"word": "益智", "meaning": "educational/puzzle"}, {"word": "枯燥", "meaning": "dull/boring"}, {"word": "趣味", "meaning": "fun/interest"}, {"word": "充实", "meaning": "fulfilled"}, {"word": "热情", "meaning": "enthusiasm"}, {"word": "投入", "meaning": "devotion"}, {"word": "乐在其中", "meaning": "find pleasure in it"}]}, {"title": "2. 假日与旅行 (Holidays and travel)", "core_words": [{"word": "文化冲击", "pinyin": "wénhuà chōngjī", "meaning": "culture shock", "collocation": "面对文化冲击、克服文化冲击", "replacement": "代替“觉得外国习惯很奇怪，不适应”", "text_type": "日记/私人信函", "before": "我刚到这里时，觉得他们的生活习惯很怪，很不适应。", "after": "每个初到异国他乡的留学生，几乎都会经历一段短暂的**文化冲击**。"}, {"word": "流连忘返", "pinyin": "liúlián wàngfǎn", "meaning": "linger and forget to return", "collocation": "令人流连忘返、美景让人流连忘返", "replacement": "代替“风景太美了，不想走”", "text_type": "游记/博客", "before": "这里的山水特别好看，我都不想回家了。", "after": "阳朔秀丽的田园风光与独特的西街文化，令中外游客**流连忘返**。"}, {"word": "大开眼界", "pinyin": "dàkāi yǎnjiè", "meaning": "broaden horizons", "collocation": "令人大开眼界、大开眼界的经历", "replacement": "代替“看到了新奇的东西，学到新知识”", "text_type": "博客/游记", "before": "这次参观科技馆，我看到了很多高科技，学到很多东西。", "after": "这次去中国西安亲眼看到秦始皇兵马俑，真是让我**大开眼界**。"}, {"word": "风土人情", "pinyin": "fēngtǔ rénqíng", "meaning": "local customs", "collocation": "领略风土人情、体验风土人情", "replacement": "代替“当地的习惯和风景”", "text_type": "游记/信函", "before": "去少数民族地区旅游，可以看那里的生活习惯。", "after": "深度旅游的魅力，在于能够真正走进当地社区，**领略独特风土人情**。"}, {"word": "深度游", "pinyin": "shēndùyóu", "meaning": "in-depth travel", "collocation": "践行深度游、深度游的好处", "replacement": "代替“在地方待很久好好旅游”", "text_type": "博客/评论文章", "before": "相比走马观花地拍照，我更喜欢慢节奏的旅游。", "after": "越来越多的人开始青睐**深度游**，借此获取更深层面的文化感悟。"}], "all_words": [{"word": "游山玩水", "meaning": "enjoy the scenery"}, {"word": "名胜古迹", "meaning": "historical sites"}, {"word": "风土人情", "meaning": "local customs"}, {"word": "走马观花", "meaning": "give a quick glance"}, {"word": "深度游", "meaning": "in-depth travel"}, {"word": "自由行", "meaning": "independent travel"}, {"word": "攻略", "meaning": "travel guide"}, {"word": "跋山涉水", "meaning": "cross mountains and rivers"}, {"word": "穷游", "meaning": "budget travel"}, {"word": "体验", "meaning": "experience"}, {"word": "震撼", "meaning": "shock/awe"}, {"word": "流连忘返", "meaning": "linger, forget to return"}, {"word": "大开眼界", "meaning": "broaden horizons"}, {"word": "见闻", "meaning": "what one sees and hears"}, {"word": "异国他乡", "meaning": "foreign land"}, {"word": "伴手礼", "meaning": "souvenir"}, {"word": "宾至如归", "meaning": "feel at home"}, {"word": "舟车劳顿", "meaning": "exhausted from journey"}, {"word": "不虚此行", "meaning": "worthwhile trip"}, {"word": "走南闯北", "meaning": "travel extensively"}, {"word": "领略", "meaning": "appreciate"}, {"word": "拓展视野", "meaning": "broaden vision"}, {"word": "文化冲击", "meaning": "culture shock"}, {"word": "探索", "meaning": "explore"}, {"word": "陌生", "meaning": "unfamiliar"}, {"word": "惬意", "meaning": "cozy/comfortable"}, {"word": "旺季", "meaning": "peak season"}, {"word": "淡季", "meaning": "off-season"}, {"word": "行囊", "meaning": "luggage/backpack"}, {"word": "目的地", "meaning": "destination"}]}, {"title": "3. 生活故事 (Life stories)", "core_words": [{"word": "刻骨铭心", "pinyin": "kègǔ míngxīn", "meaning": "unforgettable", "collocation": "刻骨铭心的经历、刻骨铭心的教训", "replacement": "代替“非常难忘”", "text_type": "日记/私人信函", "before": "高一那次爬山迷路的经历，我一辈子都忘不了。", "after": "那次在台风天参与社区救援的经历，至今仍让我**刻骨铭心**。"}, {"word": "转折点", "pinyin": "zhuǎnzhédiǎn", "meaning": "turning point", "collocation": "成为人生转折点、迎来转折点", "replacement": "代替“改变了我的生活”", "text_type": "日记/演讲稿", "before": "加入辩论社这件事，改变了我的性格和学习路线。", "after": "加入学校青年志愿者协会，成为我高中生活乃至人生道路的**重大转折点**。"}, {"word": "获益匪浅", "pinyin": "huòyì fěiqiǎn", "meaning": "benefit greatly", "collocation": "让人获益匪浅、获益匪浅的讲座", "replacement": "代替“得到很多好处，学到很多东西”", "text_type": "自荐信/演讲稿", "before": "在敬老院做义工的经历，让我学到了许多宝贵的做人道理。", "after": "这次社区环保实践活动不仅改善了周边环境，也让我们**获益匪浅**。"}, {"word": "难能可贵", "pinyin": "nánnéng kěguì", "meaning": "rare and commendable", "collocation": "难能可贵的精神、难能可贵的坚持", "replacement": "代替“很难得，很好”", "text_type": "演讲稿/推荐信", "before": "他在困难的时候还愿意帮助别人，这很少见，非常好。", "after": "面对重重困难，他依然能坚守志愿服务的承诺，这种品质确实**难能可贵**。"}, {"word": "历历在目", "pinyin": "lìlì zàimù", "meaning": "vivid in mind", "collocation": "往事历历在目、场景历历在目", "replacement": "代替“记得很清楚，像在眼前一样”", "text_type": "日记/书信", "before": "虽然过了很多年，但我们小学毕业那天的场景我依然记得很清楚。", "after": "每当翻开高中毕业相册，当年我们在操场挥洒汗水的画面便**历历在目**。"}], "all_words": [{"word": "刻骨铭心", "meaning": "unforgettable"}, {"word": "记忆犹新", "meaning": "fresh in memory"}, {"word": "历历在目", "meaning": "vivid in mind"}, {"word": "恍然大悟", "meaning": "suddenly realize"}, {"word": "难能可贵", "meaning": "rare and commendable"}, {"word": "遗憾", "meaning": "regret"}, {"word": "庆幸", "meaning": "rejoice"}, {"word": "挫折", "meaning": "setback"}, {"word": "跌宕起伏", "meaning": "ups and downs"}, {"word": "转折点", "meaning": "turning point"}, {"word": "逆境", "meaning": "adversity"}, {"word": "顺境", "meaning": "favorable circumstances"}, {"word": "磨炼", "meaning": "temper/hone"}, {"word": "启发", "meaning": "inspiration"}, {"word": "感触", "meaning": "thoughts and feelings"}, {"word": "经历", "meaning": "experience"}, {"word": "沧桑", "meaning": "vicissitudes of life"}, {"word": "见证", "meaning": "witness"}, {"word": "回忆", "meaning": "memories"}, {"word": "缅怀", "meaning": "cherish the memory of"}, {"word": "憧憬", "meaning": "long for/look forward to"}, {"word": "刻苦", "meaning": "hardworking"}, {"word": "奋斗", "meaning": "struggle/strive"}, {"word": "蜕变", "meaning": "transformation"}, {"word": "启蒙", "meaning": "enlightenment"}, {"word": "刻画", "meaning": "depict"}, {"word": "叙述", "meaning": "narrate"}, {"word": "铭记", "meaning": "engrave in mind"}, {"word": "终生难忘", "meaning": "unforgettable for life"}, {"word": "获益匪浅", "meaning": "benefit greatly"}]}, {"title": "4. 习俗与传统 (Customs and traditions)", "core_words": [{"word": "仪式感", "pinyin": "yíshìgǎn", "meaning": "sense of ritual", "collocation": "充满仪式感、生活仪式感", "replacement": "代替“做这事特别有节日的感觉”", "text_type": "博客/日记", "before": "端午节一定要吃粽子、赛龙舟，这很有过节的意思。", "after": "传统节日的魅力，在于它赋予了我们现代庸常生活一份久违的**仪式感**。"}, {"word": "弘扬", "pinyin": "hóngyáng", "meaning": "promote", "collocation": "弘扬传统文化、大力弘扬", "replacement": "代替“宣传和发展”", "text_type": "演讲稿/文章", "before": "我们应该多做宣传，让更多人知道传统文化。", "after": "作为青年一代，我们不仅是文化历史的受益者，更是**弘扬传统文化**的主力军。"}, {"word": "世代相传", "pinyin": "shìdài xiāngchuán", "meaning": "passed down through generations", "collocation": "世代相传的艺术、世代相传的习俗", "replacement": "代替“爷爷传给爸爸，爸爸传给儿子”", "text_type": "宣传海报/文章", "before": "这项做陶瓷的手艺是好几代人传下来的。", "after": "春节不仅是一个阖家团圆的契机，更是**世代相传**的文化血脉。"}, {"word": "淘汰", "pinyin": "táotài", "meaning": "eliminate/die out", "collocation": "面临被淘汰、无情淘汰", "replacement": "代替“消失了、跟不上时代”", "text_type": "辩论稿/评论", "before": "很多传统手艺在今天都快要消失了，因为没人买了。", "after": "在电子阅读的冲击下，许多传统实体书店若不转型，就将面临被时代**淘汰**的命运。"}, {"word": "瑰宝", "pinyin": "guībǎo", "meaning": "treasure", "collocation": "文化的瑰宝、艺术的瑰宝", "replacement": "代替“珍贵的文化财产”", "text_type": "演讲稿/宣传海报", "before": "京剧是非常有价值的中华文化财产。", "after": "宣纸制作技艺是中国古代造纸术的精髓，被誉为中华民族文化的**瑰宝**。"}], "all_words": [{"word": "渊源", "meaning": "origin"}, {"word": "传承", "meaning": "pass down"}, {"word": "弘扬", "meaning": "promote"}, {"word": "遗弃", "meaning": "abandon"}, {"word": "淘汰", "meaning": "eliminate"}, {"word": "节日", "meaning": "festival"}, {"word": "庆典", "meaning": "celebration"}, {"word": "仪式感", "meaning": "sense of ritual"}, {"word": "祭祀", "meaning": "offer sacrifices to"}, {"word": "祈福", "meaning": "pray for blessings"}, {"word": "团聚", "meaning": "reunite"}, {"word": "拜访", "meaning": "visit"}, {"word": "礼仪", "meaning": "etiquette"}, {"word": "禁忌", "meaning": "taboo"}, {"word": "迷信", "meaning": "superstition"}, {"word": "民俗", "meaning": "folk customs"}, {"word": "瑰宝", "meaning": "treasure"}, {"word": "衰退", "meaning": "decline"}, {"word": "现代化", "meaning": "modernization"}, {"word": "冲击", "meaning": "impact"}, {"word": "保留", "meaning": "retain"}, {"word": "世代相传", "meaning": "passed down through generations"}, {"word": "浓厚", "meaning": "strong/thick atmosphere"}, {"word": "气氛", "meaning": "atmosphere"}, {"word": "习俗", "meaning": "customs"}, {"word": "象征", "meaning": "symbolize"}, {"word": "寓意", "meaning": "implied meaning"}, {"word": "守岁", "meaning": "stay up on New Year's Eve"}, {"word": "迎新", "meaning": "welcome the new year"}, {"word": "欢聚一堂", "meaning": "gather happily under one roof"}]}, {"title": "5. 迁徙 (Migration)", "core_words": [{"word": "融入", "pinyin": "róngrù", "meaning": "integrate", "collocation": "融入当地社会、融入新生活", "replacement": "代替“跟当地人打成一片”", "text_type": "私人信函/日记", "before": "我最近很努力地去认识当地朋友，跟他们打成一片。", "after": "学习并尊重当地的礼仪与生活习俗，是新移民**融入当地社会**的关键。"}, {"word": "跨文化", "pinyin": "kuàwénhuà", "meaning": "cross-cultural", "collocation": "跨文化交流、跨文化理解", "replacement": "代替“不同文化背景的互动”", "text_type": "演讲稿/报告", "before": "我们在学校里跟不同国家的同学打交道，很有意思。", "after": "频繁的国际交换生项目，极大地促进了校园内的**跨文化理解与包容**。"}, {"word": "落叶归根", "pinyin": "luòyè guīgēn", "meaning": "return to roots", "collocation": "游子渴望落叶归根、落叶归根的传统", "replacement": "代替“老了想回到老家住”", "text_type": "私人信函/文章", "before": "这位爷爷虽然在外国赚了钱，但他老了还是想回到中国家乡安葬。", "after": "尽管在海外漂泊了半个世纪，这位老华侨心中依然渴望着**落叶归根**。"}, {"word": "扎根", "pinyin": "zhāgēn", "meaning": "take root", "collocation": "在新家扎根、在社区扎根", "replacement": "代替“在新的地方住下来，开始稳定的生活”", "text_type": "博客/日记", "before": "我打算毕业后在这个城市找工作、买房子，稳定下来。", "after": "通过多年的不懈奋斗，这位新移民终于在这片全新的土地上**扎根**并安居乐业。"}, {"word": "差异", "pinyin": "chāyì", "meaning": "difference", "collocation": "文化差异、消除差异", "replacement": "代替“不同的地方”", "text_type": "博客/文章", "before": "中西方在饮食上有很多不同的地方。", "after": "正视并尊重各民族之间的**文化差异**，是减少国际冲突的先决条件。"}], "all_words": [{"word": "移民", "meaning": "immigrant/migrate"}, {"word": "留学", "meaning": "study abroad"}, {"word": "漂泊", "meaning": "drift/wander"}, {"word": "扎根", "meaning": "take root"}, {"word": "融入", "meaning": "integrate"}, {"word": "排斥", "meaning": "reject/exclude"}, {"word": "适应", "meaning": "adapt"}, {"word": "思乡", "meaning": "homesickness"}, {"word": "乡愁", "meaning": "nostalgia"}, {"word": "孤单", "meaning": "lonely"}, {"word": "独立", "meaning": "independent"}, {"word": "克服", "meaning": "overcome"}, {"word": "障碍", "meaning": "obstacle"}, {"word": "隔阂", "meaning": "barrier"}, {"word": "差异", "meaning": "difference"}, {"word": "融合", "meaning": "fusion"}, {"word": "多元文化", "meaning": "multiculturalism"}, {"word": "冲突", "meaning": "conflict"}, {"word": "寻根", "meaning": "search for roots"}, {"word": "故土", "meaning": "homeland"}, {"word": "谋生", "meaning": "make a living"}, {"word": "安居乐业", "meaning": "live and work in peace"}, {"word": "异乡", "meaning": "foreign land"}, {"word": "边缘化", "meaning": "marginalization"}, {"word": "跨文化", "meaning": "cross-cultural"}, {"word": "挑战", "meaning": "challenge"}, {"word": "机遇", "meaning": "opportunity"}, {"word": "汇聚", "meaning": "gather/converge"}, {"word": "迁徙", "meaning": "migrate"}, {"word": "落叶归根", "meaning": "fallen leaves return to their roots"}]}]}, {"theme": "🔵 主题三：人类发明创造 (Human Ingenuity)", "templates": ["科技的高速发展如同一把**双刃剑**：在为我们提供大数据的智能便利之余，如果不加规范，极易侵犯个人隐私，导致信息茧房的产生。", "社交媒体是促进现代人跨地理交流的桥梁，但网络欺凌和假新闻泛滥的现象，正警示着我们必须提高媒介素养，**克制冷静**地使用媒体。", "艺术与科学创新均是人类灵感的璀璨结晶，它们以独特、严谨的方式打破未知瓶颈，不仅造福大众，更引领社会前行。"], "idioms": [{"idiom": "日新月异", "meaning": "change with each passing day (make rapid progress)", "usage": "在这个信息爆炸的时代，高新科技的发展可谓是**日新月异**。"}, {"idiom": "突飞猛进", "meaning": "advance by leaps and bounds", "usage": "近十年来，移动支付和电子商务的发展速度可以说是**突飞猛进**。"}, {"idiom": "双刃剑", "meaning": "double-edged sword", "usage": "网络社交软件是一把**双刃剑**，拉近了距离也拉远了人情。"}, {"idiom": "匠心独运", "meaning": "show exquisite workmanship or ingenuity", "usage": "这幅科技海报的设计**匠心独运**，成功地把中华古汉字与集成电路板融合在一起。"}], "subtopics": [{"title": "1. 娱乐 (Entertainment)", "core_words": [{"word": "沉迷", "pinyin": "chénmí", "meaning": "addicted to", "collocation": "沉迷于网络、沉迷电子游戏", "replacement": "代替“天天玩，控制不住自己”", "text_type": "建议书/演讲稿", "before": "学校要管管那些天天上网玩游戏不学习的同学。", "after": "如何防止青少年过度**沉迷于虚拟网络游戏**，是一个亟待解决的教育课题。"}, {"word": "寓教于乐", "pinyin": "yùjiào yúlè", "meaning": "edutainment", "collocation": "实现寓教于乐、寓教于乐的宗旨", "replacement": "代替“一边玩一边学”", "text_type": "评论文章/自荐信", "before": "这个手机游戏很好，能教小孩子认字，玩学结合。", "after": "优秀的教育类游戏应当在趣味与知识之间找到平衡，真正做到**寓教于乐**。"}, {"word": "喜闻乐见", "pinyin": "xǐwén lèjiàn", "meaning": "love to see and hear", "collocation": "群众喜闻乐见、喜闻乐见的形式", "replacement": "代替“大家都喜欢看，喜欢听”", "text_type": "宣传海报/提案", "before": "用小话剧介绍历史，是同学们都喜欢看的活动方式。", "after": "以角色扮演的互动形式开展历史课，是中学生们**喜闻乐见**的创新模式。"}, {"word": "逃避现实", "pinyin": "táobì xiànshí", "meaning": "escape reality", "collocation": "借助娱乐逃避现实、选择逃避现实", "replacement": "代替“不想面对生活中的麻烦”", "text_type": "文章/日记", "before": "他在现实中成绩不好，就天天躲在网络世界里不想面对现实。", "after": "部分学生沉迷网络，主要是想通过虚拟世界的成就感来**逃避现实中的学业压力**。"}, {"word": "泛娱乐化", "pinyin": "fàn yúlèhuà", "meaning": "pan-entertainment", "collocation": "泛娱乐化趋势、泛娱乐化现象", "replacement": "代替“什么事情都拿来搞笑，开玩笑”", "text_type": "辩论稿/评论", "before": "现在短视频上连历史人物都被拿来搞怪，什么都是开玩笑。", "after": "社交平台过度**泛娱乐化**的倾向，容易削弱青少年深度思考和理性探讨的能力。"}], "all_words": [{"word": "视听盛宴", "meaning": "visual and auditory feast"}, {"word": "票房", "meaning": "box office"}, {"word": "偶像剧", "meaning": "idol drama"}, {"word": "综艺", "meaning": "variety show"}, {"word": "泛娱乐化", "meaning": "pan-entertainment"}, {"word": "流量", "meaning": "web traffic/exposure"}, {"word": "炒作", "meaning": "hype"}, {"word": "迎合", "meaning": "cater to"}, {"word": "粗制滥造", "meaning": "shoddily made"}, {"word": "精品", "meaning": "masterpiece"}, {"word": "审核", "meaning": "censor/review"}, {"word": "限制", "meaning": "restrict"}, {"word": "沉迷", "meaning": "addict to"}, {"word": "虚拟", "meaning": "virtual"}, {"word": "逃避", "meaning": "escape"}, {"word": "现实", "meaning": "reality"}, {"word": "互动", "meaning": "interact"}, {"word": "直播", "meaning": "live stream"}, {"word": "打赏", "meaning": "tip/reward online"}, {"word": "疯狂", "meaning": "crazy"}, {"word": "追捧", "meaning": "chase after/flatter"}, {"word": "寓教于乐", "meaning": "edutainment"}, {"word": "堕落", "meaning": "degenerate"}, {"word": "消遣", "meaning": "pastime"}, {"word": "宣泄", "meaning": "vent"}, {"word": "剧透", "meaning": "spoiler"}, {"word": "粉丝经济", "meaning": "fan economy"}, {"word": "轰动", "meaning": "sensation"}, {"word": "潮流", "meaning": "trend"}, {"word": "喜闻乐见", "meaning": "love to see and hear"}]}, {"title": "2. 艺术表达 (Artistic expressions)", "core_words": [{"word": "灵感", "pinyin": "línggǎn", "meaning": "inspiration", "collocation": "激发灵感、创作灵感", "replacement": "代替“突然想出的好主意”", "text_type": "日记/自荐信", "before": "我散步的时候，脑子里突然想到了画这幅画的好主意。", "after": "漫步在雨后的森林中，我重新找到了这幅环保海报的**设计灵感**。"}, {"word": "审美", "pinyin": "shěnměi", "meaning": "aesthetics", "collocation": "提升审美水平、审美教育", "replacement": "代替“觉得什么是好看的眼光”", "text_type": "提案/演讲稿", "before": "多去美术馆，能让我们知道什么是好看的画。", "after": "鼓励学生定期参观艺术展览，对**提升审美水平**有重要的促进作用。"}, {"word": "匠心独运", "pinyin": "jiàngxīn dúyù", "meaning": "show ingenuity", "collocation": "设计匠心独运、构思匠心独运", "replacement": "代替“设计得非常有创意”", "text_type": "评论文章/自荐信", "before": "这个小花园设计得非常聪明，非常有创意。", "after": "这栋教学楼的绿色节能设计**匠心独运**，被选为了本市的低碳样板。"}, {"word": "共鸣", "pinyin": "gòngmíng", "meaning": "resonance", "collocation": "引起审美共鸣、产生情感共鸣", "replacement": "代替“打动了我的心，感同身受”", "text_type": "博客/日记", "before": "那首关于游子回家的歌太打动我了，我都哭了。", "after": "美术馆中那幅表现留守儿童的画作，深深地**引起了我的情感共鸣**。"}, {"word": "栩栩如生", "pinyin": "xǔxǔ rúshēng", "meaning": "lifelike", "collocation": "刻画得栩栩如生、栩栩如生的雕塑", "replacement": "代替“画得/刻得跟真的一模一样”", "text_type": "博客/游记", "before": "那个糖人做得很逼真，跟真的小猴子一模一样。", "after": "这位非遗传承人捏的面塑人物面部表情生动，简直**栩栩如生**。"}], "all_words": [{"word": "灵感", "meaning": "inspiration"}, {"word": "创作", "meaning": "create"}, {"word": "杰作", "meaning": "masterpiece"}, {"word": "展览", "meaning": "exhibition"}, {"word": "博物馆", "meaning": "museum"}, {"word": "画廊", "meaning": "gallery"}, {"word": "欣赏", "meaning": "appreciate"}, {"word": "品鉴", "meaning": "savor and evaluate"}, {"word": "抽象", "meaning": "abstract"}, {"word": "写实", "meaning": "realistic"}, {"word": "雕塑", "meaning": "sculpture"}, {"word": "旋律", "meaning": "melody"}, {"word": "节奏", "meaning": "rhythm"}, {"word": "震撼", "meaning": "shocking/stunning"}, {"word": "共鸣", "meaning": "resonance"}, {"word": "传递", "meaning": "transmit/convey"}, {"word": "表达", "meaning": "express"}, {"word": "媒介", "meaning": "medium"}, {"word": "审美", "meaning": "aesthetics"}, {"word": "独特", "meaning": "unique"}, {"word": "匠心独运", "meaning": "show great ingenuity"}, {"word": "栩栩如生", "meaning": "lifelike"}, {"word": "雅俗共赏", "meaning": "appeal to both refined and popular tastes"}, {"word": "前卫", "meaning": "avant-garde"}, {"word": "传统", "meaning": "traditional"}, {"word": "颠覆", "meaning": "subvert"}, {"word": "融合", "meaning": "blend"}, {"word": "艺术品", "meaning": "artwork"}, {"word": "感染力", "meaning": "appeal/infectiousness"}, {"word": "陶醉", "meaning": "intoxicated/fascinated"}]}, {"title": "3. 交流与媒体 (Communication and media)", "core_words": [{"word": "信息茧房", "pinyin": "xìnxī jiǎnfáng", "meaning": "information cocoon", "collocation": "陷入信息茧房、打破信息茧房", "replacement": "代替“每天只看自己喜欢的新闻，眼光变窄”", "text_type": "辩论稿/文章", "before": "手机每天只推荐我喜欢看的信息，让我不知道真实的世界。", "after": "算法推荐虽然便捷，但如果缺乏独立思考，我们极易**陷入信息茧房**。"}, {"word": "网络欺凌", "pinyin": "wǎngluò qīlíng", "meaning": "cyberbullying", "collocation": "抵制网络欺凌、遭遇网络欺凌", "replacement": "代替“在网上骂人，欺负别人”", "text_type": "倡议书/演讲稿", "before": "我们不能在别人的社交账号下骂人，这样不好。", "after": "作为合格的网民，我们不仅要规范自身言行，更要**坚决抵制网络欺凌**。"}, {"word": "舆论", "pinyin": "yúlùn", "meaning": "public opinion", "collocation": "社会舆论、引导网络舆论", "replacement": "代替“网民们的普遍看法，大家的讨论”", "text_type": "文章/辩论稿", "before": "网上很多人的看法有时候会被假新闻带偏。", "after": "媒体应当克守客观报道的操守，防止非理性的**网络舆论**给受害者造成二次伤害。"}, {"word": "标题党", "pinyin": "biātǐdǎng", "meaning": "clickbait", "collocation": "泛滥的标题党、标题党作风", "replacement": "代替“起很夸张的名字来骗人点进去”", "text_type": "辩论稿/评论", "before": "网上很多新闻内容很简单，但是标题起得非常夸张骗人。", "after": "网络上**恶俗标题党**的泛滥，不仅污染了阅读环境，也透支了大众的信任。"}, {"word": "隐私泄露", "pinyin": "yǐnsī xièlòu", "meaning": "leakage of privacy", "collocation": "防止隐私泄露、造成隐私泄露", "replacement": "代替“秘密被别人偷走了”", "text_type": "提案/文章", "before": "我们在网上下载软件，要小心被别人偷走了个人秘密。", "after": "在享受网络社交便利的同时，必须高度警惕应用程序后台可能带来的**隐私泄露风险**。"}], "all_words": [{"word": "资讯", "meaning": "information"}, {"word": "传播", "meaning": "disseminate"}, {"word": "渠道", "meaning": "channel"}, {"word": "社交媒体", "meaning": "social media"}, {"word": "朋友圈", "meaning": "social circle/Moments"}, {"word": "点赞", "meaning": "like"}, {"word": "转发", "meaning": "share/forward"}, {"word": "评论", "meaning": "comment"}, {"word": "网络欺凌", "meaning": "cyberbullying"}, {"word": "键盘侠", "meaning": "keyboard warrior"}, {"word": "舆论", "meaning": "public opinion"}, {"word": "引导", "meaning": "guide"}, {"word": "辟谣", "meaning": "refute a rumor"}, {"word": "假新闻", "meaning": "fake news"}, {"word": "信息茧房", "meaning": "information cocoon"}, {"word": "碎片化", "meaning": "fragmented"}, {"word": "标题党", "meaning": "clickbait"}, {"word": "炒作", "meaning": "sensationalize"}, {"word": "曝光", "meaning": "expose"}, {"word": "隐私", "meaning": "privacy"}, {"word": "泄露", "meaning": "leak"}, {"word": "透明", "meaning": "transparent"}, {"word": "互动", "meaning": "interaction"}, {"word": "桥梁", "meaning": "bridge"}, {"word": "鸿沟", "meaning": "gap"}, {"word": "畅通", "meaning": "unimpeded"}, {"word": "封锁", "meaning": "block"}, {"word": "审查", "meaning": "censorship"}, {"word": "普及", "meaning": "popularize"}, {"word": "畅所欲言", "meaning": "speak freely"}]}, {"title": "4. 科技 (Technology)", "core_words": [{"word": "双刃剑", "pinyin": "shuāngrènjiàn", "meaning": "double-edged sword", "collocation": "是一把双刃剑、科技双刃剑", "replacement": "代替“有好也有坏”", "text_type": "辩论稿/文章", "before": "在课堂上用平板电脑上课，有好的一面，也有坏的一面。", "after": "电子产品在教育领域的全面普及是一把**双刃剑**，关键在于学校如何进行合理引导。"}, {"word": "日新月异", "pinyin": "rìxīn yuèyì", "meaning": "change with each passing day", "collocation": "日新月异的科技、日新月异的发展", "replacement": "代替“变化特别快”", "text_type": "演讲稿/文章", "before": "现在的科技变化特别快，我们快要跟不上了。", "after": "面对**日新月异的数字化社会**，终身学习已不再是一个口号，而是生存的必需。"}, {"word": "依赖", "pinyin": "yīlài", "meaning": "rely on", "collocation": "过度依赖手机、产生依赖心理", "replacement": "代替“离不开”", "text_type": "建议书/日记", "before": "很多人现在出门离不开手机，没有手机就不能生活。", "after": "现代人对手机导航和移动支付的**过度依赖**，引发了一系列“数字焦虑”症状。"}, {"word": "便捷", "pinyin": "biànjié", "meaning": "convenient", "collocation": "快速便捷的交通、便捷的生活服务", "replacement": "代替“特别方便、特别快”", "text_type": "文章/演讲稿", "before": "高铁让城市跟城市之间坐车特别方便特别快。", "after": "移动支付的普及为大众的日常交易带来了**前所未有的便捷体验**。"}, {"word": "人工智能", "pinyin": "réngōng zhìnéng", "meaning": "artificial intelligence", "collocation": "人工智能时代、人工智能技术", "replacement": "代替“AI、电脑人”", "text_type": "辩论稿/评论", "before": "人工智能机器人现在能做很多以前人才能做的工作。", "after": "伴随着**人工智能**技术的突飞猛进，未来社会的岗位结构将迎来重塑。"}], "all_words": [{"word": "日新月异", "meaning": "change with each passing day"}, {"word": "突飞猛进", "meaning": "advance by leaps and bounds"}, {"word": "革命", "meaning": "revolution"}, {"word": "颠覆", "meaning": "subvert/overturn"}, {"word": "智能", "meaning": "smart/intelligent"}, {"word": "人工智能", "meaning": "AI"}, {"word": "算法", "meaning": "algorithm"}, {"word": "大数据", "meaning": "big data"}, {"word": "云端", "meaning": "cloud"}, {"word": "自动化", "meaning": "automation"}, {"word": "效率", "meaning": "efficiency"}, {"word": "捷径", "meaning": "shortcut"}, {"word": "依赖", "meaning": "rely on"}, {"word": "懒惰", "meaning": "lazy"}, {"word": "双刃剑", "meaning": "double-edged sword"}, {"word": "弊端", "meaning": "drawback"}, {"word": "利弊", "meaning": "pros and cons"}, {"word": "普及", "meaning": "widespread"}, {"word": "淘汰", "meaning": "eliminate"}, {"word": "创新", "meaning": "innovate"}, {"word": "研发", "meaning": "R&D"}, {"word": "专利", "meaning": "patent"}, {"word": "侵权", "meaning": "infringement"}, {"word": "黑客", "meaning": "hacker"}, {"word": "漏洞", "meaning": "loophole"}, {"word": "升级", "meaning": "upgrade"}, {"word": "兼容", "meaning": "compatible"}, {"word": "虚拟现实", "meaning": "VR"}, {"word": "便捷", "meaning": "convenient"}, {"word": "触手可及", "meaning": "within reach"}]}, {"title": "5. 科学创新 (Scientific innovation)", "core_words": [{"word": "突破", "pinyin": "tūpò", "meaning": "breakthrough", "collocation": "取得重大突破、技术突破", "replacement": "代替“解决了很难的问题”", "text_type": "演讲稿/文章", "before": "科学家们终于解决了治疗这个绝症的世纪难题。", "after": "我国科研团队在抗癌靶向药的研发领域**取得了开创性的重大突破**。"}, {"word": "伦理", "pinyin": "lúnlǐ", "meaning": "ethics", "collocation": "医学伦理、触犯科学伦理", "replacement": "代替“关于生命好坏的道德规定”", "text_type": "辩论稿/文章", "before": "克隆人和基因修改在做人道德上是有很大问题的。", "after": "基因工程在带给人类征服疾病希望的同时，也带来了巨大的**生命伦理风险**。"}, {"word": "争议", "pinyin": "zhēngyì", "meaning": "controversy", "collocation": "引发争议、备受争议", "replacement": "代替“大家天天吵架，有不同意见”", "text_type": "辩论稿/评论", "before": "要不要用机器人代替所有工厂的工人，大家有很多不同意见。", "after": "关于实验室合成肉类是否应当大范围推广的提案，目前依然**备受争议**。"}, {"word": "前沿", "pinyin": "qiányán", "meaning": "frontier", "collocation": "科技前沿、科学探索的前沿", "replacement": "代替“最新、最厉害的研究方向”", "text_type": "自荐信/演讲稿", "before": "我想在大学里研究最牛最先进的物理科技。", "after": "投身纳米材料和超导物理等**科技前沿领域**，是我自童年以来的崇高梦想。"}, {"word": "造福人类", "pinyin": "zàofú rénlèi", "meaning": "benefit humanity", "collocation": "为了造福人类、科学成果造福人类", "replacement": "代替“给所有人带来好处，帮大家过上好生活”", "text_type": "演讲稿/文章", "before": "我们要用发明来帮助人类过上非常好的生活。", "after": "科技创新归根结底应当以人为本，以**造福人类**为终极考量。"}], "all_words": [{"word": "突破", "meaning": "breakthrough"}, {"word": "探索", "meaning": "explore"}, {"word": "未知", "meaning": "unknown"}, {"word": "航天", "meaning": "aerospace"}, {"word": "基因", "meaning": "gene"}, {"word": "克隆", "meaning": "clone"}, {"word": "伦理", "meaning": "ethics"}, {"word": "争议", "meaning": "controversy"}, {"word": "突破性", "meaning": "groundbreaking"}, {"word": "实验", "meaning": "experiment"}, {"word": "假设", "meaning": "hypothesis"}, {"word": "论证", "meaning": "prove/demonstrate"}, {"word": "严谨", "meaning": "rigorous"}, {"word": "基础", "meaning": "foundation"}, {"word": "应用", "meaning": "application"}, {"word": "转化", "meaning": "transform"}, {"word": "成果", "meaning": "achievement"}, {"word": "进步", "meaning": "progress"}, {"word": "贡献", "meaning": "contribution"}, {"word": "造福", "meaning": "bring benefit to"}, {"word": "毁灭", "meaning": "destroy"}, {"word": "探索精神", "meaning": "spirit of exploration"}, {"word": "攻克", "meaning": "overcome a challenge"}, {"word": "难题", "meaning": "difficult problem"}, {"word": "瓶颈", "meaning": "bottleneck"}, {"word": "跨界", "meaning": "crossover"}, {"word": "前沿", "meaning": "frontier"}, {"word": "尖端", "meaning": "cutting-edge"}, {"word": "科学家", "meaning": "scientist"}, {"word": "实验室", "meaning": "laboratory"}]}]}, {"theme": "🟠 主题四：社会组织 (Social Organization)", "templates": ["现代教育不应当是千篇一律的应试灌输，而应注重**因材施教**，培养学生的批判性思维和全面发展的健全人格。", "在职场竞争与社会运转中，早期的**职业规划**以及出色的团队合作精神，是青少年步入社会时不可或缺的核心软实力。", "关爱社会弱势群体、积极参与社区志愿服务，不仅是每个公民应尽的责任义务，更是凝聚人心、构建和谐社会的重要基石。"], "idioms": [{"idiom": "因材施教", "meaning": "teach students in accordance with their aptitude", "usage": "贯彻**因材施教**的原则，有利于发掘每一个孩子身上的闪光点。"}, {"idiom": "拔苗助长", "meaning": "pull up seedlings to help them grow (spoil things through excessive enthusiasm or haste)", "usage": "周末给孩子报过多的补习班是典型的**拔苗助长**，往往适得其反。"}, {"idiom": "望子成龙", "meaning": "hope one's son becomes a dragon (expect one's children to be very successful)", "usage": "绝大多数家长都是**望子成龙**，却忽视了倾听孩子真正的精神诉求。"}, {"idiom": "和睦相处", "meaning": "live together in peace and harmony", "usage": "虽然我们来自不同的文化背景，但在同一个宿舍里大家一直**和睦相处**。"}], "subtopics": [{"title": "1. 社会关系 (Social relationships)", "core_words": [{"word": "代沟", "pinyin": "dàigōu", "meaning": "generation gap", "collocation": "代沟问题、缩小代沟", "replacement": "代替“跟爸爸妈妈想法不一样”", "text_type": "私人信函/日记", "before": "我们跟爸爸妈妈的想法有很多不一样的地方，经常为这事吵架。", "after": "坦诚而平和的沟通，是消除隔阂、**缩小代沟**的最佳良方。"}, {"word": "同辈压力", "pinyin": "tóngbèi yālì", "meaning": "peer pressure", "collocation": "面对同辈压力、妥善应对同辈压力", "replacement": "代替“看到同学好，自己也想好的压力”", "text_type": "博客/私人信函", "before": "看到同学都在用最新款手机，我也想买，这让我压力很大。", "after": "中学生应当建立对自己长处的自信心，不盲从潮流，合理应对**同辈压力**。"}, {"word": "融洽", "pinyin": "róngqià", "meaning": "on good terms", "collocation": "相处融洽、关系融洽", "replacement": "代替“大家关系很好，不吵架”", "text_type": "自荐信/演讲稿", "before": "我们班级里同学关系特别好，每天过得很快乐。", "after": "在这个优秀而温馨的集体中，我和老师、同学们都相处得**十分融洽**。"}, {"word": "摩擦", "pinyin": "mócā", "meaning": "friction", "collocation": "产生矛盾摩擦、摩擦和矛盾", "replacement": "代替“产生矛盾，吵架”", "text_type": "日记/私人信函", "before": "在合租的宿舍里，我们因为洗衣服的小事经常吵架。", "after": "同在一个寝室生活，因为作息不同偶尔产生一些**矛盾和摩擦**是正常的。"}, {"word": "沟通障碍", "pinyin": "gōutōng zhàng'ài", "meaning": "communication barrier", "collocation": "产生沟通障碍、消除沟通障碍", "replacement": "代替“没办法好好说话”", "text_type": "博客/建议书", "before": "父母天天用命令的语气跟我说话，这让我没办法跟他们好好说话。", "after": "居高临下的态度不仅无法解决代际矛盾，反而会**加剧沟通障碍**。"}], "all_words": [{"word": "代沟", "meaning": "generation gap"}, {"word": "隔阂", "meaning": "estrangement"}, {"word": "摩擦", "meaning": "friction"}, {"word": "和睦", "meaning": "harmonious"}, {"word": "融洽", "meaning": "on good terms"}, {"word": "疏远", "meaning": "drift apart"}, {"word": "亲密", "meaning": "intimate"}, {"word": "攀比", "meaning": "unrealistic comparison"}, {"word": "嫉妒", "meaning": "jealousy"}, {"word": "宽容", "meaning": "tolerance"}, {"word": "谅解", "meaning": "understanding/forgiveness"}, {"word": "互助", "meaning": "mutual help"}, {"word": "人脉", "meaning": "network/connections"}, {"word": "社交", "meaning": "socializing"}, {"word": "圈子", "meaning": "circle"}, {"word": "虚伪", "meaning": "hypocritical"}, {"word": "真诚", "meaning": "sincere"}, {"word": "敷衍", "meaning": "perfunctory"}, {"word": "陪伴", "meaning": "accompany"}, {"word": "倾听", "meaning": "listen attentively"}, {"word": "沟通", "meaning": "communication"}, {"word": "矛盾", "meaning": "contradiction"}, {"word": "化解", "meaning": "resolve"}, {"word": "冲突", "meaning": "conflict"}, {"word": "妥协", "meaning": "compromise"}, {"word": "尊重", "meaning": "respect"}, {"word": "平等", "meaning": "equality"}, {"word": "尊老爱幼", "meaning": "respect the old, love the young"}, {"word": "门当户对", "meaning": "be well-matched in social/economic status"}, {"word": "志同道合", "meaning": "share the same ideals"}]}, {"title": "2. 社区 (Community)", "core_words": [{"word": "归属感", "pinyin": "guīshǔgǎn", "meaning": "sense of belonging", "collocation": "增强归属感、社区归属感", "replacement": "代替“觉得是这个社区的一分子”", "text_type": "提案/演讲稿", "before": "经常和邻居打交道，会让我觉得我是这个社区的人。", "after": "积极参与邻里节等社区公益活动，有助于**增强居民对社区的归属感**。"}, {"word": "弱势群体", "pinyin": "ruòshì qúntǐ", "meaning": "vulnerable groups", "collocation": "关爱弱势群体、帮助弱势群体", "replacement": "代替“残障人、孤单的老人等需要帮助的人”", "text_type": "倡议书/提案", "before": "我们的社区应该多派一些人去给那些不能走路或生病的人送温暖。", "after": "关怀流浪动物和孤寡老人等**社会弱势群体**，是一个城市文明的温度计。"}, {"word": "志愿服务", "pinyin": "zhìyuàn fúwù", "meaning": "volunteer service", "collocation": "参加志愿服务、志愿服务精神", "replacement": "代替“做义工”", "text_type": "自荐信/演讲稿", "before": "我打算在周末去社区图书馆做义工。", "after": "利用周末课余时间参与小区的**垃圾分类志愿服务**，让我觉得生活十分充实。"}, {"word": "凝聚力", "pinyin": "níngjùlì", "meaning": "cohesion", "collocation": "增强社区凝聚力、团队凝聚力", "replacement": "代替“团结在一起的力量”", "text_type": "提案/报告", "before": "我们社区如果多办几个篮球赛，大家就会变得很团结。", "after": "定期举办社区趣味运动会，可以有效拉近邻里关系，**提升社区凝聚力**。"}, {"word": "基础设施", "pinyin": "jīchǔ shèshī", "meaning": "infrastructure", "collocation": "完善基础设施、基础设施落后", "replacement": "代替“路、灯、垃圾桶这些最基本的公共东西”", "text_type": "建议书/报告", "before": "我们小区的公园路坏了，灯也不亮，希望物业修理。", "after": "为了给老年人提供安全的散步环境，居委会正积极**更新小区的公共基础设施**。"}], "all_words": [{"word": "归属感", "meaning": "sense of belonging"}, {"word": "凝聚力", "meaning": "cohesion"}, {"word": "邻里", "meaning": "neighborhood"}, {"word": "互助", "meaning": "help each other"}, {"word": "志愿", "meaning": "volunteer"}, {"word": "奉献", "meaning": "dedicate"}, {"word": "公益", "meaning": "public welfare"}, {"word": "筹款", "meaning": "fundraising"}, {"word": "设施", "meaning": "facilities"}, {"word": "完善", "meaning": "perfect/improve"}, {"word": "破旧", "meaning": "shabby"}, {"word": "改造", "meaning": "renovate"}, {"word": "治安", "meaning": "public security"}, {"word": "巡逻", "meaning": "patrol"}, {"word": "纠纷", "meaning": "dispute"}, {"word": "调解", "meaning": "mediate"}, {"word": "倡议", "meaning": "proposal/initiative"}, {"word": "参与", "meaning": "participate"}, {"word": "融入", "meaning": "integrate"}, {"word": "孤寡老人", "meaning": "childless and widowed elders"}, {"word": "弱势群体", "meaning": "vulnerable groups"}, {"word": "关爱", "meaning": "care for"}, {"word": "捐赠", "meaning": "donate"}, {"word": "基础设施", "meaning": "infrastructure"}, {"word": "改善", "meaning": "improve"}, {"word": "繁华", "meaning": "bustling/prosperous"}, {"word": "宜居", "meaning": "livable"}, {"word": "喧嚣", "meaning": "noisy"}, {"word": "宁静", "meaning": "tranquil"}, {"word": "核心", "meaning": "core/center"}]}, {"title": "3. 教育 (Education)", "core_words": [{"word": "应试教育", "pinyin": "yìngshì jiāoyù", "meaning": "exam-oriented education", "collocation": "应试教育模式、传统的应试教育", "replacement": "代替“为了考试而读书的教育”", "text_type": "辩论稿/评论", "before": "如果学校天天只管学生的考试分数，学生会觉得很累，身体变差。", "after": "传统的**应试教育模式**往往过度注重分数，忽视了学生创造力与心理健康的平衡发展。"}, {"word": "因材施教", "pinyin": "yīncái shījiào", "meaning": "teach according to aptitude", "collocation": "贯彻因材施教的原则、提倡因材施教", "replacement": "代替“根据每个学生的能力不同来教书”", "text_type": "演讲稿/建议书", "before": "老师应该根据每个人的脾气和能力不同，用不同的办法来教我们。", "after": "优秀的教育理念应当承认学生的差异性，真正贯彻**因材施教**的黄金法则。"}, {"word": "批判性思维", "pinyin": "pìpànxìng sīwéi", "meaning": "critical thinking", "collocation": "培养批判性思维、批判性思维能力", "replacement": "代替“不随便相信别人，自己会分析的能力”", "text_type": "演讲稿/推荐信", "before": "IB学校很想教我们学会分析事情的对错，别别人说什么就信什么。", "after": "现代学校教育的重要目标之一，是引导学生学会分析，**建立卓越的批判性思维能力**。"}, {"word": "素质教育", "pinyin": "sùzhì jiāoyù", "meaning": "holistic education", "collocation": "推广素质教育、素质教育的实践", "replacement": "代替“教学生做人、做运动、艺术等全面发展的教育”", "text_type": "建议书/演讲稿", "before": "除了考试，学校还应该多教我们体育、画画和做好人。", "after": "随着**素质教育**的不断深化，艺术与体育学科在高中课程中也越来越受到重视。"}, {"word": "望子成龙", "pinyin": "wàngzǐ chénglóng", "meaning": "expect children to succeed", "collocation": "望子成龙的心切、家长望子成龙", "replacement": "代替“爸爸妈妈极度希望孩子有出息、赚大钱”", "text_type": "日记/书信", "before": "我的父母特别想让我考上名牌大学，这让我每天都很紧张。", "after": "许多家长**望子成龙心切**，往往在无意中给孩子套上了沉重的精神枷锁。"}], "all_words": [{"word": "应试教育", "meaning": "exam-oriented education"}, {"word": "素质教育", "meaning": "holistic education"}, {"word": "填鸭式", "meaning": "spoon-feeding"}, {"word": "启发式", "meaning": "heuristic/inspiring"}, {"word": "因材施教", "meaning": "teach according to aptitude"}, {"word": "拔苗助长", "meaning": "spoil things by excessive enthusiasm"}, {"word": "望子成龙", "meaning": "expect one's child to succeed"}, {"word": "竞争", "meaning": "competition"}, {"word": "激烈", "meaning": "fierce"}, {"word": "内卷", "meaning": "involution/hyper-competition"}, {"word": "减负", "meaning": "reduce burden"}, {"word": "补习班", "meaning": "cram school"}, {"word": "成绩", "meaning": "grades"}, {"word": "衡量", "meaning": "measure"}, {"word": "标准", "meaning": "standard"}, {"word": "创新能力", "meaning": "innovation ability"}, {"word": "批判性思维", "meaning": "critical thinking"}, {"word": "辍学", "meaning": "drop out"}, {"word": "欺凌", "meaning": "bullying"}, {"word": "纪律", "meaning": "discipline"}, {"word": "规范", "meaning": "regulate"}, {"word": "榜样", "meaning": "role model"}, {"word": "潜移默化", "meaning": "imperceptible influence"}, {"word": "引导", "meaning": "guide"}, {"word": "塑造", "meaning": "shape"}, {"word": "德育", "meaning": "moral education"}, {"word": "全面发展", "meaning": "all-round development"}, {"word": "奖学金", "meaning": "scholarship"}, {"word": "负担", "meaning": "burden"}, {"word": "评估", "meaning": "assessment"}]}, {"title": "4. 职场 (The working world)", "core_words": [{"word": "职业规划", "pinyin": "zhíyè guīhuà", "meaning": "career planning", "collocation": "明确的职业规划、制定职业规划", "replacement": "代替“以后想找什么工作的计划”", "text_type": "日记/私人信函", "before": "我现在就要开始想想我以后长大了要做什么工作。", "after": "高中阶段是开展自我认知和探索的重要时期，应尽早**确立清晰的职业规划**。"}, {"word": "兼职", "pinyin": "jiānzhí", "meaning": "part-time job", "collocation": "利用假期做兼职、兼职工作", "replacement": "代替“打零工、赚点外快”", "text_type": "日记/博客", "before": "我打算在暑假去星巴克打零工，赚点零花钱用。", "after": "假期进行**适当的兼职打工**，不仅可以减轻家庭的经济负担，更可以提前接触社会。"}, {"word": "竞争力", "pinyin": "jìngzhēnglì", "meaning": "competitiveness", "collocation": "提升竞争力、职场核心竞争力", "replacement": "代替“比别人强，更容易被录取的能力”", "text_type": "自荐信/推荐信", "before": "如果我会说三种外语，公司会更容易要我。", "after": "熟练使用双语不仅是个人优势，更是全球化人才市场上必不可少的**核心竞争力**。"}, {"word": "团队合作", "pinyin": "tuánduì hézuò", "meaning": "teamwork", "collocation": "团队合作能力、团队合作精神", "replacement": "代替“跟同事们一起合作做事”", "text_type": "自荐信/演讲稿", "before": "在这个课题里，我们必须要配合好其他同学，不能一个人干。", "after": "在未来的职场环境中，拥有出色的**团队合作沟通能力**甚至比专业技能更为关键。"}, {"word": "晋升", "pinyin": "jìnshēng", "meaning": "promotion", "collocation": "获得晋升机会、职位晋升", "replacement": "代替“升官、涨工资、换到更高级职位”", "text_type": "日记/私人信函", "before": "爸爸工作特别努力，上司上个月给他升职了。", "after": "他在公司服务了三年，凭借着出色的业绩，最近终于**获得了总监职位的晋升**。"}], "all_words": [{"word": "谋生", "meaning": "make a living"}, {"word": "简历", "meaning": "resume"}, {"word": "面试", "meaning": "interview"}, {"word": "录取", "meaning": "hire/admit"}, {"word": "淘汰", "meaning": "eliminate"}, {"word": "竞争", "meaning": "competition"}, {"word": "晋升", "meaning": "promotion"}, {"word": "薪酬", "meaning": "salary"}, {"word": "福利", "meaning": "benefits"}, {"word": "剥削", "meaning": "exploit"}, {"word": "加班", "meaning": "work overtime"}, {"word": "过劳", "meaning": "overwork"}, {"word": "压力", "meaning": "pressure"}, {"word": "辞职", "meaning": "resign"}, {"word": "跳槽", "meaning": "job-hopping"}, {"word": "创业", "meaning": "start a business"}, {"word": "风险", "meaning": "risk"}, {"word": "团队合作", "meaning": "teamwork"}, {"word": "领导力", "meaning": "leadership"}, {"word": "执行力", "meaning": "execution ability"}, {"word": "效率", "meaning": "efficiency"}, {"word": "怠工", "meaning": "slack off"}, {"word": "职业规划", "meaning": "career planning"}, {"word": "瓶颈", "meaning": "bottleneck"}, {"word": "退休", "meaning": "retire"}, {"word": "兼职", "meaning": "part-time job"}, {"word": "实习", "meaning": "internship"}, {"word": "经验", "meaning": "experience"}, {"word": "职场", "meaning": "workplace"}, {"word": "人际关系", "meaning": "interpersonal relationships"}]}, {"title": "5. 法律与秩序 (Law and order)", "core_words": [{"word": "遵守", "pinyin": "zūnshǒu", "meaning": "comply with", "collocation": "遵守校规、自觉遵守法律", "replacement": "代替“听学校的话，不违法”", "text_type": "倡议书/发言稿", "before": "每一个同学在学校里，都要听学校的话，按规定做事。", "after": "在社会生活中，**自觉遵守交通规则与法律规范**是每个公民应尽的义务。"}, {"word": "维权", "pinyin": "wéiquán", "meaning": "defend rights", "collocation": "依法维权、维权渠道", "replacement": "代替“跟骗子打官司，要回自己的利益”", "text_type": "文章/建议书", "before": "如果在店里买到了假的或者是过期的面包，我们要去消协投诉，要回公道。", "after": "当消费者的合法权益受侵害时，应保持理智，勇敢利用法律武器**依法维权**。"}, {"word": "公平与正义", "pinyin": "gōngpíng yǔ zhèngyì", "meaning": "fairness and justice", "collocation": "维护公平与正义、社会的公平与正义", "replacement": "代替“人人都一样待遇，讲道理”", "text_type": "演讲稿/辩论稿", "before": "只有法律讲道理，大家的生活才会有安全感。", "after": "法治的力量在于保护弱者，**彰显社会的公平与正义**。"}, {"word": "道德约束", "pinyin": "dàodé yuēshù", "meaning": "moral constraint", "collocation": "自我道德约束、道德约束力", "replacement": "代替“心里好坏标准的管束”", "text_type": "辩论稿/评论", "before": "有些事情虽然警察不抓你，但你自己心里要知道不能做。", "after": "在法律管不到的灰色地带，人们的言行主要依靠**自我的道德约束**。"}, {"word": "严惩", "pinyin": "yánchéng", "meaning": "punish severely", "collocation": "予以严惩、法律严惩", "replacement": "代替“狠狠地处罚，关进监狱”", "text_type": "文章/辩论稿", "before": "对于那些故意乱丢毒垃圾的人，国家应该把他们狠狠关进牢里罚大钱。", "after": "对于那些恶意污染水源、危害公共安全的违法行为，必须**予以严惩，决不姑息**。"}], "all_words": [{"word": "规则", "meaning": "rules"}, {"word": "约束", "meaning": "restrict/bind"}, {"word": "遵守", "meaning": "comply with"}, {"word": "违背", "meaning": "violate"}, {"word": "惩罚", "meaning": "punish"}, {"word": "制裁", "meaning": "sanction"}, {"word": "犯罪", "meaning": "crime"}, {"word": "盗窃", "meaning": "theft"}, {"word": "欺诈", "meaning": "fraud"}, {"word": "警戒", "meaning": "alert/warn"}, {"word": "巡逻", "meaning": "patrol"}, {"word": "公平", "meaning": "fairness"}, {"word": "正义", "meaning": "justice"}, {"word": "权利", "meaning": "rights"}, {"word": "义务", "meaning": "obligations"}, {"word": "侵犯", "meaning": "infringe"}, {"word": "维权", "meaning": "defend one's rights"}, {"word": "纠纷", "meaning": "dispute"}, {"word": "诉讼", "meaning": "lawsuit"}, {"word": "法庭", "meaning": "court"}, {"word": "审判", "meaning": "trial"}, {"word": "秩序", "meaning": "order"}, {"word": "混乱", "meaning": "chaos"}, {"word": "道德", "meaning": "morality"}, {"word": "底线", "meaning": "bottom line"}, {"word": "法律盲区", "meaning": "legal blind spot"}, {"word": "严惩", "meaning": "punish severely"}, {"word": "宽大", "meaning": "lenient"}, {"word": "预防", "meaning": "prevent"}, {"word": "治安", "meaning": "public security"}]}]}, {"theme": "🟤 主题五：共享地球 (Sharing the Planet)", "templates": ["保护地球生态环境与减缓全球变暖已是**迫在眉睫、刻不容缓**的任务，每一位社会成员都应当从拒绝一次性塑料制品、践行垃圾分类做起。", "全球化趋势作为经济和文化交融的引擎，在让全球供应链紧密接轨的同时，也对本土非物质文化遗产带来了重大的**同化冲击**。", "消除各阶层的性别与种族歧视，积极扶助边缘化弱势群体，是跨越贫富鸿沟、实现社会公平与长治久安的核心必修课。"], "idioms": [{"idiom": "刻不容缓", "meaning": "allow of no delay; be of extreme urgency", "usage": "控制城市白色垃圾的蔓延已经到了**刻不容缓**的地步。"}, {"idiom": "迫在眉睫", "meaning": "imminent; pressingly close", "usage": "气温持续升高导致的海平面上升，对于低地国家来说是**迫在眉睫**的灾难。"}, {"idiom": "携手共进", "meaning": "join hands and advance together", "usage": "面对气候变化这道全球性考题，唯有各国**携手共进**才能共度难关。"}, {"idiom": "互利共赢", "meaning": "mutually beneficial and win-win", "usage": "建立多元包容的全球贸易体系，能够为南北国家创造**互利共赢**的局面。"}], "subtopics": [{"title": "1. 环境 (The environment)", "core_words": [{"word": "可持续发展", "pinyin": "kěchíxù fāzhǎn", "meaning": "sustainable development", "collocation": "践行可持续发展、可持续发展目标", "replacement": "代替“对子孙后代好的环保发展方式”", "text_type": "建议书/演讲稿", "before": "如果把树都砍光了，以后的人就没有木头用了，我们要环保。", "after": "我们绝不能以牺牲生态环境为代价去换取短期的经济增长，必须坚持走**可持续发展道路**。"}, {"word": "垃圾分类", "pinyin": "lājī fēnlèi", "meaning": "garbage sorting", "collocation": "推行垃圾分类、垃圾分类习惯", "replacement": "代替“把垃圾分一分再扔”", "text_type": "倡议书/宣传海报", "before": "学校食堂应该放不同颜色的垃圾桶，让大家把垃圾分开了扔。", "after": "在校园里**推广垃圾分类习惯**，是提升全校师生绿色低碳素养的第一步。"}, {"word": "迫在眉睫", "pinyin": "pòzài méijié", "meaning": "imminent", "collocation": "任务迫在眉睫、迫在眉睫的危机", "replacement": "代替“特别着急、马上就要做”", "text_type": "演讲稿/倡议书", "before": "现在全球变暖特别急了，我们必须马上少排放废气。", "after": "控制温室气体排放，携手拯救日渐脆弱的生态地球，已经是一个**迫在眉睫的任务**。"}, {"word": "低碳", "pinyin": "dītàn", "meaning": "low carbon", "collocation": "倡导低碳生活、绿色低碳交通", "replacement": "代替“省电、少开车、保护地球的环保生活”", "text_type": "倡议书/宣传海报", "before": "我们应该多坐公交车、少坐私家车，少用塑料袋，这样对地球好。", "after": "多坐公共交通出行，践行**绿色低碳生活**，是普通公民对抗环境恶化的最强武器。"}, {"word": "节能减排", "pinyin": "jiénéng jiǎnpái", "meaning": "energy saving and emission reduction", "collocation": "落实节能减排、节能减排政策", "replacement": "代替“少用电，少排废气废水”", "text_type": "建议书/报告", "before": "学校应该把不用的灯关掉，水龙头扭紧，少浪费水和电。", "after": "学校食堂和教学楼应当引进智能化传感器，积极**落实校园节能减排措施**。"}], "all_words": [{"word": "恶化", "meaning": "deteriorate"}, {"word": "污染", "meaning": "pollution"}, {"word": "排放", "meaning": "emit"}, {"word": "废气", "meaning": "exhaust gas"}, {"word": "废水", "meaning": "wastewater"}, {"word": "垃圾分类", "meaning": "garbage sorting"}, {"word": "回收", "meaning": "recycle"}, {"word": "降解", "meaning": "degrade"}, {"word": "白色污染", "meaning": "white/plastic pollution"}, {"word": "植被", "meaning": "vegetation"}, {"word": "破坏", "meaning": "destroy"}, {"word": "砍伐", "meaning": "deforestation"}, {"word": "荒漠化", "meaning": "desertification"}, {"word": "治理", "meaning": "control/treat"}, {"word": "绿化", "meaning": "afforestation"}, {"word": "环保", "meaning": "environmental protection"}, {"word": "意识", "meaning": "awareness"}, {"word": "倡导", "meaning": "advocate"}, {"word": "节能减排", "meaning": "energy saving and emission reduction"}, {"word": "低碳", "meaning": "low carbon"}, {"word": "碳中和", "meaning": "carbon neutral"}, {"word": "可持续", "meaning": "sustainable"}, {"word": "严峻", "meaning": "severe"}, {"word": "刻不容缓", "meaning": "delay is not an option"}, {"word": "迫在眉睫", "meaning": "imminent"}, {"word": "呼吁", "meaning": "appeal"}, {"word": "携手", "meaning": "hand in hand"}, {"word": "保护", "meaning": "protect"}, {"word": "污染源", "meaning": "source of pollution"}, {"word": "净化", "meaning": "purify"}]}, {"title": "2. 气候与自然地理 (Climate & Physical geography)", "core_words": [{"word": "全球变暖", "pinyin": "quánqiú biànnuǎn", "meaning": "global warming", "collocation": "减缓全球变暖、全球变暖的影响", "replacement": "代替“天气变热了”", "text_type": "文章/演讲稿", "before": "因为全球天气变热了，所以南北极的冰川都融化了。", "after": "北极圈温度屡创新高以及冰川加速融化，都是**全球变暖不容忽视的警钟**。"}, {"word": "栖息地", "pinyin": "qīxīdì", "meaning": "habitat", "collocation": "保护栖息地、野生动物栖息地", "replacement": "代替“动物住的森林、河边等家”", "text_type": "宣传海报/倡议书", "before": "因为我们盖了太多大房子和工厂，野生熊猫都没有地方住，快饿死了。", "after": "林业开发必须设立禁伐区，以防珍稀大熊猫的**野生栖息地遭到碎片化割裂**。"}, {"word": "濒危动物", "pinyin": "bīnwēi dòngwù", "meaning": "endangered animals", "collocation": "拯救濒危动物、濒危动物目录", "replacement": "代替“快要死光了的动物”", "text_type": "宣传海报/演讲稿", "before": "藏羚羊快死光了，我们要派警察去管管那些开枪杀羊的人。", "after": "严厉打击非法偷猎，设立专项自然保护区，能有效**阻止这些濒危动物走向灭绝**。"}, {"word": "极端天气", "pinyin": "jíduān tiānqì", "meaning": "extreme weather", "collocation": "防范极端天气、极端天气频发", "replacement": "代替“忽然很大雨，或者很大风的奇怪坏天气”", "text_type": "文章/报告", "before": "这几年世界上突然有很多地方干旱或者大台风，非常反常。", "after": "近年来，暴雨、干旱和超级台风等**极端天气频发**，给各国的农业生产带来了极大考验。"}, {"word": "资源枯竭", "pinyin": "zīyuán kūjié", "meaning": "resource depletion", "collocation": "面临资源枯竭、地下资源枯竭", "replacement": "代替“地球上的石油煤炭等煤矿被挖光了”", "text_type": "演讲稿/文章", "before": "如果再不加节制地挖煤和抽石油，这些东西很快就会用完没有了。", "after": "如果我们继续无休止地向大自然索取，必将面临**能源和资源枯竭的灭顶之灾**。"}], "all_words": [{"word": "变暖", "meaning": "warming"}, {"word": "温室效应", "meaning": "greenhouse effect"}, {"word": "极端", "meaning": "extreme"}, {"word": "天气", "meaning": "weather"}, {"word": "灾害", "meaning": "disaster"}, {"word": "频发", "meaning": "occur frequently"}, {"word": "旱灾", "meaning": "drought"}, {"word": "洪涝", "meaning": "flood"}, {"word": "台风", "meaning": "typhoon"}, {"word": "海啸", "meaning": "tsunami"}, {"word": "冰川", "meaning": "glacier"}, {"word": "融化", "meaning": "melt"}, {"word": "海平面", "meaning": "sea level"}, {"word": "上升", "meaning": "rise"}, {"word": "威胁", "meaning": "threat"}, {"word": "适应", "meaning": "adapt"}, {"word": "减缓", "meaning": "mitigate"}, {"word": "栖息地", "meaning": "habitat"}, {"word": "丧失", "meaning": "loss"}, {"word": "濒危", "meaning": "endangered"}, {"word": "灭绝", "meaning": "extinction"}, {"word": "保护区", "meaning": "reserve/sanctuary"}, {"word": "壮丽", "meaning": "magnificent"}, {"word": "辽阔", "meaning": "vast"}, {"word": "险峻", "meaning": "steep"}, {"word": "独特", "meaning": "unique"}, {"word": "地貌", "meaning": "landform"}, {"word": "资源", "meaning": "resources"}, {"word": "枯竭", "meaning": "dry up/exhaust"}, {"word": "挖掘", "meaning": "excavate/mine"}]}, {"title": "3. 全球化 (Globalization)", "core_words": [{"word": "跨国", "pinyin": "kuàguó", "meaning": "transnational", "collocation": "跨国交流、跨国企业", "replacement": "代替“跟很多别的国家有关系”", "text_type": "演讲稿/文章", "before": "学校多组织跟别的国家学校的学生一起做课题，能让我们学到新东西。", "after": "频繁的**跨国青年文化交流项目**，能消除地域隔离带来的成见与刻板印象。"}, {"word": "文化融合", "pinyin": "wénhuà rónghé", "meaning": "cultural integration", "collocation": "促进文化融合、多元文化融合", "replacement": "代替“中西方文化结合在一起”", "text_type": "文章/博客", "before": "在上海的洋人过春节，中国人过圣诞，中西节日结合挺好的。", "after": "全球化潮流不仅带来了经济接轨，更有力地**促进了东西方的深层文化融合**。"}, {"word": "冲击", "pinyin": "chōngjí", "meaning": "impact", "collocation": "带来巨大冲击、经受强烈冲击", "replacement": "代替“坏的影响，打破了原样”", "text_type": "辩论稿/评论", "before": "自从肯德基和麦当劳来了之后，中国传统小吃店都没生意了。", "after": "廉价洋快餐的大范围渗透，对我国传统本土餐饮业**带来了巨大冲击**。"}, {"word": "互利共赢", "pinyin": "hùlì gòngyíng", "meaning": "mutually beneficial", "collocation": "实现互利共赢、互利共赢的合作", "replacement": "代替“大家都得到好处，双赢”", "text_type": "演讲稿/建议书", "before": "国与国之间多做贸易，大家都能发财买好东西，是双赢的好事。", "after": "唯有秉持开放包容的全球贸易合作方针，各国才能**在激烈的国际分工中实现互利共赢**。"}, {"word": "本土化", "pinyin": "běntǔhuà", "meaning": "localization", "collocation": "推行本土化、本土化策略", "replacement": "代替“为了迎合当地人的习惯做修改”", "text_type": "文章/评论", "before": "麦当劳在中国卖油条，在美国不卖，这就是迎合中国人的生活方式。", "after": "许多跨国消费品牌通过**推行巧妙的本土化策略**，成功敲开了中国市场的大门。"}], "all_words": [{"word": "融合", "meaning": "integration"}, {"word": "交流", "meaning": "exchange"}, {"word": "贸易", "meaning": "trade"}, {"word": "跨国", "meaning": "transnational"}, {"word": "冲击", "meaning": "impact"}, {"word": "垄断", "meaning": "monopoly"}, {"word": "竞争", "meaning": "competition"}, {"word": "机遇", "meaning": "opportunity"}, {"word": "挑战", "meaning": "challenge"}, {"word": "多元", "meaning": "diverse"}, {"word": "单一", "meaning": "single/homogeneous"}, {"word": "同化", "meaning": "assimilation"}, {"word": "本土化", "meaning": "localization"}, {"word": "抵制", "meaning": "boycott"}, {"word": "依赖", "meaning": "dependence"}, {"word": "互利共赢", "meaning": "mutually beneficial"}, {"word": "摩擦", "meaning": "friction"}, {"word": "关税", "meaning": "tariff"}, {"word": "供应链", "meaning": "supply chain"}, {"word": "繁荣", "meaning": "prosperity"}, {"word": "衰退", "meaning": "recession"}, {"word": "趋势", "meaning": "trend"}, {"word": "席卷", "meaning": "sweep across"}, {"word": "视野", "meaning": "vision/horizon"}, {"word": "桥梁", "meaning": "bridge"}, {"word": "接轨", "meaning": "integrate with"}, {"word": "互联互通", "meaning": "interconnectivity"}, {"word": "差距", "meaning": "gap"}, {"word": "缩小", "meaning": "narrow down"}, {"word": "扩大", "meaning": "widen"}]}, {"title": "4. 平等 (Equality)", "core_words": [{"word": "消除歧视", "pinyin": "xiāochú qíshì", "meaning": "eliminate discrimination", "collocation": "消除歧视与偏见、消除性别歧视", "replacement": "代替“不看不起穷人，黑人，女人”", "text_type": "倡议书/演讲稿", "before": "社会不应该看不起残疾人和女人，应该给她们好机会。", "after": "构建文明包容的现代社会，其首要前提是**彻底消除职场和校园中的性别歧视**。"}, {"word": "贫富悬殊", "pinyin": "pínfù xuánshū", "meaning": "huge gap between rich and poor", "collocation": "缩小贫富悬殊、贫富悬殊问题严重", "replacement": "代替“穷人太穷，富人太富的巨大鸿沟”", "text_type": "文章/辩论稿", "before": "有的有钱人天天坐豪车，有的穷人连饭都吃不饱，这个社会差别太大了。", "after": "通过合理的税收调节和教育资源倾斜，国家正在逐步**缓解城市与农村之间的贫富悬殊**。"}, {"word": "边缘化", "pinyin": "biānyuánhuà", "meaning": "marginalized", "collocation": "被边缘化、面临被边缘化的危机", "replacement": "代替“被人遗忘了，在社会角落没人管”", "text_type": "建议书/博客", "before": "现在的商店都不用现金了，让那些不会用微信的爷爷奶奶生活很惨。", "after": "如果数字化升级不向下兼容老年人群体，就会导致他们在数字时代中**被彻底边缘化**。"}, {"word": "刻板印象", "pinyin": "kèbǎn yìnxiàng", "meaning": "stereotype", "collocation": "打破刻板印象、性别刻板印象", "replacement": "代替“以前老旧的固定偏见”", "text_type": "演讲稿/文章", "before": "很多人觉得做家务一定是女人的事，男人不应该干，这是旧偏见。", "after": "我们需要通过科学的媒介宣传，逐步**打破大众心目中根深蒂固的性别刻板印象**。"}, {"word": "同工同酬", "pinyin": "tónggōng tóngchóu", "meaning": "equal pay for equal work", "collocation": "实现同工同酬、保障同工同酬", "replacement": "代替“干一样活的男的女的，拿一样多的薪水”", "text_type": "文章/倡议书", "before": "在同一个工厂干一样的流水线活，女工挣得不能比男工少，这才是讲平等。", "after": "在职场招聘和绩效分配中，全面**保障男女员工同工同酬**，是企业社会责任的体现。"}], "all_words": [{"word": "歧视", "meaning": "discrimination"}, {"word": "偏见", "meaning": "prejudice"}, {"word": "刻板印象", "meaning": "stereotype"}, {"word": "弱势", "meaning": "vulnerable"}, {"word": "贫富悬殊", "meaning": "huge gap between rich and poor"}, {"word": "差距", "meaning": "gap"}, {"word": "公平", "meaning": "fairness"}, {"word": "机会", "meaning": "opportunity"}, {"word": "均等", "meaning": "equal"}, {"word": "性别", "meaning": "gender"}, {"word": "种族", "meaning": "race"}, {"word": "阶层", "meaning": "social class"}, {"word": "跨越", "meaning": "bridge/cross over"}, {"word": "扶贫", "meaning": "poverty alleviation"}, {"word": "援助", "meaning": "aid"}, {"word": "呼吁", "meaning": "appeal"}, {"word": "争取", "meaning": "strive for"}, {"word": "权利", "meaning": "rights"}, {"word": "尊重", "meaning": "respect"}, {"word": "包容", "meaning": "inclusiveness"}, {"word": "倾听", "meaning": "listen"}, {"word": "忽视", "meaning": "ignore"}, {"word": "边缘化", "meaning": "marginalize"}, {"word": "剥夺", "meaning": "deprive"}, {"word": "享有", "meaning": "enjoy rights"}, {"word": "保障", "meaning": "guarantee"}, {"word": "完善", "meaning": "perfect/improve"}, {"word": "消除", "meaning": "eliminate"}, {"word": "鸿沟", "meaning": "chasm/gap"}, {"word": "待遇", "meaning": "treatment"}]}, {"title": "5. 和平与冲突 (Peace and conflict)", "core_words": [{"word": "争端", "pinyin": "zhēngduān", "meaning": "dispute", "collocation": "化解领土争端、贸易争端", "replacement": "代替“吵架和斗争”", "text_type": "评论文章/辩论稿", "before": "两个国家因为地界划分天天打仗，死伤了很多人。", "after": "国际社会应当积极斡旋，倡导通过和平谈判方式**化解邻国之间的领土争端**。"}, {"word": "难民", "pinyin": "nànmín", "meaning": "refugee", "collocation": "安置战争难民、难民危机", "replacement": "代替“因为打仗无家可归，逃到外国去的人”", "text_type": "倡议书/文章", "before": "打仗让很多人没有家住，只能逃荒到邻近的国家借人家的地盘住。", "after": "该地区爆发武装冲突后，数十万**无家可归的战争难民**正涌入邻国边境。"}, {"word": "互信", "pinyin": "hùxìn", "meaning": "mutual trust", "collocation": "建立互信机制、缺乏政治互信", "replacement": "代替“相信对方，互相不猜疑”", "text_type": "演讲稿/信函", "before": "两个国家如果互相天天猜疑，是没办法好好做生意和保护生态环境的。", "after": "没有在相互尊重的基础上**重建政治互信**，国际社会就很难协同解决碳排放危机。"}, {"word": "谈判", "pinyin": "tánpàn", "meaning": "negotiation", "collocation": "进行和平谈判、谈判桌上", "replacement": "代替“坐在一起开会，商量解决办法”", "text_type": "文章/报告", "before": "与其出兵打仗，不如坐在一起开会商量个大家都同意的法子。", "after": "双方代表在多次博弈后重新回到**谈判桌上**，最终达成了一致停火协议。"}, {"word": "威胁", "pinyin": "wēixie", "meaning": "threat", "collocation": "带来严重威胁、面临恐怖威胁", "replacement": "代替“非常大的危险和坏处”", "text_type": "倡议书/演讲稿", "before": "乱砍乱伐让泥石流很容易滑下来，这给山脚下的老百姓带来了大危险。", "after": "生态环境的持续恶化，已对周边社区的公共安全**带来了最直接的威胁**。"}], "all_words": [{"word": "争端", "meaning": "dispute"}, {"word": "摩擦", "meaning": "friction"}, {"word": "谈判", "meaning": "negotiation"}, {"word": "妥协", "meaning": "compromise"}, {"word": "调解", "meaning": "mediation"}, {"word": "冲突", "meaning": "conflict"}, {"word": "战争", "meaning": "war"}, {"word": "灾难", "meaning": "disaster"}, {"word": "难民", "meaning": "refugee"}, {"word": "流离失所", "meaning": "destitute and homeless"}, {"word": "援助", "meaning": "assistance"}, {"word": "捐赠", "meaning": "donation"}, {"word": "谴责", "meaning": "condemn"}, {"word": "制裁", "meaning": "sanction"}, {"word": "倡导", "meaning": "advocate"}, {"word": "和谐", "meaning": "harmony"}, {"word": "稳定", "meaning": "stability"}, {"word": "动荡", "meaning": "turbulence"}, {"word": "动乱", "meaning": "turmoil"}, {"word": "恐怖主义", "meaning": "terrorism"}, {"word": "威胁", "meaning": "threat"}, {"word": "安全", "meaning": "security"}, {"word": "防范", "meaning": "prevent"}, {"word": "协议", "meaning": "agreement"}, {"word": "缔结", "meaning": "conclude a treaty"}, {"word": "联盟", "meaning": "alliance"}, {"word": "共存", "meaning": "coexistence"}, {"word": "互信", "meaning": "mutual trust"}, {"word": "破裂", "meaning": "breakdown"}, {"word": "牺牲", "meaning": "sacrifice"}]}]}];
+    </script>
+
+    <!-- App Logic -->
+    <script>
+        // Progress storage key
+        const STORAGE_KEY = 'ib_vocab_mastery_tracker';
+        let masteredWords = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+
+        // Active state
+        let currentThemeIndex = 0;
+        let currentFlashcardIndex = 0;
+        let activeFlashcards = [];
+        
+        // Quiz states
+        let quizQuestions = [];
+        let currentQuizIndex = 0;
+        let quizScore = 0;
+        let quizHistory = [];
+
+        // App Initializer
+        window.addEventListener('DOMContentLoaded', () => {
+            initApp();
+            
+            // Register Keyboard Listeners
+            document.addEventListener('keydown', (e) => {
+                const activeView = document.querySelector('.view-section.active').id;
+                if (activeView === 'flashcards-view') {
+                    if (e.code === 'Space') {
+                        e.preventDefault();
+                        flipCard();
+                    } else if (e.code === 'ArrowLeft') {
+                        prevFlashcard(e);
+                    } else if (e.code === 'ArrowRight') {
+                        nextFlashcard(e);
+                    } else if (e.code === 'KeyM') {
+                        markFlashcardMastered(e);
+                    } else if (e.code === 'KeyR') {
+                        markFlashcardReview(e);
+                    }
+                }
+            });
+        });
+
+        function initApp() {
+            renderDashboard();
+            initFilters();
+            filterVocab();
+            initFlashcardsOptions();
+            initFlashcards();
+            renderExportHub();
+            updateGlobalStats();
+        }
+
+        // Dark/Light Theme
+        function toggleTheme() {
+            const currentTheme = document.body.getAttribute('data-theme');
+            const targetTheme = currentTheme === 'light' ? 'dark' : 'light';
+            document.body.setAttribute('data-theme', targetTheme);
+            localStorage.setItem('app_theme', targetTheme);
+        }
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem('app_theme') || 'dark';
+        document.body.setAttribute('data-theme', savedTheme);
+
+        // Switch Navigation Views
+        function switchView(viewName) {
+            document.querySelectorAll('.view-section').forEach(sec => sec.classList.remove('active'));
+            document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+            
+            const viewMap = {
+                'dashboard': 'dashboard-view',
+                'browser': 'browser-view',
+                'flashcards': 'flashcards-view',
+                'quiz': 'quiz-view',
+                'export': 'export-view'
+            };
+
+            document.getElementById(viewMap[viewName]).classList.add('active');
+            
+            // Find navigation button
+            const navButtons = document.querySelectorAll('nav .nav-btn');
+            if (viewName === 'dashboard') navButtons[0].classList.add('active');
+            else if (viewName === 'browser') navButtons[1].classList.add('active');
+            else if (viewName === 'flashcards') navButtons[2].classList.add('active');
+            else if (viewName === 'quiz') {
+                navButtons[3].classList.add('active');
+                startQuizMode(); // Init fresh quiz
+            }
+            else if (viewName === 'export') navButtons[4].classList.add('active');
+
+            // Update stats when returning to dashboard
+            if (viewName === 'dashboard') {
+                renderDashboard();
+                updateGlobalStats();
+            }
+        }
+
+        function updateGlobalStats() {
+            let total = 750;
+            let masteredCount = Object.keys(masteredWords).length;
+            
+            document.getElementById('global-total-words').textContent = total;
+            document.getElementById('global-mastered-words').textContent = masteredCount;
+            
+            let rate = total > 0 ? Math.round((masteredCount / total) * 100) : 0;
+            document.getElementById('global-mastery-rate').textContent = rate + '%';
+        }
+
+        // Save Word Mastery
+        function toggleWordMastery(word, isMastered) {
+            if (isMastered) {
+                masteredWords[word] = true;
+            } else {
+                delete masteredWords[word];
+            }
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(masteredWords));
+            updateGlobalStats();
+        }
+
+        // Render Dashboard Theme Cards
+        function renderDashboard() {
+            const grid = document.getElementById('themes-dashboard-grid');
+            grid.innerHTML = '';
+            
+            vocabData.forEach((theme, index) => {
+                // Count words and mastered
+                let totalThemeWords = 0;
+                let masteredThemeWords = 0;
+                
+                theme.subtopics.forEach(sub => {
+                    sub.all_words.forEach(w => {
+                        totalThemeWords++;
+                        if (masteredWords[w.word]) masteredThemeWords++;
+                    });
+                });
+                
+                let pct = totalThemeWords > 0 ? Math.round((masteredThemeWords / totalThemeWords) * 100) : 0;
+                
+                const card = document.createElement('div');
+                card.className = 'theme-card';
+                card.setAttribute('data-theme-idx', index);
+                
+                // Construct badges
+                let subBadges = theme.subtopics.map(sub => `<span class="subtopic-badge" onclick="jumpToSubtopic(${index}, '${sub.title}')">📄 ${sub.title}</span>`).join('');
+
+                card.innerHTML = `
+                    <div class="theme-card-header">
+                        <span class="theme-card-title">${theme.theme}</span>
+                        <div class="theme-progress">
+                            <div class="progress-bar-bg">
+                                <div class="progress-bar-fill" style="width: ${pct}%;"></div>
+                            </div>
+                            <span>${masteredThemeWords}/${totalThemeWords} (${pct}%)</span>
+                        </div>
+                    </div>
+                    <div class="theme-card-body">
+                        <p class="theme-card-desc"><strong>万能模板句：</strong>${theme.templates[0] || '暂无描述'}</p>
+                        <div class="theme-subtopics-list">
+                            ${subBadges}
+                        </div>
+                    </div>
+                    <div class="theme-card-footer">
+                        <button class="btn btn-primary" onclick="startThemeFlashcards(${index})">🃏 卡片速记</button>
+                        <button class="btn" onclick="startThemeQuiz(${index})">✍️ 主题自测</button>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function jumpToSubtopic(themeIdx, subTitle) {
+            switchView('browser');
+            document.getElementById('theme-filter').value = themeIdx;
+            filterVocab();
+            // Scroll to the subtopic header
+            setTimeout(() => {
+                const elements = document.getElementsByTagName('h3');
+                for (let el of elements) {
+                    if (el.textContent.includes(subTitle)) {
+                        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        el.style.color = 'var(--primary)';
+                        setTimeout(() => el.style.color = '', 2000);
+                        break;
+                    }
+                }
+            }, 100);
+        }
+
+        function startThemeFlashcards(themeIdx) {
+            switchView('flashcards');
+            document.getElementById('flashcard-theme-select').value = themeIdx;
+            initFlashcards();
+        }
+
+        function startThemeQuiz(themeIdx) {
+            switchView('quiz');
+            startQuizMode(themeIdx);
+        }
+
+        // Filters initialization for Vocabulary Browser
+        function initFilters() {
+            const themeFilter = document.getElementById('theme-filter');
+            themeFilter.innerHTML = '<option value="all">显示全部主题</option>';
+            
+            vocabData.forEach((theme, index) => {
+                const opt = document.createElement('option');
+                opt.value = index;
+                opt.textContent = theme.theme.replace(/^[🟢🟡🔵🟠🟤]\s+/, '');
+                themeFilter.appendChild(opt);
+            });
+        }
+
+        // Render & Filter Vocabulary Browser
+        function filterVocab() {
+            const searchVal = document.getElementById('search-input').value.toLowerCase().trim();
+            const themeFilterVal = document.getElementById('theme-filter').value;
+            const coreOnly = document.getElementById('core-only-toggle').checked;
+            
+            const container = document.getElementById('vocab-browser-list');
+            container.innerHTML = '';
+            
+            vocabData.forEach((theme, themeIdx) => {
+                // Filter by theme
+                if (themeFilterVal !== 'all' && themeFilterVal != themeIdx) return;
+                
+                let themeHtml = '';
+                
+                theme.subtopics.forEach(sub => {
+                    let filteredWords = [];
+                    
+                    if (coreOnly) {
+                        // Core detailed words only
+                        filteredWords = sub.core_words.filter(w => {
+                            return w.word.includes(searchVal) || 
+                                   w.pinyin.toLowerCase().includes(searchVal) || 
+                                   w.meaning.toLowerCase().includes(searchVal);
+                        });
+                    } else {
+                        // All 30 words
+                        filteredWords = sub.all_words.filter(w => {
+                            return w.word.includes(searchVal) || 
+                                   w.meaning.toLowerCase().includes(searchVal);
+                        });
+                    }
+                    
+                    if (filteredWords.length === 0) return;
+                    
+                    let cardsHtml = '';
+                    if (coreOnly) {
+                        filteredWords.forEach(w => {
+                            let checked = masteredWords[w.word] ? 'checked' : '';
+                            cardsHtml += `
+                                <div class="vocab-detail-card" onclick="openWordDrawer('${w.word.replace(/'/g, "\\'")}')">
+                                    <div class="detail-header">
+                                        <div class="detail-chinese-pinyin">
+                                            <span class="detail-chinese">${w.word}</span>
+                                            <span class="detail-pinyin">${w.pinyin}</span>
+                                        </div>
+                                        <span class="detail-english">${w.meaning}</span>
+                                    </div>
+                                    <div style="display:flex; gap:0.4rem; flex-wrap:wrap; margin-top:0.4rem;">
+                                        <span style="font-size:0.7rem; background-color:rgba(59,130,246,0.12); color:var(--primary); padding:0.15rem 0.35rem; border-radius:4px; font-weight:600;">替换：${w.replacement}</span>
+                                        <span style="font-size:0.7rem; background-color:var(--border-color); color:var(--text-secondary); padding:0.15rem 0.35rem; border-radius:4px; font-weight:600;">文体：${w.text_type}</span>
+                                    </div>
+                                    <div class="detail-meta-group">
+                                        <span class="detail-meta-title">常用搭配</span>
+                                        <span class="detail-meta-value">${w.collocation}</span>
+                                    </div>
+                                    <div class="detail-meta-group">
+                                        <span class="detail-meta-title">提分句式对比</span>
+                                        <span class="detail-meta-value" style="font-size:0.8rem; display:flex; flex-direction:column; gap:0.25rem; background-color:var(--bg-color); padding:0.5rem; border-radius:4px;">
+                                            <span style="color:#ef4444; font-weight:500;">❌ 低分：${w.before}</span>
+                                            <span style="color:#10b981; font-weight:600;">✅ 高分：${w.after.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')}</span>
+                                        </span>
+                                    </div>
+                                    <input type="checkbox" class="mastery-checkbox" ${checked} onclick="event.stopPropagation(); toggleWordMastery('${w.word.replace(/'/g, "\\'")}', this.checked)" title="标记为掌握">
+                                </div>
+                            `;
+                        });
+                    } else {
+                        filteredWords.forEach(w => {
+                            let checked = masteredWords[w.word] ? 'checked' : '';
+                            let clickAction = `onclick="openWordDrawer('${w.word.replace(/'/g, "\\'")}')"`;
+                            cardsHtml += `
+                                <div class="vocab-mini-card" ${clickAction}>
+                                    <span class="mini-card-chinese">
+                                        <input type="checkbox" ${checked} onclick="event.stopPropagation(); toggleWordMastery('${w.word.replace(/'/g, "\\'")}', this.checked)" style="margin-right: 0.5rem; cursor: pointer;">
+                                        ${w.word}
+                                    </span>
+                                    <span class="mini-card-english">${w.meaning}</span>
+                                </div>
+                            `;
+                        });
+                    }
+                                        themeHtml += `
+                        <h3 class="subtopic-group-header">📄 ${sub.title} (${filteredWords.length} 词)</h3>
+                        <div class="vocab-cards-grid">
+                            ${cardsHtml}
+                        </div>
+                    `;
+                });
+                
+                if (themeHtml) {
+                    const themeSection = document.createElement('div');
+                    themeSection.style.marginBottom = '2.5rem';
+                    themeSection.innerHTML = `
+                        <h2 style="font-size: 1.35rem; font-weight:700; margin-bottom:1rem; border-left: 4px solid var(--primary); padding-left: 0.75rem;">${theme.theme}</h2>
+                        ${themeHtml}
+                    `;
+                    container.appendChild(themeSection);
+                }
+            });
+            
+            if (container.innerHTML === '') {
+                container.innerHTML = '<div style="text-align:center; padding: 3rem; color: var(--text-secondary);">没有找到符合条件的词汇</div>';
+            }
+        }
+
+        // Helper to find word details
+        function findWordDetails(word) {
+            for (const theme of vocabData) {
+                for (const sub of theme.subtopics) {
+                    const coreMatch = sub.core_words.find(cw => cw.word === word);
+                    if (coreMatch) return { type: 'core', ...coreMatch };
+                    const simpleMatch = sub.all_words.find(aw => aw.word === word);
+                    if (simpleMatch) return { type: 'simple', ...simpleMatch };
+                }
+            }
+            return null;
+        }
+
+        // Modal drawers
+        let drawerActiveWord = "";
+        function openWordDrawer(word) {
+            const details = findWordDetails(word);
+            if (!details) return;
+
+            drawerActiveWord = word;
+            document.getElementById('drawer-chinese').textContent = word;
+
+            if (details.type === 'core') {
+                document.getElementById('drawer-pinyin').textContent = details.pinyin;
+                document.getElementById('drawer-english').textContent = details.meaning;
+                document.getElementById('drawer-collocation').textContent = details.collocation;
+                
+                let richHtml = '';
+                if (details.replacement && details.before && details.after) {
+                    richHtml = `
+                        <div style="margin-bottom:0.75rem; display:flex; gap:0.5rem; flex-wrap:wrap;">
+                            <span style="font-size:0.8rem; background-color:rgba(59,130,246,0.15); color:var(--primary); padding:0.2rem 0.5rem; border-radius:4px; font-weight:600;">近义替换：${details.replacement}</span>
+                            <span style="font-size:0.8rem; background-color:var(--border-color); color:var(--text-secondary); padding:0.2rem 0.5rem; border-radius:4px; font-weight:600;">最适文体：${details.text_type}</span>
+                        </div>
+                        <div style="font-size:0.9rem; display:flex; flex-direction:column; gap:0.4rem; padding:0.75rem; background-color:var(--bg-color); border-radius:0.5rem; border-left:3px solid var(--primary); margin-top:0.5rem;">
+                            <span style="color:#ef4444; font-weight:500;">❌ 普通大白话句：${details.before}</span>
+                            <span style="color:#10b981; font-weight:600;">✅ 高分升级表达：${details.after.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')}</span>
+                        </div>
+                    `;
+                } else {
+                    richHtml = details.example.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+                }
+                document.getElementById('drawer-example').innerHTML = richHtml;
+            } else {
+                document.getElementById('drawer-pinyin').textContent = "";
+                document.getElementById('drawer-english').textContent = details.meaning;
+                document.getElementById('drawer-collocation').textContent = "无精讲搭配";
+                document.getElementById('drawer-example').textContent = "该词汇为基础分类词汇，暂无精讲考场例句。建议结合上下文或Quizlet导入查阅。";
+            }
+            
+            const isMastered = masteredWords[word] || false;
+            const btn = document.getElementById('drawer-master-btn');
+            if (isMastered) {
+                btn.textContent = '💚 已掌握（点击取消）';
+                btn.className = 'btn btn-primary';
+                btn.style.backgroundColor = '#10b981';
+            } else {
+                btn.textContent = '标记为熟练掌握';
+                btn.className = 'btn';
+                btn.style.backgroundColor = '';
+            }
+            
+            document.getElementById('word-detail-drawer').style.display = 'flex';
+        }
+
+        function openSimpleWord(word, meaning) {
+            openWordDrawer(word);
+        }
+                function closeWordDrawer(e) {
+            document.getElementById('word-detail-drawer').style.display = 'none';
+        }
+
+        function toggleDrawerWordMastery() {
+            const isMastered = masteredWords[drawerActiveWord] || false;
+            toggleWordMastery(drawerActiveWord, !isMastered);
+            
+            // Re-render browser to update checkboxes
+            filterVocab();
+            closeWordDrawer();
+        }
+
+        // Voice speech synthesis
+        function speakCurrentWord(e) {
+            if (e) e.stopPropagation();
+            let text = document.getElementById('card-front-chinese').textContent;
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel(); // Cancel any ongoing speech
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'zh-CN';
+                utterance.rate = 0.85; // slightly slower for language learners
+                
+                const voices = window.speechSynthesis.getVoices();
+                const zhVoice = voices.find(v => v.lang.includes('zh') || v.lang.includes('ZH'));
+                if (zhVoice) utterance.voice = zhVoice;
+                
+                window.speechSynthesis.speak(utterance);
+            } else {
+                alert("抱歉，您的浏览器不支持语音朗读功能。");
+            }
+        }
+
+        // Flashcards logic
+        function initFlashcardsOptions() {
+            const select = document.getElementById('flashcard-theme-select');
+            select.innerHTML = '<option value="all">精选 Criterion A 核心精讲词 (75词)</option>';
+            
+            vocabData.forEach((theme, index) => {
+                const opt = document.createElement('option');
+                opt.value = index;
+                opt.textContent = theme.theme.replace(/^[🟢🟡🔵🟠🟤]\s+/, '');
+                select.appendChild(opt);
+            });
+        }
+
+        function initFlashcards() {
+            const themeIdx = document.getElementById('flashcard-theme-select').value;
+            activeFlashcards = [];
+            
+            if (themeIdx === 'all') {
+                // Collect core words from all subtopics
+                vocabData.forEach(theme => {
+                    theme.subtopics.forEach(sub => {
+                        sub.core_words.forEach(cw => {
+                            activeFlashcards.push(cw);
+                        });
+                    });
+                });
+            } else {
+                // Collect core words from selected theme
+                vocabData[themeIdx].subtopics.forEach(sub => {
+                    sub.core_words.forEach(cw => {
+                        activeFlashcards.push(cw);
+                    });
+                });
+            }
+
+            // Shuffle array
+            activeFlashcards.sort(() => Math.random() - 0.5);
+            
+            currentFlashcardIndex = 0;
+            showFlashcard();
+        }
+
+        function showFlashcard() {
+            if (activeFlashcards.length === 0) {
+                document.getElementById('card-front-chinese').textContent = "无卡片";
+                return;
+            }
+            
+            // Unflip card
+            document.getElementById('flashcard-inner').classList.remove('flipped');
+            
+            const card = activeFlashcards[currentFlashcardIndex];
+            
+            setTimeout(() => {
+                document.getElementById('card-front-chinese').textContent = card.word;
+                document.getElementById('card-back-chinese').textContent = card.word;
+                document.getElementById('card-back-pinyin').textContent = card.pinyin;
+                document.getElementById('card-back-english').textContent = card.meaning;
+                
+                // If it is a core word, we show rich layout
+                const details = findWordDetails(card.word);
+                if (details && details.type === 'core') {
+                    document.getElementById('card-back-collocation').textContent = `${details.collocation} | 推荐文体: [${details.text_type}]`;
+                    document.getElementById('card-back-example').innerHTML = `
+                        <span style="color:var(--text-muted); font-size:0.75rem; font-weight:700; text-transform:uppercase; display:block; margin-bottom:0.15rem;">近义替换: ${details.replacement}</span>
+                        <span style="color:#ef4444; display:block; margin-bottom:0.1rem;">❌ 低分：${details.before}</span>
+                        <span style="color:#10b981; font-weight:600; display:block;">✅ 高分：${details.after.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')}</span>
+                    `;
+                } else {
+                    document.getElementById('card-back-collocation').textContent = "无精讲搭配";
+                    document.getElementById('card-back-example').textContent = "该词汇为基础分类词汇，暂无精讲考场例句。建议结合上下文或Quizlet导入查阅。";
+                }
+                
+                document.getElementById('flashcard-progress-text').textContent = `${currentFlashcardIndex + 1} / ${activeFlashcards.length}`;
+            }, 150);
+        }
+
+                function flipCard() {
+            document.getElementById('flashcard-inner').classList.toggle('flipped');
+        }
+
+        function prevFlashcard(e) {
+            if (e) e.stopPropagation();
+            if (currentFlashcardIndex > 0) {
+                currentFlashcardIndex--;
+                showFlashcard();
+            }
+        }
+
+        function nextFlashcard(e) {
+            if (e) e.stopPropagation();
+            if (currentFlashcardIndex < activeFlashcards.length - 1) {
+                currentFlashcardIndex++;
+                showFlashcard();
+            }
+        }
+
+        // Smart Quiz Mode
+        function startQuizMode(themeIdx = 'all') {
+            quizQuestions = [];
+            currentQuizIndex = 0;
+            quizScore = 0;
+            quizHistory = [];
+            
+            // 1. Gather all words for potential answers
+            let allPool = [];
+            let corePool = [];
+            
+            vocabData.forEach((theme, index) => {
+                if (themeIdx !== 'all' && themeIdx != index) return;
+                
+                theme.subtopics.forEach(sub => {
+                    sub.all_words.forEach(w => allPool.push(w));
+                    sub.core_words.forEach(cw => corePool.push(cw));
+                });
+            });
+
+            if (corePool.length < 4) {
+                corePool = [...allPool];
+            }
+
+            // 2. Build 10 questions
+            let shuffledCore = [...corePool].sort(() => Math.random() - 0.5);
+            let quizLen = Math.min(10, shuffledCore.length);
+            
+            for (let i = 0; i < quizLen; i++) {
+                const target = shuffledCore[i];
+                
+                let type = Math.floor(Math.random() * 2);
+                if (target.example && target.example !== "暂无" && type === 1) {
+                    type = 2;
+                }
+
+                let qText = '';
+                let qTypeLabel = '';
+                let correctOpt = '';
+                let options = [];
+
+                if (type === 0) {
+                    qTypeLabel = '词义选择 (英译中)';
+                    qText = `请选择词语 “<strong>${target.word}</strong>” 的正确英文释义：`;
+                    correctOpt = target.meaning;
+                    
+                    let wrongPool = allPool.filter(w => w.word !== target.word).sort(() => Math.random() - 0.5);
+                    options = [correctOpt, wrongPool[0].meaning, wrongPool[1].meaning, wrongPool[2].meaning];
+                } else if (type === 1) {
+                    qTypeLabel = '词义选择 (中译英)';
+                    qText = `哪个词语的意思是 “<strong>${target.meaning}</strong>”？`;
+                    correctOpt = target.word;
+                    
+                    let wrongPool = allPool.filter(w => w.word !== target.word).sort(() => Math.random() - 0.5);
+                    options = [correctOpt, wrongPool[0].word, wrongPool[1].word, wrongPool[2].word];
+                } else {
+                    qTypeLabel = '句子填空 (Context Fit)';
+                    let rawSentence = (target.after || target.example || '').replace(new RegExp(target.word, 'g'), ' ______ ');
+                    let sentence = rawSentence.replace(/\*\*(.*?)\*\*/g, '$1');
+                    qText = `请选出最适合填入括号中的词语：<br><br><div style="font-style: italic; color: var(--text-secondary); background-color: var(--bg-color); padding: 1rem; border-radius: 0.5rem; border-left: 3px solid var(--primary);">${sentence}</div>`;
+                    correctOpt = target.word;
+                    
+                    let wrongPool = allPool.filter(w => w.word !== target.word).sort(() => Math.random() - 0.5);
+                    options = [correctOpt, wrongPool[0].word, wrongPool[1].word, wrongPool[2].word];                }
+
+                options.sort(() => Math.random() - 0.5);
+
+                quizQuestions.push({
+                    qTypeLabel,
+                    qText,
+                    correctOpt,
+                    options,
+                    targetWord: target.word
+                });
+            }
+
+            renderQuizQuestion();
+        }
+
+        function renderQuizQuestion() {
+            const box = document.getElementById('quiz-box');
+            
+            if (quizQuestions.length === 0) {
+                box.innerHTML = '<div style="text-align:center; padding: 2rem;">词汇库数据不足，无法生成测试。</div>';
+                return;
+            }
+
+            if (currentQuizIndex >= quizQuestions.length) {
+                renderQuizResults();
+                return;
+            }
+
+            const pct = Math.round((currentQuizIndex / quizQuestions.length) * 100);
+            const q = quizQuestions[currentQuizIndex];
+
+            let optionsHtml = q.options.map(opt => `
+                <button class="quiz-option-btn" onclick="submitQuizAnswer(this, '${opt.replace(/'/g, "\'")}', '${q.correctOpt.replace(/'/g, "\'")}')">${opt}</button>
+            `).join('');
+
+            box.innerHTML = `
+                <div class="quiz-progress-bar">
+                    <div class="quiz-progress-fill" style="width: ${pct}%;"></div>
+                </div>
+                <div class="detail-header" style="justify-content: space-between;">
+                    <span class="quiz-question-type">${q.qTypeLabel}</span>
+                    <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 700;">第 ${currentQuizIndex + 1} / ${quizQuestions.length} 题</span>
+                </div>
+                <p class="quiz-question-text">${q.qText}</p>
+                <div class="quiz-options-list">
+                    ${optionsHtml}
+                </div>
+            `;
+        }
+
+        function submitQuizAnswer(btn, selected, correct) {
+            document.querySelectorAll('.quiz-option-btn').forEach(b => b.removeAttribute('onclick'));
+
+            const isCorrect = (selected === correct);
+            if (isCorrect) {
+                btn.classList.add('correct');
+                quizScore++;
+                const q = quizQuestions[currentQuizIndex];
+                toggleWordMastery(q.targetWord, true);
+            } else {
+                btn.classList.add('incorrect');
+                document.querySelectorAll('.quiz-option-btn').forEach(b => {
+                    if (b.textContent === correct) {
+                        b.classList.add('correct');
+                    }
+                });
+            }
+
+            setTimeout(() => {
+                currentQuizIndex++;
+                renderQuizQuestion();
+            }, 1500);
+        }
+
+        function renderQuizResults() {
+            const box = document.getElementById('quiz-box');
+            
+            box.innerHTML = `
+                <div style="text-align: center; display: flex; flex-direction: column; gap: 1.5rem; padding: 1rem 0;">
+                    <span style="font-size: 5rem;">🏆</span>
+                    <h2 style="font-size: 1.8rem; font-weight: 700;">测试已完成！</h2>
+                    <p style="font-size: 1.1rem; color: var(--text-secondary);">您的得分是：<strong style="color: var(--primary); font-size: 2rem;">${quizScore}</strong> / ${quizQuestions.length}</p>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">答对的核心词汇已被自动标记为“已掌握”。</p>
+                    <div style="margin-top: 1rem; display: flex; gap: 1rem;">
+                        <button class="btn btn-primary" onclick="startQuizMode()">🔄 再考一次</button>
+                        <button class="btn" onclick="switchView('dashboard')">📊 返回仪表盘</button>
+                    </div>
+                </div>
+            `;
+            
+            if (quizScore >= 8) {
+                triggerConfetti();
+            }
+        }
+
+        // Confetti
+        function triggerConfetti() {
+            const canvas = document.getElementById('confetti-canvas');
+            canvas.style.display = 'block';
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            
+            let particles = [];
+            const colors = ['#3b82f6', '#10b981', '#f59e0b', '#ef4444', '#06b6d4', '#f97316'];
+            
+            for (let i = 0; i < 150; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height - canvas.height,
+                    r: Math.random() * 6 + 4,
+                    d: Math.random() * canvas.height,
+                    color: colors[Math.floor(Math.random() * colors.length)],
+                    tilt: Math.random() * 10 - 5,
+                    tiltAngleIncremental: Math.random() * 0.07 + 0.02,
+                    tiltAngle: 0
+                });
+            }
+            
+            let animationFrameId;
+            function draw() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                let remaining = false;
+                
+                particles.forEach((p, idx) => {
+                    p.tiltAngle += p.tiltAngleIncremental;
+                    p.y += (Math.cos(p.d) + 3 + p.r / 2) / 2;
+                    p.x += Math.sin(p.tiltAngle);
+                    p.tilt = Math.sin(p.tiltAngle - idx / 3) * 15;
+                    
+                    if (p.y < canvas.height) remaining = true;
+                    
+                    ctx.beginPath();
+                    ctx.lineWidth = p.r;
+                    ctx.strokeStyle = p.color;
+                    ctx.moveTo(p.x + p.tilt + p.r / 2, p.y);
+                    ctx.lineTo(p.x + p.tilt, p.y + p.tilt + p.r / 2);
+                    ctx.stroke();
+                });
+                
+                if (remaining) {
+                    animationFrameId = requestAnimationFrame(draw);
+                } else {
+                    canvas.style.display = 'none';
+                }
+            }
+            
+            draw();
+            setTimeout(() => {
+                cancelAnimationFrame(animationFrameId);
+                canvas.style.display = 'none';
+            }, 5000);
+        }
+
+        // Render Export Hub List
+        function renderExportHub() {
+            const container = document.getElementById('export-hub-grid');
+            container.innerHTML = '';
+            
+            vocabData.forEach((theme, themeIdx) => {
+                theme.subtopics.forEach((sub, subIdx) => {
+                    const card = document.createElement('div');
+                    card.className = 'export-card';
+                    
+                    let copyText = sub.all_words.map(w => `${w.word} | ${w.meaning}`).join('\n');
+
+                    card.innerHTML = `
+                        <div class="export-info">
+                            <span class="export-title">${sub.title}</span>
+                            <span class="export-desc">共 30 个词汇/短语</span>
+                        </div>
+                        <button class="btn" style="flex: 0 0 auto;" onclick="copyExportText('${copyText.replace(/'/g, "\'")}', this)">📋 复制 Quizlet 格式</button>
+                    `;
+                    container.appendChild(card);
+                });
+            });
+        }
+
+        function copyExportText(text, btn) {
+            navigator.clipboard.writeText(text.replace(/\n/g, '\n')).then(() => {
+                const oldText = btn.textContent;
+                btn.textContent = '✅ 已成功复制！';
+                btn.style.backgroundColor = '#10b981';
+                btn.style.color = 'white';
+                setTimeout(() => {
+                    btn.textContent = oldText;
+                    btn.style.backgroundColor = '';
+                    btn.style.color = '';
+                }, 2000);
+            }).catch(err => {
+                alert("复制失败，请手动选择复制。");
+            });
+        }
+    </script>
+</body>
+</html>
