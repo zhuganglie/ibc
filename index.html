@@ -68,6 +68,10 @@
             transition: background-color 0.3s, color 0.3s;
         }
 
+        body.drawer-open {
+            overflow: hidden;
+        }
+
         /* Ambient Glow in Background */
         .ambient-glow {
             position: fixed;
@@ -136,6 +140,7 @@
         nav {
             display: flex;
             gap: 0.5rem;
+            align-items: stretch;
         }
 
         .nav-btn {
@@ -145,13 +150,24 @@
             font-family: inherit;
             font-size: 0.9rem;
             font-weight: 500;
-            padding: 0.5rem 1rem;
-            border-radius: 0.5rem;
+            padding: 0.6rem 1rem;
+            border-radius: 0.75rem;
             cursor: pointer;
-            display: flex;
+            display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 0.5rem;
+            min-height: 44px;
             transition: all 0.2s ease;
+        }
+
+        .nav-btn-icon {
+            font-size: 1rem;
+            line-height: 1;
+        }
+
+        .nav-btn-label {
+            line-height: 1.1;
         }
 
         .nav-btn:hover {
@@ -728,6 +744,11 @@
             height: 380px;
             perspective: 1000px;
             cursor: pointer;
+            touch-action: pan-y;
+        }
+
+        .card-container.swiping {
+            cursor: grabbing;
         }
 
         .card-inner {
@@ -1089,6 +1110,16 @@
             color: var(--text-secondary);
             font-size: 1.5rem;
             cursor: pointer;
+            width: 2.75rem;
+            height: 2.75rem;
+            border-radius: 9999px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .drawer-close:hover {
+            background-color: var(--surface-hover);
         }
 
         /* Confetti canvas */
@@ -1114,6 +1145,307 @@
             border-radius: 4px;
             box-shadow: 0 1px 0 var(--border-color);
         }
+
+        /* Responsive layout */
+        @media (max-width: 1100px) {
+            header {
+                flex-wrap: wrap;
+                gap: 1rem;
+                padding: 1rem 1.25rem;
+            }
+
+            nav {
+                order: 3;
+                width: 100%;
+                flex-wrap: wrap;
+            }
+
+            .nav-btn {
+                flex: 1 1 calc(50% - 0.5rem);
+            }
+
+            main {
+                padding: 1.5rem;
+            }
+
+            .theme-card-header,
+            .theme-card-footer,
+            .detail-header,
+            .card-back-title-row,
+            .export-card {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .theme-progress,
+            .detail-english,
+            .card-back-english {
+                width: 100%;
+            }
+
+            .progress-bar-bg {
+                flex: 1;
+                width: auto;
+            }
+
+            .flashcard-settings {
+                grid-template-columns: 1fr;
+            }
+
+            .flashcard-settings .filter-group {
+                grid-column: auto !important;
+            }
+
+            .flashcard-actions {
+                flex-direction: column;
+            }
+
+            .card-front,
+            .card-back,
+            .drawer-content {
+                overflow-y: auto;
+            }
+
+            .drawer-content {
+                max-height: 90vh;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-bottom: calc(5.75rem + env(safe-area-inset-bottom));
+            }
+
+            header {
+                padding: 0.9rem 1rem;
+                align-items: center;
+            }
+
+            nav {
+                position: fixed;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 130;
+                order: initial;
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(5, minmax(0, 1fr));
+                gap: 0.4rem;
+                padding: 0.6rem max(0.75rem, env(safe-area-inset-left)) calc(0.6rem + env(safe-area-inset-bottom)) max(0.75rem, env(safe-area-inset-right));
+                border-top: 1px solid var(--border-color);
+                background-color: rgba(21, 28, 44, 0.92);
+                backdrop-filter: blur(18px);
+                box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.18);
+            }
+
+            [data-theme="light"] nav {
+                background-color: rgba(255, 255, 255, 0.94);
+            }
+
+            .nav-btn {
+                min-width: 0;
+                min-height: 3.75rem;
+                padding: 0.45rem 0.2rem;
+                border-radius: 0.9rem;
+                flex-direction: column;
+                gap: 0.2rem;
+                font-size: 0.68rem;
+                line-height: 1.15;
+            }
+
+            .nav-btn-icon {
+                font-size: 1rem;
+            }
+
+            .nav-btn-label {
+                width: 100%;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+
+            .theme-toggle-btn {
+                width: 2.3rem;
+                height: 2.3rem;
+            }
+
+            .ambient-glow,
+            .ambient-glow-left {
+                width: 320px;
+                height: 320px;
+            }
+
+            .logo-text h1 {
+                font-size: 1rem;
+            }
+
+            .logo-text p {
+                font-size: 0.7rem;
+            }
+
+            main {
+                padding: 1rem;
+            }
+
+            .stats-grid,
+            .themes-grid,
+            .vocab-list-container,
+            .export-hub-grid {
+                gap: 1rem;
+            }
+
+            .stat-card,
+            .theme-card,
+            .browser-filter-bar,
+            .quiz-container,
+            .drawer-content {
+                padding: 1.25rem;
+            }
+
+            .toggle-switch-wrapper {
+                align-self: flex-start;
+                margin-top: 0;
+                flex-wrap: wrap;
+            }
+
+            .vocab-mini-card {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+
+            .mini-card-english {
+                max-width: 100%;
+                white-space: normal;
+                text-align: left;
+            }
+
+            .card-container {
+                height: clamp(320px, 56vh, 420px);
+            }
+
+            .card-front,
+            .card-back {
+                padding: 1.5rem;
+            }
+
+            .card-front-chinese {
+                font-size: 2.35rem;
+                text-align: center;
+                word-break: break-word;
+            }
+
+            .card-back-chinese {
+                font-size: 1.5rem;
+            }
+
+            .card-back-footer {
+                flex-wrap: wrap;
+                justify-content: flex-start;
+            }
+
+            .flashcard-action-btn,
+            .btn,
+            .quiz-option-btn,
+            .filter-input,
+            .nav-arrow,
+            .theme-toggle-btn {
+                min-height: 44px;
+            }
+
+            .quiz-question-text {
+                font-size: 1.15rem;
+            }
+
+            .export-card {
+                gap: 1rem;
+            }
+
+            .export-card .btn {
+                width: 100%;
+            }
+
+            .drawer-overlay {
+                align-items: stretch;
+                justify-content: stretch;
+                padding: 0;
+            }
+
+            .drawer-content {
+                max-width: none;
+                height: 100dvh;
+                max-height: 100dvh;
+                border-radius: 0;
+                border: none;
+                padding: calc(1rem + env(safe-area-inset-top)) 1rem calc(1.25rem + env(safe-area-inset-bottom));
+            }
+
+            .drawer-close {
+                top: calc(0.75rem + env(safe-area-inset-top));
+                right: 0.75rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 0.8rem 0.9rem;
+            }
+
+            .logo-area {
+                gap: 0.5rem;
+            }
+
+            .logo-icon {
+                font-size: 1.4rem;
+            }
+
+            .theme-toggle-btn {
+                width: 2rem;
+                height: 2rem;
+            }
+
+            .theme-card-title,
+            .subtopic-group-header,
+            .detail-chinese,
+            .quiz-question-text {
+                font-size: 1.05rem;
+            }
+
+            .stat-value {
+                font-size: 1.6rem;
+            }
+
+            .card-container {
+                height: clamp(300px, 58vh, 390px);
+            }
+
+            .card-front,
+            .card-back {
+                padding: 1rem;
+                border-radius: 1rem;
+            }
+
+            .card-front-chinese {
+                font-size: 1.9rem;
+            }
+
+            .nav-btn {
+                font-size: 0.64rem;
+                padding: 0.4rem 0.1rem;
+            }
+
+            .nav-btn-icon {
+                font-size: 0.95rem;
+            }
+
+            .flashcard-action-btn,
+            .btn,
+            .quiz-option-btn,
+            .filter-input {
+                font-size: 0.9rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1130,11 +1462,11 @@
             </div>
         </div>
         <nav>
-            <button class="nav-btn active" onclick="switchView('dashboard')">📊 仪表盘</button>
-            <button class="nav-btn" onclick="switchView('browser')">🔍 词汇浏览</button>
-            <button class="nav-btn" onclick="switchView('flashcards')">🃏 卡片记忆</button>
-            <button class="nav-btn" onclick="switchView('quiz')">✍️ 智能自测</button>
-            <button class="nav-btn" onclick="switchView('export')">📤 导出集</button>
+            <button class="nav-btn active" onclick="switchView('dashboard')"><span class="nav-btn-icon">📊</span><span class="nav-btn-label">仪表盘</span></button>
+            <button class="nav-btn" onclick="switchView('browser')"><span class="nav-btn-icon">🔍</span><span class="nav-btn-label">词汇浏览</span></button>
+            <button class="nav-btn" onclick="switchView('flashcards')"><span class="nav-btn-icon">🃏</span><span class="nav-btn-label">卡片记忆</span></button>
+            <button class="nav-btn" onclick="switchView('quiz')"><span class="nav-btn-icon">✍️</span><span class="nav-btn-label">智能自测</span></button>
+            <button class="nav-btn" onclick="switchView('export')"><span class="nav-btn-icon">📤</span><span class="nav-btn-label">导出集</span></button>
         </nav>
         <button class="theme-toggle-btn" onclick="toggleTheme()" title="切换明暗模式">🌓</button>
     </header>
@@ -1209,7 +1541,7 @@
                         <div class="card-front">
                             <div class="card-front-chinese" id="card-front-chinese">极简主义</div>
                             <span class="speaker-icon-btn" style="font-size: 1.5rem;" onclick="speakCurrentWord(event)">🔊</span>
-                            <div class="card-front-hint">点击卡片翻面</div>
+                            <div class="card-front-hint">点击翻面 · 左右滑动切换</div>
                         </div>
                         <div class="card-back">
                             <div class="card-back-title-row">
@@ -1232,6 +1564,7 @@
                                 </div>
                             </div>
                             <div class="card-back-footer">
+                                <span>触屏可左右滑动切换</span>
                                 <span>按 <kbd class="kbd-badge">Space</kbd> 翻转 | <kbd class="kbd-badge">←</kbd> <kbd class="kbd-badge">→</kbd> 切换</span>
                             </div>
                         </div>
@@ -1305,6 +1638,9 @@
         let currentThemeIndex = 0;
         let currentFlashcardIndex = 0;
         let activeFlashcards = [];
+        let flashcardTouchStartX = 0;
+        let flashcardTouchStartY = 0;
+        let suppressFlashcardFlip = false;
         
         // Quiz states
         let quizQuestions = [];
@@ -1315,9 +1651,16 @@
         // App Initializer
         window.addEventListener('DOMContentLoaded', () => {
             initApp();
+            initTouchInteractions();
             
             // Register Keyboard Listeners
             document.addEventListener('keydown', (e) => {
+                const activeDrawer = document.getElementById('word-detail-drawer');
+                if (e.code === 'Escape' && activeDrawer.style.display === 'flex') {
+                    closeWordDrawer();
+                    return;
+                }
+
                 const activeView = document.querySelector('.view-section.active').id;
                 if (activeView === 'flashcards-view') {
                     if (e.code === 'Space') {
@@ -1360,6 +1703,7 @@
 
         // Switch Navigation Views
         function switchView(viewName) {
+            setDrawerOpenState(false);
             document.querySelectorAll('.view-section').forEach(sec => sec.classList.remove('active'));
             document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
             
@@ -1400,6 +1744,47 @@
             
             let rate = total > 0 ? Math.round((masteredCount / total) * 100) : 0;
             document.getElementById('global-mastery-rate').textContent = rate + '%';
+        }
+
+        function initTouchInteractions() {
+            const cardContainer = document.querySelector('.card-container');
+            if (!cardContainer) return;
+
+            cardContainer.addEventListener('touchstart', (e) => {
+                const touch = e.changedTouches[0];
+                flashcardTouchStartX = touch.clientX;
+                flashcardTouchStartY = touch.clientY;
+                cardContainer.classList.remove('swiping');
+            }, { passive: true });
+
+            cardContainer.addEventListener('touchmove', (e) => {
+                const touch = e.changedTouches[0];
+                const dx = touch.clientX - flashcardTouchStartX;
+                const dy = touch.clientY - flashcardTouchStartY;
+
+                if (Math.abs(dx) > 12 && Math.abs(dx) > Math.abs(dy)) {
+                    cardContainer.classList.add('swiping');
+                }
+            }, { passive: true });
+
+            cardContainer.addEventListener('touchend', (e) => {
+                const touch = e.changedTouches[0];
+                const dx = touch.clientX - flashcardTouchStartX;
+                const dy = touch.clientY - flashcardTouchStartY;
+                const passedSwipeThreshold = Math.abs(dx) > 55 && Math.abs(dx) > Math.abs(dy) * 1.2;
+
+                cardContainer.classList.remove('swiping');
+
+                if (!passedSwipeThreshold) return;
+
+                suppressFlashcardFlip = true;
+                if (dx < 0) nextFlashcard();
+                else prevFlashcard();
+
+                window.setTimeout(() => {
+                    suppressFlashcardFlip = false;
+                }, 350);
+            }, { passive: true });
         }
 
         // Save Word Mastery
@@ -1627,6 +2012,12 @@
 
         // Modal drawers
         let drawerActiveWord = "";
+
+        function setDrawerOpenState(isOpen) {
+            document.body.classList.toggle('drawer-open', isOpen);
+            document.getElementById('word-detail-drawer').style.display = isOpen ? 'flex' : 'none';
+        }
+
         function openWordDrawer(word) {
             const details = findWordDetails(word);
             if (!details) return;
@@ -1674,14 +2065,15 @@
                 btn.style.backgroundColor = '';
             }
             
-            document.getElementById('word-detail-drawer').style.display = 'flex';
+            setDrawerOpenState(true);
         }
 
         function openSimpleWord(word, meaning) {
             openWordDrawer(word);
         }
-                function closeWordDrawer(e) {
-            document.getElementById('word-detail-drawer').style.display = 'none';
+
+        function closeWordDrawer(e) {
+            setDrawerOpenState(false);
         }
 
         function toggleDrawerWordMastery() {
@@ -1790,7 +2182,8 @@
             }, 150);
         }
 
-                function flipCard() {
+        function flipCard() {
+            if (suppressFlashcardFlip) return;
             document.getElementById('flashcard-inner').classList.toggle('flipped');
         }
 
