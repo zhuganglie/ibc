@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="zh-SG">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第五单元 词语闪卡 | S1 G1 华文</title>
+<style>
+:root{
+  --bg:#f6f8fc; --card-bg:#fff; --primary:#2d6cdf; --primary-dark:#1b4fc4;
+  --text:#1d1f28; --muted:#5e6678; --border:#e1e5eb; --shadow:0 10px 30px rgba(28,32,48,.08);
+  --radius:16px; --flip-dur:0.6s;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text);min-height:100vh;display:flex;flex-direction:column}
+header{background:linear-gradient(135deg,var(--primary),#4a8cff);color:#fff;padding:1.2rem 1rem;text-align:center;box-shadow:var(--shadow)}
+header h1{font-size:1.3rem;font-weight:700;letter-spacing:.5px}
+header p{font-size:.85rem;opacity:.9;margin-top:.2rem}
+main{flex:1;padding:1.2rem 1rem;display:flex;flex-direction:column;align-items:center;max-width:720px;margin:0 auto;width:100%}
+
+/* 进度条 */
+.progress-wrap{width:100%;max-width:600px;margin-bottom:1.2rem}
+.progress-bar{height:6px;background:var(--border);border-radius:3px;overflow:hidden}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--primary),#4a8cff);width:0%;transition:width .3s ease;border-radius:3px}
+.progress-text{display:flex;justify-content:space-between;font-size:.75rem;color:var(--muted);margin-top:.3rem}
+
+/* 闪卡容器 */
+.flashcard-wrap{perspective:1000px;width:100%;max-width:560px;min-height:360px}
+.flashcard{position:relative;width:100%;height:360px;transform-style:preserve-3d;transition:transform var(--flip-dur) cubic-bezier(.4,0,.2,1);cursor:pointer}
+.flashcard.flipped{transform:rotateY(180deg)}
+.card-face{position:absolute;width:100%;height:100%;backface-visibility:hidden;border-radius:var(--radius);box-shadow:var(--shadow);display:flex;flex-direction:column;background:var(--card-bg);border:1px solid var(--border);padding:2rem}
+.card-face.back{transform:rotateY(180deg)}
+
+/* 正面 */
+.front-content{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+.chinese-word{font-size:4.5rem;font-weight:800;line-height:1.1;letter-spacing:.05em;background:linear-gradient(135deg,var(--primary),#4a8cff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:.5rem}
+.word-hint{font-size:.9rem;color:var(--muted);font-weight:500}
+.tap-hint{position:absolute;bottom:1.2rem;left:50%;transform:translateX(-50%);font-size:.75rem;color:var(--muted);opacity:.7;animation:pulse 2s infinite;display:flex;align-items:center;gap:.3rem}
+.tap-hint::before{content:"";width:16px;height:16px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235e6678' stroke-width='2'%3E%3Cpath d='M12 5v14M19 12H5'/%3E%3C/svg%3E") center/contain no-repeat}
+
+/* 背面 */
+.back-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;padding-bottom:.8rem;border-bottom:1px solid var(--border)}
+.back-header h2{font-size:1.5rem;font-weight:700}
+.pinyin{font-size:1.1rem;color:var(--primary);font-weight:600;letter-spacing:.5px}
+.meanings{flex:1;display:flex;flex-direction:column;gap:.7rem;overflow-y:auto;padding-right:.2rem}
+.meaning-row{display:flex;gap:.8rem;align-items:flex-start;padding:.6rem .8rem;background:#fafbfc;border-radius:10px;border:1px solid var(--border);transition:all .2s}
+.meaning-row:hover{border-color:var(--primary);background:#f0f5ff}
+.meaning-label{min-width:70px;font-size:.75rem;font-weight:600;color:var(--primary);text-transform:uppercase;letter-spacing:.5px;margin-top:.1rem}
+.meaning-value{font-size:.9rem;line-height:1.5;color:var(--text);flex:1}
+.meaning-value.en{color:var(--muted);font-style:italic}
+.example-sentences{margin-top:.5rem;padding-top:.5rem;border-top:1px dashed var(--border)}
+.example-label{font-size:.7rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:.3rem}
+.example-item{font-size:.8rem;color:var(--text);line-height:1.6;padding:.4rem 0;border-bottom:1px solid var(--border)}
+.example-item:last-child{border-bottom:none}
+.example-item .zh{font-weight:500}
+.example-item .en{color:var(--muted);font-style:italic;margin-top:.15rem;display:block}
+
+/* 导航 */
+.nav{display:flex;justify-content:center;align-items:center;gap:.8rem;margin-top:1.5rem;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.4rem;padding:.6rem 1.2rem;border-radius:10px;font-size:.85rem;font-weight:600;border:none;cursor:pointer;transition:all .2s;user-select:none;min-width:90px}
+.btn-primary{background:var(--primary);color:#fff}
+.btn-primary:hover{background:var(--primary-dark);transform:translateY(-1px);box-shadow:0 4px 12px rgba(45,108,223,.3)}
+.btn-secondary{background:#fff;color:var(--text);border:1px solid var(--border)}
+.btn-secondary:hover{background:#f6f8fc;border-color:#cdd3dc}
+.btn:disabled{opacity:.4;cursor:not-allowed;transform:none}
+.btn-icon{width:18px;height:18px;display:flex;align-items:center;justify-content:center}
+.shuffle-btn{padding:.6rem;min-width:48px}
+.counter{font-size:.85rem;color:var(--muted);font-weight:500;min-width:80px;text-align:center}
+
+/* 模式切换 */
+.mode-toggle{display:flex;gap:.4rem;background:#fff;border:1px solid var(--border);border-radius:10px;padding:.3rem;margin-bottom:1.2rem}
+.mode-btn{padding:.4rem .8rem;border:none;background:transparent;color:var(--muted);font-size:.75rem;font-weight:600;border-radius:8px;cursor:pointer;transition:all .2s}
+.mode-btn.active{background:var(--primary);color:#fff}
+.mode-btn:not(.active):hover{background:#f0f5ff;color:var(--primary)}
+
+/* 音频按钮 */
+.speak-btn{background:none;border:none;cursor:pointer;padding:.3rem;color:var(--muted);border-radius:8px;transition:all .2s;display:flex;align-items:center;justify-content:center}
+.speak-btn:hover{background:#f0f5ff;color:var(--primary)}
+.speak-btn.speaking{color:var(--primary);animation:pulse 1s infinite}
+
+/* 动画 */
+@keyframes pulse{0%,100%{opacity:.7}50%{opacity:1}}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.flashcard-wrap{animation:fadeIn .4s ease}
+
+/* 响应式 */
+@media(max-width:480px){
+  .chinese-word{font-size:3.5rem}
+  .flashcard{min-height:320px;height:320px}
+  .card-face{padding:1.5rem}
+  .meaning-row{flex-direction:column;gap:.2rem}
+  .meaning-label{min-width:auto}
+  .btn{padding:.5rem .9rem;font-size:.8rem;min-width:80px}
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>第五单元 词语闪卡</h1>
+  <p>中一 G1 华文 · 14 核心词语 · 点击卡片翻转</p>
+</header>
+
+<main>
+  <!-- 进度条 -->
+  <div class="progress-wrap" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="14" aria-label="学习进度">
+    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-text">
+      <span id="progressCurrent">第 0 / 14 词</span>
+      <span id="progressPercent">0%</span>
+    </div>
+  </div>
+
+  <!-- 模式切换 -->
+  <div class="mode-toggle" role="tablist" aria-label="学习模式">
+    <button class="mode-btn active" role="tab" data-mode="sequential" aria-selected="true">顺序练习</button>
+    <button class="mode-btn" role="tab" data-mode="random" aria-selected="false">随机打乱</button>
+    <button class="mode-btn" role="tab" data-mode="wrong" aria-selected="false" id="wrongModeBtn" style="display:none">错词复习</button>
+  </div>
+
+  <!-- 闪卡 -->
+  <div class="flashcard-wrap" id="flashcardWrap">
+    <div class="flashcard" id="flashcard" role="button" tabindex="0" aria-label="点击翻转卡片，查看词语详情">
+      <!-- 正面 -->
+      <div class="card-face front">
+        <div class="front-content">
+          <div class="chinese-word" id="frontWord">准备开始</div>
+          <div class="word-hint">点击卡片翻转</div>
+        </div>
+        <div class="tap-hint" id="tapHint">点击翻转</div>
+      </div>
+      <!-- 背面 -->
+      <div class="card-face back">
+        <div class="back-header">
+          <div>
+            <h2 id="backWord"></h2>
+            <div class="pinyin" id="backPinyin"></div>
+          </div>
+          <button class="speak-btn" id="speakBtn" aria-label="朗读词语" title="朗读词语">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+          </button>
+        </div>
+        <div class="meanings" id="meanings"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 导航 -->
+  <div class="nav" role="navigation" aria-label="闪卡导航">
+    <button class="btn btn-secondary" id="prevBtn" aria-label="上一张"><svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>上一张</button>
+    <div class="counter" id="counter">0 / 14</div>
+    <button class="btn btn-secondary shuffle-btn" id="shuffleBtn" aria-label="打乱顺序" title="打乱顺序">
+      <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="16 3 21 3 21 8"/><path d="M4 20L21 3"/><polyline points="21 16 8 21 3 21 3 16"/></svg>
+    </button>
+    <button class="btn btn-primary" id="nextBtn" aria-label="下一张">下一张<svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></button>
+  </div>
+
+  <!-- 统计面板 -->
+  <div class="nav" style="margin-top:.8rem;justify-content:center;gap:1.5rem;font-size:.75rem;color:var(--muted)">
+    <span>已掌握：<strong id="masteredCount" style="color:var(--primary)">0</strong>/14</span>
+    <span>本轮翻转：<strong id="flipCount">0</strong>次</span>
+  </div>
+</main>
+
+<script>
+// ============= 数据 =============
+const words = [
+  {id:1, zh:"烦恼", py:"fán nǎo", zhMeaning:"因事情不顺心而感到苦闷、担忧", enMeaning:"worry; annoyance; trouble", examples:[{zh:"考试前夕，他最烦恼的是华文口试。",en:"Before the exam, he was most worried about the Chinese oral."},{zh:"首先到辅导室，烦恼的心情才慢慢平复下来。",en:"First went to the tutoring room, then the worried mood slowly calmed down."}]},
+  {id:2, zh:"眼膏", py:"yǎn gāo", zhMeaning:"涂抹在眼部的药膏或护肤品", enMeaning:"eye ointment; eye cream", examples:[{zh:"奶奶每晚睡前都要涂眼膏护理眼部。",en:"Grandma applies eye cream every night before bed."},{zh:"接着去药房买眼膏，顺便问药剂师用法。",en:"Then went to pharmacy to buy eye ointment, also asked pharmacist for usage."}]},
+  {id:3, zh:"车资卡", py:"chē zī kǎ", zhMeaning:"新加坡通用的储值交通卡（EZ-Link/NETS FlashPay）", enMeaning:"stored-value travel card; EZ-Link card", examples:[{zh:"我每天早高峰刷车资卡坐地铁上学。",en:"I tap my EZ-Link card to take MRT to school every morning rush hour."},{zh:"从地铁站出发，记得先确认车资卡余额。",en:"Starting from MRT station, remember to check stored-value card balance first."}]},
+  {id:4, zh:"创新", py:"chuàng xīn", zhMeaning:"创造新事物、新方法；打破旧有模式", enMeaning:"innovate; innovation", examples:[{zh:"学校鼓励同学创新设计环保袋参赛。",en:"School encourages students to innovate and design eco-bags for competition."},{zh:"然后参观创新实验室，看学生用3D打印做模型。",en:"Then visit innovation lab, see students use 3D printing to make models."}]},
+  {id:5, zh:"填写", py:"tián xiě", zhMeaning:"在表格、空格等处写上所需内容", enMeaning:"fill in; fill out", examples:[{zh:"报名比赛前，请仔细填写个人资料表。",en:"Before signing up for competition, please fill in personal particulars form carefully."},{zh:"首先在入口填写游客登记表格，领取地图。",en:"First fill in visitor registration form at entrance, collect map."}]},
+  {id:6, zh:"表格", py:"biǎo gé", zhMeaning:"由横竖线组成、用以记录数据的格式", enMeaning:"form; table", examples:[{zh:"老师发下成绩表格，请核对后签名。",en:"Teacher handed out results table, please verify and sign."},{zh:"填写好表格，接着才能领取导览耳机。",en:"After filling in form, then can collect audio guide."}]},
+  {id:7, zh:"详情", py:"xiáng qíng", zhMeaning:"详细的情况或情形", enMeaning:"details; particulars", examples:[{zh:"扫描二维码查看活动详情与报名链接。",en:"Scan QR code to view event details and registration link."},{zh:"服务台提供中英双语详情单张，然后我们才决定行程。",en:"Counter provides bilingual details sheet, then we decide itinerary."}]},
+  {id:8, zh:"产品", py:"chǎn pǐn", zhMeaning:"经劳动生产出来供交换或使用的物品", enMeaning:"product; merchandise", examples:[{zh:"这款护肤产品在新加坡超市很畅销。",en:"This skincare product sells well in Singapore supermarkets."},{zh:"最后在纪念品店买了两件手工产品带回家。",en:"Finally bought two handmade products at souvenir shop to bring home."}]},
+  {id:9, zh:"牧场", py:"mù chǎng", zhMeaning:"供牲畜放牧的大片草地", enMeaning:"pasture; ranch", examples:[{zh:"周末全家去牧场喂羊、挤牛奶。",en:"Weekend whole family goes to ranch to feed sheep, milk cows."},{zh:"接着来到牧场区，近距离喂食小山羊。",en:"Then arrive at ranch area, feed baby goats up close."}]},
+  {id:10, zh:"航海", py:"háng hǎi", zhMeaning:"驾驶船只在海上航行", enMeaning:"navigate; sail", examples:[{zh:"爷爷年轻时是航海军官，见过大风浪。",en:"Grandpa was a naval officer when young, has seen big waves."},{zh:"博物馆航海展厅展示古代星盘与罗盘。",en:"Museum navigation gallery displays ancient astrolabes and compasses."}]},
+  {id:11, zh:"潜水", py:"qián shuǐ", zhMeaning:"潜入水中作业或游览", enMeaning:"dive; scuba dive", examples:[{zh:"妹妹考了潜水执照，想去巴厘岛看珊瑚。",en:"Younger sister got diving license, wants to go Bali see corals."},{zh:"然后观看专业潜水表演，潜水员喂食鲨鱼。",en:"Then watch professional diving performance, divers feed sharks."}]},
+  {id:12, zh:"海洋", py:"hǎi yáng", zhMeaning:"广阔的大海；海水覆盖的地球表面部分", enMeaning:"ocean; sea", examples:[{zh:"新加坡被海洋环绕，海洋生物多样性高。",en:"Singapore surrounded by ocean, high marine biodiversity."},{zh:"从海洋馆出发，接着穿越海底隧道看魔鬼鱼。",en:"From oceanarium depart, then cross underwater tunnel see manta rays."}]},
+  {id:13, zh:"降落", py:"jiàng luò", zhMeaning:"飞机、直升机等从空中下降着陆", enMeaning:"land; touch down", examples:[{zh:"樟宜机场跑道繁忙，平均每分钟一架飞机降落。",en:"Changi Airport runway busy, average one plane lands per minute."},{zh:"最后坐缆车降落山脚，结束愉快一日游。",en:"Finally take cable car descend to foothill, end pleasant day trip."}]},
+  {id:14, zh:"基因", py:"jī yīn", zhMeaning:"生物遗传的基本单位，决定性状", enMeaning:"gene", examples:[{zh:"科学家研究基因编辑治疗罕见病。",en:"Scientists research gene editing to treat rare diseases."},{zh:"科普馆基因互动展让我们拼出DNA双螺旋。",en:"Science museum gene interactive exhibit lets us assemble DNA double helix."}]}
+];
+
+// ============= 状态 =============
+let currentIndex = 0;
+let order = [...words]; // 当前顺序
+let mode = 'sequential'; // sequential | random | wrong
+let mastered = new Set();
+let wrongWords = new Set();
+let flipCount = 0;
+let isFlipped = false;
+const flashcard = document.getElementById('flashcard');
+const flashcardWrap = document.getElementById('flashcardWrap');
+
+// DOM 元素
+const frontWord = document.getElementById('frontWord');
+const backWord = document.getElementById('backWord');
+const backPinyin = document.getElementById('backPinyin');
+const meaningsEl = document.getElementById('meanings');
+const progressFill = document.getElementById('progressFill');
+const progressCurrent = document.getElementById('progressCurrent');
+const progressPercent = document.getElementById('progressPercent');
+const counter = document.getElementById('counter');
+const masteredCount = document.getElementById('masteredCount');
+const flipCountEl = document.getElementById('flipCount');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const shuffleBtn = document.getElementById('shuffleBtn');
+const speakBtn = document.getElementById('speakBtn');
+const tapHint = document.getElementById('tapHint');
+const wrongModeBtn = document.getElementById('wrongModeBtn');
+const modeBtns = document.querySelectorAll('.mode-btn');
+
+// ============= 工具函数 =============
+function shuffleArray(arr){
+  const a = [...arr];
+  for(let i=a.length-1;i>0;i--){
+    const j = Math.floor(Math.random()*(i+1));
+    [a[i],a[j]] = [a[j],a[i]];
+  }
+  return a;
+}
+
+function updateProgress(){
+  const total = words.length;
+  const current = currentIndex + 1;
+  const percent = Math.round((current/total)*100);
+  progressFill.style.width = percent + '%';
+  progressCurrent.textContent = `第 ${current} / ${total} 词`;
+  progressPercent.textContent = percent + '%';
+  counter.textContent = `${current} / ${total}`;
+  masteredCount.textContent = mastered.size;
+  progressFill.parentElement.parentElement.setAttribute('aria-valuenow', current);
+}
+
+function renderCard(word){
+  frontWord.textContent = word.zh;
+  backWord.textContent = word.zh;
+  backPinyin.textContent = word.py;
+  meaningsEl.innerHTML = `
+    <div class="meaning-row">
+      <span class="meaning-label">中文</span>
+      <span class="meaning-value">${word.zhMeaning}</span>
+    </div>
+    <div class="meaning-row">
+      <span class="meaning-label">English</span>
+      <span class="meaning-value en">${word.enMeaning}</span>
+    </div>
+    <div class="meaning-row example-sentences">
+      <div style="width:100%">
+        <div class="example-label">例句 Examples</div>
+        ${word.examples.map(ex => `
+          <div class="example-item">
+            <span class="zh">${ex.zh}</span>
+            <span class="en">${ex.en}</span>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `;
+  // 重置翻转状态
+  flashcard.classList.remove('flipped');
+  isFlipped = false;
+  tapHint.style.display = 'flex';
+  updateProgress();
+}
+
+function speak(text){
+  if(!('speechSynthesis' in window)) return;
+  speechSynthesis.cancel();
+  const utter = new SpeechSynthesisUtterance(text);
+  utter.lang = 'zh-CN';
+  utter.rate = 0.9;
+  utter.pitch = 1;
+  speakBtn.classList.add('speaking');
+  utter.onend = () => speakBtn.classList.remove('speaking');
+  utter.onerror = () => speakBtn.classList.remove('speaking');
+  speechSynthesis.speak(utter);
+}
+
+function goToIndex(idx){
+  if(idx < 0) idx = order.length - 1;
+  if(idx >= order.length) idx = 0;
+  currentIndex = idx;
+  renderCard(order[currentIndex]);
+  flipCount = 0;
+  flipCountEl.textContent = flipCount;
+}
+
+function nextCard(){ goToIndex(currentIndex + 1); }
+function prevCard(){ goToIndex(currentIndex - 1); }
+
+function setMode(newMode){
+  mode = newMode;
+  modeBtns.forEach(btn => {
+    const active = btn.dataset.mode === newMode;
+    btn.classList.toggle('active', active);
+    btn.setAttribute('aria-selected', active);
+  });
+  if(mode === 'random'){
+    order = shuffleArray(words);
+  }else if(mode === 'wrong'){
+    order = words.filter(w => wrongWords.has(w.id));
+    if(order.length === 0){
+      alert('暂无错词，太棒了！');
+      setMode('sequential');
+      return;
+    }
+  }else{
+    order = [...words];
+  }
+  currentIndex = 0;
+  goToIndex(0);
+}
+
+// ============= 事件绑定 =============
+flashcard.addEventListener('click', () => {
+  if(!isFlipped){
+    flashcard.classList.add('flipped');
+    isFlipped = true;
+    tapHint.style.display = 'none';
+    flipCount++;
+    flipCountEl.textContent = flipCount;
+  }
+});
+
+flashcard.addEventListener('keydown', (e) => {
+  if(e.key === 'Enter' || e.key === ' '){
+    e.preventDefault();
+    flashcard.click();
+  }
+});
+
+speakBtn.addEventListener('click', (e) => {
+  e.stopPropagation();
+  const word = order[currentIndex];
+  speak(word.zh);
+});
+
+prevBtn.addEventListener('click', prevCard);
+nextBtn.addEventListener('click', nextCard);
+
+shuffleBtn.addEventListener('click', () => {
+  order = shuffleArray(order);
+  currentIndex = 0;
+  goToIndex(0);
+});
+
+modeBtns.forEach(btn => {
+  btn.addEventListener('click', () => setMode(btn.dataset.mode));
+});
+
+// 键盘快捷键
+document.addEventListener('keydown', (e) => {
+  if(e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+  switch(e.key){
+    case 'ArrowRight': case ' ': nextCard(); break;
+    case 'ArrowLeft': prevCard(); break;
+    case 'ArrowUp': case 'f': case 'F': flashcard.click(); break;
+    case 's': case 'S': speakBtn.click(); break;
+    case 'r': case 'R': shuffleBtn.click(); break;
+    case '1': setMode('sequential'); break;
+    case '2': setMode('random'); break;
+    case '3': if(wrongWords.size) setMode('wrong'); break;
+  }
+});
+
+// 标记掌握/未掌握（双击卡片正面）
+let lastTap = 0;
+frontWord.addEventListener('click', (e) => {
+  const now = Date.now();
+  if(now - lastTap < 300){
+    // 双击：切换掌握状态
+    const word = order[currentIndex];
+    if(mastered.has(word.id)){
+      mastered.delete(word.id);
+      frontWord.style.animation = 'none';
+    }else{
+      mastered.add(word.id);
+      frontWord.style.animation = 'pulse 0.5s ease';
+    }
+    updateProgress();
+  }
+  lastTap = now;
+});
+
+// 长按/右键：标记为错词
+frontWord.addEventListener('contextmenu', (e) => {
+  e.preventDefault();
+  const word = order[currentIndex];
+  if(wrongWords.has(word.id)){
+    wrongWords.delete(word.id);
+  }else{
+    wrongWords.add(word.id);
+    wrongModeBtn.style.display = 'block';
+  }
+  updateProgress();
+});
+
+// 触摸支持：双击检测
+let touchTimer = null;
+flashcard.addEventListener('touchend', (e) => {
+  if(e.target === speakBtn || speakBtn.contains(e.target)) return;
+  const now = Date.now();
+  if(now - lastTap < 300){
+    flashcard.click();
+  }
+  lastTap = now;
+}, {passive:true});
+
+// 初始化
+goToIndex(0);
+
+// PWA 支持：离线缓存提示
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('/sw.js').catch(()=>{});
+}
+</script>
+</body>
+</html>
