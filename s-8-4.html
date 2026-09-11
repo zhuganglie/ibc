@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="zh-SG">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第五单元 C卷·终极通关互动版 | S1 G1 华文</title>
+<style>
+:root{--primary:#1a65d6;--primary-dark:#0f4bb5;--bg:#f4f7fb;--card:#fff;--border:#e2e8f0;--text:#1e293b;--muted:#64748b;--success:#10b981;--error:#ef4444;--radius:14px;--accent:#f59e0b}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text);line-height:1.75}
+header{background:linear-gradient(135deg,#1a65d6,#3b82f6);color:#fff;padding:1.6rem 1rem;text-align:center;box-shadow:0 4px 15px rgba(26,101,214,.2)}
+header h1{font-size:1.45rem;letter-spacing:.5px;font-weight:700}
+header p{opacity:.95;font-size:.9rem;margin-top:.35rem}
+header .sub{font-size:.8rem;opacity:.85;margin-top:.25rem}
+main{max-width:860px;margin:0 auto;padding:1.2rem 1rem 3rem}
+.toolbar{display:flex;gap:.7rem;flex-wrap:wrap;justify-content:center;margin:1.2rem 0;position:sticky;top:10px;z-index:99}
+.btn{appearance:none;border:none;border-radius:10px;padding:.55rem 1.1rem;font-weight:600;cursor:pointer;transition:.18s ease;font-size:.9rem;box-shadow:0 2px 6px rgba(0,0,0,.08)}
+.btn-primary{background:var(--primary);color:#fff}
+.btn-primary:hover{background:var(--primary-dark);transform:translateY(-1px)}
+.btn-ghost{background:#fff;border:1px solid var(--border);color:var(--text)}
+.btn-ghost:hover{background:#f8fafc;border-color:var(--primary);color:var(--primary)}
+.btn-small{padding:.4rem .8rem;font-size:.82rem}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.4rem;margin:1.3rem 0;box-shadow:0 6px 18px rgba(0,0,0,.04)}
+.card h2{font-size:1.15rem;color:var(--primary);border-left:4px solid var(--primary);padding-left:.7rem;margin-bottom:.7rem;display:flex;align-items:center;flex-wrap:wrap;gap:.5rem}
+.badge{display:inline-block;background:var(--primary);color:#fff;font-size:.72rem;padding:.2rem .55rem;border-radius:20px;font-weight:600}
+.badge-gold{background:var(--accent)}
+.meta{font-size:.84rem;color:var(--muted);margin-bottom:.9rem}
+.q{margin:.8rem 0;padding:.85rem 1rem;background:#f8fafc;border:1px solid var(--border);border-radius:10px}
+.q-title{font-weight:600;margin-bottom:.45rem;font-size:.95rem;color:#0f172a}
+.input{border:1.8px solid var(--border);border-radius:8px;padding:.45rem .65rem;font-size:.92rem;outline:none;transition:.15s;background:#fff;min-width:100px}
+.input:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(26,101,214,.15)}
+.input.ok{border-color:var(--success);background:#ecfdf5;color:#065f46;font-weight:600}
+.input.err{border-color:var(--error);background:#fef2f2;color:#991b1b}
+.inline{display:inline-flex;align-items:center;gap:.4rem;flex-wrap:wrap}
+.table{width:100%;border-collapse:collapse;margin:.7rem 0;font-size:.9rem}
+.table th,.table td{border:1px solid var(--border);padding:.55rem .65rem;text-align:left;vertical-align:middle}
+.table th{background:#eef4ff;color:var(--primary);text-align:center;font-weight:700}
+.table td:first-child{text-align:center}
+.ans{margin-top:.8rem;padding:.85rem 1rem;background:#f0f7ff;border:1.5px dashed var(--primary);border-radius:10px;font-size:.9rem;display:none;line-height:1.8}
+.ans.show{display:block}
+.ans strong{color:var(--primary)}
+.passage{background:#fff;border:1px solid var(--border);border-left:4px solid var(--primary);padding:1.1rem 1.2rem;border-radius:10px;line-height:1.95;font-size:.96rem;margin-bottom:1rem}
+.passage b{color:var(--primary);background:rgba(26,101,214,.08);padding:0 .2rem;border-radius:4px}
+.options{display:flex;flex-direction:column;gap:.45rem;margin-top:.5rem}
+.options label{display:flex;gap:.5rem;align-items:center;padding:.5rem .7rem;border:1px solid var(--border);border-radius:8px;background:#fff;cursor:pointer;font-size:.9rem;transition:.15s}
+.options label:hover{border-color:var(--primary);background:#f0f7ff}
+textarea{width:100%;min-height:95px;border:1.8px solid var(--border);border-radius:10px;padding:.7rem .8rem;font-size:.92rem;resize:vertical;font-family:inherit;line-height:1.6}
+textarea:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(26,101,214,.15);outline:none}
+.hint{font-size:.82rem;color:var(--muted);margin-top:.35rem}
+.kbd{font-family:ui-monospace,monospace;background:#e2e8f0;border:1px solid #cbd5e1;padding:.1rem .4rem;border-radius:6px;font-size:.8rem}
+hr{border:none;border-top:1px dashed var(--border);margin:1.2rem 0}
+.small{font-size:.82rem;color:var(--muted)}
+.audio-box{display:flex;align-items:center;gap:.8rem;background:#eff6ff;padding:.8rem 1rem;border-radius:10px;margin-bottom:1rem;flex-wrap:wrap}
+.audio-box span{font-size:.85rem;font-weight:600;color:var(--primary)}
+.img-container{text-align:center;margin:1rem 0}
+.img-container img{max-width:100%;height:auto;border-radius:10px;border:1px solid var(--border);box-shadow:0 4px 12px rgba(0,0,0,.08)}
+.caption{font-size:.8rem;color:var(--muted);margin-top:.4rem}
+@media print{header,.toolbar,.btn-hide,.audio-box{display:none!important}.card{box-shadow:none;break-inside:avoid;border:1px solid #ccc;margin:1rem 0}}
+</style>
+</head>
+<body>
+<header>
+<h1>第五单元 C卷 · 终极通关互动评估版</h1>
+<p>新加坡中一 G1 华文 · 空间转换叙述与词语综合实战 · 5关大闯关 · 60分 · 建议40分钟</p>
+<p class="sub">涵盖全部 14 核心词与 9 连接词 · 配备标准/慢速双轨音频 · 支持在线自检与打印</p>
+</header>
+
+<main>
+<div class="toolbar">
+<button class="btn btn-ghost" onclick="window.print()">🖨️ 打印试卷</button>
+<button class="btn btn-ghost" onclick="clearAll()">🧹 一键清空</button>
+<button class="btn btn-primary" onclick="checkAll()">✅ 一键检查（第一、二、三关）</button>
+</div>
+
+<!-- 第一关 -->
+<div class="card" id="sec1">
+<h2>第一关：词语攻坚 <span class="badge">10分</span> <span style="font-weight:400;font-size:.84rem;color:var(--muted)">—— 听音识字与语境搭配</span></h2>
+<p class="meta">任务：根据拼音提示在横线上填入正确汉字，右侧完成英汉词义连线。</p>
+<table class="table">
+<thead><tr><th style="width:55px">题号</th><th style="width:130px">拼音提示</th><th style="width:140px">写汉字（填空）</th><th>生活语境填空句子</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>chē zī kǎ</td><td><input class="input" id="t1" placeholder="汉字" style="width:120px"></td><td>每天清晨乘坐巴士或地铁，上车时要记得刷好 ______ 。</td></tr>
+<tr><td>2</td><td>yǎn gāo</td><td><input class="input" id="t2" placeholder="汉字" style="width:120px"></td><td>奶奶眼睛容易干涩发痒，每晚睡前都要涂上 ______ 护眼。</td></tr>
+<tr><td>3</td><td>tián xiě</td><td><input class="input" id="t3" placeholder="汉字" style="width:120px"></td><td>参加圣淘沙研学活动前，每位同学都必须认真 ______ 报名表。</td></tr>
+<tr><td>4</td><td>biǎo gé</td><td><input class="input" id="t4" placeholder="汉字" style="width:120px"></td><td>请仔细核对这张活动登记 ______ 上的个人信息。</td></tr>
+<tr><td>5</td><td>chuàng xīn</td><td><input class="input" id="t5" placeholder="汉字" style="width:120px"></td><td>学校科技节倡导环保生活，鼓励同学们大胆 ______ 环保设计。</td></tr>
+<tr><td>6</td><td>jī yīn</td><td><input class="input" id="t6" placeholder="汉字" style="width:120px"></td><td>生物科普馆里，我们通过屏幕了解了海洋生物独特的 ______ 结构。</td></tr>
+<tr><td>7</td><td>qián shuǐ</td><td><input class="input" id="t7" placeholder="汉字" style="width:120px"></td><td>名胜世界里，游客们隔着大水族缸观看精彩的 ______ 表演。</td></tr>
+<tr><td>8</td><td>jiàng luò</td><td><input class="input" id="t8" placeholder="汉字" style="width:120px"></td><td>傍晚时分，跨海高空缆车平稳缓缓地 ______ 在西乐索海滩。</td></tr>
+</tbody>
+</table>
+<p class="hint">提示：先拼读，再写汉字；“车资卡”为新加坡常用生活词汇。</p>
+<div style="margin-top:.7rem;display:flex;gap:.5rem;flex-wrap:wrap">
+<button class="btn btn-primary btn-small" onclick="check1()">检查第一关</button>
+<button class="btn btn-ghost btn-small btn-hide" onclick="toggle('a1')">显示 / 隐藏答案</button>
+</div>
+<div id="a1" class="ans">
+<strong>正确答案：</strong><br>
+1. 车资卡 · 2. 眼膏 · 3. 填写 · 4. 表格 · 5. 创新 · 6. 基因 · 7. 潜水 · 8. 降落<br>
+<span class="small">连线对照：降落→to land / touch down；潜水→to dive；海洋→ocean；航海→to sail</span>
+</div>
+</div>
+
+<!-- 第二关 -->
+<div class="card" id="sec2">
+<h2>第二关：火眼金睛 <span class="badge">10分</span> <span style="font-weight:400;font-size:.84rem;color:var(--muted)">—— 情境纠错与选词</span></h2>
+<h3 style="font-size:.95rem;margin:.6rem 0">2A 圈错改正（6分，每题2分）</h3>
+<div class="q">
+<div class="q-title">1. 考完华文后，小华去圣淘沙游玩，心中的烦脑立刻烟消云散。</div>
+<div class="inline">圈出：<input class="input" id="c1" placeholder="错字" style="width:90px"> → 改正为：<input class="input" id="r1" placeholder="正字" style="width:90px"></div>
+</div>
+<div class="q">
+<div class="q-title">2. 参加本次海岛研学营前，请查看通知上的活动祥情与集合时间。</div>
+<div class="inline">圈出：<input class="input" id="c2" placeholder="错字" style="width:90px"> → 改正为：<input class="input" id="r2" placeholder="正字" style="width:90px"></div>
+</div>
+<div class="q">
+<div class="q-title">3. 太阳缓缓下山，跨海高空缆车平稳地将落在西乐索海滩。</div>
+<div class="inline">圈出：<input class="input" id="c3" placeholder="错字" style="width:90px"> → 改正为：<input class="input" id="r3" placeholder="正字" style="width:90px"></div>
+</div>
+
+<h3 style="font-size:.95rem;margin:1rem 0 .4rem">2B 语境选词填空（4分，每题2分）</h3>
+<div class="q">
+<div class="q-title">4. 新加坡国立大学举办科技展，展出了许多由中学生自主研发的绿色 ______ 。</div>
+<div class="options">
+<label><input type="radio" name="q4" value="A"> A. 烦恼</label>
+<label><input type="radio" name="q4" value="B"> B. 产品</label>
+<label><input type="radio" name="q4" value="C"> C. 牧场</label>
+</div>
+</div>
+<div class="q">
+<div class="q-title">5. 圣淘沙名胜世界里最吸引游客的，是深水缸中惊险优美的 ______ 表演。</div>
+<div class="options">
+<label><input type="radio" name="q5" value="A"> A. 潜水</label>
+<label><input type="radio" name="q5" value="B"> B. 表格</label>
+<label><input type="radio" name="q5" value="C"> C. 航海</label>
+</div>
+</div>
+
+<div style="margin-top:.7rem;display:flex;gap:.5rem;flex-wrap:wrap">
+<button class="btn btn-primary btn-small" onclick="check2()">检查第二关</button>
+<button class="btn btn-ghost btn-small btn-hide" onclick="toggle('a2')">显示 / 隐藏答案</button>
+</div>
+<div id="a2" class="ans">
+<strong>2A 纠错：</strong> 1. 圈 脑 → 改 恼（烦恼） · 2. 圈 祥 → 改 情（详情） · 3. 圈 将 → 改 降（降落）<br>
+<strong>2B 选词：</strong> 4. B 产品 · 5. A 潜水
+</div>
+</div>
+
+<!-- 第三关 -->
+<div class="card" id="sec3">
+<h2>第三关：空间排序 <span class="badge">12分</span> <span style="font-weight:400;font-size:.84rem;color:var(--muted)">—— 海陆空路线导航</span></h2>
+<p class="meta">背景：中一学生小明担任“圣淘沙海陆空探秘日”导览小使者，他的讲稿顺序被打乱了！</p>
+
+<div class="img-container">
+<img src="img-8-4-1.png" alt="圣淘沙海陆空探秘路线图">
+<div class="caption">图 1：圣淘沙海陆空探秘 5 站动线示意图</div>
+</div>
+
+<h3 style="font-size:.95rem;margin:.8rem 0 .4rem">3A 动线乱序整理与连接词补全（6分）</h3>
+<div class="q"><b>A.</b> （ <input class="input" id="c_a" placeholder="连接词" style="width:80px"> ）坐高空缆车缓缓降落在西乐索海滩，结束了一天充实的探秘。</div>
+<div class="q"><b>B.</b> （ <input class="input" id="c_b1" placeholder="连接词" style="width:80px"> ）港湾站出发，（ <input class="input" id="c_b2" placeholder="连接词" style="width:80px"> ）在游客中心填写登记表格，了解活动详情。</div>
+<div class="q"><b>C.</b> （ <input class="input" id="c_c" placeholder="连接词" style="width:80px"> ）走进未来科技馆，体验环保创新科技，了解水母的奇妙基因。</div>
+<div class="q"><b>D.</b> （ <input class="input" id="c_d" placeholder="连接词" style="width:80px"> ）前往著名的 S.E.A. 海洋馆，看潜水员在深水隧道中喂食鱼群。</div>
+<div class="q"><b>E.</b> （ <input class="input" id="c_e" placeholder="连接词" style="width:80px"> ）穿过林荫小道，到达微型城市牧场，给温顺的小山羊喂青草。</div>
+<div class="q"><b>F.</b> 顺道参观旁边的海事文化馆，瞻仰古代壮丽的航海大帆船。</div>
+
+<div class="q">
+<div class="q-title">正确参观动线顺序（填字母 A–F）：</div>
+<div class="inline">
+<input class="input" id="s1" placeholder="字母" style="width:50px;text-align:center"> →
+<input class="input" id="s2" placeholder="字母" style="width:50px;text-align:center"> →
+<input class="input" id="s3" placeholder="字母" style="width:50px;text-align:center"> →
+<input class="input" id="s4" placeholder="字母" style="width:50px;text-align:center"> →
+<input class="input" id="s5" placeholder="字母" style="width:50px;text-align:center"> →
+<input class="input" id="s6" placeholder="字母" style="width:50px;text-align:center">
+</div>
+</div>
+
+<h3 style="font-size:.95rem;margin:1.1rem 0 .4rem">3B 空间连接词运用与选填（6分）</h3>
+<p class="hint"><span class="kbd">词箱：首先、接着、然后、之后、最后、从……出发、前往、到达、返回</span></p>
+<div class="q">1. <input class="input" id="sc1" placeholder="连接词" style="width:95px"> 港湾站地铁站出发，我们乘车前往圣淘沙。</div>
+<div class="q">2. <input class="input" id="sc2a" placeholder="连接词" style="width:95px"> 在游客中心填写了表格， <input class="input" id="sc2b" placeholder="连接词" style="width:95px"> 走进未来科技馆。</div>
+<div class="q">3. 在海洋馆看完潜水表演 <input class="input" id="sc3" placeholder="连接词" style="width:95px"> ，我们前往微型牧场喂羊。</div>
+<div class="q">4. <input class="input" id="sc4" placeholder="连接词" style="width:95px"> 坐缆车降落西乐索海滩，满载快乐返回家中。</div>
+
+<div style="margin-top:.7rem;display:flex;gap:.5rem;flex-wrap:wrap">
+<button class="btn btn-primary btn-small" onclick="check3()">检查第三关</button>
+<button class="btn btn-ghost btn-small btn-hide" onclick="toggle('a3')">显示 / 隐藏答案</button>
+</div>
+<div id="a3" class="ans">
+<strong>3A 动线顺序：</strong> B → C → D → E → F → A<br>
+<strong>连接词填空参考：</strong> A. 最后 · B. 从……出发 / 首先 · C. 接着 · D. 然后 / 前往 · E. 之后 / 到达<br>
+<strong>3B 句式参考：</strong> 1. 从 · 2. 首先 / 接着 · 3. 之后 / 之后 · 4. 最后
+</div>
+</div>
+
+<!-- 第四关 -->
+<div class="card" id="sec4">
+<h2>第四关：实用阅读侦探 <span class="badge">14分</span> <span style="font-weight:400;font-size:.84rem;color:var(--muted)">—— 《圣淘沙海陆空探秘日》</span></h2>
+
+<div class="audio-box">
+<span>🎧 课文朗读录音：</span>
+<audio controls style="height:36px">
+<source src="材料.mp3" type="audio/mpeg">
+您的浏览器不支持音频播放。
+</audio>
+<span style="margin-left:1rem">🐢 慢速跟读版：</span>
+<audio controls style="height:36px">
+<source src="材料_慢速.mp3" type="audio/mpeg">
+您的浏览器不支持音频播放。
+</audio>
+</div>
+
+<div class="passage">
+    上周六早晨，我和家人决定去圣淘沙游玩，把备考华文的<b>烦恼</b>全部抛到脑后。我们带上水壶，刷<b>车资卡</b>搭乘地铁，<b>从</b>港湾站<b>出发前往</b>圣淘沙。<br>
+    <b>首先</b>，我们在游客服务中心<b>填写</b>探秘活动的登记<b>表格</b>，工作人员热情地递给我们一份指南，上面写满了各项活动的<b>详情</b>。<b>接着</b>，我们走进未来科技馆，这里展示了许多环保<b>创新</b>科技，我们还买到了由海藻制成的绿色<b>产品</b>；在生命科学互动角，我们兴致勃勃地了解发光水母的奇妙<b>基因</b>。<br>
+    <b>然后</b>，我们<b>前往</b>闻名世界的<b>海洋</b>馆，漫步在幽蓝的海底隧道中，正巧遇上专业<b>潜水</b>员在水中给魔鬼鱼喂食。<b>之后</b>，我们穿过林道，<b>到达</b>微型城市<b>牧场</b>，给温顺的小山羊喂青草，旁边展厅里的古老<b>航海</b>帆船模型更是气派非凡。<br>
+    傍晚时分，我们乘坐跨海高空缆车，微风吹拂，缆车缓缓<b>降落</b>在西乐索海滩。满载着快乐，我们踏上<b>返回</b>温馨家园的路。睡前，妹妹觉得眼睛有些酸涩，妈妈细心地帮她涂上<b>眼膏</b>。这一天，我们深切体会到：华文词语就在丰富多彩的生活中！
+</div>
+
+<div class="img-container">
+<img src="img-8-4-2.jpeg" alt="圣淘沙探秘生活场景">
+<div class="caption">图 2：刷车资卡、看详情、缆车降落与睡前涂眼膏的生活画卷</div>
+</div>
+
+<div class="q">
+<div class="q-title">1. 小明一家去圣淘沙的主要原因是什么？（2分）</div>
+<div class="options">
+<label><input type="radio" name="rd1" value="A"> A. 去药店买眼膏给妹妹护眼</label>
+<label><input type="radio" name="rd1" value="B"> B. 借周末游玩放松心情，消除烦恼</label>
+<label><input type="radio" name="rd1" value="C"> C. 想要测试车资卡里还有多少余额</label>
+</div>
+</div>
+
+<div class="q">
+<div class="q-title">2. 在未来科技馆里，小明和家人了解到了什么？（2分）</div>
+<div class="options">
+<label><input type="radio" name="rd2" value="A"> A. 古代航海帆船的制作技术</label>
+<label><input type="radio" name="rd2" value="B"> B. 发光水母的奇妙基因并买到环保产品</label>
+<label><input type="radio" name="rd2" value="C"> C. 潜水员在深水隧道中喂鲨鱼</label>
+</div>
+</div>
+
+<div class="q">
+<div class="q-title">3. 关于“微型城市牧场与展厅”，下列哪项叙述是正确的？（2分）</div>
+<div class="options">
+<label><input type="radio" name="rd3" value="A"> A. 小明在牧场看到了从空中降落的飞机</label>
+<label><input type="radio" name="rd3" value="B"> B. 潜水教练在城市牧场里喂羊</label>
+<label><input type="radio" name="rd3" value="C"> C. 牧场旁边展出了气派非凡的古老航海帆船模型</label>
+</div>
+</div>
+
+<div class="q">
+<div class="q-title">4. 空间转换路线追踪表（4分，每空1分）</div>
+<table class="table">
+<thead><tr><th>站次</th><th>游览地点</th><th>核心活动内容填空</th></tr></thead>
+<tbody>
+<tr><td>第一站</td><td>游客服务中心</td><td>填写登记（ <input class="input" id="tr1" style="width:75px"> ），了解活动（ <input class="input" id="tr2" style="width:75px"> ）</td></tr>
+<tr><td>第二站</td><td>未来科技馆</td><td>体验环保（ <input class="input" id="tr3" style="width:75px"> ），了解水母（ <input class="input" id="tr4" style="width:75px"> ）</td></tr>
+<tr><td>第三站</td><td>S.E.A. 海洋馆</td><td>漫步海底隧道，观赏专业（ <input class="input" id="tr5" style="width:75px"> ）员喂鱼</td></tr>
+<tr><td>终点站</td><td>西乐索海滩</td><td>乘坐高空缆车缓缓（ <input class="input" id="tr6" style="width:75px"> ），看夕阳</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="q">
+<div class="q-title">5. 情感升华与生活应用问答（4分）</div>
+<textarea id="op5" placeholder="读完短文，你最喜欢小明行程中的哪一个地点？为什么？请用上本单元学过的至少 1 个生词（如：创新、潜水、牧场、航海、海洋等）回答。"></textarea>
+<p class="hint">答题支架：我最喜欢 ______ ，因为在这里可以 ______ ，体验到 ______ 。</p>
+</div>
+
+<div style="margin-top:.7rem;display:flex;gap:.5rem;flex-wrap:wrap">
+<button class="btn btn-ghost btn-small btn-hide" onclick="toggle('a4')">显示 / 隐藏答案</button>
+</div>
+<div id="a4" class="ans">
+<strong>1.</strong> B 放松心情消除烦恼 · <strong>2.</strong> B 发光水母基因与环保产品 · <strong>3.</strong> C 展出古老航海帆船模型<br>
+<strong>4.</strong> 表格 / 详情 / 创新 / 基因 / 潜水 / 降落<br>
+<strong>5. 参考：</strong>我最喜欢海洋馆，因为漫步在海底隧道可以近距离观看专业潜水员喂食魔鬼鱼，了解丰富的海洋生物，感受奇妙的自然魅力。
+</div>
+</div>
+
+<!-- 第五关 -->
+<div class="card" id="sec5">
+<h2>第五关：导览创作与口试模拟 <span class="badge badge-gold">14分</span></h2>
+<h3 style="font-size:.95rem;margin:.6rem 0">5A 真实导览口述稿创作（10分）</h3>
+<p class="meta">情境：你是学校迎新大使，请根据 5 站动线，为国外交换生写一段 80–100 字的导览词并录音。</p>
+<div class="q" style="background:#fff">
+<b>动线提示（5 站固定）：</b> 1. 游客中心（填表格、拿详情） → 2. 未来科技馆（创新产品、水母基因） → 3. 海洋潜水馆（海底隧道、潜水表演） → 4. 城市牧场（喂小羊、看航海帆船） → 5. 西乐索海滩（缆车降落、海风美景）<br>
+<span class="small">要求：① 空间连接词 ≥ 4 个 ② 单元生词 ≥ 5 个 ③ 每站点明“地点 + 活动”</span>
+</div>
+
+<h4 style="font-size:.9rem;margin:.8rem 0 .3rem">三步法速写（构思草稿）：</h4>
+<table class="table">
+<tr><th style="width:190px">步骤</th><th>你的构思</th></tr>
+<tr><td>① 想路线（5站）</td><td>1.游客中心 2.未来科技馆 3.海洋馆 4.城市牧场 5.西乐索海滩</td></tr>
+<tr><td>② 选连接词（各1个）</td><td>站1: 首先 站2: 接着 站3: 然后 站4: 之后 站5: 最后</td></tr>
+<tr><td>③ 嵌生词说活动</td><td><textarea placeholder="草稿：首先在游客中心填写表格了解详情；接着去科技馆看创新产品和基因模型……" style="min-height:70px"></textarea></td></tr>
+</table>
+
+<h4 style="font-size:.9rem;margin:1rem 0 .3rem">正式口述稿（80–100字）：</h4>
+<textarea id="draft" placeholder="请在此撰写正式导览词（80–100字），完成后可点击“统计字数”检验。" style="min-height:110px"></textarea>
+<div style="margin-top:.4rem;display:flex;gap:.5rem;align-items:center;flex-wrap:wrap">
+<button class="btn btn-ghost btn-small" onclick="countWords()">统计字数</button>
+<span id="wc" class="small">字数：0</span>
+<button class="btn btn-ghost btn-small btn-hide" onclick="toggle('a5')">查看高分范文</button>
+</div>
+<div id="a5" class="ans">
+<strong>高分范文参考（98字）：</strong><br>
+各位同学好！今天由我带大家参观。<strong>首先</strong>我们在游客中心集合，<strong>填写表格</strong>了解活动<strong>详情</strong>。<strong>接着前往创新</strong>科技馆，探索有趣的生物<strong>基因</strong>。<strong>然后</strong>走进<strong>海洋</strong>馆，欣赏精彩的<strong>潜水</strong>表演。<strong>之后到达牧场</strong>喂小羊，参观古代<strong>航海</strong>帆船。<strong>最后</strong>乘坐高空缆车，缓缓<strong>降落</strong>在沙滩，结束愉快旅程！
+</div>
+
+<hr>
+<h3 style="font-size:.95rem;margin:.9rem 0 .4rem">5B 新加坡 G1 口试实战对答模拟（4分）</h3>
+<div class="q">
+<div class="q-title">考官提问 1：在平时的周末或学校假期，你通常喜欢去哪里放松？为什么？（2分）</div>
+<textarea placeholder="我的回答：我喜欢去……因为……消除烦恼……"></textarea>
+</div>
+<div class="q">
+<div class="q-title">考官提问 2：当你向别人介绍一条游览路线时，为什么使用“首先、接着、然后、最后”这样的空间词语会更好？（2分）</div>
+<textarea placeholder="我的回答：因为使用这些连接词，可以让路线顺序很清晰，听的人能够……"></textarea>
+</div>
+
+<hr>
+<h3 style="font-size:.95rem;margin:.7rem 0">同伴互评与自我评分量规</h3>
+<label style="display:flex;gap:.4rem;margin:.35rem 0"><input type="checkbox"> 空间动线清晰，连接词 ≥ 4 个且自然不堆砌（3分）</label>
+<label style="display:flex;gap:.4rem;margin:.35rem 0"><input type="checkbox"> 本单元核心生词 ≥ 5 个，字音字形运用准确（3分）</label>
+<label style="display:flex;gap:.4rem;margin:.35rem 0"><input type="checkbox"> 5 站均交代清楚“地点 + 活动”，条理分明（2分）</label>
+<label style="display:flex;gap:.4rem;margin:.35rem 0"><input type="checkbox"> 导览字数在 80–100 字，语句通顺表达自信（2分）</label>
+</div>
+
+<div class="card" style="text-align:center">
+<p class="small">新加坡中一 G1 华文 · 第五单元 8-4 终极通关评测 | 对应纸质卷：S1-G1-8-4.docx / .pdf</p>
+<p class="small">与 8-2（A卷）、8-3（B卷）阶梯递进 · 听说读写一体化达成！</p>
+</div>
+</main>
+
+<script>
+function toggle(id){document.getElementById(id).classList.toggle('show')}
+function clearAll(){
+ document.querySelectorAll('input[type=text], textarea').forEach(e=>e.value='');
+ document.querySelectorAll('input[type=radio], input[type=checkbox]').forEach(e=>e.checked=false);
+ document.querySelectorAll('.input').forEach(e=>e.classList.remove('ok','err'));
+ document.querySelectorAll('.ans').forEach(e=>e.classList.remove('show'));
+ document.getElementById('wc').textContent='字数：0';
+}
+function check1(){
+ const ans=["车资卡","眼膏","填写","表格","创新","基因","潜水","降落"];
+ let ok=0;
+ for(let i=1;i<=8;i++){
+   const el=document.getElementById('t'+i);
+   const v=(el.value||'').trim();
+   if(v===ans[i-1]){el.classList.remove('err');el.classList.add('ok');ok++}
+   else if(v===''){el.classList.remove('ok','err')}
+   else{el.classList.remove('ok');el.classList.add('err')}
+ }
+ alert(ok===8 ? '第一关全对！词语掌握太扎实了 🎉' : '第一关：做对 '+ok+'/8，标红题目请订正。');
+}
+function check2(){
+ const pairs=[['c1','脑'],['r1','恼'],['c2','祥'],['r2','情'],['c3','将'],['r3','降']];
+ let ok=0;
+ pairs.forEach(([id,exp])=>{
+   const el=document.getElementById(id);
+   if(!el) return;
+   const v=(el.value||'').trim();
+   if(v===exp){el.classList.remove('err');el.classList.add('ok');ok++}
+   else if(v===''){el.classList.remove('ok','err')}
+   else{el.classList.remove('ok');el.classList.add('err')}
+ });
+ const expR={q4:'B',q5:'A'};
+ let rok=0;
+ for(const k in expR){
+   const sel=document.querySelector('input[name="'+k+'"]:checked');
+   if(sel && sel.value===expR[k]) rok++;
+ }
+ alert('2A 改错：'+ok+'/6 空正确；2B 选词：'+rok+'/2 题正确！');
+}
+function check3(){
+ const seqExp=['B','C','D','E','F','A'];
+ let seqOk=0;
+ for(let i=1;i<=6;i++){
+   const el=document.getElementById('s'+i);
+   const v=(el.value||'').trim().toUpperCase();
+   if(v===seqExp[i-1]){el.classList.remove('err');el.classList.add('ok');seqOk++}
+   else if(v===''){el.classList.remove('ok','err')}
+   else{el.classList.remove('ok');el.classList.add('err')}
+ }
+ alert(seqOk===6 ? '3A 排序全部正确（B→C→D→E→F→A）！👏' : '3A 排序：正确 '+seqOk+'/6 个，请参考地图动线。');
+}
+function checkAll(){check1();check2();check3()}
+function countWords(){
+ const t=document.getElementById('draft').value||'';
+ const c=t.replace(/\s/g,'').length;
+ document.getElementById('wc').textContent='字数：'+c+'（目标80–100字）'+(c>=80&&c<=100?' ✅ 合格':' ⚠️ 需调整');
+}
+</script>
+</body>
+</html>
