@@ -1,0 +1,2525 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>事实与意见 · 狮城新闻小读者探案馆 | 新加坡中一 G1 华文第六单元阅读课</title>
+  <style>
+    :root {
+      --primary: #1E3A8A;
+      --primary-light: #2563EB;
+      --primary-gradient: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 100%);
+      --accent: #F59E0B;
+      --accent-gradient: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+      --success: #10B981;
+      --danger: #EF4444;
+      --fact-color: #0284C7;
+      --fact-bg: #E0F2FE;
+      --fact-border: #38BDF8;
+      --opinion-color: #D97706;
+      --opinion-bg: #FEF3C7;
+      --opinion-border: #FBBF24;
+      --bg: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --text: #0F172A;
+      --text-muted: #64748B;
+      --border: #E2E8F0;
+      --sketch-border: #334155;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 22px;
+      --wobbly-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+      --shadow-sm: 0 2px 4px rgba(15, 23, 42, 0.05);
+      --shadow-md: 0 10px 20px -5px rgba(15, 23, 42, 0.08), 0 2px 6px rgba(15, 23, 42, 0.04);
+      --shadow-sketch: 3px 3px 0px rgba(15, 23, 42, 0.85);
+      --shadow-sketch-lg: 5px 5px 0px rgba(15, 23, 42, 0.85);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    }
+
+    body {
+      background: 
+        radial-gradient(circle at 10% 15%, rgba(224, 242, 254, 0.7) 0%, transparent 40%),
+        radial-gradient(circle at 90% 85%, rgba(254, 243, 199, 0.7) 0%, transparent 45%),
+        #F8FAFC;
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 16px 12px 60px;
+    }
+
+    /* 拼音排版控制 (Ruby) */
+    ruby {
+      ruby-position: over;
+      font-family: inherit;
+    }
+    rt {
+      font-size: 0.65em;
+      font-weight: 600;
+      color: #2563EB;
+      user-select: none;
+      letter-spacing: 0px;
+      transform: translateY(-2px);
+    }
+    body.hide-pinyin rt {
+      display: none;
+    }
+
+    .app-container {
+      width: 100%;
+      max-width: 1000px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    /* ================= 手绘涂鸦风格通用类 ================= */
+    .sketch-box {
+      border: 2px solid var(--sketch-border);
+      border-radius: var(--wobbly-radius);
+      box-shadow: var(--shadow-sketch);
+      background: white;
+      transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .sketch-box:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sketch-lg);
+    }
+
+    .sticky-note {
+      background: #FEF9C3;
+      border: 2px solid #CA8A04;
+      border-radius: 4px 18px 4px 18px;
+      padding: 16px;
+      position: relative;
+      box-shadow: 3px 3px 8px rgba(0,0,0,0.06);
+    }
+    .sticky-note::before {
+      content: "";
+      position: absolute;
+      top: -10px;
+      left: 35%;
+      width: 60px;
+      height: 18px;
+      background: rgba(253, 224, 71, 0.65);
+      border: 1px dashed rgba(202, 138, 4, 0.4);
+      transform: rotate(-3deg);
+    }
+
+    /* ================= 顶栏与仪表盘 ================= */
+    .top-nav {
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(12px);
+      border-radius: var(--radius-lg);
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 2px solid var(--sketch-border);
+      box-shadow: var(--shadow-sketch);
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-badge {
+      width: 48px;
+      height: 48px;
+      background: #EFF6FF;
+      border: 2px solid var(--sketch-border);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 2px 2px 0 var(--sketch-border);
+    }
+
+    .brand-text h1 {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .brand-text p {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .hud-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .stat-pill {
+      background: #F1F5F9;
+      padding: 6px 14px;
+      border-radius: 30px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: #334155;
+      border: 1.5px solid var(--sketch-border);
+      box-shadow: 2px 2px 0 var(--sketch-border);
+    }
+    .stat-pill.points {
+      background: #FEF3C7;
+      color: #B45309;
+    }
+    .stat-pill.combo {
+      background: #EDE9FE;
+      color: #6D28D9;
+    }
+    .stat-pill.badges {
+      background: #DCFCE7;
+      color: #15803D;
+    }
+
+    .btn-toggle {
+      background: #FFFFFF;
+      border: 1.5px solid var(--sketch-border);
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      box-shadow: 2px 2px 0 var(--sketch-border);
+      transition: all 0.15s ease;
+    }
+    .btn-toggle:hover {
+      transform: translateY(-1px);
+      box-shadow: 3px 3px 0 var(--sketch-border);
+    }
+    .btn-toggle.active {
+      background: #EFF6FF;
+      color: #1D4ED8;
+    }
+
+    /* ================= 导航切换栏 ================= */
+    .tab-bar {
+      display: flex;
+      background: white;
+      padding: 6px;
+      border-radius: var(--radius-md);
+      border: 2px solid var(--sketch-border);
+      box-shadow: var(--shadow-sketch);
+      gap: 6px;
+      overflow-x: auto;
+    }
+
+    .tab-btn {
+      flex: 1;
+      min-width: 135px;
+      padding: 10px 12px;
+      border: 1.5px solid transparent;
+      background: transparent;
+      border-radius: 10px;
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: var(--text-muted);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .tab-btn:hover {
+      color: var(--primary);
+      background: #F1F5F9;
+    }
+
+    .tab-btn.active {
+      background: var(--primary-gradient);
+      color: white;
+      border-color: var(--sketch-border);
+      box-shadow: 2px 2px 0 var(--sketch-border);
+    }
+
+    /* ================= 页面主体容器 ================= */
+    .tab-content {
+      display: none;
+      animation: fadeIn 0.25s ease-out;
+    }
+    .tab-content.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      border: 2px solid var(--sketch-border);
+      box-shadow: var(--shadow-sketch);
+      margin-bottom: 16px;
+    }
+
+    .card-title {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .card-subtitle {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    /* ================= TAB 1: 图解概念馆 ================= */
+    .concept-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+    @media (max-width: 700px) {
+      .concept-grid { grid-template-columns: 1fr; }
+    }
+
+    .concept-card {
+      padding: 20px;
+      border-radius: var(--radius-md);
+      border: 2px solid var(--sketch-border);
+      box-shadow: var(--shadow-sketch);
+      position: relative;
+    }
+    .concept-card.fact {
+      background: linear-gradient(180deg, #F0F9FF 0%, #FFFFFF 100%);
+    }
+    .concept-card.opinion {
+      background: linear-gradient(180deg, #FFFBEB 0%, #FFFFFF 100%);
+    }
+
+    .concept-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      padding: 6px 14px;
+      border-radius: 30px;
+      border: 1.5px solid var(--sketch-border);
+      margin-bottom: 14px;
+    }
+    .concept-card.fact .concept-badge {
+      background: #BAE6FD;
+      color: #0369A1;
+    }
+    .concept-card.opinion .concept-badge {
+      background: #FDE68A;
+      color: #B45309;
+    }
+
+    .concept-metaphor {
+      font-size: 1.05rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .concept-card.fact .concept-metaphor { color: #0284C7; }
+    .concept-card.opinion .concept-metaphor { color: #D97706; }
+
+    .concept-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 0.92rem;
+      color: #334155;
+      margin-bottom: 16px;
+    }
+
+    /* 信号词雷达 */
+    .radar-section {
+      background: #F8FAFC;
+      border-radius: var(--radius-md);
+      padding: 20px;
+      border: 2px dashed #94A3B8;
+    }
+    .radar-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .radar-filters {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .radar-filter-btn {
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      border: 1.5px solid var(--sketch-border);
+      background: white;
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--text-muted);
+    }
+    .radar-filter-btn.active {
+      background: var(--primary);
+      color: white;
+    }
+
+    .radar-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+    .radar-chip {
+      padding: 8px 16px;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      user-select: none;
+      border: 1.5px solid var(--sketch-border);
+      box-shadow: 2px 2px 0 var(--sketch-border);
+    }
+    .radar-chip.fact-type {
+      background: #E0F2FE;
+      color: #0369A1;
+    }
+    .radar-chip.opinion-type {
+      background: #FEF3C7;
+      color: #B45309;
+    }
+    .radar-chip:hover, .radar-chip.selected {
+      transform: translateY(-2px);
+      box-shadow: 3px 3px 0 var(--sketch-border);
+    }
+    .radar-chip.selected.fact-type {
+      background: #0284C7;
+      color: white;
+    }
+    .radar-chip.selected.opinion-type {
+      background: #D97706;
+      color: white;
+    }
+
+    .radar-display-panel {
+      background: white;
+      border-radius: var(--radius-sm);
+      padding: 18px;
+      border: 2px solid var(--sketch-border);
+      box-shadow: var(--shadow-sketch);
+      min-height: 110px;
+    }
+
+    /* ================= TAB 2: 荧光笔研读厅与手绘插画 ================= */
+    .reading-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 16px;
+      padding: 14px 18px;
+      background: #F8FAFC;
+      border-radius: var(--radius-md);
+      border: 2px solid var(--sketch-border);
+    }
+
+    .pen-btn {
+      padding: 9px 18px;
+      border-radius: 30px;
+      font-size: 0.92rem;
+      font-weight: 800;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border: 2px solid var(--sketch-border);
+      background: white;
+      box-shadow: 2px 2px 0 var(--sketch-border);
+      transition: all 0.15s ease;
+    }
+    .pen-btn.fact-pen.active {
+      background: #0284C7;
+      color: white;
+    }
+    .pen-btn.opinion-pen.active {
+      background: #D97706;
+      color: white;
+    }
+    .pen-btn.eraser-btn.active {
+      background: #475569;
+      color: white;
+    }
+
+    .article-tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 16px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+    }
+    .article-tab-btn {
+      padding: 8px 16px;
+      border-radius: 20px;
+      background: white;
+      border: 1.5px solid var(--sketch-border);
+      font-size: 0.88rem;
+      font-weight: 800;
+      color: var(--text-muted);
+      cursor: pointer;
+      white-space: nowrap;
+      box-shadow: 2px 2px 0 var(--sketch-border);
+    }
+    .article-tab-btn.active {
+      background: var(--primary);
+      color: white;
+    }
+
+    .article-reader-container {
+      background: #FFFFFF;
+      border: 2px solid var(--sketch-border);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      line-height: 2.2;
+      font-size: 1.15rem;
+      color: #1E293B;
+      box-shadow: var(--shadow-sketch);
+      position: relative;
+    }
+
+    /* 手绘插画横幅区域 */
+    .article-illustration-banner {
+      background: #F8FAFC;
+      border: 2px solid var(--sketch-border);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .banner-svg-wrapper {
+      width: 140px;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: white;
+      border: 1.5px solid var(--sketch-border);
+      border-radius: 12px;
+      box-shadow: 2px 2px 0 var(--sketch-border);
+      flex-shrink: 0;
+    }
+    .banner-text-info {
+      flex: 1;
+      min-width: 200px;
+    }
+    .banner-text-info h3 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+    .banner-text-info p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* 文本句子可交互状态 */
+    .sentence-item {
+      padding: 4px 6px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: inline;
+      margin: 0 2px;
+      position: relative;
+    }
+    .sentence-item:hover {
+      outline: 2px dashed #64748B;
+      background: rgba(241, 245, 249, 0.8);
+    }
+    .sentence-item.marked-fact {
+      background: #BAE6FD !important;
+      color: #075985;
+      font-weight: 600;
+      border-bottom: 2px solid #0284C7;
+    }
+    .sentence-item.marked-opinion {
+      background: #FDE68A !important;
+      color: #92400E;
+      font-weight: 600;
+      border-bottom: 2px solid #D97706;
+    }
+
+    .vocab-word {
+      color: #1D4ED8;
+      font-weight: 800;
+      border-bottom: 2px dotted #2563EB;
+      cursor: help;
+      padding: 0 2px;
+    }
+    .vocab-word:hover {
+      background: #EFF6FF;
+    }
+
+    /* 手绘风格印章诊断反馈 */
+    .diagnosis-panel {
+      margin-top: 20px;
+      padding: 18px 20px;
+      border-radius: var(--radius-md);
+      background: #FFFFFF;
+      border: 2px solid var(--sketch-border);
+      box-shadow: var(--shadow-sketch);
+      display: none;
+      position: relative;
+    }
+    .diagnosis-panel.show {
+      display: block;
+      animation: popIn 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .sketch-stamp {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      border-radius: 20px;
+      border: 2px solid;
+      font-weight: 800;
+      font-size: 0.88rem;
+      transform: rotate(-2deg);
+      margin-bottom: 10px;
+    }
+    .sketch-stamp.fact-stamp {
+      border-color: #0284C7;
+      color: #0369A1;
+      background: #E0F2FE;
+    }
+    .sketch-stamp.opinion-stamp {
+      border-color: #D97706;
+      color: #B45309;
+      background: #FEF3C7;
+    }
+    .sketch-stamp.wrong-stamp {
+      border-color: #EF4444;
+      color: #991B1B;
+      background: #FEE2E2;
+    }
+
+    /* ================= TAB 3: 速辩争霸赛 ================= */
+    .blitz-arena {
+      background: white;
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      border: 2px solid var(--sketch-border);
+      box-shadow: var(--shadow-sketch);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .arena-status-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 14px;
+      border-bottom: 2px dashed #CBD5E1;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .health-bar {
+      display: flex;
+      gap: 6px;
+      font-size: 1.4rem;
+    }
+
+    .timer-container {
+      width: 140px;
+      height: 12px;
+      background: #E2E8F0;
+      border: 1.5px solid var(--sketch-border);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .timer-progress {
+      height: 100%;
+      width: 100%;
+      background: var(--accent-gradient);
+      transition: width 1s linear;
+    }
+
+    .quiz-card {
+      background: #FFFFFF;
+      border: 2px solid var(--sketch-border);
+      border-radius: var(--radius-md);
+      padding: 28px 20px;
+      text-align: center;
+      min-height: 160px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      box-shadow: inset 0 2px 6px rgba(0,0,0,0.03);
+    }
+
+    .quiz-text {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #1E293B;
+      line-height: 1.8;
+      max-width: 740px;
+    }
+
+    .action-choice-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    @media (max-width: 520px) {
+      .action-choice-group { grid-template-columns: 1fr; }
+    }
+
+    .choice-btn {
+      padding: 18px 24px;
+      border-radius: var(--radius-md);
+      border: 2px solid var(--sketch-border);
+      font-size: 1.25rem;
+      font-weight: 800;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 3px 3px 0 var(--sketch-border);
+      transition: all 0.15s ease;
+      user-select: none;
+    }
+    .choice-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 5px 5px 0 var(--sketch-border);
+    }
+    .choice-btn:active {
+      transform: translate(2px, 2px);
+      box-shadow: 1px 1px 0 var(--sketch-border);
+    }
+    .choice-btn.btn-fact {
+      background: #E0F2FE;
+      color: #0369A1;
+    }
+    .choice-btn.btn-opinion {
+      background: #FEF3C7;
+      color: #B45309;
+    }
+
+    /* ================= TAB 4: 复合句手术刀 ================= */
+    .slicer-card {
+      background: white;
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      border: 2px solid var(--sketch-border);
+      box-shadow: var(--shadow-sketch);
+    }
+
+    .slicer-sentence-box {
+      background: #F8FAFC;
+      padding: 18px;
+      border-radius: var(--radius-md);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #1E293B;
+      text-align: center;
+      margin-bottom: 20px;
+      line-height: 1.8;
+      border: 2px solid var(--sketch-border);
+      box-shadow: 2px 2px 0 var(--sketch-border);
+    }
+
+    .slicer-slots {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+    @media (max-width: 680px) {
+      .slicer-slots { grid-template-columns: 1fr; }
+    }
+
+    .drop-slot {
+      border: 2px dashed var(--sketch-border);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      min-height: 140px;
+      background: #F8FAFC;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      transition: all 0.2s ease;
+    }
+    .drop-slot.slot-fact {
+      background: #F0F9FF;
+      border-color: #0284C7;
+    }
+    .drop-slot.slot-opinion {
+      background: #FFFBEB;
+      border-color: #D97706;
+    }
+
+    .draggable-chips-pool {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      margin-bottom: 24px;
+      padding: 16px;
+      background: #F8FAFC;
+      border-radius: var(--radius-md);
+      border: 1.5px dashed #94A3B8;
+    }
+
+    .drag-chip {
+      padding: 10px 18px;
+      border-radius: 24px;
+      background: white;
+      border: 2px solid var(--sketch-border);
+      color: #0F172A;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 2px 2px 0 var(--sketch-border);
+      transition: all 0.2s ease;
+    }
+    .drag-chip:hover {
+      transform: translateY(-2px);
+      box-shadow: 4px 4px 0 var(--sketch-border);
+    }
+    .drag-chip.placed {
+      opacity: 0.35;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    /* ================= TAB 5: 试卷二实战大闯关 ================= */
+    .paper2-card {
+      background: white;
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      border: 2px solid var(--sketch-border);
+      box-shadow: var(--shadow-sketch);
+    }
+
+    .paper2-item {
+      background: #F8FAFC;
+      border: 2px solid #E2E8F0;
+      border-radius: var(--radius-md);
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .paper2-item.passed {
+      border-color: #10B981;
+      background: #F0FDF4;
+    }
+    .paper2-item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .paper2-badge {
+      font-size: 0.85rem;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 12px;
+      background: #DBEAFE;
+      color: #1E40AF;
+    }
+
+    .paper2-options {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .paper2-opt-btn {
+      padding: 12px 16px;
+      border-radius: 8px;
+      border: 1.5px solid var(--sketch-border);
+      background: white;
+      text-align: left;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .paper2-opt-btn:hover {
+      background: #EFF6FF;
+      border-color: #2563EB;
+    }
+    .paper2-opt-btn.selected-correct {
+      background: #D1FAE5;
+      border-color: #10B981;
+      color: #065F46;
+    }
+    .paper2-opt-btn.selected-wrong {
+      background: #FEE2E2;
+      border-color: #EF4444;
+      color: #991B1B;
+    }
+
+    /* ================= TAB 6: 见解与手绘英雄集邮册 ================= */
+    .badge-album-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+    @media (max-width: 760px) {
+      .badge-album-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .badge-album-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    .hero-badge-card {
+      border: 2px dashed #94A3B8;
+      border-radius: 14px;
+      padding: 14px 10px;
+      text-align: center;
+      background: #F8FAFC;
+      transition: all 0.2s ease;
+    }
+    .hero-badge-card.unlocked {
+      border: 2px solid var(--sketch-border);
+      background: #FEF9C3;
+      box-shadow: 2px 2px 0 var(--sketch-border);
+      transform: rotate(-1deg);
+    }
+    .badge-icon-box {
+      font-size: 2.2rem;
+      margin-bottom: 6px;
+    }
+    .badge-name {
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: #1E293B;
+    }
+    .badge-status {
+      font-size: 0.72rem;
+      color: #64748B;
+      margin-top: 4px;
+    }
+    .hero-badge-card.unlocked .badge-status {
+      color: #15803D;
+      font-weight: 700;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .form-label {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #334155;
+    }
+
+    .fact-option-btn {
+      padding: 12px 16px;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid var(--sketch-border);
+      background: white;
+      text-align: left;
+      font-size: 0.98rem;
+      line-height: 1.5;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.15s;
+    }
+    .fact-option-btn:hover {
+      background: #EFF6FF;
+    }
+    .fact-option-btn.selected {
+      background: #DBEAFE;
+      color: #1E40AF;
+      border-color: #2563EB;
+      box-shadow: 2px 2px 0 var(--sketch-border);
+    }
+
+    .sentence-scaffold-input {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: var(--radius-sm);
+      border: 2px solid var(--sketch-border);
+      font-size: 1.05rem;
+      line-height: 1.6;
+      font-family: inherit;
+      resize: vertical;
+      min-height: 90px;
+    }
+
+    /* 证书与徽章海报 */
+    .certificate-card {
+      background: linear-gradient(135deg, #1E3A8A 0%, #0F172A 100%);
+      color: white;
+      border-radius: var(--radius-lg);
+      padding: 30px;
+      text-align: center;
+      border: 3px solid var(--sketch-border);
+      box-shadow: 6px 6px 0 var(--sketch-border);
+      position: relative;
+      margin-top: 16px;
+    }
+    .cert-seal {
+      width: 72px;
+      height: 72px;
+      background: var(--accent-gradient);
+      border: 2px solid white;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+      margin-bottom: 14px;
+      box-shadow: 0 4px 14px rgba(245, 158, 11, 0.4);
+    }
+    .cert-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
+    .cert-body {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      margin-bottom: 18px;
+      border: 1px dashed rgba(255, 255, 255, 0.3);
+      text-align: left;
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    .btn-primary {
+      background: var(--primary-gradient);
+      color: white;
+      border: 2px solid var(--sketch-border);
+      padding: 12px 26px;
+      border-radius: 30px;
+      font-size: 1rem;
+      font-weight: 800;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 3px 3px 0 var(--sketch-border);
+      transition: all 0.15s;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 5px 5px 0 var(--sketch-border);
+    }
+
+    /* 浮动词汇解释框 */
+    .vocab-modal {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 24px;
+      border-radius: var(--radius-md);
+      border: 2px solid var(--sketch-border);
+      box-shadow: 6px 6px 0 var(--sketch-border);
+      max-width: 420px;
+      width: 90%;
+      z-index: 1000;
+      display: none;
+    }
+    .vocab-modal.show {
+      display: block;
+      animation: popIn 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.4);
+      backdrop-filter: blur(4px);
+      z-index: 999;
+      display: none;
+    }
+    .modal-overlay.show {
+      display: block;
+    }
+
+    @keyframes popIn {
+      from { transform: translate(-50%, -46%) scale(0.95); opacity: 0; }
+      to { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="app-container">
+
+  <!-- ================= 顶栏与玩家仪表盘 ================= -->
+  <header class="top-nav">
+    <div class="brand-group">
+      <div class="logo-badge">
+        <!-- 手绘报纸小图标 SVG -->
+        <svg width="32" height="32" viewBox="0 0 36 36" fill="none" stroke="#1E3A8A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 8h24v20a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V8z" fill="#E0F2FE"/>
+          <line x1="10" y1="13" x2="26" y2="13"/>
+          <line x1="10" y1="18" x2="20" y2="18"/>
+          <line x1="10" y1="23" x2="16" y2="23"/>
+          <circle cx="23" cy="22" r="3" fill="#FBBF24"/>
+        </svg>
+      </div>
+      <div class="brand-text">
+        <h1>狮城新闻小读者探案馆 <span style="font-size: 0.75rem; background: #DBEAFE; color: #1E40AF; padding: 2px 8px; border-radius: 12px; border: 1px solid #93C5FD;">中一 G1 第六单元</span></h1>
+        <p>阅读技能攻关：分清新闻中的“事实 (Fact)”与“意见 (Opinion)”</p>
+      </div>
+    </div>
+    <div class="hud-controls">
+      <div class="stat-pill points">
+        <span>⭐️ 探索积分:</span>
+        <span id="player-score">0</span>
+      </div>
+      <div class="stat-pill combo">
+        <span>🔥 连击:</span>
+        <span id="player-combo">0</span>
+      </div>
+      <div class="stat-pill badges">
+        <span>🏅 英雄勋章:</span>
+        <span id="player-badges">0/5</span>
+      </div>
+      <button class="btn-toggle active" id="btn-toggle-pinyin" title="显示或隐藏汉字上方拼音">
+        <span>🔤 拼音: 开</span>
+      </button>
+      <button class="btn-toggle active" id="btn-toggle-sound" title="开启或静音网页音效">
+        <span id="sound-icon">🔊 音效: 开</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ================= 标签导航 ================= -->
+  <nav class="tab-bar">
+    <button class="tab-btn active" data-tab="guide">💡 图解概念馆</button>
+    <button class="tab-btn" data-tab="highlighter">🖍️ 荧光笔研读厅</button>
+    <button class="tab-btn" data-tab="blitz">⚡ 速辩争霸赛</button>
+    <button class="tab-btn" data-tab="slicer">🔬 复合句手术刀</button>
+    <button class="tab-btn" data-tab="paper2">📝 试卷二实战题</button>
+    <button class="tab-btn" data-tab="builder">📜 见解与集邮册</button>
+  </nav>
+
+  <!-- ================= TAB 1: 图解概念馆 ================= -->
+  <section id="tab-guide" class="tab-content active">
+    <div class="card">
+      <h2 class="card-title">
+        <!-- 手绘相机与气泡小标 SVG -->
+        <svg width="28" height="28" viewBox="0 0 32 32" fill="none" stroke="#1E3A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="4" y="9" width="24" height="18" rx="3" fill="#E0F2FE"/>
+          <circle cx="16" cy="18" r="5" fill="#FFFFFF"/>
+          <path d="M11 9l2-4h6l2 4"/>
+        </svg>
+        📷 照相机 vs 💭 想法气泡 —— 手绘图解概念
+      </h2>
+      <p class="card-subtitle">阅读新加坡新闻时，千万不要把别人的“心里想法”误当成“客观发生的事实”！</p>
+
+      <div class="concept-grid">
+        <!-- 事实卡 -->
+        <div class="concept-card fact">
+          <div class="concept-badge">📷 事实 · Fact</div>
+          <div class="concept-metaphor">像照相机镜头拍下的真实画面</div>
+          <ul class="concept-features">
+            <li>✅ <strong>真实发生</strong>：客观存在，不随个人喜好而改变。</li>
+            <li>✅ <strong>有据可查</strong>：包含时间、地点、数字、人数或具体行动。</li>
+            <li>✅ <strong>可验证真伪</strong>：能拿出打卡表、录像、尺子或官方文件查证。</li>
+          </ul>
+          <div class="sticky-note" style="background:#E0F2FE; border-color:#38BDF8;">
+            <strong>📰 新闻典型例句：</strong><br>
+            “昨夜凌晨 1 点 30 分，300 多名地铁<span class="vocab-word" data-word="维修">维修</span>人员检修了 15 公里的铁轨。”<br>
+            <span style="color: #0369A1; font-size: 0.82rem; font-weight:700;">🔍 照相机报告：时间（1:30）、人数（300名）、里程（15公里）均可查证！</span>
+          </div>
+        </div>
+
+        <!-- 意见卡 -->
+        <div class="concept-card opinion">
+          <div class="concept-badge">💭 意见 · Opinion</div>
+          <div class="concept-metaphor">像头脑中冒出的主观想法气泡</div>
+          <ul class="concept-features">
+            <li>💡 <strong>主观想法</strong>：个人的感受、情绪、评价、推测或呼吁。</li>
+            <li>💡 <strong>因人而异</strong>：没有绝对的标准答案，换一个人想法可能不同。</li>
+            <li>💡 <strong>无法量化</strong>：不能用仪器称重，常带有评价形容词或看法词。</li>
+          </ul>
+          <div class="sticky-note">
+            <strong>📰 新闻典型例句：</strong><br>
+            “李同学表示：‘我<span style="color:#B45309;font-weight:700;">觉得</span>维修工人们是全岛最棒的<span class="vocab-word" data-word="幕后">幕后</span><span class="vocab-word" data-word="英雄">英雄</span>！’”<br>
+            <span style="color: #B45309; font-size: 0.82rem; font-weight:700;">🔍 想法气泡报告：含有“觉得”、“最棒”，表达的是崇敬感受，属于个人评价！</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 信号词雷达探测器 (扩充至16词) -->
+      <div class="radar-section">
+        <div class="radar-header">
+          <div>
+            <h3 style="font-size: 1.15rem; font-weight: 800; color: var(--primary);">📡 信号词雷达探测器 (16 大核心标志词)</h3>
+            <p style="font-size: 0.82rem; color: var(--text-muted);">点击下方的信号词，雷达将为你扫描其归属类别与实战避坑技巧：</p>
+          </div>
+          <div class="radar-filters">
+            <button class="radar-filter-btn active" data-filter="all">全部 (16)</button>
+            <button class="radar-filter-btn" data-filter="fact">📷 事实标志词 (8)</button>
+            <button class="radar-filter-btn" data-filter="opinion">💭 意见标志词 (8)</button>
+          </div>
+        </div>
+
+        <div class="radar-chips" id="radar-chips-container">
+          <!-- 动态渲染 16 个信号词 -->
+        </div>
+
+        <div class="radar-display-panel" id="radar-display-panel">
+          <div style="text-align: center; color: var(--text-muted); font-size: 0.95rem;">
+            👆 点击上方任意信号词，启动雷达深度解析！
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TAB 2: 荧光笔研读厅 (5篇手绘插画新闻) ================= -->
+  <section id="tab-highlighter" class="tab-content">
+    <div class="card">
+      <h2 class="card-title">🖍️ 双色荧光笔 · 互动新闻研读厅</h2>
+      <p class="card-subtitle">
+        手持蓝色笔画【事实】，黄色笔画【意见】！点击每一句即可盖上手绘检验印章，解锁对应幕后英雄徽章！
+      </p>
+
+      <!-- 工具栏 -->
+      <div class="reading-toolbar">
+        <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+          <span style="font-size: 0.9rem; font-weight: 800; color: #475569;">选择批注工具：</span>
+          <button class="pen-btn fact-pen active" id="pen-fact" data-pen="fact">
+            <span>📷 蓝色笔 · 标事实</span>
+          </button>
+          <button class="pen-btn opinion-pen" id="pen-opinion" data-pen="opinion">
+            <span>💭 黄色笔 · 标意见</span>
+          </button>
+          <button class="pen-btn eraser-btn" id="pen-eraser" data-pen="eraser">
+            <span>🧹 橡皮擦</span>
+          </button>
+        </div>
+        <div style="display: flex; gap: 12px; align-items: center;">
+          <div class="stat-pill" style="font-size: 0.82rem;">
+            <span>事实批注: </span><span id="fact-count" style="color:#0284C7; font-weight:800;">0/0</span>
+          </div>
+          <div class="stat-pill" style="font-size: 0.82rem;">
+            <span>意见批注: </span><span id="opinion-count" style="color:#D97706; font-weight:800;">0/0</span>
+          </div>
+          <button class="btn-toggle" id="btn-reset-article" title="清空当前篇章的所有批注">重置标记</button>
+        </div>
+      </div>
+
+      <!-- 5 篇新闻切换卡 -->
+      <div class="article-tabs">
+        <button class="article-tab-btn active" data-article="0">① SMRT地铁夜间抢修</button>
+        <button class="article-tab-btn" data-article="1">② 国庆庆典大雨保洁</button>
+        <button class="article-tab-btn" data-article="2">③ 樟宜机场行李地勤</button>
+        <button class="article-tab-btn" data-article="3">④ 综合诊疗所配药团队</button>
+        <button class="article-tab-btn" data-article="4">⑤ 狮城树木医生巡检</button>
+      </div>
+
+      <!-- 阅读文章区域 -->
+      <div class="article-reader-container">
+        <!-- 手绘插画横幅 -->
+        <div class="article-illustration-banner" id="article-banner">
+          <div class="banner-svg-wrapper" id="banner-svg-box">
+            <!-- 动态渲染手绘场景插画 SVG -->
+          </div>
+          <div class="banner-text-info">
+            <h3 id="current-article-title">午夜抢修四小时：SMRT地铁幕后英雄守护狮城轨道</h3>
+            <p id="current-article-summary">在黑暗闷热的地下隧道中，数百名工程师争分夺秒排除安全隐患。</p>
+          </div>
+        </div>
+
+        <div id="article-body-content">
+          <!-- 动态渲染文章句子 -->
+        </div>
+      </div>
+
+      <!-- 即时手绘风格诊断反馈气泡 -->
+      <div class="diagnosis-panel" id="diagnosis-panel">
+        <div class="sketch-stamp" id="diag-stamp">
+          <span>📷 事实查证章</span>
+        </div>
+        <h4 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 6px;" id="diag-sentence-text"></h4>
+        <p style="font-size: 0.92rem; color: #334155; line-height: 1.6;" id="diag-explanation"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TAB 3: 速辩争霸赛 (扩充至20题) ================= -->
+  <section id="tab-blitz" class="tab-content">
+    <div class="blitz-arena">
+      <div class="arena-status-bar">
+        <div>
+          <span style="font-size: 0.85rem; font-weight: 700; color: var(--text-muted);">挑战进度: </span>
+          <span id="blitz-progress-text" style="font-weight: 800; color: var(--primary);">1 / 20</span>
+        </div>
+        <div class="health-bar" id="blitz-health">
+          <span>❤️</span><span>❤️</span><span>❤️</span>
+        </div>
+        <div>
+          <div class="timer-container">
+            <div class="timer-progress" id="blitz-timer-bar"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 问答展示卡 -->
+      <div class="quiz-card" id="blitz-card">
+        <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 10px; font-weight: 700;">
+          📰 狮城新闻语句速判 · 快速反应
+        </div>
+        <div class="quiz-text" id="blitz-question-text">
+          <!-- 动态加载新闻句子 -->
+        </div>
+      </div>
+
+      <!-- 选择按钮 -->
+      <div class="action-choice-group" id="blitz-actions">
+        <button class="choice-btn btn-fact" id="btn-choose-fact">
+          <span>📷 事实 (Fact)</span>
+          <span style="font-size: 0.8rem; opacity: 0.85;">有时间 · 有数据 · 客观发生</span>
+        </button>
+        <button class="choice-btn btn-opinion" id="btn-choose-opinion">
+          <span>💭 意见 (Opinion)</span>
+          <span style="font-size: 0.8rem; opacity: 0.85;">个人感受 · 评价 · 倡议建议</span>
+        </button>
+      </div>
+
+      <!-- 答题解析展示 -->
+      <div id="blitz-feedback-box" style="display: none; padding: 14px; border-radius: var(--radius-sm); border: 2px solid #E2E8F0; background: #F8FAFC;">
+        <div id="blitz-feedback-header" style="font-weight: 800; font-size: 1rem; margin-bottom: 4px;"></div>
+        <div id="blitz-feedback-text" style="font-size: 0.9rem; color: #475569; line-height: 1.5;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TAB 4: 复合句手术刀 (扩充至6关) ================= -->
+  <section id="tab-slicer" class="tab-content">
+    <div class="slicer-card">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; flex-wrap:wrap;">
+        <h2 class="card-title">🔬 复合句手术刀 · 剥离主观修饰词</h2>
+        <span style="font-weight:800; font-size:0.9rem; color:var(--primary); background:#EFF6FF; padding:4px 12px; border-radius:20px; border:1px solid #BFDBFE;">
+          关卡: <span id="slicer-level-indicator">1 / 6</span>
+        </span>
+      </div>
+      <p class="card-subtitle">
+        攻克 G1 难点：新闻经常把“事实”和“修饰词”拼在同一句！点击下方碎片，将它们精准分类！
+      </p>
+
+      <div class="slicer-sentence-box" id="slicer-target-sentence">
+        工人们在暴雨中极其辛苦地维修了 3 小时铁轨。
+      </div>
+
+      <div class="draggable-chips-pool" id="slicer-chips-pool">
+        <!-- 待拆解句子碎片 -->
+      </div>
+
+      <div class="slicer-slots">
+        <div class="drop-slot slot-fact" id="slot-fact" data-type="fact">
+          <div class="slot-title" style="font-weight:800; color:#0284C7;">📷 客观事实骨架 (Fact)</div>
+          <div style="font-size: 0.82rem; color: #64748B; margin-bottom: 8px;">时间、数据、具体行动</div>
+          <div class="slot-content" id="slot-fact-content">
+            <span style="color: #94A3B8; font-size: 0.9rem;">(点击下方事实碎片放入)</span>
+          </div>
+        </div>
+
+        <div class="drop-slot slot-opinion" id="slot-opinion" data-type="opinion">
+          <div class="slot-title" style="font-weight:800; color:#D97706;">💭 主观修饰插件 (Opinion)</div>
+          <div style="font-size: 0.82rem; color: #64748B; margin-bottom: 8px;">形容词、主观感受、情绪评价</div>
+          <div class="slot-content" id="slot-opinion-content">
+            <span style="color: #94A3B8; font-size: 0.9rem;">(点击下方意见碎片放入)</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 10px;">
+        <button class="btn-primary" id="btn-next-slicer" style="display: none;">下一关拆解 ➔</button>
+      </div>
+
+      <div id="slicer-analysis-box" style="display: none; margin-top: 18px; padding: 16px; background: #ECFDF5; border-radius: var(--radius-sm); border: 2px solid #10B981; font-size: 0.92rem; color: #065F46; line-height: 1.6;">
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TAB 5: 试卷二实战大闯关 (新增强化) ================= -->
+  <section id="tab-paper2" class="tab-content">
+    <div class="paper2-card">
+      <h2 class="card-title">📝 新加坡中学试卷二 · 实用文新闻理解闯关</h2>
+      <p class="card-subtitle">精选 5 道新加坡中学华文考卷风格的真实新闻辨析题，即时检测你的批判性阅读理解素养！</p>
+
+      <div id="paper2-items-container">
+        <!-- 动态渲染 5 道考题 -->
+      </div>
+
+      <div style="text-align: center; margin-top: 10px;">
+        <button class="btn-primary" id="btn-submit-paper2">
+          <span>📊 提交试卷二测验</span>
+        </button>
+      </div>
+
+      <div id="paper2-score-box" style="display:none; margin-top: 20px; padding: 20px; text-align: center; background:#EFF6FF; border:2px solid var(--sketch-border); border-radius:var(--radius-md);">
+        <h3 style="font-size:1.3rem; color:var(--primary); margin-bottom:6px;">测验完成！</h3>
+        <p style="font-size:1.1rem; font-weight:700; color:#1E293B;" id="paper2-score-text"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TAB 6: 见解工坊与手绘集邮册 ================= -->
+  <section id="tab-builder" class="tab-content">
+    <div class="card">
+      <h2 class="card-title">📜 狮城幕后英雄集邮册 & 个人见解工坊</h2>
+      <p class="card-subtitle">
+        阅读新闻不仅要分清事实，更要学会<strong>“摆事实、讲道理”</strong>！完成阅读任务即可解锁 5 枚手绘英雄印章！
+      </p>
+
+      <!-- 5 枚手绘英雄印章墙 -->
+      <h3 style="font-size: 1.05rem; font-weight: 800; color: var(--text); margin-bottom: 12px;">
+        🎖️ 我的狮城幕后英雄勋章墙 (完成批注即可点亮)：
+      </h3>
+      <div class="badge-album-grid" id="badge-album-container">
+        <!-- 动态渲染 5 枚手绘徽章 -->
+      </div>
+
+      <div class="form-group" style="margin-top: 14px;">
+        <label class="form-label">第 1 步：选定一条你所读到的新闻【客观事实 📷】：</label>
+        <div class="fact-selector-box" id="builder-fact-options">
+          <button class="fact-option-btn selected" data-fact="昨夜 300 名维修人员在凌晨完成了 15 公里的铁轨全面检测。">
+            ① “昨夜 300 名维修人员在凌晨完成了 15 公里的铁轨全面检测。”
+          </button>
+          <button class="fact-option-btn" data-fact="200 名清洁工友在国庆庆典散场后，冒雨在 2 小时内清理了 8 吨垃圾。">
+            ② “200 名清洁工友在国庆庆典散场后，冒雨在 2 小时内清理了 8 吨垃圾。”
+          </button>
+          <button class="fact-option-btn" data-fact="地勤团队每天清晨 5 点开始运转，运送超过 3 万件行李避免延误。">
+            ③ “地勤团队每天清晨 5 点开始运转，运送超过 3 万件行李避免延误。”
+          </button>
+          <button class="fact-option-btn" data-fact="综合诊疗所配药团队每天复核超过 1200 份药单，严格避免配药失误。">
+            ④ “综合诊疗所配药团队每天复核超过 1200 份药单，严格避免配药失误。”
+          </button>
+        </div>
+      </div>
+
+      <div class="form-group" style="margin-top: 14px;">
+        <label class="form-label">
+          第 2 步：依据上方事实，发表你的【个人见解 💭】（运用至少 2 个第六单元词汇）：
+        </label>
+        <div style="font-size: 0.85rem; color: #64748B; margin-bottom: 4px;">
+          备选核心词汇：<span class="vocab-word" data-word="幕后">幕后</span>、<span class="vocab-word" data-word="英雄">英雄</span>、<span class="vocab-word" data-word="贡献">贡献</span>、<span class="vocab-word" data-word="确保">确保</span>、<span class="vocab-word" data-word="避免">避免</span>、<span class="vocab-word" data-word="职业">职业</span>
+        </div>
+        <textarea class="sentence-scaffold-input" id="builder-opinion-input">我认为这群默默坚守的劳动者是当之无愧的幕后英雄。他们认真负责的态度确保了大家的生活顺畅，他们的辛勤贡献值得全岛人民的尊敬与感谢。</textarea>
+      </div>
+
+      <div style="text-align: center; margin-top: 12px;">
+        <button class="btn-primary" id="btn-generate-cert">
+          <span>✨ 签发我的新闻智慧小读者勋章</span>
+        </button>
+      </div>
+
+      <!-- 证书展示区 -->
+      <div class="certificate-card" id="cert-card">
+        <div class="cert-seal">🎖️</div>
+        <div class="cert-title">新加坡中一华文 · 新闻小读者素养认证</div>
+        <div style="font-size: 0.9rem; color: #94A3B8; margin-bottom: 16px;">Certificate of Critical News Literacy · Unit 6</div>
+
+        <div class="cert-body">
+          <div style="margin-bottom: 10px;">
+            <span style="color: #38BDF8; font-weight: 700;">【我引用的客观事实 📷】：</span><br>
+            <span id="cert-fact-text" style="color: #E2E8F0;">昨夜 300 名维修人员在凌晨完成了 15 公里的铁轨全面检测。</span>
+          </div>
+          <div>
+            <span style="color: #FBBF24; font-weight: 700;">【我表达的有理见解 💭】：</span><br>
+            <span id="cert-opinion-text" style="color: #FFFFFF;">我认为这群默默坚守的劳动者是当之无愧的幕后英雄。他们认真负责的态度确保了大家的生活顺畅，他们的辛勤贡献值得全岛人民的尊敬与感谢。</span>
+          </div>
+        </div>
+
+        <div style="display:flex; justify-content:space-between; font-size:0.85rem; color:#94A3B8;">
+          <span>颁发机构：南望学园华文教研备课组</span>
+          <span>评级：卓越小侦探</span>
+          <span id="cert-date">2026年10月</span>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 12px;">
+        <button class="btn-toggle" onclick="window.print()" style="padding: 8px 18px;">
+          🖨️ 打印 / 保存荣誉证书
+        </button>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- 词汇释义浮窗 -->
+<div class="modal-overlay" id="vocab-overlay"></div>
+<div class="vocab-modal" id="vocab-modal">
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 10px;">
+    <h3 style="font-size: 1.3rem; color: var(--primary);" id="vm-word">词语</h3>
+    <button id="vm-close" style="border:none; background:none; font-size:1.4rem; cursor:pointer; color:#94A3B8;">&times;</button>
+  </div>
+  <div style="font-size: 1rem; color: #2563EB; font-weight: 700; margin-bottom: 6px;" id="vm-pinyin">pīn yīn</div>
+  <div style="font-size: 0.95rem; color: #334155; line-height: 1.6; margin-bottom: 10px;" id="vm-meaning">词义解释</div>
+  <div style="background: #F8FAFC; padding: 10px; border-radius: var(--radius-sm); font-size: 0.88rem; color: #64748B;" id="vm-collocation">高频搭配</div>
+</div>
+
+<script>
+/* ================= 全局核心数据 ================= */
+
+// 11个单元核心生词
+const VOCAB_DATA = {
+  "宿舍": { pinyin: "sù shè", meaning: "供学生、工人或机构成员集体居住的房屋 (dormitory; quarters)。", collocations: "工友宿舍、返回宿舍" },
+  "订购": { pinyin: "dìng gòu", meaning: "预先约定购买货物或服务 (place an order; order)。", collocations: "订购零件、订购设备" },
+  "避免": { pinyin: "bì miǎn", meaning: "设法不使某种不好的情况或差错发生 (avoid; prevent)。", collocations: "避免失误、避免意外" },
+  "失误": { pinyin: "shī wù", meaning: "由于疏忽或水平不够而出现的差错 (lapse; mistake; error)。", collocations: "操作失误、减少失误" },
+  "严重": { pinyin: "yán zhòng", meaning: "程度深、影响大、情况危急 (serious; severe; critical)。", collocations: "严重后果、严重延误" },
+  "贡献": { pinyin: "gòng xiàn", meaning: "把力量或智慧奉献给公众；做出的有益成效 (contribute; contribution)。", collocations: "做出贡献、宝贵贡献" },
+  "维修": { pinyin: "wéi xiū", meaning: "保养、检查并修理机器或设施 (maintain and repair; maintenance)。", collocations: "维修铁轨、定期维修" },
+  "幕后": { pinyin: "mù hòu", meaning: "舞台帷幕后面；比喻在背后提供支持与保障 (behind the scenes)。", collocations: "幕后英雄、坚守幕后" },
+  "英雄": { pinyin: "yīng xióng", meaning: "为公众利益做出非凡贡献、令人敬佩的人 (hero)。", collocations: "平民英雄、幕后英雄" },
+  "确保": { pinyin: "què bǎo", meaning: "切实保持或保证，使不出现差错 (ensure; guarantee)。", collocations: "确保安全、确保准时" },
+  "职业": { pinyin: "zhí yè", meaning: "在社会中所从事并以此作为主要生活来源的工作 (occupation; profession)。", collocations: "崇高的职业、敬业精神" }
+};
+
+// 16 大核心信号词雷达库
+const RADAR_DATA = [
+  // 事实标志词 (8个)
+  { word: "共有……人 / 占了……%", type: "fact", label: "数字与统计", tip: "数字可通过官方统计、考勤打卡或人口普查核实，属于经典事实标志！", example: "现场共有 200 名清洁工友入场作业。" },
+  { word: "昨夜凌晨 1 点半", type: "fact", label: "具体时间点", tip: "明确的日期、钟点属于时间事实，日历与时钟可以见证！", example: "最后一班 MRT 于昨夜凌晨 1 点 30 分驶入车厂。" },
+  { word: "完成了 15 公里巡检", type: "fact", label: "工程行动记录", tip: "里程、工作量属于可量测的客观动作事实。", example: "技术团队完成了 15 公里的铁轨全面检测。" },
+  { word: "调查显示 / 据记录", type: "fact", label: "客观查证依据", tip: "引用官方档案与客观调查结果，提示后续内容为事实。", example: "交通局记录显示，列车准点率达到 99.8%。" },
+  { word: "清理了 8 吨垃圾", type: "fact", label: "物理重量与测量", tip: "重量、长度等有物理度量单位的数据均属事实。", example: "保洁人员共清运了 8 吨庆典遗留垃圾。" },
+  { word: "位于大士车厂", type: "fact", label: "确切地理位置", tip: "现实世界中客观存在的地点与设施属于地理事实。", example: "工友们在大士车厂检修列车底盘。" },
+  { word: "订购了 50 套新仪器", type: "fact", label: "商业交易记录", tip: "采购、订货均有合同与发票收据可证实。", example: "公司按时订购了 50 套防护头盔与工具。" },
+  { word: "每天清晨 5 点开始", type: "fact", label: "既定运营规程", tip: "机构制度规定的公开时间表属于规程事实。", example: "樟宜机场行李处理中心清晨 5 点开始运转。" },
+  
+  // 意见标志词 (8个)
+  { word: "我认为 / 我觉得", type: "opinion", label: "主观态度动词", tip: "明确标示说话者个人的内心情感与主观推断，绝非人人相同的客观规律！", example: "李同学说：‘我觉得他们是真正的幕后英雄。’" },
+  { word: "非常辛苦 / 极其闷热", type: "opinion", label: "感官主观形容词", tip: "主观感受因人而异，无法用物理工具称重或测量。", example: "在闷热的地下隧道里作业非常辛苦。" },
+  { word: "应该 / 必须 / 呼吁", type: "opinion", label: "倡导与建议词", tip: "对社会或个人的倡导建议，反映价值主张，属于典型的意见表达！", example: "广大乘客应该多给幕后劳动者一份理解和掌声。" },
+  { word: "最棒 / 当之无愧", type: "opinion", label: "极值赞赏词", tip: "带强烈情感的最高级修饰词，属于高度主观评价！", example: "他们是狮城当之无愧的幕后英雄。" },
+  { word: "令人感动 / 深受敬佩", type: "opinion", label: "情绪心理反应", tip: "个人内心的情绪触动属于情感意见。", example: "后勤工友的敬业精神令人感动。" },
+  { word: "可能造成严重后果", type: "opinion", label: "经验预测与推断", tip: "对未来未发生事情的评估推断，属于主观推测。", example: "微小失误可能引发严重的交通事故。" },
+  { word: "是最崇高的职业", type: "opinion", label: "职业价值判断", tip: "每个人对职业高低的看法不同，属于道德审美评价。", example: "默默奉献的清洁工人从事着最崇高的职业。" },
+  { word: "希望大家共同努力", type: "opinion", label: "愿望与期许", tip: "个人的愿望期许不代表已经发生的事实。", example: "总监希望大家共同保持城市的美丽。" }
+];
+
+// 5篇手绘插画新闻库 (嵌入 SVG 图标与全面生词)
+const ARTICLES = [
+  {
+    title: "午夜抢修四小时：SMRT地铁幕后英雄守护狮城轨道",
+    summary: "凌晨地下隧道闷热昏暗，300名工程师完成15公里巡检，确保市民晨间通车。",
+    badgeName: "轨道守护勋章",
+    badgeIcon: "🚇",
+    svg: `<svg width="100" height="70" viewBox="0 0 100 70" fill="none" stroke="#1E3A8A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="15" y="15" width="70" height="40" rx="8" fill="#EFF6FF"/>
+      <line x1="15" y1="35" x2="85" y2="35"/>
+      <circle cx="30" cy="44" r="4" fill="#F59E0B"/>
+      <circle cx="70" cy="44" r="4" fill="#F59E0B"/>
+      <line x1="5" y1="62" x2="95" y2="62" stroke="#64748B"/>
+      <line x1="20" y1="58" x2="25" y2="66" stroke="#64748B"/>
+      <line x1="40" y1="58" x2="45" y2="66" stroke="#64748B"/>
+      <line x1="60" y1="58" x2="65" y2="66" stroke="#64748B"/>
+      <line x1="80" y1="58" x2="85" y2="66" stroke="#64748B"/>
+    </svg>`,
+    sentences: [
+      { text: "昨夜凌晨 1 点 30 分，最后一班 MRT 列车驶入大士车厂。", type: "fact", reason: "有具体时间点（凌晨 1:30）与列车运营记录，事实可考。" },
+      { text: "驻扎在附近宿舍的 300 多名地铁维修人员，立刻带齐工具进入地下隧道。", type: "fact", reason: "具体人数（300名）、地点（宿舍与隧道）均可核实。" },
+      { text: "在长达 4 个小时的作业中，工友们完成了 15 公里的铁轨全面检测，紧固了 800 多个螺丝。", type: "fact", reason: "时间、里程与零件数量均为明确的工程数据。" },
+      { text: "带班总工程师受访时表示：“在昏暗闷热的隧道里工作非常辛苦，但大家毫无怨言。”", type: "opinion", reason: "“非常辛苦”是总工个人的身体感受与主观感受评价，属于意见。" },
+      { text: "这一系列细致的操作，是为了确保今天清晨首班列车安全发出，有效避免失误。", type: "fact", reason: "陈述安全检修规程的客观目的，有流程手册可查。" },
+      { text: "每天搭乘地铁上学的李同学感慨道：“我觉得维修工人们是全岛最棒的幕后英雄。”", type: "opinion", reason: "含有标志词“我觉得”，且“最棒的幕后英雄”是个人的崇高敬意。" }
+    ]
+  },
+  {
+    title: "大雨中的“橙色马甲”：国庆庆典幕后保洁与后勤团队纪实",
+    summary: "现场2.5万观众散场后突降暴雨，200名保洁人员两小时内清运8吨垃圾。",
+    badgeName: "狮城绿化勋章",
+    badgeIcon: "🧹",
+    svg: `<svg width="100" height="70" viewBox="0 0 100 70" fill="none" stroke="#D97706" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20 20 L40 5 L80 15 L60 30 Z" fill="#FEF3C7"/>
+      <line x1="50" y1="20" x2="30" y2="65" stroke="#78350F" stroke-width="3"/>
+      <path d="M20 58 Q30 52 40 58 L42 66 L18 66 Z" fill="#F59E0B"/>
+      <path d="M70 45 Q75 40 85 45 L85 65 L70 65 Z" fill="#E2E8F0" stroke="#475569"/>
+    </svg>`,
+    sentences: [
+      { text: "昨晚国庆庆典现场聚集了超过 2 万 5000 名观众。", type: "fact", reason: "观众人数（2.5万人）有门票与闸机安检数据可查验。" },
+      { text: "庆典散场后，200 名身穿橙色马甲的保洁工友冒雨入场，在 2 个小时内清理了整整 8 吨垃圾。", type: "fact", reason: "人数（200人）、时间（2小时）与垃圾重量（8吨）皆为客观事实。" },
+      { text: "后勤总监在记者会上赞扬道：“保洁团队做出了巨大的贡献，他们的敬业精神令人感动。”", type: "opinion", reason: "“巨大的贡献”和“令人感动”是总监个人的高度赞扬，属于主观评价。" },
+      { text: "现场一名年轻志愿者呼吁：“每一位市民都应该自觉带走垃圾，减轻幕后人员的负担。”", type: "opinion", reason: "出现标志词“呼吁”、“应该”，属于对公众行为的价值倡导与建议。" }
+    ]
+  },
+  {
+    title: "守护行李的“传送大师”：樟宜机场地勤工友的清晨",
+    summary: "每天搬运3万件行李，争分夺秒避免失误，让每位旅客安心出行。",
+    badgeName: "航空护航勋章",
+    badgeIcon: "🧳",
+    svg: `<svg width="100" height="70" viewBox="0 0 100 70" fill="none" stroke="#0284C7" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="25" y="25" width="50" height="35" rx="6" fill="#E0F2FE"/>
+      <path d="M40 25 V16 H60 V25" stroke="#0369A1"/>
+      <line x1="50" y1="25" x2="50" y2="60"/>
+      <circle cx="35" cy="62" r="3" fill="#334155"/>
+      <circle cx="65" cy="62" r="3" fill="#334155"/>
+    </svg>`,
+    sentences: [
+      { text: "每天清晨 5 点，樟宜机场第三搭客大厦行李分拣区准时开始运转。", type: "fact", reason: "有确切的时间（清晨5点）与机场工作区地点事实。" },
+      { text: "150 名地勤工友每天需要搬运超过 3 万件旅客行李，确保每一件行李准时送上飞机。", type: "fact", reason: "人数（150名）与行李件数（3万件）属于机场运营的客观记录。" },
+      { text: "主管在晨会上强调：“即使是一次小小的失误，都可能给乘客带来严重的烦恼。”", type: "opinion", reason: "“严重的烦恼”属于基于经验的主观推测与后果严重性评估。" },
+      { text: "常年出差的旅客张先生认为，樟宜机场地勤人员是全世界最高效的团队。", type: "opinion", reason: "含有标志词“认为”，且“全世界最高效”是个人的体验感受与评价。" }
+    ]
+  },
+  {
+    title: "白衣天使身后的屏障：综合诊疗所配药与消毒团队",
+    summary: "每天精准复核1200份药单，严格避免配药失误，默默守护社区病患安全。",
+    badgeName: "天使后盾勋章",
+    badgeIcon: "💊",
+    svg: `<svg width="100" height="70" viewBox="0 0 100 70" fill="none" stroke="#10B981" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="30" y="20" width="40" height="45" rx="4" fill="#ECFDF5"/>
+      <rect x="42" y="10" width="16" height="10" rx="2" fill="#D1FAE5"/>
+      <line x1="50" y1="32" x2="50" y2="52" stroke="#059669" stroke-width="3"/>
+      <line x1="40" y1="42" x2="60" y2="42" stroke="#059669" stroke-width="3"/>
+    </svg>`,
+    sentences: [
+      { text: "在盛港综合诊疗所，后勤配药团队每天需要处理超过 1200 份处方药单。", type: "fact", reason: "诊所地点明确，处方单数量（1200份）有电脑系统客观记录。" },
+      { text: "药剂师表示：“为了确保患者用药安全，我们反复核对三遍，严格避免任何配药失误。”", type: "fact", reason: "核对三遍与防差错流程为诊所的客观规范事实。" },
+      { text: "前来取药的林阿姨深有感触地说：“我觉得这些幕后药剂师非常有耐心，值得我们信赖。”", type: "opinion", reason: "含有标志词“我觉得”，且“非常有耐心、值得信赖”是个人的主观感受与评价。" },
+      { text: "卫生部门倡议：公众在诊疗所排队取药时，应该多一份耐心与包容。", type: "opinion", reason: "含有“倡议”、“应该”，属于对公众礼仪的道德呼吁。" }
+    ]
+  },
+  {
+    title: "绿意狮城的“树木医生”：国家公园局午夜修剪团队纪实",
+    summary: "定期维修修剪老树，抵御狂风暴雨，确保道路万无一失。",
+    badgeName: "森林守护勋章",
+    badgeIcon: "🌳",
+    svg: `<svg width="100" height="70" viewBox="0 0 100 70" fill="none" stroke="#16A34A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M50 10 Q25 25 35 45 Q20 50 42 55 L42 66 H58 L58 55 Q80 50 65 45 Q75 25 50 10 Z" fill="#DCFCE7"/>
+      <line x1="40" y1="35" x2="48" y2="45" stroke="#15803D"/>
+      <line x1="60" y1="32" x2="52" y2="45" stroke="#15803D"/>
+    </svg>`,
+    sentences: [
+      { text: "新加坡国家公园局团队每年对全岛超过 50 万棵树木进行健康检查。", type: "fact", reason: "官方统计树木数量（50万棵）与年度检查有完整绿化数据库可查。" },
+      { text: "在东海岸公园，园艺团队订购了 3 台新型吊臂车，用于维修和修剪枯木树枝。", type: "fact", reason: "地点、订购设备数量（3台）及维修用途均为客观事实。" },
+      { text: "资深树木医生陈先生认为，与狂风暴雨赛跑是这份职业最艰辛的挑战。", type: "opinion", reason: "含有标志词“认为”，且“最艰辛的挑战”是陈先生个人的工作体会与定性。" },
+      { text: "居民黄先生赞叹道：“他们默默奉献保护了街道安全，是绿意狮城最好的守护者。”", type: "opinion", reason: "“最好的守护者”带有赞叹与情感修饰，属于高度主观评价。" }
+    ]
+  }
+];
+
+// 速辩争霸赛 20 题题库
+const BLITZ_QUESTIONS = [
+  { q: "昨夜凌晨 1 点半，全岛 MRT 列车全部停止对外运营。", type: "fact", reason: "时刻表公开可查，属于时间与运营事实。" },
+  { q: "我认为，坚守在幕后的维修工友比台前的明星更值得尊敬。", type: "opinion", reason: "含有“我认为”，属于个人道德价值判断。" },
+  { q: "新加坡民防部队在火警响起后 8 分钟内赶到了现场。", type: "fact", reason: "出警记录与时间（8分钟）客观可考证。" },
+  { q: "这家小贩中心的老巴刹摊位卖的鸡饭是全岛最好吃的。", type: "opinion", reason: "“最好吃”是个人口味，无客观测量标准。" },
+  { q: "学校为了避免学生发生意外，订购了 50 套防护头盔。", type: "fact", reason: "采购订单（50套）属于客观交易事实。" },
+  { q: "清洁工友每天起早贪黑打扫街道，这份工作非常辛苦。", type: "opinion", reason: "“非常辛苦”是主观感知，因人而异。" },
+  { q: "全岛共有超过 300 处 MRT 轨道检修传感器在 24 小时运行。", type: "fact", reason: "传感器数量与监控运行记录属于客观事实。" },
+  { q: "每一位市民都应该对社区保洁人员多微笑、说声谢谢。", type: "opinion", reason: "含有“应该”，是对人际行为的道德倡导。" },
+  { q: "总工程师说：“即使是松动一颗螺丝的小失误，也可能造成严重危险。”", type: "opinion", reason: "话中对危险程度的评估属于主观经验推测。" },
+  { q: "樟宜机场去年共接待了超过 6500 万人次出入境旅客。", type: "fact", reason: "海关年报统计数字确凿，属于事实。" },
+  { q: "综合诊疗所配药团队每天复核了 1200 张处方药单。", type: "fact", reason: "药单数量记录在案，属于可查证事实。" },
+  { q: "护士长表示：“我们的后勤消毒团队是全医院最棒的。”", type: "opinion", reason: "“最棒的”属于主管个人的主观夸赞与表彰。" },
+  { q: "东海岸公园昨夜维修修剪了 15 棵受强风吹袭的大树。", type: "fact", reason: "地点（东海岸）与数量（15棵）均为工程事实。" },
+  { q: "我坚信，只要人人都付出爱心，新加坡就会变得更加温暖。", type: "opinion", reason: "含有“我坚信”，属于个人信念与理想期待。" },
+  { q: "为了确保安全，客工宿舍每月进行两次消防安全演习。", type: "fact", reason: "演习制度与每月两次记录属于客观规程事实。" },
+  { q: "地勤人员每天在烈日下搬运行李，实在太令人心疼了。", type: "opinion", reason: "“令人心疼”是说话者的情感同理心，属于意见。" },
+  { q: "国庆庆典当晚，现场共有 200 名清洁工友参与清理作业。", type: "fact", reason: "参与人员数量（200人）有考勤名单证实。" },
+  { q: "我们必须尊重身边的每一位普通劳动者，珍惜他们的奉献。", type: "opinion", reason: "含有“必须”，属于倡导性道德意见。" },
+  { q: "国家公园局在全岛管理着超过 50 万棵城市树木。", type: "fact", reason: "官方绿化数据库有详细统计事实。" },
+  { q: "李先生说：“这是一份极其伟大的职业。”", type: "opinion", reason: "“极其伟大”是个人崇高敬意评价，属于主观意见。" }
+];
+
+// 复合句手术刀 6 关库
+const SLICER_LEVELS = [
+  {
+    original: "工人们在暴雨中极其辛苦地维修了 3 小时铁轨。",
+    chips: [
+      { text: "维修了 3 小时铁轨", correctType: "fact" },
+      { text: "在暴雨中极其辛苦", correctType: "opinion" }
+    ],
+    explanation: "抽去主观感受词“极其辛苦”，剩下的“维修了3小时铁轨”就是能用打卡记录查证的客观事实！"
+  },
+  {
+    original: "200名清洁工人在雨中做出了巨大贡献，共清理了 8 吨庆典垃圾。",
+    chips: [
+      { text: "200名清洁工共清理了 8 吨庆典垃圾", correctType: "fact" },
+      { text: "做出了巨大贡献", correctType: "opinion" }
+    ],
+    explanation: "人数与重量是物理事实；而“贡献是否巨大”是社会的高度主观评价！"
+  },
+  {
+    original: "王经理认为，这是技术团队今年最严重的一次设备操作失误。",
+    chips: [
+      { text: "技术团队发生了设备操作失误", correctType: "fact" },
+      { text: "王经理认为这是今年最严重的一次", correctType: "opinion" }
+    ],
+    explanation: "失误记录在案（事实），但“最严重”是经理个人的定性判断（意见）！"
+  },
+  {
+    original: "地勤人员以令人惊叹的高效速度，搬运了 3 万件旅客行李。",
+    chips: [
+      { text: "搬运了 3 万件旅客行李", correctType: "fact" },
+      { text: "以令人惊叹的高效速度", correctType: "opinion" }
+    ],
+    explanation: "3万件行李是客观数据；“令人惊叹的高效”是作者发出的主观赞叹！"
+  },
+  {
+    original: "树木医生陈先生顶着可怕的暴风雨，完成了 15 棵大树的修剪。",
+    chips: [
+      { text: "完成了 15 棵大树的修剪", correctType: "fact" },
+      { text: "顶着可怕的暴风雨", correctType: "opinion" }
+    ],
+    explanation: "修剪15棵树是可测工作量；“可怕的”是人们对暴雨的主观恐惧情绪！"
+  },
+  {
+    original: "诊所后勤人员在非常沉重的压力下，每天复核了 1200 份药单。",
+    chips: [
+      { text: "每天复核了 1200 份药单", correctType: "fact" },
+      { text: "在非常沉重的压力下", correctType: "opinion" }
+    ],
+    explanation: "复核1200份药单有系统记录；“非常沉重的压力”是工友的心理体验！"
+  }
+];
+
+// 试卷二 5 道模拟考题
+const PAPER2_DATA = [
+  {
+    id: 1,
+    title: "第一题：辨析新闻报道语句",
+    stem: "“SMRT 昨夜派出了 300 名维修人员，在地下隧道工作了 4 个小时。” 根据新加坡华文试卷二答题规范，这句话属于什么？",
+    options: [
+      { text: "A. 客观事实（Fact），因为包含具体人数与时间，可以查验打卡记录。", isCorrect: true },
+      { text: "B. 主观意见（Opinion），因为“在地下隧道工作”听起来非常艰苦。", isCorrect: false },
+      { text: "C. 个人猜测，因为新闻报道经常夸大实际施工人数。", isCorrect: false }
+    ],
+    explanation: "正确答案是 A。句中 300 名人员、4 个小时均为客观可查验的工程记录，无主观评价词。"
+  },
+  {
+    id: 2,
+    title: "第二题：辨析受访者引语",
+    stem: "阅读引语：“现场一名乘客受访时说：‘我认为他们是狮城当之无愧的幕后英雄。’” 句中的划线内容属于什么？",
+    options: [
+      { text: "A. 客观事实，因为这名乘客确实接受了采访并说了这句话。", isCorrect: false },
+      { text: "B. 主观意见，因为含有标志词“我认为”，且“幕后英雄”是情感赞誉。", isCorrect: true },
+      { text: "C. 新闻虚假信息，因为乘客没有权利代表公众发表评价。", isCorrect: false }
+    ],
+    explanation: "正确答案是 B。虽然“乘客说了这话”是事实，但话语本身的性质是乘客个人的主观崇敬与看法！"
+  },
+  {
+    id: 3,
+    title: "第三题：辨析修饰性词语",
+    stem: "“保洁工友在暴雨中清理了 8 吨垃圾，做出了极为巨大的贡献。” 关于本句的分析，哪项最准确？",
+    options: [
+      { text: "A. 全句完全是事实，因为垃圾重量有 8 吨。", isCorrect: false },
+      { text: "B. 全句完全是意见，因为“极为巨大”否定了垃圾的真实重量。", isCorrect: false },
+      { text: "C. 本句融合了事实与意见，“8吨”是客观事实，“极为巨大”是主观评价。", isCorrect: true }
+    ],
+    explanation: "正确答案是 C。新闻常将事实数据与评价词糅合在一起，明智的读者需要将两者剥离看待。"
+  },
+  {
+    id: 4,
+    title: "第四题：辨析倡导与呼吁",
+    stem: "“交通安全局呼吁：公众在早高峰地铁拥挤时，应该给予工友更多谅解。” 这句话表达的是什么？",
+    options: [
+      { text: "A. 主观意见（倡导与呼吁），因为包含“应该”，体现的是道德期望而非现状事实。", isCorrect: true },
+      { text: "B. 官方事实，因为交通局是政府部门，说出的话一律算作科学事实。", isCorrect: false },
+      { text: "C. 统计数据，表明公众目前已经做到了谅解工友。", isCorrect: false }
+    ],
+    explanation: "正确答案是 A。标志词“呼吁”与“应该”代表对理想行为的倡导与要求，属于意见范畴。"
+  },
+  {
+    id: 5,
+    title: "第五题：事实与观点的逻辑关联",
+    stem: "在新加坡华文综合读写中，我们在发表个人见解时，为什么必须先列举“事实”？",
+    options: [
+      { text: "A. 为了凑足考试要求的作文字数。", isCorrect: false },
+      { text: "B. 只有依托真实可靠的事实支撑，个人的意见与观点才具备说服力。", isCorrect: true },
+      { text: "C. 因为事实比意见更容易背诵和记忆。", isCorrect: false }
+    ],
+    explanation: "正确答案是 B。摆事实才能讲明道理，批判性思维的核心就是用客观事实支撑主观观点！"
+  }
+];
+
+/* ================= 纯原生 Web Audio 音效引擎 ================= */
+class SoundEngine {
+  constructor() {
+    this.ctx = null;
+    this.enabled = true;
+  }
+  init() {
+    if (!this.ctx) {
+      const AudioCtx = window.AudioContext || window.webkitAudioContext;
+      if (AudioCtx) this.ctx = new AudioCtx();
+    }
+  }
+  playCorrect() {
+    if (!this.enabled) return;
+    this.init();
+    if (!this.ctx) return;
+    const now = this.ctx.currentTime;
+    const osc = this.ctx.createOscillator();
+    const gain = this.ctx.createGain();
+    osc.type = "sine";
+    osc.frequency.setValueAtTime(587.33, now);
+    osc.frequency.exponentialRampToValueAtTime(880, now + 0.15);
+    gain.gain.setValueAtTime(0.2, now);
+    gain.gain.exponentialRampToValueAtTime(0.01, now + 0.25);
+    osc.connect(gain);
+    gain.connect(this.ctx.destination);
+    osc.start(now);
+    osc.stop(now + 0.25);
+  }
+  playWrong() {
+    if (!this.enabled) return;
+    this.init();
+    if (!this.ctx) return;
+    const now = this.ctx.currentTime;
+    const osc = this.ctx.createOscillator();
+    const gain = this.ctx.createGain();
+    osc.type = "triangle";
+    osc.frequency.setValueAtTime(260, now);
+    osc.frequency.setValueAtTime(220, now + 0.1);
+    gain.gain.setValueAtTime(0.25, now);
+    gain.gain.exponentialRampToValueAtTime(0.01, now + 0.25);
+    osc.connect(gain);
+    gain.connect(this.ctx.destination);
+    osc.start(now);
+    osc.stop(now + 0.25);
+  }
+  playFanfare() {
+    if (!this.enabled) return;
+    this.init();
+    if (!this.ctx) return;
+    const notes = [523.25, 659.25, 783.99, 1046.5];
+    notes.forEach((freq, idx) => {
+      const now = this.ctx.currentTime + idx * 0.08;
+      const osc = this.ctx.createOscillator();
+      const gain = this.ctx.createGain();
+      osc.type = "sine";
+      osc.frequency.setValueAtTime(freq, now);
+      gain.gain.setValueAtTime(0.2, now);
+      gain.gain.exponentialRampToValueAtTime(0.01, now + 0.2);
+      osc.connect(gain);
+      gain.connect(this.ctx.destination);
+      osc.start(now);
+      osc.stop(now + 0.2);
+    });
+  }
+}
+const sound = new SoundEngine();
+
+/* ================= 状态管理 ================= */
+class AppState {
+  constructor() {
+    this.score = 0;
+    this.combo = 0;
+    this.unlockedBadges = new Set();
+    this.currentArticleIndex = 0;
+    this.selectedPen = "fact";
+    this.articleAnnotations = {};
+
+    // 速辩赛
+    this.blitzIndex = 0;
+    this.blitzLives = 3;
+    this.blitzTimer = null;
+    this.blitzTimeLeft = 15;
+
+    // 手术刀
+    this.slicerIndex = 0;
+    this.slicerPlacements = {};
+
+    // 试卷二测验
+    this.paper2Answers = {};
+  }
+
+  addScore(pts) {
+    this.combo++;
+    const bonus = Math.floor(this.combo / 3) * 5;
+    this.score += pts + bonus;
+    this.updateHUD();
+  }
+
+  breakCombo() {
+    this.combo = 0;
+    this.updateHUD();
+  }
+
+  unlockBadge(idx) {
+    if (!this.unlockedBadges.has(idx)) {
+      this.unlockedBadges.add(idx);
+      this.addScore(30);
+      sound.playFanfare();
+      this.updateHUD();
+      renderBadgeAlbum();
+    }
+  }
+
+  updateHUD() {
+    document.getElementById("player-score").textContent = this.score;
+    document.getElementById("player-combo").textContent = this.combo;
+    document.getElementById("player-badges").textContent = `${this.unlockedBadges.size}/5`;
+  }
+}
+const state = new AppState();
+
+/* ================= 页面初始化 ================= */
+document.addEventListener("DOMContentLoaded", () => {
+  setupHUDControls();
+  setupNavigation();
+  renderRadarSection();
+  setupHighlighterSection();
+  setupBlitzArena();
+  setupSlicerSection();
+  setupPaper2Section();
+  setupOpinionBuilder();
+  renderBadgeAlbum();
+  setupVocabTooltips();
+});
+
+function setupHUDControls() {
+  const btnPinyin = document.getElementById("btn-toggle-pinyin");
+  btnPinyin.addEventListener("click", () => {
+    document.body.classList.toggle("hide-pinyin");
+    const isHidden = document.body.classList.contains("hide-pinyin");
+    btnPinyin.classList.toggle("active", !isHidden);
+    btnPinyin.innerHTML = isHidden ? "🔤 拼音: 关" : "🔤 拼音: 开";
+  });
+
+  const btnSound = document.getElementById("btn-toggle-sound");
+  btnSound.addEventListener("click", () => {
+    sound.enabled = !sound.enabled;
+    btnSound.classList.toggle("active", sound.enabled);
+    btnSound.innerHTML = sound.enabled ? "🔊 音效: 开" : "🔇 音效: 关";
+  });
+}
+
+function setupNavigation() {
+  const tabs = document.querySelectorAll(".tab-btn");
+  tabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+      tabs.forEach(t => t.classList.remove("active"));
+      tab.classList.add("active");
+      const targetId = `tab-${tab.dataset.tab}`;
+      document.querySelectorAll(".tab-content").forEach(c => c.classList.remove("active"));
+      const target = document.getElementById(targetId);
+      if (target) target.classList.add("active");
+    });
+  });
+}
+
+/* ================= 模块一：雷达 16 词 ================= */
+function renderRadarSection() {
+  const container = document.getElementById("radar-chips-container");
+  const panel = document.getElementById("radar-display-panel");
+  const filterBtns = document.querySelectorAll(".radar-filter-btn");
+
+  function renderChips(filter = "all") {
+    container.innerHTML = "";
+    RADAR_DATA.forEach((item, idx) => {
+      if (filter !== "all" && item.type !== filter) return;
+      const chip = document.createElement("div");
+      chip.className = `radar-chip ${item.type}-type`;
+      chip.innerHTML = `${item.type === 'fact' ? '📷' : '💭'} ${item.word}`;
+      chip.addEventListener("click", () => {
+        document.querySelectorAll(".radar-chip").forEach(c => c.classList.remove("selected"));
+        chip.classList.add("selected");
+        displayRadarDetail(item);
+        sound.playCorrect();
+      });
+      container.appendChild(chip);
+    });
+  }
+
+  function displayRadarDetail(item) {
+    const isFact = item.type === "fact";
+    panel.innerHTML = `
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; flex-wrap:wrap; gap:6px;">
+        <span style="font-weight:800; font-size:1.15rem; color:${isFact ? '#0284C7' : '#D97706'};">
+          ${isFact ? '📷 客观事实标志词' : '💭 主观意见标志词'} · 【${item.word}】
+        </span>
+        <span style="font-size:0.82rem; background:${isFact ? '#E0F2FE' : '#FEF3C7'}; color:${isFact ? '#0369A1' : '#B45309'}; padding:3px 10px; border-radius:12px; font-weight:700; border:1px solid;">
+          标志类别：${item.label}
+        </span>
+      </div>
+      <p style="font-size:0.95rem; color:#334155; margin-bottom:8px; line-height:1.5;">💡 <strong>判定法宝：</strong>${item.tip}</p>
+      <div style="background:#F8FAFC; padding:8px 12px; border-radius:6px; border-left:4px solid ${isFact ? '#0284C7' : '#D97706'}; font-size:0.9rem;">
+        <strong>📰 狮城新闻例句：</strong>${item.example}
+      </div>
+    `;
+  }
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      filterBtns.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      renderChips(btn.dataset.filter);
+    });
+  });
+
+  renderChips("all");
+}
+
+/* ================= 模块二：荧光笔研读厅 (5篇手绘文章) ================= */
+function setupHighlighterSection() {
+  const penBtns = document.querySelectorAll(".pen-btn");
+  penBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      penBtns.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      state.selectedPen = btn.dataset.pen;
+    });
+  });
+
+  const articleTabBtns = document.querySelectorAll(".article-tab-btn");
+  articleTabBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      articleTabBtns.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      state.currentArticleIndex = parseInt(btn.dataset.article);
+      loadArticle(state.currentArticleIndex);
+    });
+  });
+
+  document.getElementById("btn-reset-article").addEventListener("click", () => {
+    state.articleAnnotations[state.currentArticleIndex] = {};
+    loadArticle(state.currentArticleIndex);
+    document.getElementById("diagnosis-panel").classList.remove("show");
+  });
+
+  loadArticle(0);
+}
+
+function formatTextWithVocabAndRuby(text) {
+  let result = text;
+  Object.keys(VOCAB_DATA).forEach(word => {
+    const info = VOCAB_DATA[word];
+    const regex = new RegExp(word, "g");
+    const rubyHtml = `<span class="vocab-word" data-word="${word}"><ruby>${word}<rt>${info.pinyin}</rt></ruby></span>`;
+    result = result.replace(regex, rubyHtml);
+  });
+  return result;
+}
+
+function loadArticle(index) {
+  const article = ARTICLES[index];
+  document.getElementById("current-article-title").textContent = article.title;
+  document.getElementById("current-article-summary").textContent = article.summary;
+  document.getElementById("banner-svg-box").innerHTML = article.svg;
+
+  const container = document.getElementById("article-body-content");
+  container.innerHTML = "";
+
+  if (!state.articleAnnotations[index]) {
+    state.articleAnnotations[index] = {};
+  }
+
+  const p = document.createElement("p");
+  article.sentences.forEach((sObj, sIdx) => {
+    const span = document.createElement("span");
+    span.className = "sentence-item";
+    span.dataset.sentenceIdx = sIdx;
+    span.innerHTML = formatTextWithVocabAndRuby(sObj.text) + " ";
+
+    const currentMark = state.articleAnnotations[index][sIdx];
+    if (currentMark === "fact") span.classList.add("marked-fact");
+    if (currentMark === "opinion") span.classList.add("marked-opinion");
+
+    span.addEventListener("click", (e) => {
+      if (e.target.classList.contains("vocab-word") || e.target.closest(".vocab-word")) return;
+      handleSentenceHighlight(index, sIdx, span, sObj);
+    });
+
+    p.appendChild(span);
+  });
+
+  container.appendChild(p);
+  updateAnnotationCounts(index);
+}
+
+function handleSentenceHighlight(articleIdx, sentenceIdx, element, sentenceObj) {
+  const pen = state.selectedPen;
+  const panel = document.getElementById("diagnosis-panel");
+  const stamp = document.getElementById("diag-stamp");
+  const textEl = document.getElementById("diag-sentence-text");
+  const expEl = document.getElementById("diag-explanation");
+
+  if (pen === "eraser") {
+    element.classList.remove("marked-fact", "marked-opinion");
+    delete state.articleAnnotations[articleIdx][sentenceIdx];
+    panel.classList.remove("show");
+    updateAnnotationCounts(articleIdx);
+    return;
+  }
+
+  element.classList.remove("marked-fact", "marked-opinion");
+  if (pen === "fact") element.classList.add("marked-fact");
+  if (pen === "opinion") element.classList.add("marked-opinion");
+
+  state.articleAnnotations[articleIdx][sentenceIdx] = pen;
+  const isCorrect = pen === sentenceObj.type;
+
+  panel.classList.add("show");
+  textEl.textContent = `“${sentenceObj.text}”`;
+
+  if (isCorrect) {
+    sound.playCorrect();
+    state.addScore(10);
+    stamp.className = `sketch-stamp ${pen === 'fact' ? 'fact-stamp' : 'opinion-stamp'}`;
+    stamp.innerHTML = pen === 'fact' ? '<span>📷 事实查证章 · 准确核实</span>' : '<span>💭 意见识别章 · 主观明确</span>';
+    expEl.innerHTML = `<strong>解析：</strong>${sentenceObj.reason}`;
+  } else {
+    sound.playWrong();
+    state.breakCombo();
+    stamp.className = "sketch-stamp wrong-stamp";
+    stamp.innerHTML = '<span>⚠️ 需要推敲章 · 属性不符</span>';
+    expEl.innerHTML = `<strong>点拨提示：</strong>它其实属于【${sentenceObj.type === 'fact' ? '客观事实 📷' : '主观意见 💭'}】。${sentenceObj.reason}`;
+  }
+
+  updateAnnotationCounts(articleIdx);
+
+  // 检查是否全篇解锁该勋章
+  checkArticleCompletion(articleIdx);
+}
+
+function updateAnnotationCounts(index) {
+  const article = ARTICLES[index];
+  const marks = state.articleAnnotations[index] || {};
+  let factsMarked = 0, opinionsMarked = 0;
+  let totalFacts = article.sentences.filter(s => s.type === "fact").length;
+  let totalOpinions = article.sentences.filter(s => s.type === "opinion").length;
+
+  Object.keys(marks).forEach(sIdx => {
+    if (marks[sIdx] === "fact") factsMarked++;
+    if (marks[sIdx] === "opinion") opinionsMarked++;
+  });
+
+  document.getElementById("fact-count").textContent = `${factsMarked}/${totalFacts}`;
+  document.getElementById("opinion-count").textContent = `${opinionsMarked}/${totalOpinions}`;
+}
+
+function checkArticleCompletion(index) {
+  const article = ARTICLES[index];
+  const marks = state.articleAnnotations[index] || {};
+  let allCorrect = true;
+
+  if (Object.keys(marks).length < article.sentences.length) return;
+
+  article.sentences.forEach((s, idx) => {
+    if (marks[idx] !== s.type) allCorrect = false;
+  });
+
+  if (allCorrect) {
+    state.unlockBadge(index);
+  }
+}
+
+/* ================= 模块三：速辩争霸赛 20 题 ================= */
+function setupBlitzArena() {
+  document.getElementById("btn-choose-fact").addEventListener("click", () => handleBlitzAnswer("fact"));
+  document.getElementById("btn-choose-opinion").addEventListener("click", () => handleBlitzAnswer("opinion"));
+  loadBlitzQuestion();
+}
+
+function loadBlitzQuestion() {
+  if (state.blitzIndex >= BLITZ_QUESTIONS.length) {
+    finishBlitzArena();
+    return;
+  }
+  const qObj = BLITZ_QUESTIONS[state.blitzIndex];
+  document.getElementById("blitz-progress-text").textContent = `${state.blitzIndex + 1} / ${BLITZ_QUESTIONS.length}`;
+  document.getElementById("blitz-question-text").innerHTML = formatTextWithVocabAndRuby(qObj.q);
+  document.getElementById("blitz-feedback-box").style.display = "none";
+  resetBlitzTimer();
+}
+
+function resetBlitzTimer() {
+  clearInterval(state.blitzTimer);
+  state.blitzTimeLeft = 15;
+  const bar = document.getElementById("blitz-timer-bar");
+  bar.style.width = "100%";
+
+  state.blitzTimer = setInterval(() => {
+    state.blitzTimeLeft--;
+    const pct = (state.blitzTimeLeft / 15) * 100;
+    bar.style.width = `${pct}%`;
+
+    if (state.blitzTimeLeft <= 0) {
+      clearInterval(state.blitzTimer);
+      handleBlitzTimeout();
+    }
+  }, 1000);
+}
+
+function handleBlitzAnswer(chosenType) {
+  clearInterval(state.blitzTimer);
+  const qObj = BLITZ_QUESTIONS[state.blitzIndex];
+  const isCorrect = chosenType === qObj.type;
+  showBlitzFeedback(isCorrect, qObj);
+}
+
+function handleBlitzTimeout() {
+  const qObj = BLITZ_QUESTIONS[state.blitzIndex];
+  showBlitzFeedback(false, qObj, true);
+}
+
+function showBlitzFeedback(isCorrect, qObj, isTimeout = false) {
+  const fbBox = document.getElementById("blitz-feedback-box");
+  const fbHeader = document.getElementById("blitz-feedback-header");
+  const fbText = document.getElementById("blitz-feedback-text");
+  fbBox.style.display = "block";
+
+  if (isCorrect) {
+    sound.playCorrect();
+    state.addScore(15);
+    fbBox.style.background = "#F0FDF4";
+    fbBox.style.borderColor = "#10B981";
+    fbHeader.style.color = "#166534";
+    fbHeader.textContent = "🎉 回答正确！火眼金睛！";
+  } else {
+    sound.playWrong();
+    state.breakCombo();
+    state.blitzLives--;
+    updateHealthDisplay();
+    fbBox.style.background = "#FEF2F2";
+    fbBox.style.borderColor = "#EF4444";
+    fbHeader.style.color = "#991B1B";
+    fbHeader.textContent = isTimeout ? "⏰ 时间到！未能及早辨明！" : `❌ 判断失误！本句其实属于【${qObj.type === 'fact' ? '事实 📷' : '意见 💭'}】`;
+  }
+
+  fbText.textContent = `判定依据：${qObj.reason}`;
+
+  setTimeout(() => {
+    if (state.blitzLives <= 0) {
+      finishBlitzArena(true);
+    } else {
+      state.blitzIndex++;
+      loadBlitzQuestion();
+    }
+  }, 2000);
+}
+
+function updateHealthDisplay() {
+  const el = document.getElementById("blitz-health");
+  let hearts = "";
+  for (let i = 0; i < 3; i++) {
+    hearts += i < state.blitzLives ? "❤️" : "🖤";
+  }
+  el.innerHTML = hearts;
+}
+
+function finishBlitzArena(isGameOver = false) {
+  clearInterval(state.blitzTimer);
+  const card = document.getElementById("blitz-card");
+  document.getElementById("blitz-actions").style.display = "none";
+  sound.playFanfare();
+
+  card.innerHTML = `
+    <div style="text-align: center; padding: 20px;">
+      <div style="font-size: 3.5rem; margin-bottom: 10px;">${isGameOver ? '💪' : '🏆'}</div>
+      <h3 style="font-size:1.5rem; color:var(--primary); margin-bottom:8px;">
+        ${isGameOver ? '挑战结束 · 再接再厉！' : '全胜通关 · 狮城特约新闻小侦探！'}
+      </h3>
+      <p style="font-size:1rem; color:#475569; margin-bottom:16px;">
+        最终获得积分：<strong style="color:var(--accent); font-size:1.3rem;">${state.score}</strong> 分
+      </p>
+      <button class="btn-primary" onclick="restartBlitz()">🔄 重新挑战</button>
+    </div>
+  `;
+}
+
+window.restartBlitz = function() {
+  state.blitzIndex = 0;
+  state.blitzLives = 3;
+  updateHealthDisplay();
+  document.getElementById("blitz-actions").style.display = "grid";
+  loadBlitzQuestion();
+};
+
+/* ================= 模块四：复合句手术刀 (6关) ================= */
+function setupSlicerSection() {
+  loadSlicerLevel(0);
+  document.getElementById("btn-next-slicer").addEventListener("click", () => {
+    state.slicerIndex = (state.slicerIndex + 1) % SLICER_LEVELS.length;
+    loadSlicerLevel(state.slicerIndex);
+  });
+}
+
+function loadSlicerLevel(index) {
+  const lvl = SLICER_LEVELS[index];
+  document.getElementById("slicer-level-indicator").textContent = `${index + 1} / ${SLICER_LEVELS.length}`;
+  document.getElementById("slicer-target-sentence").textContent = lvl.original;
+  const pool = document.getElementById("slicer-chips-pool");
+  const factSlot = document.getElementById("slot-fact-content");
+  const opSlot = document.getElementById("slot-opinion-content");
+  const nextBtn = document.getElementById("btn-next-slicer");
+  const analysisBox = document.getElementById("slicer-analysis-box");
+
+  pool.innerHTML = "";
+  factSlot.innerHTML = `<span style="color:#94A3B8; font-size:0.9rem;">(点击碎片放入)</span>`;
+  opSlot.innerHTML = `<span style="color:#94A3B8; font-size:0.9rem;">(点击碎片放入)</span>`;
+  nextBtn.style.display = "none";
+  analysisBox.style.display = "none";
+
+  state.slicerPlacements = { fact: null, opinion: null };
+
+  lvl.chips.forEach(chip => {
+    const btn = document.createElement("button");
+    btn.className = "drag-chip";
+    btn.textContent = chip.text;
+    btn.addEventListener("click", () => {
+      handleSlicerChipClick(chip, btn, lvl);
+    });
+    pool.appendChild(btn);
+  });
+}
+
+function handleSlicerChipClick(chip, btn, lvl) {
+  if (chip.correctType === "fact" && !state.slicerPlacements.fact) {
+    state.slicerPlacements.fact = chip.text;
+    document.getElementById("slot-fact-content").innerHTML = `<span style="color:#0369A1; font-weight:800;">✅ ${chip.text}</span>`;
+    btn.classList.add("placed");
+    sound.playCorrect();
+    state.addScore(15);
+  } else if (chip.correctType === "opinion" && !state.slicerPlacements.opinion) {
+    state.slicerPlacements.opinion = chip.text;
+    document.getElementById("slot-opinion-content").innerHTML = `<span style="color:#B45309; font-weight:800;">💡 ${chip.text}</span>`;
+    btn.classList.add("placed");
+    sound.playCorrect();
+    state.addScore(15);
+  }
+
+  if (state.slicerPlacements.fact && state.slicerPlacements.opinion) {
+    const analysisBox = document.getElementById("slicer-analysis-box");
+    analysisBox.style.display = "block";
+    analysisBox.innerHTML = `<strong>🔬 手术刀深度剖析：</strong>${lvl.explanation}`;
+    document.getElementById("btn-next-slicer").style.display = "inline-flex";
+    sound.playFanfare();
+  }
+}
+
+/* ================= 模块五：试卷二实战题 ================= */
+function setupPaper2Section() {
+  const container = document.getElementById("paper2-items-container");
+  container.innerHTML = "";
+
+  PAPER2_DATA.forEach(item => {
+    const box = document.createElement("div");
+    box.className = "paper2-item";
+    box.id = `paper2-box-${item.id}`;
+
+    let optsHtml = "";
+    item.options.forEach((opt, oIdx) => {
+      optsHtml += `
+        <button class="paper2-opt-btn" data-qid="${item.id}" data-oidx="${oIdx}">
+          <span>${opt.text}</span>
+        </button>
+      `;
+    });
+
+    box.innerHTML = `
+      <div class="paper2-item-header">
+        <span class="paper2-badge">${item.title}</span>
+        <span style="font-size:0.8rem; color:#64748B;">分值：2 分</span>
+      </div>
+      <p style="font-size:1.05rem; font-weight:700; color:#1E293B; line-height:1.6;">${item.stem}</p>
+      <div class="paper2-options" id="p2-opts-${item.id}">
+        ${optsHtml}
+      </div>
+      <div id="p2-exp-${item.id}" style="display:none; margin-top:12px; padding:10px; border-radius:6px; font-size:0.88rem; background:#F8FAFC; border:1px solid #CBD5E1;"></div>
+    `;
+
+    container.appendChild(box);
+  });
+
+  container.addEventListener("click", (e) => {
+    const btn = e.target.closest(".paper2-opt-btn");
+    if (!btn) return;
+    const qid = parseInt(btn.dataset.qid);
+    const oidx = parseInt(btn.dataset.oidx);
+    state.paper2Answers[qid] = oidx;
+
+    const parent = document.getElementById(`p2-opts-${qid}`);
+    parent.querySelectorAll(".paper2-opt-btn").forEach(b => {
+      b.style.borderColor = "var(--sketch-border)";
+      b.style.background = "white";
+    });
+    btn.style.borderColor = "#2563EB";
+    btn.style.background = "#EFF6FF";
+  });
+
+  document.getElementById("btn-submit-paper2").addEventListener("click", () => {
+    let score = 0;
+    PAPER2_DATA.forEach(item => {
+      const chosen = state.paper2Answers[item.id];
+      const box = document.getElementById(`paper2-box-${item.id}`);
+      const expBox = document.getElementById(`p2-exp-${item.id}`);
+      expBox.style.display = "block";
+      expBox.innerHTML = `<strong>解析：</strong>${item.explanation}`;
+
+      if (chosen !== undefined) {
+        const isRight = item.options[chosen].isCorrect;
+        const btn = box.querySelectorAll(".paper2-opt-btn")[chosen];
+        if (isRight) {
+          score += 2;
+          btn.classList.add("selected-correct");
+          box.classList.add("passed");
+        } else {
+          btn.classList.add("selected-wrong");
+        }
+      }
+    });
+
+    const scoreBox = document.getElementById("paper2-score-box");
+    scoreBox.style.display = "block";
+    document.getElementById("paper2-score-text").textContent = `您的总得分为：${score} / 10 分`;
+    state.addScore(score * 10);
+    sound.playFanfare();
+  });
+}
+
+/* ================= 模块六：集邮册与见解工坊 ================= */
+function renderBadgeAlbum() {
+  const container = document.getElementById("badge-album-container");
+  container.innerHTML = "";
+
+  ARTICLES.forEach((art, idx) => {
+    const card = document.createElement("div");
+    const isUnlocked = state.unlockedBadges.has(idx);
+    card.className = `hero-badge-card ${isUnlocked ? 'unlocked' : ''}`;
+    card.innerHTML = `
+      <div class="badge-icon-box">${art.badgeIcon}</div>
+      <div class="badge-name">${art.badgeName}</div>
+      <div class="badge-status">${isUnlocked ? '✅ 已点亮' : '🔒 待阅读研读'}</div>
+    `;
+    container.appendChild(card);
+  });
+}
+
+function setupOpinionBuilder() {
+  const factBtns = document.querySelectorAll(".fact-option-btn");
+  let selectedFact = factBtns[0].dataset.fact;
+
+  factBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      factBtns.forEach(b => b.classList.remove("selected"));
+      btn.classList.add("selected");
+      selectedFact = btn.dataset.fact;
+    });
+  });
+
+  document.getElementById("btn-generate-cert").addEventListener("click", () => {
+    const opinionText = document.getElementById("builder-opinion-input").value.trim();
+    if (!opinionText) {
+      alert("请写下你对这条事实的个人见解与想法！");
+      return;
+    }
+
+    document.getElementById("cert-fact-text").textContent = selectedFact;
+    document.getElementById("cert-opinion-text").textContent = opinionText;
+    const now = new Date();
+    document.getElementById("cert-date").textContent = `${now.getFullYear()}年${now.getMonth() + 1}月`;
+
+    sound.playFanfare();
+    state.addScore(25);
+    document.getElementById("cert-card").scrollIntoView({ behavior: "smooth" });
+  });
+}
+
+/* ================= 词汇浮窗 ================= */
+function setupVocabTooltips() {
+  const overlay = document.getElementById("vocab-overlay");
+  const modal = document.getElementById("vocab-modal");
+  const closeBtn = document.getElementById("vm-close");
+
+  function openModal(word) {
+    const data = VOCAB_DATA[word];
+    if (!data) return;
+    document.getElementById("vm-word").textContent = word;
+    document.getElementById("vm-pinyin").textContent = data.pinyin;
+    document.getElementById("vm-meaning").textContent = data.meaning;
+    document.getElementById("vm-collocation").textContent = `高频搭配：${data.collocations}`;
+    overlay.classList.add("show");
+    modal.classList.add("show");
+    sound.playCorrect();
+  }
+
+  function closeModal() {
+    overlay.classList.remove("show");
+    modal.classList.remove("show");
+  }
+
+  document.addEventListener("click", (e) => {
+    const target = e.target.closest(".vocab-word");
+    if (target) {
+      e.stopPropagation();
+      openModal(target.dataset.word);
+    }
+  });
+
+  closeBtn.addEventListener("click", closeModal);
+  overlay.addEventListener("click", closeModal);
+}
+</script>
+</body>
+</html>
