@@ -1,0 +1,3697 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>私人电邮写作工坊 · 新加坡中学华文 G1 实用文通关营</title>
+  <style>
+    :root {
+      --primary: #1E3A8A;
+      --primary-light: #2563EB;
+      --primary-gradient: linear-gradient(135deg, #1E3A8A 0%, #2563EB 100%);
+      --accent: #F59E0B;
+      --accent-dark: #B45309;
+      --success: #16A34A;
+      --success-bg: #DCFCE7;
+      --danger: #DC2626;
+      --danger-bg: #FEE2E2;
+      --info: #0284C7;
+      --info-bg: #E0F2FE;
+      --bg: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --text: #0F172A;
+      --text-muted: #475569;
+      --border: #CBD5E1;
+      --sketch-border: #334155;
+      --radius-sm: 10px;
+      --radius-md: 16px;
+      --radius-lg: 22px;
+      --shadow-sketch: 3px 3px 0px rgba(15, 23, 42, 0.85);
+      --shadow-sketch-lg: 5px 5px 0px rgba(15, 23, 42, 0.85);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at 12% 10%, rgba(219, 234, 254, 0.75) 0%, transparent 40%),
+        radial-gradient(circle at 88% 85%, rgba(254, 243, 199, 0.7) 0%, transparent 45%),
+        var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 16px 14px 56px;
+      line-height: 1.6;
+    }
+
+    /* 拼音控制 */
+    ruby {
+      ruby-position: over;
+      font-family: inherit;
+    }
+    rt {
+      font-size: 0.65em;
+      font-weight: 600;
+      color: #1D4ED8;
+      user-select: none;
+      letter-spacing: 0;
+    }
+    body.hide-pinyin rt {
+      display: none;
+    }
+
+    .app-container {
+      width: 100%;
+      max-width: 1120px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    /* 屏幕阅读器隐藏辅助类 */
+    .visually-hidden:where(:not(:focus-within, :active)) {
+      position: absolute !important;
+      clip-path: inset(50%) !important;
+      overflow: hidden !important;
+      width: 1px !important;
+      height: 1px !important;
+      margin: -1px !important;
+      padding: 0 !important;
+      border: 0 !important;
+      white-space: nowrap !important;
+    }
+
+    /* ================= 顶栏与 HUD ================= */
+    .top-nav {
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(10px);
+      border-radius: var(--radius-lg);
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 2px solid var(--sketch-border);
+      box-shadow: var(--shadow-sketch);
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-badge {
+      width: 50px;
+      height: 50px;
+      background: #EFF6FF;
+      border: 2px solid var(--sketch-border);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 2px 2px 0 var(--sketch-border);
+      flex-shrink: 0;
+    }
+
+    .brand-text h1 {
+      font-size: 1.22rem;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1.25;
+    }
+
+    .brand-text p {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .hud-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .stat-pill {
+      background: #F1F5F9;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.86rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      border: 1.5px solid var(--sketch-border);
+      box-shadow: 2px 2px 0 var(--sketch-border);
+      font-variant-numeric: tabular-nums;
+    }
+    .stat-pill.points { background: #FEF3C7; color: #92400E; }
+    .stat-pill.combo { background: #EDE9FE; color: #5B21B6; }
+    .stat-pill.badges { background: #DCFCE7; color: #166534; }
+
+    .btn-toggle {
+      background: #FFFFFF;
+      border: 1.5px solid var(--sketch-border);
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      box-shadow: 2px 2px 0 var(--sketch-border);
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+    }
+    .btn-toggle:hover {
+      transform: translateY(-1px);
+      box-shadow: 3px 3px 0 var(--sketch-border);
+    }
+    .btn-toggle.active {
+      background: #EFF6FF;
+      color: #1D4ED8;
+    }
+
+    /* ================= 主导航标签栏 ================= */
+    .tab-bar {
+      display: flex;
+      background: #FFFFFF;
+      padding: 6px;
+      border-radius: var(--radius-md);
+      border: 2px solid var(--sketch-border);
+      box-shadow: var(--shadow-sketch);
+      gap: 6px;
+      overflow-x: auto;
+    }
+
+    .tab-btn {
+      flex: 1;
+      min-width: 148px;
+      padding: 10px 14px;
+      border: 1.5px solid transparent;
+      background: transparent;
+      border-radius: 10px;
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: var(--text-muted);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: all 0.18s ease;
+      white-space: nowrap;
+    }
+
+    .tab-btn:hover {
+      color: var(--primary);
+      background: #F1F5F9;
+    }
+
+    .tab-btn.active {
+      background: var(--primary-gradient);
+      color: #FFFFFF;
+      border-color: var(--sketch-border);
+      box-shadow: 2px 2px 0 var(--sketch-border);
+    }
+
+    /* ================= 通用卡片与按钮 ================= */
+    .tab-content {
+      display: none;
+      animation: fadeSlideIn 0.24s ease-out;
+    }
+    .tab-content.active {
+      display: block;
+    }
+
+    @keyframes fadeSlideIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      border: 2px solid var(--sketch-border);
+      box-shadow: var(--shadow-sketch);
+      margin-bottom: 16px;
+    }
+
+    .card-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .card-title {
+      font-size: 1.28rem;
+      font-weight: 800;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+
+    .card-subtitle {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    .sticky-note {
+      background: #FEF9C3;
+      border: 2px solid #CA8A04;
+      border-radius: 6px 18px 6px 18px;
+      padding: 14px 16px;
+      position: relative;
+      box-shadow: 3px 3px 0 rgba(202, 138, 4, 0.25);
+      font-size: 0.92rem;
+    }
+
+    .btn-primary {
+      background: var(--primary-gradient);
+      color: #FFFFFF;
+      border: 2px solid var(--sketch-border);
+      border-radius: 12px;
+      padding: 10px 18px;
+      font-size: 0.94rem;
+      font-weight: 800;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      box-shadow: 2px 2px 0 var(--sketch-border);
+      transition: transform 0.14s ease, box-shadow 0.14s ease;
+    }
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 4px 4px 0 var(--sketch-border);
+    }
+
+    .btn-secondary {
+      background: #FFFFFF;
+      color: var(--text);
+      border: 2px solid var(--sketch-border);
+      border-radius: 12px;
+      padding: 9px 15px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      box-shadow: 2px 2px 0 var(--sketch-border);
+      transition: transform 0.14s ease, background-color 0.14s ease;
+    }
+    .btn-secondary:hover {
+      background: #F1F5F9;
+      transform: translateY(-1px);
+    }
+    .btn-secondary.active {
+      background: #DBEAFE;
+      color: #1E3A8A;
+    }
+
+    .btn-accent {
+      background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+      color: #FFFFFF;
+      border: 2px solid var(--sketch-border);
+      border-radius: 12px;
+      padding: 10px 18px;
+      font-size: 0.94rem;
+      font-weight: 800;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      box-shadow: 2px 2px 0 var(--sketch-border);
+    }
+    .btn-accent:hover {
+      transform: translateY(-1px);
+      box-shadow: 4px 4px 0 var(--sketch-border);
+    }
+
+    /* 可点击单元词汇胶囊 */
+    .vocab-word {
+      display: inline-block;
+      background: #FEF3C7;
+      border-bottom: 2px dashed #D97706;
+      padding: 0 3px;
+      border-radius: 4px;
+      font-weight: 700;
+      color: #92400E;
+      cursor: pointer;
+      transition: background-color 0.15s ease;
+    }
+    .vocab-word:hover {
+      background: #FDE68A;
+    }
+
+    /* ================= 模块 1：电邮解剖室 ================= */
+    .anatomy-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 18px;
+      align-items: start;
+    }
+    @media (max-width: 860px) {
+      .anatomy-grid { grid-template-columns: 1fr; }
+    }
+
+    .email-frame {
+      background: #FFFFFF;
+      border: 2px solid var(--sketch-border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-sketch);
+    }
+
+    .email-chrome {
+      background: #E2E8F0;
+      padding: 10px 14px;
+      border-bottom: 2px solid var(--sketch-border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: #334155;
+    }
+
+    .email-dots {
+      display: flex;
+      gap: 6px;
+    }
+    .email-dots span {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      border: 1.5px solid #334155;
+      display: inline-block;
+    }
+
+    .email-meta-bar {
+      background: #F8FAFC;
+      padding: 10px 16px;
+      border-bottom: 1.5px solid #CBD5E1;
+      font-size: 0.86rem;
+      color: #475569;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+    }
+
+    .anatomy-zone {
+      width: 100%;
+      text-align: left;
+      background: transparent;
+      border: none;
+      border-left: 5px solid transparent;
+      padding: 11px 16px;
+      cursor: pointer;
+      display: block;
+      font-size: 0.96rem;
+      color: var(--text);
+      line-height: 1.75;
+      transition: background-color 0.15s ease, border-color 0.15s ease;
+      position: relative;
+    }
+    .anatomy-zone + .anatomy-zone {
+      border-top: 1px dashed #E2E8F0;
+    }
+    .anatomy-zone:hover {
+      background: #F1F5F9;
+    }
+    .anatomy-zone.active {
+      background: #EFF6FF;
+      border-left-color: #2563EB;
+    }
+    .anatomy-zone.inspected .zone-pill::after {
+      content: " ✓";
+      color: #16A34A;
+    }
+
+    .zone-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.74rem;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: #E2E8F0;
+      color: #1E293B;
+      margin-bottom: 4px;
+      border: 1px solid #94A3B8;
+    }
+    .anatomy-zone.active .zone-pill {
+      background: #DBEAFE;
+      color: #1E3A8A;
+      border-color: #3B82F6;
+    }
+
+    .indent-visual {
+      display: inline-block;
+      background: #FEF3C7;
+      border: 1px dashed #D97706;
+      color: #92400E;
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 0 4px;
+      border-radius: 4px;
+      margin-right: 3px;
+      vertical-align: middle;
+    }
+
+    .inspector-box {
+      background: #F8FAFC;
+      border: 2px solid var(--sketch-border);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      box-shadow: var(--shadow-sketch);
+    }
+
+    .compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    @media (max-width: 560px) {
+      .compare-grid { grid-template-columns: 1fr; }
+    }
+
+    .compare-card {
+      padding: 12px;
+      border-radius: 10px;
+      border: 1.5px solid;
+      font-size: 0.88rem;
+      line-height: 1.6;
+    }
+    .compare-card.good {
+      background: #F0FDF4;
+      border-color: #16A34A;
+      color: #14532D;
+    }
+    .compare-card.bad {
+      background: #FEF2F2;
+      border-color: #DC2626;
+      color: #7F1D1D;
+    }
+
+    /* 原生 details/summary 句式手风琴 */
+    .accordion-section {
+      margin-top: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .accordion-section details {
+      background: #FFFFFF;
+      border: 1.5px solid var(--sketch-border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .accordion-section summary {
+      padding: 11px 14px;
+      font-weight: 800;
+      font-size: 0.92rem;
+      cursor: pointer;
+      background: #F1F5F9;
+      color: #1E293B;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .accordion-section summary::-webkit-details-marker {
+      display: none;
+    }
+    .accordion-section summary::after {
+      content: "＋ 展开";
+      font-size: 0.78rem;
+      color: #2563EB;
+      font-weight: 700;
+    }
+    .accordion-section details[open] summary::after {
+      content: "－ 收起";
+    }
+    .accordion-section details[open] summary {
+      background: #DBEAFE;
+      color: #1E3A8A;
+      border-bottom: 1.5px solid var(--sketch-border);
+    }
+    .scaffold-chips {
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .copy-chip {
+      text-align: left;
+      background: #F8FAFC;
+      border: 1.5px solid #CBD5E1;
+      border-radius: 8px;
+      padding: 8px 10px;
+      font-size: 0.87rem;
+      color: #1E293B;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+    }
+    .copy-chip:hover {
+      background: #EFF6FF;
+      border-color: #3B82F6;
+    }
+
+    /* ================= 模块 2：审题拆弹厅 ================= */
+    .prompt-selector-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+
+    .analyzer-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      gap: 18px;
+      align-items: start;
+    }
+    @media (max-width: 860px) {
+      .analyzer-grid { grid-template-columns: 1fr; }
+    }
+
+    .exam-paper-box {
+      background: #FFFDF7;
+      border: 2px solid var(--sketch-border);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      box-shadow: var(--shadow-sketch);
+    }
+    .exam-tag {
+      display: inline-block;
+      background: #1E3A8A;
+      color: #FFFFFF;
+      font-size: 0.78rem;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 8px;
+    }
+
+    .email-stimulus {
+      background: #FFFFFF;
+      border: 1.5px solid #94A3B8;
+      border-radius: 10px;
+      padding: 14px;
+      margin: 12px 0;
+      font-size: 0.94rem;
+      line-height: 1.75;
+    }
+
+    .task-badge-1 {
+      background: #DBEAFE;
+      color: #1E40AF;
+      padding: 1px 6px;
+      border-radius: 5px;
+      font-weight: 800;
+    }
+    .task-badge-2 {
+      background: #FEF3C7;
+      color: #92400E;
+      padding: 1px 6px;
+      border-radius: 5px;
+      font-weight: 800;
+    }
+
+    .quiz-step-card {
+      background: #F8FAFC;
+      border: 2px solid var(--sketch-border);
+      border-radius: 14px;
+      padding: 14px;
+      margin-bottom: 12px;
+    }
+    .quiz-step-card h3 {
+      font-size: 0.98rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+    .quiz-options {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+    .quiz-opt-btn {
+      width: 100%;
+      text-align: left;
+      padding: 9px 12px;
+      border: 1.5px solid var(--sketch-border);
+      border-radius: 9px;
+      background: #FFFFFF;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.14s ease;
+    }
+    .quiz-opt-btn:hover {
+      background: #EFF6FF;
+    }
+    .quiz-opt-btn.correct {
+      background: #DCFCE7;
+      border-color: #16A34A;
+      color: #14532D;
+    }
+    .quiz-opt-btn.wrong {
+      background: #FEE2E2;
+      border-color: #DC2626;
+      color: #7F1D1D;
+    }
+
+    /* ================= 模块 3：格式纠错与三步扩写 ================= */
+    .drills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      align-items: start;
+    }
+    @media (max-width: 900px) {
+      .drills-grid { grid-template-columns: 1fr; }
+    }
+
+    .snippet-box {
+      background: #FFFBEB;
+      border: 2px dashed #D97706;
+      border-radius: 12px;
+      padding: 14px;
+      font-size: 0.96rem;
+      line-height: 1.8;
+      margin: 12px 0;
+      white-space: pre-wrap;
+    }
+
+    .builder-slot {
+      background: #F8FAFC;
+      border: 1.5px solid var(--sketch-border);
+      border-radius: 12px;
+      padding: 12px;
+      margin-bottom: 10px;
+    }
+    .builder-slot-label {
+      font-size: 0.84rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 6px;
+      display: block;
+    }
+    .slot-choices {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .slot-btn {
+      text-align: left;
+      padding: 8px 11px;
+      border-radius: 8px;
+      border: 1.5px solid #CBD5E1;
+      background: #FFFFFF;
+      font-size: 0.88rem;
+      cursor: pointer;
+    }
+    .slot-btn.selected {
+      background: #DBEAFE;
+      border-color: #2563EB;
+      font-weight: 700;
+      color: #1E3A8A;
+    }
+
+    .expanded-preview {
+      background: #F0FDF4;
+      border: 2px solid #16A34A;
+      border-radius: 12px;
+      padding: 14px;
+      margin-top: 12px;
+      font-size: 0.96rem;
+      line-height: 1.8;
+    }
+
+    /* ================= 模块 4：考场实战写作舱 ================= */
+    .studio-top-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 14px;
+      padding: 12px 14px;
+      background: #F1F5F9;
+      border: 2px solid var(--sketch-border);
+      border-radius: 14px;
+    }
+
+    .tier-group {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .timer-pill {
+      background: #FFFFFF;
+      border: 1.5px solid var(--sketch-border);
+      border-radius: 999px;
+      padding: 5px 12px;
+      font-weight: 800;
+      font-size: 0.88rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .studio-workspace {
+      display: grid;
+      grid-template-columns: 0.92fr 1.28fr;
+      gap: 18px;
+      align-items: start;
+    }
+    @media (max-width: 920px) {
+      .studio-workspace { grid-template-columns: 1fr; }
+    }
+
+    .helper-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .vocab-bank-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 8px;
+    }
+
+    .vocab-insert-btn {
+      background: #FFFFFF;
+      border: 1.5px solid var(--sketch-border);
+      border-radius: 999px;
+      padding: 5px 11px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: all 0.14s ease;
+    }
+    .vocab-insert-btn:hover {
+      background: #EFF6FF;
+      transform: translateY(-1px);
+    }
+    .vocab-insert-btn.used {
+      background: #DCFCE7;
+      border-color: #16A34A;
+      color: #166534;
+    }
+
+    .quick-insert-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 7px;
+      margin-top: 8px;
+    }
+    .quick-insert-btn {
+      background: #F8FAFC;
+      border: 1.5px solid #94A3B8;
+      border-radius: 8px;
+      padding: 7px 9px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: left;
+      color: #1E293B;
+    }
+    .quick-insert-btn:hover {
+      background: #DBEAFE;
+      border-color: #2563EB;
+    }
+
+    /* SEAB 电子考场电邮编辑器 */
+    .seab-editor-shell {
+      background: #FFFFFF;
+      border: 2px solid var(--sketch-border);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sketch);
+      overflow: hidden;
+    }
+
+    .seab-header-bar {
+      background: #1E3A8A;
+      color: #FFFFFF;
+      padding: 10px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.9rem;
+      font-weight: 800;
+    }
+
+    .seab-meta-table {
+      background: #F8FAFC;
+      padding: 12px 16px;
+      border-bottom: 1.5px solid #CBD5E1;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 0.88rem;
+    }
+    .seab-meta-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .seab-meta-key {
+      min-width: 68px;
+      font-weight: 800;
+      color: #475569;
+    }
+
+    /* 表单验证样式：严格遵循 validate-input-after-interaction */
+    .field {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+    .field label {
+      font-weight: 800;
+      font-size: 0.88rem;
+      color: #1E293B;
+      margin-bottom: 2px;
+    }
+    .hint {
+      display: block;
+      color: #475569;
+      font-size: 0.8rem;
+      margin-bottom: 4px;
+    }
+    .error-msg {
+      display: none;
+      color: #DC2626;
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-top: 4px;
+    }
+
+    .form-control {
+      width: 100%;
+      border: 1.5px solid #94A3B8;
+      border-radius: 10px;
+      padding: 9px 12px;
+      font-size: 0.96rem;
+      color: var(--text);
+      background: #FFFFFF;
+      transition: border-color 0.15s ease, background-color 0.15s ease;
+    }
+    .form-control:focus {
+      outline: 2px solid #2563EB;
+      outline-offset: 1px;
+    }
+
+    :is(input, textarea, select):is(:user-invalid, .user-invalid-fallback) {
+      border-color: #DC2626;
+      background-color: #FEF2F2;
+    }
+    :is(input, textarea, select):is(:user-invalid, .user-invalid-fallback) + .error-msg {
+      display: block;
+    }
+    :is(input, textarea, select):is(:user-valid, .user-valid-fallback) {
+      border-color: #16A34A;
+    }
+
+    .email-textarea {
+      min-height: 290px;
+      line-height: 1.85;
+      resize: vertical;
+      font-size: 1rem;
+    }
+
+    .guided-scaffold-panel {
+      background: #F0F9FF;
+      border-bottom: 2px solid #BAE6FD;
+      padding: 14px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .live-checklist-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      padding: 10px 16px;
+      background: #F8FAFC;
+      border-top: 1.5px solid #E2E8F0;
+      border-bottom: 1.5px solid #E2E8F0;
+    }
+    .check-chip {
+      font-size: 0.78rem;
+      font-weight: 800;
+      padding: 3px 9px;
+      border-radius: 999px;
+      border: 1px solid #CBD5E1;
+      background: #FFFFFF;
+      color: #64748B;
+    }
+    .check-chip.pass {
+      background: #DCFCE7;
+      border-color: #16A34A;
+      color: #166534;
+    }
+
+    .typo-alert-bar {
+      margin: 10px 16px 0;
+      padding: 9px 12px;
+      border-radius: 10px;
+      background: #FEF3C7;
+      border: 1.5px solid #D97706;
+      color: #92400E;
+      font-size: 0.85rem;
+      font-weight: 700;
+      display: none;
+    }
+    .typo-alert-bar.show {
+      display: block;
+    }
+
+    .editor-footer-actions {
+      padding: 12px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      background: #F8FAFC;
+    }
+
+    .word-count-badge {
+      font-weight: 800;
+      font-size: 0.9rem;
+      padding: 5px 12px;
+      border-radius: 999px;
+      background: #FEF3C7;
+      color: #92400E;
+      border: 1.5px solid #D97706;
+      font-variant-numeric: tabular-nums;
+    }
+    .word-count-badge.ready {
+      background: #DCFCE7;
+      color: #166534;
+      border-color: #16A34A;
+    }
+
+    /* ================= 模块 5：勋章与作品集 ================= */
+    .badges-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .badge-card {
+      background: #F8FAFC;
+      border: 2px solid #CBD5E1;
+      border-radius: 16px;
+      padding: 16px 12px;
+      text-align: center;
+      opacity: 0.72;
+      transition: all 0.2s ease;
+    }
+    .badge-card.unlocked {
+      background: linear-gradient(180deg, #FEF9C3 0%, #FFFFFF 100%);
+      border-color: var(--sketch-border);
+      box-shadow: var(--shadow-sketch);
+      opacity: 1;
+    }
+    .badge-emoji {
+      font-size: 2.2rem;
+      margin-bottom: 6px;
+    }
+    .badge-title {
+      font-size: 0.96rem;
+      font-weight: 800;
+      color: var(--text);
+    }
+    .badge-desc {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .cheat-sheet-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+    }
+    .cheat-item {
+      background: #EFF6FF;
+      border: 1.5px solid #93C5FD;
+      border-radius: 12px;
+      padding: 12px;
+    }
+    .cheat-item h3 {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #1E3A8A;
+      margin-bottom: 4px;
+    }
+
+    .portfolio-item {
+      border: 2px solid var(--sketch-border);
+      border-radius: 14px;
+      padding: 14px;
+      background: #FFFFFF;
+      margin-bottom: 12px;
+      box-shadow: 2px 2px 0 var(--sketch-border);
+    }
+
+    /* ================= 原生 Dialog 样式与滚动锁 ================= */
+    dialog {
+      margin: auto;
+      border: 2px solid var(--sketch-border);
+      border-radius: var(--radius-lg);
+      padding: 0;
+      max-width: 92vw;
+      width: 560px;
+      background: #FFFFFF;
+      color: var(--text);
+      box-shadow: 0 24px 48px rgba(15, 23, 42, 0.28);
+    }
+    dialog.dialog-wide {
+      width: 860px;
+    }
+    dialog[open] {
+      display: flex;
+      flex-direction: column;
+      max-height: 88vh;
+    }
+    dialog:modal {
+      overscroll-behavior: contain;
+    }
+    dialog::backdrop {
+      background-color: rgba(15, 23, 42, 0.55);
+      backdrop-filter: blur(2px);
+      overflow: hidden;
+      overscroll-behavior: contain;
+    }
+
+    .dialog-header {
+      padding: 16px 20px;
+      background: #EFF6FF;
+      border-bottom: 2px solid var(--sketch-border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+    .dialog-header h2 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+    .dialog-body {
+      padding: 18px 20px;
+      overflow-y: auto;
+      font-size: 0.94rem;
+      line-height: 1.7;
+    }
+    .dialog-footer {
+      padding: 12px 20px;
+      background: #F8FAFC;
+      border-top: 1.5px solid #CBD5E1;
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .rubric-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 12px;
+    }
+    @media (max-width: 720px) {
+      .rubric-split { grid-template-columns: 1fr; }
+    }
+
+    .rubric-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 10px 0;
+      font-size: 0.88rem;
+    }
+    .rubric-table th, .rubric-table td {
+      border: 1px solid #CBD5E1;
+      padding: 8px 10px;
+      text-align: left;
+    }
+    .rubric-table th {
+      background: #F1F5F9;
+      font-weight: 800;
+    }
+
+    .model-compare-box {
+      background: #F8FAFC;
+      border: 1.5px solid #94A3B8;
+      border-radius: 10px;
+      padding: 12px;
+      font-size: 0.88rem;
+      white-space: pre-wrap;
+      line-height: 1.75;
+    }
+
+    .site-footer {
+      text-align: center;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: 8px;
+    }
+
+    /* Toast 提示 */
+    .toast-banner {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #0F172A;
+      color: #FFFFFF;
+      padding: 10px 16px;
+      border-radius: 12px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+      z-index: 1000;
+      opacity: 0;
+      transform: translateY(10px);
+      pointer-events: none;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+    .toast-banner.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media print {
+      .top-nav, .tab-bar, .studio-top-controls, .helper-sidebar, .editor-footer-actions, .dialog-footer {
+        display: none !important;
+      }
+      body { background: #FFFFFF; padding: 0; }
+      .card, .seab-editor-shell { box-shadow: none; border-color: #94A3B8; }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <!-- 顶栏与 HUD -->
+    <header class="top-nav">
+      <div class="brand-group">
+        <div class="logo-badge">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="4" width="20" height="16" rx="3" fill="#DBEAFE"/>
+            <path d="M22 6l-10 7L2 6"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <h1>私人电邮写作工坊 · 狮城 G1 华文实用文通关营</h1>
+          <p>对标新加坡 MOE 中学华文 G1 课程纲要与 SEAB 电子化考试规范（≥80字 · 20分制）</p>
+        </div>
+      </div>
+
+      <div class="hud-controls">
+        <span class="stat-pill points">⭐ 积分：<span id="hud-score">0</span></span>
+        <span class="stat-pill combo">🔥 连击：<span id="hud-combo">0</span></span>
+        <span class="stat-pill badges">🏅 勋章：<span id="hud-badges">0/5</span></span>
+        <button type="button" id="btn-toggle-pinyin" class="btn-toggle active" aria-pressed="true">🔤 拼音：开</button>
+        <button type="button" id="btn-toggle-sound" class="btn-toggle active" aria-pressed="true">🔊 音效：开</button>
+      </div>
+    </header>
+
+    <!-- 5大渐进式学习模块导航 -->
+    <nav class="tab-bar" aria-label="学习模块导航">
+      <button type="button" class="tab-btn active" data-tab="anatomy">📬 1. 电邮解剖室</button>
+      <button type="button" class="tab-btn" data-tab="analyzer">🔍 2. 审题拆弹厅</button>
+      <button type="button" class="tab-btn" data-tab="drills">🛠️ 3. 格式与扩写闯关</button>
+      <button type="button" class="tab-btn" data-tab="studio">💻 4. 考场实战写作舱</button>
+      <button type="button" class="tab-btn" data-tab="portfolio">🏆 5. 勋章与作品集</button>
+    </nav>
+
+    <main>
+      <!-- ==================== 模块 1：电邮解剖室 ==================== -->
+      <section id="tab-anatomy" class="tab-content active" aria-labelledby="anatomy-heading">
+        <div class="card">
+          <div class="card-header-row">
+            <div>
+              <h2 id="anatomy-heading" class="card-title">📬 私人电邮 6 大标准格式解剖室</h2>
+              <p class="card-subtitle">点击左侧示范电邮的任意一部分（① 至 ⑥），查看新加坡中学 G1 华文考场的格式要求与防扣分秘诀！看完全部 6 处即可点亮第 1 枚勋章。</p>
+            </div>
+            <span class="stat-pill" id="anatomy-progress-pill">已透视：0 / 6 部位</span>
+          </div>
+
+          <div class="anatomy-grid">
+            <!-- 左侧：交互式范文电邮 -->
+            <div class="email-frame">
+              <div class="email-chrome">
+                <div class="email-dots" aria-hidden="true">
+                  <span style="background:#FCA5A5"></span>
+                  <span style="background:#FDE047"></span>
+                  <span style="background:#86EFAC"></span>
+                </div>
+                <span>SEAB 电子考场示范卷 · 私人电邮</span>
+              </div>
+              <div class="email-meta-bar">
+                <div><strong>发件人：</strong>jiahao@school.edu.sg</div>
+                <div><strong>收件人：</strong>minghua@school.edu.sg</div>
+                <div><strong>日期：</strong>2026年11月19日</div>
+                <div><strong>字数：</strong>约 155 字（达标 ✅）</div>
+              </div>
+
+              <button type="button" class="anatomy-zone active" data-zone="subject">
+                <span class="zone-pill">① 主题栏 (Subject)</span><br>
+                <strong>主题：</strong>回复：学校“感恩<ruby>幕后<rt>mù hòu</rt></ruby><ruby>英雄<rt>yīng xióng</rt></ruby>”活动
+              </button>
+
+              <button type="button" class="anatomy-zone" data-zone="salutation">
+                <span class="zone-pill">② 称呼 (顶格写 + 中文冒号)</span><br>
+                <strong>明华：</strong>
+              </button>
+
+              <button type="button" class="anatomy-zone" data-zone="greeting">
+                <span class="zone-pill">③ 开头问候与写邮目的 (空两格)</span><br>
+                <span class="indent-visual">空两格</span>你好！收到你的电邮，知道学校下周要举办感恩活动，我感到很高兴。我写这封电邮，是想和你分享我的看法。
+              </button>
+
+              <button type="button" class="anatomy-zone" data-zone="body">
+                <span class="zone-pill">④ 正文：逐点回应两大任务 (分段 · 空两格)</span><br>
+                <span class="indent-visual">空两格</span>在学校里，我最敬佩食堂的清洁工友叔叔。他每天早晨很早来到学校，认真打扫桌椅和地面，<ruby>确保<rt>què bǎo</rt></ruby>校园干净卫生，<ruby>避免<rt>bì miǎn</rt></ruby>同学们滑倒。虽然他在<ruby>幕后<rt>mù hòu</rt></ruby>默默工作，但是他的<ruby>贡献<rt>gòng xiàn</rt></ruby>非常大。<br>
+                <span class="indent-visual">空两格</span>我认为同学们可以用实际行动感谢他们。首先，吃完饭后我们应该把碗盘放进回收处；其次，平时不要乱扔垃圾，减轻叔叔的工作负担。
+              </button>
+
+              <button type="button" class="anatomy-zone" data-zone="closing">
+                <span class="zone-pill">⑤ 结尾与祝语 (结束语 + “祝” + 祝词)</span><br>
+                <span class="indent-visual">空两格</span>时间不早了，我就写到这里。希望早日收到你的回邮！<br>
+                <span class="indent-visual">空两格</span>祝<br>
+                学业进步！
+              </button>
+
+              <button type="button" class="anatomy-zone" data-zone="signature">
+                <span class="zone-pill">⑥ 署名 (靠左顶格 · 去姓留名)</span><br>
+                <strong>家豪</strong>
+              </button>
+            </div>
+
+            <!-- 右侧：X 光解析面板与百搭句式库 -->
+            <div>
+              <div class="inspector-box" id="anatomy-inspector">
+                <!-- 动态渲染 -->
+              </div>
+
+              <section class="accordion-section" aria-label="实用文百搭句式库">
+                <details name="scaffold-bank" open>
+                  <summary>💬 1. 开头问候与点题句（点击可复制）</summary>
+                  <div class="scaffold-chips">
+                    <button type="button" class="copy-chip" data-copy="　　你好！好久不见，近来好吗？收到你的电邮，我感到非常高兴。">
+                      <span>你好！好久不见，近来好吗？收到你的电邮，我感到非常高兴。</span>
+                      <span>📋</span>
+                    </button>
+                    <button type="button" class="copy-chip" data-copy="　　你好！知道你最近遇到了一些烦恼，我写这封电邮是想给你提几个建议。">
+                      <span>你好！知道你最近遇到了一些烦恼，我写这封电邮是想给你提几个建议。</span>
+                      <span>📋</span>
+                    </button>
+                    <button type="button" class="copy-chip" data-copy="　　你好！假期快到了，我想邀请你一起参加一项有趣的活动，下面为你介绍详情。">
+                      <span>你好！假期快到了，我想邀请你一起参加一项有趣的活动，下面为你介绍详情。</span>
+                      <span>📋</span>
+                    </button>
+                  </div>
+                </details>
+
+                <details name="scaffold-bank">
+                  <summary>📌 2. 正文讲事实 / 分享经历句</summary>
+                  <div class="scaffold-chips">
+                    <button type="button" class="copy-chip" data-copy="　　首先，我想和你分享我的经历。以前我也经常……，后来我制定了计划，再也没……。">
+                      <span>首先，我想和你分享我的经历。以前我也经常……，后来……</span>
+                      <span>📋</span>
+                    </button>
+                    <button type="button" class="copy-chip" data-copy="　　在我身边，最值得敬佩的幕后英雄是……。他每天默默工作，确保……，避免发生失误。">
+                      <span>在我身边，最值得敬佩的幕后英雄是……。他每天默默工作，确保……</span>
+                      <span>📋</span>
+                    </button>
+                  </div>
+                </details>
+
+                <details name="scaffold-bank">
+                  <summary>💡 3. 正文提建议 / 说明好处句</summary>
+                  <div class="scaffold-chips">
+                    <button type="button" class="copy-chip" data-copy="　　针对你的问题，我有两个建议。第一，你可以……；第二，你应该……，这样不仅能……，还能……。">
+                      <span>针对你的问题，我有两个建议。第一……；第二……，这样不仅能……</span>
+                      <span>📋</span>
+                    </button>
+                    <button type="button" class="copy-chip" data-copy="　　为了确保活动顺利进行，我们首先要……，接着……，最后……。这样做既能减轻负担，又能保护环境。">
+                      <span>为了确保活动顺利进行，我们首先要……，接着……，最后……。</span>
+                      <span>📋</span>
+                    </button>
+                  </div>
+                </details>
+
+                <details name="scaffold-bank">
+                  <summary>🌟 4. 结尾结束语与标准祝语</summary>
+                  <div class="scaffold-chips">
+                    <button type="button" class="copy-chip" data-copy="　　时间不早了，我就写到这里。希望早日收到你的回邮！&#10;　　祝&#10;学业进步！">
+                      <span>时间不早了，我就写到这里。希望早日收到你的回邮！＋ 祝 学业进步！</span>
+                      <span>📋</span>
+                    </button>
+                    <button type="button" class="copy-chip" data-copy="　　希望我的建议对你有帮助。期待你的好消息！&#10;　　祝&#10;生活愉快！">
+                      <span>希望我的建议对你有帮助。期待你的好消息！＋ 祝 生活愉快！</span>
+                      <span>📋</span>
+                    </button>
+                  </div>
+                </details>
+              </section>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== 模块 2：审题拆弹厅 ==================== -->
+      <section id="tab-analyzer" class="tab-content" aria-labelledby="analyzer-heading">
+        <div class="card">
+          <div class="card-header-row">
+            <div>
+              <h2 id="analyzer-heading" class="card-title">🔍 考场审题拆弹厅 · 锁定 4 大关键信息</h2>
+              <p class="card-subtitle">MOE 试卷一实用文最怕“写跑题”或“漏答任务”！选择下方真题，点击带下划线的单元生词可查拼音与搭配，并完成右侧 4 步审题拆弹。</p>
+            </div>
+          </div>
+
+          <div class="prompt-selector-row" id="analyzer-prompt-btns">
+            <!-- 动态生成 -->
+          </div>
+
+          <div class="analyzer-grid">
+            <div class="exam-paper-box" id="analyzer-stimulus-box">
+              <!-- 动态渲染题目情境 -->
+            </div>
+
+            <div>
+              <div id="analyzer-quiz-container">
+                <!-- 动态渲染 4 步审题测验 -->
+              </div>
+              <div class="sticky-note" id="analyzer-complete-note" style="display:none;">
+                <strong>🎉 审题拆弹成功！</strong>你已经找准发件人、收件人、主题与两大核心任务！<br>
+                <button type="button" class="btn-primary" id="btn-go-studio-from-analyzer" style="margin-top:10px;">
+                  🚀 带着审题笔记进入考场写作舱
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== 模块 3：格式与扩写闯关 ==================== -->
+      <section id="tab-drills" class="tab-content" aria-labelledby="drills-heading">
+        <div class="drills-grid">
+          <!-- 子任务 A：病邮急诊室 -->
+          <div class="card">
+            <div class="card-header-row">
+              <div>
+                <h2 id="drills-heading" class="card-title">🩺 病邮急诊室（格式与常见错字找茬）</h2>
+                <p class="card-subtitle">G1 考场上这 6 种错误最容易扣分！找出每份“病历”的问题所在，答对 5 题点亮【格式纠错名医】勋章。</p>
+              </div>
+              <span class="stat-pill" id="doctor-progress-pill">第 1 / 6 题</span>
+            </div>
+
+            <div id="doctor-case-container">
+              <!-- 动态渲染 -->
+            </div>
+          </div>
+
+          <!-- 子任务 B：黄金三步扩写机 -->
+          <div class="card">
+            <div class="card-header-row">
+              <div>
+                <h2 class="card-title">🧱 黄金三步扩写机（轻松写够 80 字）</h2>
+                <p class="card-subtitle">只写一句话字数一定不够！用“① 回应表态 → ② 具体做法 → ③ 好处感受”三步法，把 15 字干瘪句子变成 60 字高分段落。</p>
+              </div>
+            </div>
+
+            <div class="prompt-selector-row" id="expander-topic-btns">
+              <!-- 动态生成 3 个主题 -->
+            </div>
+
+            <div id="expander-builder-container">
+              <!-- 动态生成三步拼接器 -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== 模块 4：考场实战写作舱 ==================== -->
+      <section id="tab-studio" class="tab-content" aria-labelledby="studio-heading">
+        <div class="card">
+          <div class="card-header-row">
+            <div>
+              <h2 id="studio-heading" class="card-title">💻 SEAB 电子考场实战写作舱</h2>
+              <p class="card-subtitle">先选定考题与支架层级（🌱 扶手填空 / 🌿 进阶支架 / 🌳 全真考场），完成不少于 80 字的私人电邮，点击“智能批阅打分”获得 20 分制详细诊断与范文对照！</p>
+            </div>
+          </div>
+
+          <!-- 顶部考题与支架控制栏 -->
+          <div class="studio-top-controls">
+            <div class="tier-group" id="studio-prompt-btns">
+              <!-- 动态考题按钮 + 自定义考题按钮 -->
+            </div>
+
+            <div class="tier-group" id="studio-tier-btns">
+              <button type="button" class="btn-secondary active" data-tier="guided">🌱 扶手填空模式</button>
+              <button type="button" class="btn-secondary" data-tier="scaffold">🌿 进阶支架模式</button>
+              <button type="button" class="btn-secondary" data-tier="exam">🌳 全真考场模式</button>
+            </div>
+
+            <div class="timer-pill">
+              ⏱️ 考场计时：<span id="exam-timer-display">25:00</span>
+              <button type="button" class="btn-secondary" id="btn-timer-toggle" style="padding:3px 8px; font-size:0.78rem;">开始</button>
+              <button type="button" class="btn-secondary" id="btn-timer-reset" style="padding:3px 8px; font-size:0.78rem;">重置</button>
+            </div>
+          </div>
+
+          <div class="studio-workspace">
+            <!-- 左侧辅助面板 -->
+            <aside class="helper-sidebar">
+              <div class="exam-paper-box" id="studio-prompt-card">
+                <!-- 动态考题提示 + 任务一/二实时完成雷达 -->
+              </div>
+
+              <div class="card" style="margin-bottom:0; padding:16px;" id="studio-vocab-panel">
+                <h3 style="font-size:0.98rem; font-weight:800; color:var(--primary);">📦 本题核心词语胶囊（点击插入正文）</h3>
+                <p style="font-size:0.8rem; color:var(--text-muted);">每用到一个词语，胶囊会变绿 ✅，有助于语文内容加分！</p>
+                <div class="vocab-bank-grid" id="studio-vocab-chips">
+                  <!-- 动态生成 -->
+                </div>
+              </div>
+
+              <div class="card" style="margin-bottom:0; padding:16px;" id="studio-quick-panel">
+                <h3 style="font-size:0.98rem; font-weight:800; color:var(--primary);">⚡ 考场常用格式与句式快捷插入</h3>
+                <div class="quick-insert-grid">
+                  <button type="button" class="quick-insert-btn" data-insert-type="salutation">① 插入标准称呼</button>
+                  <button type="button" class="quick-insert-btn" data-insert-type="indent">␣ 插入空两格(　　)</button>
+                  <button type="button" class="quick-insert-btn" data-insert-type="greeting">② 插入开头问候</button>
+                  <button type="button" class="quick-insert-btn" data-insert-type="connector">③ 插入过渡连接词</button>
+                  <button type="button" class="quick-insert-btn" data-insert-type="closing">④ 插入结尾与祝语</button>
+                  <button type="button" class="quick-insert-btn" data-insert-type="signature">⑤ 插入顶格署名</button>
+                </div>
+              </div>
+            </aside>
+
+            <!-- 右侧 SEAB 电邮编辑器 -->
+            <div class="seab-editor-shell">
+              <div class="seab-header-bar">
+                <span>📧 SEAB 华文 G1 实用文作答界面（拼音输入）</span>
+                <button type="button" class="btn-secondary" id="btn-load-sample-draft" style="padding:4px 10px; font-size:0.78rem;">📄 填入示范草稿体验</button>
+              </div>
+
+              <form id="email-composer-form" novalidate>
+                <div class="seab-meta-table">
+                  <div class="seab-meta-row">
+                    <span class="seab-meta-key">发件人：</span>
+                    <span id="meta-sender-display">家豪 &lt;jiahao@school.edu.sg&gt;</span>
+                  </div>
+                  <div class="seab-meta-row">
+                    <span class="seab-meta-key">收件人：</span>
+                    <span id="meta-recipient-display">明华 &lt;minghua@school.edu.sg&gt;</span>
+                  </div>
+                  <div class="seab-meta-row">
+                    <span class="seab-meta-key">日　期：</span>
+                    <span>2026年11月19日</span>
+                  </div>
+                  <div class="field">
+                    <label for="email-subject">电邮主题 (Subject)</label>
+                    <span id="subject-hint" class="hint">格式提示：回复电邮请写“回复：原主题”；主动发信请写明核心事由。</span>
+                    <input
+                      type="text"
+                      id="email-subject"
+                      name="subject"
+                      class="form-control"
+                      required
+                      minlength="3"
+                      placeholder="例如：回复：学校“感恩幕后英雄”活动"
+                      aria-describedby="subject-hint"
+                      data-error="subject-error"
+                    >
+                    <div id="subject-error" class="error-msg">
+                      <span role="img" aria-label="错误">❌</span> 请填写至少 3 个字的电邮主题（回复来邮记得加上“回复：”）。
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 模式 1：扶手填空抽屉 -->
+                <div id="guided-scaffold-panel" class="guided-scaffold-panel">
+                  <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+                    <strong style="color:#0369A1; font-size:0.94rem;">🌱 分步扶手填空区（填完点击下方合成完整电邮）</strong>
+                    <button type="button" class="btn-primary" id="btn-assemble-guided" style="padding:6px 12px; font-size:0.84rem;">✨ 合成完整电邮到正文区</button>
+                  </div>
+
+                  <div class="field">
+                    <label for="g-salutation">1. 称呼（不用写姓，不用写冒号，系统自动加中文冒号）</label>
+                    <span id="g-salutation-hint" class="hint">例如填写：明华 或 表哥</span>
+                    <input type="text" id="g-salutation" class="form-control" placeholder="例如：明华" aria-describedby="g-salutation-hint">
+                  </div>
+
+                  <div class="field">
+                    <label for="g-greeting">2. 开头问候与写邮目的（系统会自动空两格）</label>
+                    <span id="g-greeting-hint" class="hint">先问好，再说明写这封电邮的目的。</span>
+                    <input type="text" id="g-greeting" class="form-control" placeholder="例如：你好！收到你的电邮，我感到很高兴。今天写信想和你分享我的看法。" aria-describedby="g-greeting-hint">
+                  </div>
+
+                  <div class="field">
+                    <label for="g-task1">3. 正文第一段：回应【任务一】（用“表态 + 事实/做法 + 感受”）</label>
+                    <span id="g-task1-hint" class="hint">尝试用上左侧绿色提示区的核心生词。</span>
+                    <textarea id="g-task1" class="form-control" rows="2" placeholder="写出你对第一个问题的具体回答……" aria-describedby="g-task1-hint"></textarea>
+                  </div>
+
+                  <div class="field">
+                    <label for="g-task2">4. 正文第二段：回应【任务二】（用“首先……；其次……，这样能……”）</label>
+                    <span id="g-task2-hint" class="hint">针对第二个问题提出具体做法或建议，并说明好处。</span>
+                    <textarea id="g-task2" class="form-control" rows="2" placeholder="写出你对第二个问题的具体建议或看法……" aria-describedby="g-task2-hint"></textarea>
+                  </div>
+
+                  <div class="field">
+                    <label for="g-closing">5. 结尾结束语（系统会自动附带“祝 学业进步！”及顶格署名）</label>
+                    <span id="g-closing-hint" class="hint">例如：时间不早了，我就写到这里。希望早日收到你的回邮！</span>
+                    <input type="text" id="g-closing" class="form-control" value="时间不早了，我就写到这里。希望早日收到你的回邮！" aria-describedby="g-closing-hint">
+                  </div>
+                </div>
+
+                <!-- 实时 6 项格式检查条 -->
+                <div class="live-checklist-bar" aria-label="电邮格式实时检测">
+                  <span class="check-chip" id="chk-subject">○ 主题栏</span>
+                  <span class="check-chip" id="chk-salutation">○ 称呼顶格+冒号</span>
+                  <span class="check-chip" id="chk-greeting">○ 开头问候</span>
+                  <span class="check-chip" id="chk-paragraphs">○ 双任务分段</span>
+                  <span class="check-chip" id="chk-closing">○ 结束语+祝语</span>
+                  <span class="check-chip" id="chk-signature">○ 署名顶格去姓</span>
+                </div>
+
+                <!-- 错别字预警条 -->
+                <div id="typo-alert-bar" class="typo-alert-bar" role="status"></div>
+
+                <!-- 主正文输入区 -->
+                <div style="padding:14px 16px 8px;">
+                  <div class="field">
+                    <label for="email-body">电邮正文作答区（含称呼、正文、祝语与署名）</label>
+                    <span id="body-hint" class="hint">注意：称呼与署名靠左顶格；每段开头请空两格（可用上方快捷按钮插入全角空格“　　”），总字数需达 80 字以上。</span>
+                    <textarea
+                      id="email-body"
+                      name="body"
+                      class="form-control email-textarea"
+                      required
+                      minlength="60"
+                      placeholder="在此输入完整电邮内容（可用 Ctrl+Space 切换中文拼音输入法，或点击左侧快捷按钮辅助）……"
+                      aria-describedby="body-hint"
+                      data-error="body-error"
+                    ></textarea>
+                    <div id="body-error" class="error-msg">
+                      <span role="img" aria-label="错误">❌</span> 电邮正文内容过短（至少需要 60 字以上，建议写满 80 字），请补充称呼、两大任务段落与结尾祝语。
+                    </div>
+                  </div>
+                </div>
+
+                <div class="editor-footer-actions">
+                  <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
+                    <span class="word-count-badge" id="word-count-badge">当前有效汉字：0 字（目标 ≥80 字）</span>
+                    <button type="button" class="btn-secondary" id="btn-clear-draft">🗑️ 清空重写</button>
+                  </div>
+                  <button type="submit" class="btn-accent" id="btn-grade-email">✅ 提交电邮 · 智能批阅打分</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== 模块 5：勋章与作品集 ==================== -->
+      <section id="tab-portfolio" class="tab-content" aria-labelledby="portfolio-heading">
+        <div class="card">
+          <h2 id="portfolio-heading" class="card-title">🏆 我的通关勋章与考前 30 秒口诀</h2>
+          <p class="card-subtitle">收集全部 5 枚勋章，代表你已完整掌握新加坡中学华文 G1 私人电邮的审题、格式与写作规范！</p>
+          <div class="badges-grid" id="badges-grid-container">
+            <!-- 动态生成 5 枚勋章 -->
+          </div>
+
+          <h3 style="font-size:1.08rem; font-weight:800; color:var(--primary); margin: 14px 0 10px;">📝 G1 私人电邮考前 30 秒速记口诀卡</h3>
+          <div class="cheat-sheet-grid">
+            <div class="cheat-item">
+              <h3>1️⃣ 顶格两头站</h3>
+              <p>开头<strong>称呼</strong>靠左顶格，只叫名字加中文冒号（<code>明华：</code>）；结尾<strong>署名</strong>也靠左顶格，去姓留名（<code>家豪</code>）。</p>
+            </div>
+            <div class="cheat-item">
+              <h3>2️⃣ 空两格分段</h3>
+              <p>问候段、任务一、任务二、结束语和“祝”字都要<strong>空两格</strong>；一题写一段，阅卷老师一眼看清得分点！</p>
+            </div>
+            <div class="cheat-item">
+              <h3>3️⃣ 三步写够 80 字</h3>
+              <p>每题用“<strong>① 表态/建议 + ② 事实/具体做法 + ③ 好处/感受</strong>”，轻松超过 80 字红线。</p>
+            </div>
+            <div class="cheat-item">
+              <h3>4️⃣ 拼音防错字</h3>
+              <p>注意易混字：<strong>避<ruby>免<rt>miǎn</rt></ruby></strong>（中间无点）、<strong><ruby>幕<rt>mù</rt></ruby>后</strong>（巾字底）、<strong><ruby>订<rt>dìng</rt></ruby>购</strong>（言字旁）、<strong>计<ruby>划<rt>huà</rt></ruby></strong>（戈字旁）。</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header-row">
+            <div>
+              <h2 class="card-title">📂 我的电邮作品集（自动保存在本地浏览器）</h2>
+              <p class="card-subtitle">每次批阅后可保存作品，随时重新载入写作舱修改或打印复习。</p>
+            </div>
+            <button type="button" class="btn-secondary" id="btn-print-portfolio">🖨️ 打印本页 / 导出 PDF</button>
+          </div>
+          <div id="portfolio-list-container">
+            <!-- 动态渲染保存的电邮 -->
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      新加坡中学华文 G1（Full SBB）实用文教学辅助应用 · 纯本地离线运行，自动保存草稿与练习记录
+    </footer>
+  </div>
+
+  <!-- ==================== 弹窗 1：词汇与搭配卡 ==================== -->
+  <dialog id="vocab-dialog" closedby="any" aria-labelledby="vocab-dialog-title">
+    <div class="dialog-header">
+      <h2 id="vocab-dialog-title">📖 单元核心生词卡</h2>
+      <form method="dialog">
+        <button type="submit" class="btn-secondary" value="close" style="padding:5px 12px;">关闭</button>
+      </form>
+    </div>
+    <div class="dialog-body" id="vocab-dialog-body">
+      <!-- 动态填入 -->
+    </div>
+    <div class="dialog-footer">
+      <form method="dialog">
+        <button type="submit" class="btn-primary" value="ok">记住了</button>
+      </form>
+    </div>
+  </dialog>
+
+  <!-- ==================== 弹窗 2：20 分智能批阅与范文对照 ==================== -->
+  <dialog id="rubric-dialog" class="dialog-wide" closedby="any" aria-labelledby="rubric-dialog-title">
+    <div class="dialog-header">
+      <h2 id="rubric-dialog-title">📊 MOE G1 私人电邮 20 分制批阅报告</h2>
+      <form method="dialog">
+        <button type="submit" class="btn-secondary" value="close" style="padding:5px 12px;">关闭</button>
+      </form>
+    </div>
+    <div class="dialog-body" id="rubric-dialog-body">
+      <!-- 动态渲染评分报告 -->
+    </div>
+    <div class="dialog-footer">
+      <button type="button" class="btn-secondary" id="btn-print-report">🖨️ 打印报告</button>
+      <button type="button" class="btn-accent" id="btn-save-to-portfolio">💾 保存到我的作品集</button>
+      <form method="dialog">
+        <button type="submit" class="btn-primary" value="continue">返回继续修改</button>
+      </form>
+    </div>
+  </dialog>
+
+  <!-- ==================== 弹窗 3：自定义考题编辑器 ==================== -->
+  <dialog id="custom-prompt-dialog" closedby="any" aria-labelledby="custom-dialog-title">
+    <div class="dialog-header">
+      <h2 id="custom-dialog-title">➕ 创建自定义学校练习考题</h2>
+      <form method="dialog">
+        <button type="submit" class="btn-secondary" value="close" style="padding:5px 12px;">取消</button>
+      </form>
+    </div>
+    <form id="custom-prompt-form" novalidate>
+      <div class="dialog-body" style="display:flex; flex-direction:column; gap:10px;">
+        <div class="field">
+          <label for="cp-title">考题短名称</label>
+          <span id="cp-title-hint" class="hint">例如：学校华文阅读周邀请</span>
+          <input type="text" id="cp-title" class="form-control" required minlength="2" placeholder="输入考题名称" aria-describedby="cp-title-hint" data-error="cp-title-error">
+          <div id="cp-title-error" class="error-msg"><span role="img" aria-label="错误">❌</span> 请填写至少 2 个字的考题名称。</div>
+        </div>
+
+        <div class="field">
+          <label for="cp-mode">发信类型</label>
+          <span id="cp-mode-hint" class="hint">决定主题栏是否需要写“回复：”</span>
+          <select id="cp-mode" class="form-control" aria-describedby="cp-mode-hint">
+            <option value="reply">回复电邮（主题须加“回复：”）</option>
+            <option value="new">主动写信（直接写明事由）</option>
+          </select>
+        </div>
+
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+          <div class="field">
+            <label for="cp-sender">我的名字（发件人·不带姓）</label>
+            <span id="cp-sender-hint" class="hint">如：家豪 / 丽敏</span>
+            <input type="text" id="cp-sender" class="form-control" required value="家豪" aria-describedby="cp-sender-hint" data-error="cp-sender-error">
+            <div id="cp-sender-error" class="error-msg"><span role="img" aria-label="错误">❌</span> 请填写发件人名字。</div>
+          </div>
+          <div class="field">
+            <label for="cp-recipient">对方称呼（收件人·不带姓）</label>
+            <span id="cp-recipient-hint" class="hint">如：志伟 / 表姐</span>
+            <input type="text" id="cp-recipient" class="form-control" required value="志伟" aria-describedby="cp-recipient-hint" data-error="cp-recipient-error">
+            <div id="cp-recipient-error" class="error-msg"><span role="img" aria-label="错误">❌</span> 请填写收件人称呼。</div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="cp-subject">原电邮或指定主题</label>
+          <span id="cp-subject-hint" class="hint">例如：邀请参加学校华文学会义卖会</span>
+          <input type="text" id="cp-subject" class="form-control" required minlength="2" placeholder="输入主题内容" aria-describedby="cp-subject-hint" data-error="cp-subject-error">
+          <div id="cp-subject-error" class="error-msg"><span role="img" aria-label="错误">❌</span> 请填写电邮主题内容。</div>
+        </div>
+
+        <div class="field">
+          <label for="cp-task1">任务一要求（正文第一段必答）</label>
+          <span id="cp-task1-hint" class="hint">例如：介绍义卖会的时间、地点和售卖物品</span>
+          <input type="text" id="cp-task1" class="form-control" required minlength="4" placeholder="输入任务一具体要求" aria-describedby="cp-task1-hint" data-error="cp-task1-error">
+          <div id="cp-task1-error" class="error-msg"><span role="img" aria-label="错误">❌</span> 请填写任务一具体要求。</div>
+        </div>
+
+        <div class="field">
+          <label for="cp-task2">任务二要求（正文第二段必答）</label>
+          <span id="cp-task2-hint" class="hint">例如：说明邀请对方参加的原因和好处</span>
+          <input type="text" id="cp-task2" class="form-control" required minlength="4" placeholder="输入任务二具体要求" aria-describedby="cp-task2-hint" data-error="cp-task2-error">
+          <div id="cp-task2-error" class="error-msg"><span role="img" aria-label="错误">❌</span> 请填写任务二具体要求。</div>
+        </div>
+      </div>
+      <div class="dialog-footer">
+        <button type="submit" class="btn-primary">✅ 生成考题并开始写作</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div id="toast-banner" class="toast-banner" role="status" aria-live="polite"></div>
+
+  <script>
+  (function () {
+    "use strict";
+
+    /* ================= 1. 单元核心词汇库（第四、五、六单元） ================= */
+    const VOCAB_DB = {
+      "幕后": { pinyin: "mù hòu", meaning: "舞台帷幕后面；比喻不公开露面、默默付出的保障者。", english: "behind the scenes", collocations: "幕后英雄、幕后工作", trap: "底部是“巾”（布幕），不要写成“羡慕”的“慕”（心字底）！" },
+      "英雄": { pinyin: "yīng xióng", meaning: "品质高尚、为公众利益默默付出或做出贡献的人。", english: "hero", collocations: "幕后英雄、无名英雄", trap: "“雄”右边是“隹”，中间有四条横画。" },
+      "职业": { pinyin: "zhí yè", meaning: "个人在社会中所从事的工作。", english: "occupation; profession", collocations: "尊重职业、各行各业", trap: "“职”左边是“耳”，最后一笔要写成提。" },
+      "维修": { pinyin: "wéi xiū", meaning: "保养、检查并修理机器、设施、电灯等。", english: "maintain and repair", collocations: "维修电梯、维修水管", trap: "“修”右下角是三撇（彡），别漏掉一撇。" },
+      "确保": { pinyin: "què bǎo", meaning: "切实保证，使不出现差错或意外。", english: "ensure; guarantee", collocations: "确保安全、确保卫生", trap: "“确”左边是“石”，右边是“角”。" },
+      "避免": { pinyin: "bì miǎn", meaning: "设法不让不好的事情或意外发生。", english: "avoid; prevent", collocations: "避免失误、避免意外", trap: "“免”字中间绝对没有点！有点的是“兔子”的“兔”！" },
+      "失误": { pinyin: "shī wù", meaning: "由于疏忽或不小心而出现的差错。", english: "mistake; lapse", collocations: "避免失误、减少失误", trap: "“误”是言字旁（讠），不是心字旁的“悟”。" },
+      "贡献": { pinyin: "gòng xiàn", meaning: "把力量、智慧奉献给学校、社区或社会。", english: "contribution; contribute", collocations: "做出贡献、宝贵贡献", trap: "“献”右边是“犬”，右上角一定要点上一点！" },
+      "宿舍": { pinyin: "sù shè", meaning: "供学生或工人集体居住的房屋。", english: "dormitory", collocations: "工人宿舍、离开宿舍", trap: "“舍”字中间是“干”，不要写成“社”。" },
+      "订购": { pinyin: "dìng gòu", meaning: "预先约定购买物品或服务。", english: "order; place an order", collocations: "网上订购、订购产品", trap: "“订”是言字旁（讠），不要误写成“定购”。" },
+      "严重": { pinyin: "yán zhòng", meaning: "程度深、影响大（多用于问题或后果）。", english: "serious; severe", collocations: "严重后果、问题严重", trap: "注意“严”字上横短、下横长。" },
+      "车资卡": { pinyin: "chē zī kǎ", meaning: "新加坡乘坐巴士、地铁的储值交通卡（EZ-Link）。", english: "EZ-Link / travel card", collocations: "刷车资卡、充值车资卡", trap: "“资”下面是个“贝”（代表钱币）。" },
+      "填写": { pinyin: "tián xiě", meaning: "在表格或空格里写上所需资料。", english: "fill in (a form)", collocations: "填写表格、填写资料", trap: "“填”左边是提土旁（土），右边“真”里面有三横。" },
+      "表格": { pinyin: "biǎo gé", meaning: "用横竖线组成、记录资料的文件。", english: "form; table", collocations: "报名表格、核对表格", trap: "“格”是木字旁，右下部是“口”。" },
+      "详情": { pinyin: "xiáng qíng", meaning: "详细的情况或说明。", english: "details", collocations: "了解详情、活动详情", trap: "“详”是言字旁（讠），不要写成“祥”！" },
+      "创新": { pinyin: "chuàng xīn", meaning: "创造新事物或新方法。", english: "innovation; innovate", collocations: "环保创新、大胆创新", trap: "“创”左边是“仓”，右边是立刀旁（刂）。" },
+      "产品": { pinyin: "chǎn pǐn", meaning: "生产出来供人们使用的物品。", english: "product", collocations: "环保产品、新产品", trap: "“品”由三个“口”组成。" },
+      "海洋": { pinyin: "hǎi yáng", meaning: "广阔的大海。", english: "ocean", collocations: "海洋馆、海洋生物", trap: "两个字都是三点水（氵）。" },
+      "潜水": { pinyin: "qián shuǐ", meaning: "潜入水中游览或喂食海洋生物。", english: "dive; scuba dive", collocations: "潜水表演、潜水员", trap: "“潜”左边是“氵”，右边上面两个“夫”。" },
+      "牧场": { pinyin: "mù chǎng", meaning: "饲养羊、牛等动物的大片草地。", english: "pasture; ranch", collocations: "城市牧场、参观牧场", trap: "“牧”左边是牛字旁（牜），右边是反文旁（攵）。" },
+      "降落": { pinyin: "jiàng luò", meaning: "飞机或缆车从空中向下着陆。", english: "land; touch down", collocations: "缓缓降落、降落海滩", trap: "“降”左边是双耳旁（阝），不要写成“将”！" },
+      "烦恼": { pinyin: "fán nǎo", meaning: "因事情不顺心而感到苦闷、担忧。", english: "worry; trouble", collocations: "解决烦恼、消除烦恼", trap: "“恼”左边是竖心旁（忄），不要写成月字旁的“脑”！" },
+      "计划": { pinyin: "jì huà", meaning: "事先安排好的学习或行动打算。", english: "plan", collocations: "制定计划、温习计划", trap: "“划”右边是立刀旁，不要写成繁体的“画”！" },
+      "珍惜": { pinyin: "zhēn xī", meaning: "重视爱惜，不浪费时间或事物。", english: "cherish; treasure", collocations: "珍惜时间、珍惜机会", trap: "“惜”左边是竖心旁（忄）。" },
+      "克服": { pinyin: "kè fú", meaning: "用努力战胜坏习惯或困难。", english: "overcome", collocations: "克服坏习惯、克服困难", trap: "“服”左边是月字旁，不要写成“克复”！" },
+      "测验": { pinyin: "cè yàn", meaning: "学校检查学习情况的小型考试。", english: "quiz; test", collocations: "华文测验、准备测验", trap: "“测”有三点水（氵），“验”是马字旁。" },
+      "早晨": { pinyin: "zǎo chén", meaning: "天刚亮到吃早餐前后的时段。", english: "early morning", collocations: "早晨六点半、清新的早晨", trap: "“晨”上边是“日”，下边是“辰”。" },
+      "赖床": { pinyin: "lài chuáng", meaning: "到了起床时间仍然躺在床上不想起来。", english: "stay in bed late", collocations: "喜欢赖床、克服赖床", trap: "“赖”不是竖心旁的“懒”！“赖床”的“赖”右边是“负”。" },
+      "诚实": { pinyin: "chéng shí", meaning: "说话做事真实，不欺骗自己或他人。", english: "honest", collocations: "诚实面对、做个诚实的人", trap: "“诚”是言字旁（讠）。" },
+      "仍然": { pinyin: "réng rán", meaning: "表示情况还是和以前一样。", english: "still; yet", collocations: "仍然努力、仍然没有改", trap: "“仍”右边是“乃”。" }
+    };
+
+    /* ================= 2. 常见错别字雷达字典 ================= */
+    const TYPO_PAIRS = [
+      { wrong: "慕后", right: "幕后", pattern: /(^|[^羡])慕后/, tip: "舞台布“幕”用巾字底（幕），心里想才用“慕”。" },
+      { wrong: "定购", right: "订购", pattern: /(^|[^一决肯必])定购/, tip: "预先约定购买是言字旁的“订购”。" },
+      { wrong: "烦脑", right: "烦恼", tip: "心里担忧苦闷用竖心旁的“烦恼”，不是头“脑”。" },
+      { wrong: "克复", right: "克服", tip: "战胜缺点或困难写作“克服”。" },
+      { wrong: "计画", right: "计划", tip: "规范简体写作“计划”（立刀旁）。" },
+      { wrong: "懒床", right: "赖床", tip: "不起床固定搭配写作“赖床”。" },
+      { wrong: "将落", right: "降落", pattern: /(缓缓|平稳|飞机|缆车)将落|将落(在|到|山脚|海滩)/, tip: "飞机、缆车向下着陆写作“降落”（双耳旁）。" },
+      { wrong: "祥情", right: "详情", tip: "详细说明是言字旁的“详情”。" },
+      { wrong: "天写", right: "填写", pattern: /天写(表格|资料|信息|登记|表单)/, tip: "把资料填进表格写作“填写”（提土旁）。" },
+      { wrong: "避兔", right: "避免", tip: "“免”字中间没有点！加点变成“兔”。" }
+    ];
+
+    function detectTypos(text) {
+      return TYPO_PAIRS.filter((tp) => (tp.pattern ? tp.pattern.test(text) : text.includes(tp.wrong)));
+    }
+
+    /* ================= 3. 模块 1：电邮解剖 6 大部分数据 ================= */
+    const ANATOMY_DETAILS = {
+      subject: {
+        title: "① 主题栏 (Subject)",
+        align: "填写在邮件系统顶部的“主题”栏内",
+        rule: "必须根据题目要求简洁明确地写出事由。如果是回复别人的电邮，必须加上“回复：”再加上原电邮主题。",
+        good: "回复：学校“感恩幕后英雄”活动\n邀请参加圣淘沙一日游",
+        bad: "❌ 空白不写\n❌ 写“华文作业”或“你好吗”\n❌ 回复邮件却忘了写“回复：”",
+        tip: "最省力的满分公式：直接把题目给的原主题抄下来，在前面加上“回复：”三个字！"
+      },
+      salutation: {
+        title: "② 称呼 (Salutation)",
+        align: "靠左顶格写（绝对不能空两格！）",
+        rule: "私人电邮是写给朋友或亲戚的，必须“去姓留名”（如：明华、志伟）或用亲属称呼（如：表哥），后面一定要加中文冒号（：）。",
+        good: "明华：\n表哥：",
+        bad: "❌ 陈明华：（多写了姓，太生疏）\n❌ 　　明华：（空了两格，格式扣分）\n❌ 明华，（用了逗号而不是中文冒号）",
+        tip: "记住口诀：“称呼顶格站，去姓留名字，末尾加冒号！”"
+      },
+      greeting: {
+        title: "③ 开头问候与写邮目的",
+        align: "另起一行，开头空两格（两个全角汉字位置）",
+        rule: "先用一句话礼貌问候（如“你好！收到你的电邮，我感到很高兴。”），再用一句话直接点明写这封电邮的目的（回答问题/提建议/发出邀请）。",
+        good: "　　你好！收到你的电邮，知道学校下周要举办感恩活动，我感到很高兴。我写这封电邮，是想和你分享我的看法。",
+        bad: "❌ 写完“明华：”后不换行直接接着写“你好！”\n❌ 问候语写太长（扯到天气、早餐），迟迟不入正题。",
+        tip: "G1 考试时间紧，问候＋点题 2 句话搞定（约 30 字），干净利落！"
+      },
+      body: {
+        title: "④ 正文：逐点回应两大任务",
+        align: "建议分两段书写（每段开头空两格）",
+        rule: "MOE 考题一定包含【两个核心任务】。最佳策略是“第一段答任务一，第二段答任务二”，并使用“首先、接着、然后、最后”或“虽然……但是……”等连接词，用上单元核心词语。",
+        good: "　　在学校里，我最敬佩食堂的清洁工友叔叔……（任务一：说谁 + 具体工作）\n　　我认为同学们可以用实际行动感谢他们……（任务二：提两个具体建议）",
+        bad: "❌ 只回答第一个问题，完全漏掉第二个问题（内容分直接少一半！）\n❌ 全部挤成一段，没有条理\n❌ 只写 20 个字就结束",
+        tip: "每一段用【三步扩写法】：① 亮出观点/人物 → ② 讲具体事实/做法 → ③ 说明好处或感受。"
+      },
+      closing: {
+        title: "⑤ 结尾结束语与祝语",
+        align: "结束语空两格；“祝”空两格；祝词下一行顶格写",
+        rule: "正文写完后，另起一行写礼貌的结束语（如“时间不早了，我就写到这里。希望早日收到你的回邮！”）。接着另起一行空两格写“祝”，再下一行顶格写四字祝福语并加感叹号！",
+        good: "　　时间不早了，我就写到这里。希望早日收到你的回邮！\n　　祝\n学业进步！",
+        bad: "❌ 写完正文直接署名，没有祝语\n❌ 写成“祝你快乐。”（缺少规范书信祝语格式）\n❌ 对同学写“工作顺利”（对象不对！同学写“学业进步！”，长辈写“身体健康！”）",
+        tip: "考场保底万能祝语：同学写“学业进步！”或“生活愉快！”；哥哥姐姐/长辈写“身体健康！”或“生活愉快！”。"
+      },
+      signature: {
+        title: "⑥ 署名 (Signature)",
+        align: "在祝语下一行靠左顶格写（不加标点符号）",
+        rule: "私人电邮署名只需写自己的名字（去姓留名，如“家豪”），绝不加姓氏，也不在名字后面加句号或感叹号。电邮系统顶部已有日期，末尾不用再写日期！",
+        good: "家豪",
+        bad: "❌ 　　　　李家豪。（靠右缩进＋写了姓＋加了句号）\n❌ 2026年11月19日（画蛇添足多写日期）",
+        tip: "记住：电子考场里，称呼和署名都是【靠左顶格】，不需要自己按好多空格去右对齐！"
+      }
+    };
+
+    /* ================= 4. 三大真题与自定义考题数据 ================= */
+    const PROMPTS = [
+      {
+        id: "p1",
+        tabLabel: "考题一：感恩幕后英雄 (U6·回复)",
+        mode: "reply",
+        unitTag: "第六单元 · 幕后英雄与社会责任（回复来邮）",
+        senderName: "家豪",
+        senderEmail: "jiahao@school.edu.sg",
+        recipientName: "明华",
+        recipientEmail: "minghua@school.edu.sg",
+        originalSubject: "学校“感恩幕后英雄”活动",
+        expectedSubject: "回复：学校“感恩幕后英雄”活动",
+        wishSuggestion: "学业进步！",
+        stimulusHTML: `
+          <p><strong>发件人：</strong>明华 &lt;minghua@school.edu.sg&gt;</p>
+          <p><strong>主题：</strong>学校“感恩幕后英雄”活动</p>
+          <hr style="margin:8px 0; border:none; border-top:1px dashed #CBD5E1;">
+          <p>家豪：</p>
+          <p>　　你好！下个星期学校就要举办“感恩校园<span class="vocab-word" data-word="幕后"><ruby>幕后<rt>mù hòu</rt></ruby></span><span class="vocab-word" data-word="英雄"><ruby>英雄<rt>yīng xióng</rt></ruby></span>”活动周了！老师让我们先想一想身边默默工作的人。</p>
+          <p>　　我想问问你：<span class="task-badge-1">【任务一】</span>在学校或社区里，你最敬佩哪一位幕后工作者（例如清洁工友、<span class="vocab-word" data-word="维修"><ruby>维修<rt>wéi xiū</rt></ruby></span>师傅、保安叔叔）？他平时为我们做了哪些具体工作？<span class="task-badge-2">【任务二】</span>你认为同学们平时可以做些什么，来感谢他们或减轻他们的负担？</p>
+          <p>　　期待你的回邮！</p>
+          <p>　　祝<br>生活愉快！</p>
+          <p>明华</p>
+        `,
+        instruction: "假设你是家豪，请写一封电邮回复明华，回答他提出的两个问题。字数在 80 字以上。",
+        task1Label: "任务一：说明最敬佩的幕后工作者及他做的具体工作",
+        task2Label: "任务二：给同学们提出感谢或减轻工作负担的具体建议",
+        task1Keywords: ["敬佩", "清洁", "工友", "维修", "保安", "打扫", "检查", "工作", "学校", "社区", "英雄", "幕后", "叔叔", "阿姨"],
+        task2Keywords: ["建议", "认为", "可以", "应该", "感谢", "谢谢", "减轻", "碗盘", "垃圾", "回收", "微笑", "帮忙", "保持", "爱护"],
+        vocabList: ["幕后", "英雄", "职业", "维修", "确保", "避免", "失误", "贡献"],
+        connectors: ["首先", "其次", "虽然", "但是", "为了", "因为", "所以"],
+        analyzerSteps: [
+          {
+            q: "第 1 步：这封电邮的【发件人】（我自己）是谁？结尾署名应该写什么？",
+            options: ["家豪", "李家豪", "明华", "2026年11月19日"],
+            correctIdx: 0,
+            explain: "题目说“假设你是家豪”，私人电邮署名只写名字“家豪”，靠左顶格，不加姓氏也不加日期。"
+          },
+          {
+            q: "第 2 步：我要写给谁？电邮正文第一行的【称呼】应该怎么写？",
+            options: ["　　明华：", "明华：", "陈明华，", "你好明华："],
+            correctIdx: 1,
+            explain: "收件人是好友“明华”，称呼必须靠左顶格，不带姓氏，末尾加中文冒号（：）。"
+          },
+          {
+            q: "第 3 步：这是回复来邮，电邮顶部的【主题】应该怎么填写最规范？",
+            options: ["回复：学校“感恩幕后英雄”活动", "感恩活动", "写给明华的一封信", "没有主题"],
+            correctIdx: 0,
+            explain: "回复电邮的标准格式是在原主题前加上“回复：”。"
+          },
+          {
+            q: "第 4 步：正文必须回答明华的哪【两个核心任务】才能拿满内容分？",
+            options: [
+              "只介绍校园里的美食和我的兴趣爱好",
+              "① 最敬佩哪位幕后工作者及他的工作；② 同学们可以做什么感谢或减轻负担",
+              "只写一个建议，不用写自己敬佩谁",
+              "讨论下个星期学校考试的科目"
+            ],
+            correctIdx: 1,
+            explain: "审题抓重点！明华在信里问了两个问题，正文必须分两段逐一回应，缺一不可。"
+          }
+        ],
+        guidedStarters: {
+          salutation: "明华",
+          greeting: "你好！收到你的电邮，知道学校下周要举办感恩活动，我感到很高兴。今天写信想和你分享我的看法。",
+          task1: "在学校里，我最敬佩食堂的清洁工友叔叔。他每天早晨很早就来到学校打扫桌椅和地面，确保校园干净卫生，避免同学们滑倒。",
+          task2: "我认为同学们可以用实际行动感谢他们。首先，吃完饭后我们应该自己把碗盘放进回收处；其次，平时不要乱扔垃圾，这样能减轻叔叔的工作负担，表达对这份职业的尊重。"
+        },
+        modelEmail: `主题：回复：学校“感恩幕后英雄”活动
+
+明华：
+　　你好！收到你的电邮，知道学校下周要举办“感恩校园幕后英雄”活动周，我感到非常高兴。我写这封电邮，是想回答你的两个问题，和你分享我的想法。
+
+　　在学校里，我最敬佩的是食堂的清洁工友叔叔。他每天早晨很早就来到学校，认真打扫桌椅和地面，还会仔细检查洗手间设施，确保校园环境干净安全，避免同学们滑倒或生病。虽然他在幕后默默工作，但是他对学校做出的贡献非常大。
+
+　　我认为同学们可以在日常生活中用行动感谢他，减轻他的工作负担。首先，我们在食堂吃完饭后，应该主动把碗盘放进回收处，不要把食物残渣洒在桌面上；其次，平时见到清洁工友叔叔时，可以微笑着说一声“谢谢”，让每一份职业都得到尊重。
+
+　　时间不早了，我就写到这里。希望早日收到你的回邮！
+　　祝
+学业进步！
+家豪`
+      },
+      {
+        id: "p2",
+        tabLabel: "考题二：圣淘沙一日游 (U5·邀请)",
+        mode: "new",
+        unitTag: "第五单元 · 空间转换与游览经历（主动发邮）",
+        senderName: "家豪",
+        senderEmail: "jiahao@school.edu.sg",
+        recipientName: "表哥",
+        recipientEmail: "zhiwei@mail.sg",
+        originalSubject: "邀请参加圣淘沙海洋与科技探秘一日游",
+        expectedSubject: "邀请你参加圣淘沙一日游",
+        wishSuggestion: "生活愉快！",
+        stimulusHTML: `
+          <p><strong>情境说明：</strong></p>
+          <p>学校假期即将到来，社区民众俱乐部将举办“圣淘沙海洋与科技探秘一日游”。你非常想邀请表哥志伟一起报名参加。</p>
+          <p>请写一封电邮给表哥，内容须包括：</p>
+          <p><span class="task-badge-1">【任务一】</span>向他介绍这次一日游的报名方式与游览路线（请用空间连接词介绍至少 3 个站点和活动，如填写<span class="vocab-word" data-word="表格"><ruby>表格<rt>biǎo gé</rt></ruby></span>、<span class="vocab-word" data-word="海洋"><ruby>海洋<rt>hǎi yáng</rt></ruby></span>馆<span class="vocab-word" data-word="潜水"><ruby>潜水<rt>qián shuǐ</rt></ruby></span>表演、<span class="vocab-word" data-word="牧场"><ruby>牧场<rt>mù chǎng</rt></ruby></span>等）。</p>
+          <p><span class="task-badge-2">【任务二】</span>说明你为什么想邀请他一起参加，以及参加这项活动有什么好处。</p>
+        `,
+        instruction: "假设你是家豪，请写一封电邮给你的表哥志伟，介绍详情并发出邀请。字数在 80 字以上。",
+        task1Label: "任务一：说明报名方式，并用空间连接词介绍游览路线（≥3站）",
+        task2Label: "任务二：说明邀请表哥一起参加的原因和活动的好处",
+        task1Keywords: ["填写", "表格", "车资卡", "首先", "接着", "然后", "最后", "科技", "海洋", "潜水", "牧场", "缆车", "降落", "出发", "前往", "到达"],
+        task2Keywords: ["邀请", "因为", "好处", "烦恼", "放松", "开心", "学习", "知识", "一起", "希望", "参加", "环保", "创新"],
+        vocabList: ["车资卡", "填写", "表格", "详情", "创新", "产品", "海洋", "潜水", "牧场", "降落", "烦恼"],
+        connectors: ["首先", "接着", "然后", "之后", "最后", "从……出发", "前往", "返回"],
+        analyzerSteps: [
+          {
+            q: "第 1 步：这封电邮是主动发邮，我是“家豪”，结尾署名写什么？",
+            options: ["家豪", "李家豪", "表哥", "志伟"],
+            correctIdx: 0,
+            explain: "写信人是“家豪”，署名靠左顶格写“家豪”即可，不用写姓。"
+          },
+          {
+            q: "第 2 步：收件人是你的表哥志伟，开头【称呼】怎么写最合适？",
+            options: ["志伟表哥：", "表哥：", "林志伟：", "以上皆可，但“表哥：”或“志伟：”最自然"],
+            correctIdx: 3,
+            explain: "对同辈亲戚写“表哥：”或“志伟表哥：”都很有礼貌且亲切，注意靠左顶格加中文冒号！"
+          },
+          {
+            q: "第 3 步：这是【主动发信】不是回复电邮，主题栏需要写“回复：”吗？",
+            options: ["必须写“回复：”", "不需要写“回复：”，直接写“邀请你参加圣淘沙一日游”"],
+            correctIdx: 1,
+            explain: "只有回复别人的来邮才写“回复：”。主动联系对方，直接写清楚主题事由即可。"
+          },
+          {
+            q: "第 4 步：任务一特别要求我们用什么方法来介绍游览路线？",
+            options: [
+              "随便挑一个地点写几句",
+              "运用“首先、接着、然后、最后”等空间连接词介绍至少 3 个站点和活动",
+              "只写报名费用多少"
+            ],
+            correctIdx: 1,
+            explain: "结合第五单元核心技能，用空间连接词按顺序介绍站点与活动，结构清晰得高分！"
+          }
+        ],
+        guidedStarters: {
+          salutation: "表哥",
+          greeting: "你好！好久不见，近来好吗？学校假期快到了，我想邀请你一起参加民众俱乐部举办的圣淘沙一日游。",
+          task1: "我已经查看了活动详情，报名只需在网上填写表格。当天早上我们刷车资卡从港湾站出发：首先到游客中心报到；接着去未来科技馆看创新产品；然后去海洋馆欣赏潜水表演；最后到城市牧场喂羊，再坐缆车降落海滩。",
+          task2: "我特别想邀请你一起去，因为我们很久没一起出游了。参加这个活动不仅能消除平日温习功课的烦恼，放松心情，还能学到很多海洋和环保科学知识，一举两得！"
+        },
+        modelEmail: `主题：邀请你参加圣淘沙一日游
+
+表哥：
+　　你好！好久不见，你最近过得怎么样？学校假期快到了，民众俱乐部将举办“圣淘沙海洋与科技探秘一日游”，我想邀请你和我一起报名参加。
+
+　　我已经查好了活动详情，我们只要上网填写登记表格就能报名。当天早上，我们可以刷车资卡从港湾地铁站出发。首先，我们在游客中心集合；接着前往未来科技馆，参观有趣的环保创新产品；然后走进海洋馆，观赏精彩的潜水员喂鱼表演；最后再到微型城市牧场喂小羊，坐缆车降落西乐索海滩才返回家里。
+
+　　我想邀请你一起去，是因为平时我们学习都很忙，一直没有机会好好放松。参加这次一日游，不仅能够消除日常烦恼、增进我们表兄弟之间的感情，还能在游玩中增长科学和海洋知识，真是一举两得！
+
+　　如果你有兴趣，请尽快告诉我！期待你的回邮！
+　　祝
+生活愉快！
+家豪`
+      },
+      {
+        id: "p3",
+        tabLabel: "考题三：克服赖床烦恼 (U4·回复)",
+        mode: "reply",
+        unitTag: "第四单元 · 坚持与克服坏习惯（回复求助信）",
+        senderName: "家豪",
+        senderEmail: "jiahao@school.edu.sg",
+        recipientName: "晓敏",
+        recipientEmail: "xiaomin@school.edu.sg",
+        originalSubject: "最近温习功课的烦恼",
+        expectedSubject: "回复：最近温习功课的烦恼",
+        wishSuggestion: "学业进步！",
+        stimulusHTML: `
+          <p><strong>发件人：</strong>晓敏 &lt;xiaomin@school.edu.sg&gt;</p>
+          <p><strong>主题：</strong>最近温习功课的烦恼</p>
+          <hr style="margin:8px 0; border:none; border-top:1px dashed #CBD5E1;">
+          <p>家豪：</p>
+          <p>　　你好！下周就要进行华文<span class="vocab-word" data-word="测验"><ruby>测验<rt>cè yàn</rt></ruby></span>了，我心里非常着急！这段时间我<span class="vocab-word" data-word="早晨"><ruby>早晨<rt>zǎo chén</rt></ruby></span>总是<span class="vocab-word" data-word="赖床"><ruby>赖床<rt>lài chuáng</rt></ruby></span>，放学后又<span class="vocab-word" data-word="仍然"><ruby>仍然<rt>réng rán</rt></ruby></span>只想玩手机，一点温习<span class="vocab-word" data-word="计划"><ruby>计划<rt>jì huà</rt></ruby></span>也没有。</p>
+          <p>　　听说你以前也有类似的问题，后来改掉了。<span class="task-badge-1">【任务一】</span>你能和我分享你是怎么<span class="vocab-word" data-word="克服"><ruby>克服<rt>kè fú</rt></ruby></span>坏习惯的吗？<span class="task-badge-2">【任务二】</span>对于我现在的烦恼，你有什么具体的建议可以帮我吗？</p>
+          <p>　　祝<br>一切顺利！</p>
+          <p>晓敏</p>
+        `,
+        instruction: "假设你是家豪，请写一封电邮回复晓敏，分享你的经历并给她提出建议。字数在 80 字以上。",
+        task1Label: "任务一：分享自己曾经如何克服坏习惯（如赖床/玩手机）的经历",
+        task2Label: "任务二：给晓敏提出具体改善温习和克服懒惰的建议并鼓励她",
+        task1Keywords: ["以前", "曾经", "早晨", "赖床", "手机", "迟到", "一想到", "再也没", "克服", "测验", "习惯", "妈妈"],
+        task2Keywords: ["建议", "计划", "珍惜", "首先", "其次", "闹钟", "温习", "坚持", "诚实", "一定", "加油", "相信"],
+        vocabList: ["计划", "珍惜", "克服", "测验", "早晨", "赖床", "仍然", "诚实"],
+        connectors: ["首先", "其次", "一想到……就……", "再也没……", "只要", "因为", "所以"],
+        analyzerSteps: [
+          {
+            q: "第 1 步：收件人是谁？开口称呼怎么写？",
+            options: ["晓敏：", "林晓敏：", "　　晓敏：", "家豪："],
+            correctIdx: 0,
+            explain: "回复同班同学“晓敏”，称呼顶格写“晓敏：”（不带姓，加中文冒号）。"
+          },
+          {
+            q: "第 2 步：电邮顶部的【主题】应该写什么？",
+            options: ["最近温习功课的烦恼", "回复：最近温习功课的烦恼", "给晓敏的建议"],
+            correctIdx: 1,
+            explain: "回复来邮必须在原主题前面加上“回复：”。"
+          },
+          {
+            q: "第 3 步：第四单元学过哪两个实用句式，最适合用来写【任务一】的改变经历？",
+            options: [
+              "“首先……接着……最后……”",
+              "“一想到……就……” 和 “再也没……”",
+              "“一边……一边……”"
+            ],
+            correctIdx: 1,
+            explain: "例如：“一想到测验要交白卷，我就立刻放下手机”；“从那天起，我再也没赖床了。”"
+          },
+          {
+            q: "第 4 步：任务二给同学提建议时，语气应该怎样？",
+            options: ["严厉批评她太懒惰", "真诚鼓励，并给出 2 个具体可行的做法（如制定计划、珍惜早晨时间）"],
+            correctIdx: 1,
+            explain: "私人电邮面对朋友求助，要表现出关心与鼓励，提出的建议要具体、好操作！"
+          }
+        ],
+        guidedStarters: {
+          salutation: "晓敏",
+          greeting: "你好！收到你的电邮，知道你正在为下周的华文测验烦恼，我很理解你的感受。今天写信想和你分享我的经验。",
+          task1: "以前，我在早晨也常常赖床，一到放学仍然抱着手机不放。后来在一次测验中成绩不理想，我才诚实地面对自己的缺点。一想到浪费时间就会落后，我就下定决心改正，现在再也没赖床了。",
+          task2: "针对你的烦恼，我有两个小建议。首先，每天晚上睡前制定简单的温习计划，把手机交给父母保管；其次，要珍惜早晨清醒的时间，早起二十分钟背词语。只要你坚持下去，一定能克服坏习惯，考出好成绩！"
+        },
+        modelEmail: `主题：回复：最近温习功课的烦恼
+
+晓敏：
+　　你好！收到你的电邮，知道你因为准备下周的华文测验而感到烦恼，我很理解你的心情。我写这封电邮，是想和你分享我的经历，并给你提几个小建议。
+
+　　其实，以前我也常常在早晨赖床，放学后仍然只顾着玩手机，结果在一次测验中成绩退步了。那天我诚实地检讨了自己的错误，一想到如果继续懒惰就会被同学甩在后面，我就立刻把闹钟放得离床远一点。从那以后，我制定了早起温习时间表，再也没赖床了！
+
+　　针对你现在的情况，我想给你两个建议。首先，每天晚上睡前花五分钟写好第二天的温习计划，温习时把手机放到客厅，避免分心；其次，要珍惜早晨头脑最清醒的时间，每天早起十五分钟复习几个华文生词。只要你一步一步坚持，一定能克服这个坏习惯，在测验中取得好成绩！
+
+　　时间不早了，我就写到这里。加油！期待你的好消息！
+　　祝
+学业进步！
+家豪`
+      }
+    ];
+
+    /* ================= 5. 病邮急诊室 6 题 ================= */
+    const DOCTOR_CASES = [
+      {
+        title: "病例 1：朋友来信的称呼",
+        snippet: "主题：回复：周末去图书馆复习\n\n　　陈明华，\n　　你好！我这个星期六有空……",
+        question: "上面这封电邮的【称呼】共有几处格式错误？应该怎么改？",
+        options: [
+          "完全正确，没有错误",
+          "有 3 处错误：空了两格、写了全名、用了逗号。应顶格写“明华：”",
+          "只需要把逗号改成句号就行"
+        ],
+        correctIdx: 1,
+        explanation: "私人电邮称呼必须【靠左顶格】、【去姓留名】、后面加【中文冒号（：）】！"
+      },
+      {
+        title: "病例 2：主题栏和结尾署名",
+        snippet: "主题：华文电邮\n……\n　　祝你天天开心！\n　　　　　　　　李家豪。\n　　　　　　　　2026年11月19日",
+        question: "这段回复电邮的【主题与结尾】有哪些明显的扣分错误？",
+        options: [
+          "主题太笼统且没写“回复：”；祝语没换行写“祝”；署名没靠左顶格且多了姓氏、句号和日期",
+          "只是日期的年份写错了",
+          "结尾应该加上电话号码"
+        ],
+        correctIdx: 0,
+        explanation: "回复题主题要写“回复：原主题”；祝语要分两行（空两格写“祝”，下一行顶格写“学业进步！”）；署名靠左顶格只写“家豪”，不加标点和日期。"
+      },
+      {
+        title: "病例 3：审题与内容完整性",
+        snippet: "题目要求：① 介绍你最敬佩的幕后英雄 ② 说明同学们可以怎样减轻他的负担\n\n学生草稿：我最敬佩学校的清洁工友叔叔，他每天早早就来扫地，非常辛苦。如果没有他，学校会很脏。他真是大英雄！希望同学们都能知道他很辛苦。",
+        question: "这篇草稿已经写了 56 个字，为什么【内容分】会不及格？",
+        options: [
+          "因为清洁工友不能算幕后英雄",
+          "因为完全漏掉了【任务二】（没提出具体的建议或做法），且总字数远低于 80 字",
+          "因为用了一个感叹号"
+        ],
+        correctIdx: 1,
+        explanation: "漏答任何一项任务都会严重丢分！必须专门再写一段，提出 2 个具体可行的做法（如收拾碗盘、不乱丢垃圾）。"
+      },
+      {
+        title: "病例 4：考场高频错别字雷达",
+        snippet: "　　他是一位在慕后默默工作的维修人员。为了确保安全，他每天认真检查电梯，避免发生严重失误，公司还专门定购了新工具。",
+        question: "上面这段话里藏着 2 个高频错别字，请你立刻“捉虫”！",
+        options: [
+          "“慕后”应改为“幕后”；“定购”应改为“订购”",
+          "“维修”应改为“唯修”；“确保”应改为“确宝”",
+          "没有错别字"
+        ],
+        correctIdx: 0,
+        explanation: "第六单元重难点字形：舞台布“幕”用巾字底（幕后）；预先约定买东西用言字旁（订购）！"
+      },
+      {
+        title: "病例 5：语言规范与华英混杂",
+        snippet: "　　Hello 表哥！我们星期六坐 MRT 去 Sentosa 玩啦，记得带 EZ-Link card！首先我们去 fill up form，然后看 dolphin show，超级 nice 哦！",
+        question: "为什么这段正文在 MOE G1 考试中会被扣【语文表达分】？",
+        options: [
+          "因为用了空间连接词“首先、然后”",
+          "因为大量出现英文词（Hello、card、form、nice）和口语化语气词（啦、哦），没有用规范华文表达",
+          "因为不应该在星期六出去玩"
+        ],
+        correctIdx: 1,
+        explanation: "G1 实用文允许使用大家熟悉的本地事物，但务必用规范华文表达！例如：MRT→地铁、EZ-Link→车资卡、fill up form→填写表格、nice→精彩。"
+      },
+      {
+        title: "病例 6：祝语对象搞错",
+        snippet: "（写给生病住院的阿姨）\n　　阿姨，您好好休息，我下周再去看您。\n　　祝\n学业进步！\n小敏",
+        question: "这封信的格式很整齐，但有一处常识错误，是哪里？",
+        options: [
+          "称呼应该写“阿姨，”",
+          "祝语用错了！阿姨是长辈且生病了，不能祝她“学业进步！”，应该写“早日康复！”或“身体健康！”",
+          "不应该写“下周再去看您”"
+        ],
+        correctIdx: 1,
+        explanation: "祝语必须符合收信人身份！写给同学用“学业进步！”，写给普通亲友用“生活愉快！”或“身体健康！”，写给生病的人用“早日康复！”。"
+      }
+    ];
+
+    /* ================= 6. 黄金三步扩写机数据 ================= */
+    const EXPANDER_CHALLENGES = [
+      {
+        id: "exp1",
+        label: "主题 1：赞扬幕后英雄",
+        weakSentence: "干瘪原句（14字）：我敬佩清洁叔叔，他每天扫地。",
+        step1: [
+          "在学校里，我最敬佩的是食堂的清洁工友叔叔。",
+          "社区里默默付出的清洁工友是我心目中的幕后英雄。"
+        ],
+        step2: [
+          "他每天早晨六点就到达学校，认真擦洗每一张餐桌并拖干湿滑的地面，确保食堂干净卫生。",
+          "无论刮风还是下雨，他都会及时清理垃圾，并维修松动的桌椅，避免同学们受伤。"
+        ],
+        step3: [
+          "虽然他工作在幕后，但是他的贡献保障了大家的健康，每一份职业都值得我们尊敬！",
+          "一想到他每天这么辛苦，我就告诉自己吃完饭一定要把碗盘放好，减轻他的负担。"
+        ]
+      },
+      {
+        id: "exp2",
+        label: "主题 2：介绍圣淘沙行程",
+        weakSentence: "干瘪原句（13字）：我们去了科技馆、海洋馆和海滩。",
+        step1: [
+          "这次一日游的路线非常丰富，我们可以先在网上填写登记表格。",
+          "活动当天的安排精彩极了，我们刷车资卡从港湾地铁站出发。"
+        ],
+        step2: [
+          "首先走进未来科技馆看环保创新产品，接着去海洋馆欣赏潜水员喂鱼，然后到牧场喂小羊。",
+          "首先在游客中心了解详情，接着去海洋馆探索海洋生物，之后前往科技馆了解生物基因。"
+        ],
+        step3: [
+          "最后我们乘坐高空缆车降落海滩，这样不仅能放松心情、消除烦恼，还能学到课本外的知识！",
+          "最后大家欢欢喜喜返回家里，既增进了感情，又度过了一个难忘又充实的假期。"
+        ]
+      },
+      {
+        id: "exp3",
+        label: "主题 3：克服懒惰给建议",
+        weakSentence: "干瘪原句（13字）：你不要赖床，要好好温习功课。",
+        step1: [
+          "针对你最近温习没有计划的烦恼，我想给你两个实用的小建议。",
+          "看到你担心下周的华文测验，我非常理解你的心情，你可以试试下面的方法。"
+        ],
+        step2: [
+          "首先，每天睡前花五分钟制定温习时间表，并把手机放到客厅；其次，早起十五分钟复习生词。",
+          "首先，把闹钟放到离床远一点的地方，克服赖床；其次，一想到测验目标就马上开始做练习。"
+        ],
+        step3: [
+          "只要珍惜早晨的时间并诚实执行计划，你一定能改掉拖延的习惯，在测验中进步！",
+          "这样坚持一个星期，你再也不会手忙脚乱，复习效率也会大大提高，加油！"
+        ]
+      }
+    ];
+
+    /* ================= 7. 5 枚勋章定义 ================= */
+    const BADGE_DEFS = [
+      { id: "b1", emoji: "🔍", title: "格式透视达人", desc: "在【电邮解剖室】看完全部 6 个电邮组成部分" },
+      { id: "b2", emoji: "💣", title: "审题拆弹神探", desc: "在【审题拆弹厅】完成任意 1 道考题的 4 步审题" },
+      { id: "b3", emoji: "🩺", title: "格式纠错名医", desc: "在【病邮急诊室】答对 5 题以上找茬挑战" },
+      { id: "b4", emoji: "🧱", title: "三步扩写巧匠", desc: "使用【黄金三步扩写机】合成至少 1 段高分正文" },
+      { id: "b5", emoji: "🏆", title: "G1 电邮写作大师", desc: "在【考场实战写作舱】写出电邮并获得 14/20 分以上" }
+    ];
+
+    /* ================= 8. 音效引擎（纯 Web Audio API） ================= */
+    const sound = {
+      ctx: null,
+      enabled: true,
+      init() {
+        if (!this.ctx) {
+          const AudioCtx = window.AudioContext || window.webkitAudioContext;
+          if (AudioCtx) this.ctx = new AudioCtx();
+        }
+      },
+      playTone(freqs, type = "sine", dur = 0.16) {
+        if (!this.enabled) return;
+        this.init();
+        if (!this.ctx) return;
+        freqs.forEach((f, idx) => {
+          const t = this.ctx.currentTime + idx * 0.08;
+          const osc = this.ctx.createOscillator();
+          const gain = this.ctx.createGain();
+          osc.type = type;
+          osc.frequency.setValueAtTime(f, t);
+          gain.gain.setValueAtTime(0.16, t);
+          gain.gain.exponentialRampToValueAtTime(0.008, t + dur);
+          osc.connect(gain);
+          gain.connect(this.ctx.destination);
+          osc.start(t);
+          osc.stop(t + dur);
+        });
+      },
+      playCorrect() { this.playTone([587.33, 880], "sine", 0.18); },
+      playWrong() { this.playTone([250, 200], "triangle", 0.2); },
+      playFanfare() { this.playTone([523.25, 659.25, 783.99, 1046.5], "sine", 0.22); },
+      playClick() { this.playTone([480], "sine", 0.06); }
+    };
+
+    /* ================= 9. 应用状态管理 ================= */
+    const STORAGE_KEY_PORTFOLIO = "g1_u6_saved_emails_v1";
+    const STORAGE_KEY_STATE = "g1_u6_email_workshop_state_v1";
+
+    const appState = {
+      score: 0,
+      combo: 0,
+      badges: new Set(),
+      inspectedZones: new Set(["subject"]),
+      analyzerPromptIdx: 0,
+      analyzerAnswers: {}, // { promptId: { stepIdx: optIdx } }
+      doctorIdx: 0,
+      doctorCorrectCount: 0,
+      doctorAnswered: {}, // { caseIdx: optIdx }
+      expanderIdx: 0,
+      expanderSelections: [0, 0, 0],
+      studioPromptId: "p1",
+      studioTier: "guided",
+      customPrompts: [],
+      lastEvaluation: null,
+      timerSeconds: 25 * 60,
+      timerRunning: false,
+      timerInterval: null
+    };
+
+    function saveProgress() {
+      try {
+        localStorage.setItem(STORAGE_KEY_STATE, JSON.stringify({
+          score: appState.score,
+          combo: appState.combo,
+          badges: Array.from(appState.badges),
+          inspectedZones: Array.from(appState.inspectedZones),
+          customPrompts: appState.customPrompts
+        }));
+      } catch (_) {
+        /* 隐私浏览模式下忽略存储错误 */
+      }
+    }
+
+    function loadProgress() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY_STATE);
+        if (!raw) return;
+        const parsed = JSON.parse(raw);
+        if (typeof parsed.score === "number") appState.score = parsed.score;
+        if (typeof parsed.combo === "number") appState.combo = parsed.combo;
+        if (Array.isArray(parsed.badges)) parsed.badges.forEach(b => appState.badges.add(b));
+        if (Array.isArray(parsed.inspectedZones)) parsed.inspectedZones.forEach(z => appState.inspectedZones.add(z));
+        if (Array.isArray(parsed.customPrompts)) appState.customPrompts = parsed.customPrompts;
+      } catch (_) {
+        /* 忽略损坏数据 */
+      }
+    }
+
+    function updateHUD() {
+      document.getElementById("hud-score").textContent = appState.score;
+      document.getElementById("hud-combo").textContent = appState.combo;
+      document.getElementById("hud-badges").textContent = `${appState.badges.size}/5`;
+      document.getElementById("anatomy-progress-pill").textContent = `已透视：${appState.inspectedZones.size} / 6 部位`;
+      renderBadgesGrid();
+    }
+
+    function awardScore(points) {
+      appState.combo += 1;
+      const bonus = appState.combo >= 3 ? 5 : 0;
+      appState.score += points + bonus;
+      updateHUD();
+      saveProgress();
+    }
+
+    function resetCombo() {
+      appState.combo = 0;
+      updateHUD();
+      saveProgress();
+    }
+
+    function unlockBadge(badgeId) {
+      if (appState.badges.has(badgeId)) return;
+      appState.badges.add(badgeId);
+      appState.score += 30;
+      sound.playFanfare();
+      const def = BADGE_DEFS.find(b => b.id === badgeId);
+      showToast(`🎉 解锁新勋章：${def ? def.emoji + " " + def.title : badgeId}（+30 分）`);
+      updateHUD();
+      saveProgress();
+    }
+
+    let toastTimer = null;
+    function showToast(msg) {
+      const el = document.getElementById("toast-banner");
+      el.textContent = msg;
+      el.classList.add("show");
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => el.classList.remove("show"), 2600);
+    }
+
+    /* ================= 10. 现代 Web Guidance：Dialog 兼容与校验机制 ================= */
+    function initDialogEnhancements() {
+      // Light-dismiss fallback when closedBy is not supported
+      if (!("closedBy" in HTMLDialogElement.prototype)) {
+        const outside = (e, dialog) => {
+          const r = dialog.getBoundingClientRect();
+          return e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom;
+        };
+        document.querySelectorAll('dialog[closedby="any"]').forEach((dialog) => {
+          let pressedOutside = false;
+          dialog.addEventListener("pointerdown", (e) => {
+            pressedOutside = outside(e, dialog);
+          });
+          dialog.addEventListener("pointerup", (e) => {
+            if (pressedOutside && outside(e, dialog)) dialog.close();
+          });
+        });
+      }
+
+      // Reset returnValue on close so stale button values do not leak
+      document.querySelectorAll("dialog").forEach((dialog) => {
+        dialog.addEventListener("close", () => {
+          dialog.returnValue = "";
+        });
+      });
+    }
+
+    // :user-invalid JS fallback + ARIA 同步体验
+    const ValidationController = (() => {
+      const supportsUserInvalid = CSS.supports("selector(:user-invalid)");
+      const dirtyState = new WeakMap();
+      const flagged = new WeakSet();
+      const announced = new WeakSet();
+      let announcer = null;
+      let announceTimer = null;
+      let announcedField = null;
+
+      const linkError = (el, shown) => {
+        const errorId = el.dataset.error;
+        if (!errorId) return;
+        const ids = (el.getAttribute("aria-describedby") || "").split(/\s+/).filter((id) => id && id !== errorId);
+        if (shown) ids.push(errorId);
+        if (ids.length) el.setAttribute("aria-describedby", ids.join(" "));
+        else el.removeAttribute("aria-describedby");
+      };
+
+      const spokenText = (node) => {
+        const copy = node.cloneNode(true);
+        copy.querySelectorAll('[aria-hidden="true"]').forEach((n) => n.remove());
+        copy.querySelectorAll('[role="img"][aria-label]').forEach((n) => n.replaceWith(`${n.getAttribute("aria-label")}: `));
+        return copy.textContent.replace(/\s+/g, " ").trim();
+      };
+
+      const announceError = (el) => {
+        const error = document.getElementById(el.dataset.error);
+        if (!error || !announcer) return;
+        const label = el.labels?.[0] ? `${spokenText(el.labels[0])}: ` : "";
+        clearTimeout(announceTimer);
+        announcer.textContent = "";
+        announcedField = el;
+        announceTimer = setTimeout(() => {
+          announcer.textContent = label + spokenText(error);
+        }, 500);
+      };
+
+      const isFieldInvalid = (el) => {
+        if (supportsUserInvalid) return el.matches(":user-invalid");
+        return el.classList.contains("user-invalid-fallback");
+      };
+
+      const syncAria = (el, announce = false) => {
+        if (!el.matches?.("input, select, textarea")) return;
+        const invalid = isFieldInvalid(el);
+        if (invalid) {
+          if (announce && !announced.has(el)) {
+            announceError(el);
+            announced.add(el);
+          }
+          el.setAttribute("aria-invalid", "true");
+          linkError(el, true);
+          flagged.add(el);
+        } else if (flagged.has(el) || el.getAttribute("aria-invalid") !== "true") {
+          el.setAttribute("aria-invalid", "false");
+          linkError(el, false);
+          flagged.delete(el);
+          announced.delete(el);
+          if (announcedField === el) {
+            clearTimeout(announceTimer);
+            if (announcer) announcer.textContent = "";
+          }
+        }
+      };
+
+      const updateFallback = (input) => {
+        const isValid = input.validity.valid;
+        input.classList.toggle("user-invalid-fallback", !isValid);
+        input.classList.toggle("user-valid-fallback", isValid);
+      };
+
+      const markSubmitInteraction = (form) => {
+        form.querySelectorAll("input, select, textarea").forEach((el) => {
+          if (!el.checkValidity) return;
+          if (!supportsUserInvalid) {
+            dirtyState.set(el, { hasInteracted: true, hasBlurred: true });
+            updateFallback(el);
+          } else {
+            // Trigger native :user-invalid only on submit attempt via reportValidity/checkValidity
+          }
+          syncAria(el, false);
+        });
+      };
+
+      const init = () => {
+        announcer = document.createElement("div");
+        announcer.setAttribute("aria-live", "polite");
+        announcer.classList.add("visually-hidden");
+        document.body.append(announcer);
+
+        document.querySelectorAll("input, select, textarea").forEach((el) => {
+          if (!el.hasAttribute("aria-invalid")) el.setAttribute("aria-invalid", "false");
+          syncAria(el);
+        });
+
+        document.addEventListener("blur", (e) => {
+          const el = e.target;
+          if (!el.matches?.("input, select, textarea")) return;
+          if (!supportsUserInvalid) {
+            const st = dirtyState.get(el) || { hasInteracted: false, hasBlurred: false };
+            st.hasBlurred = true;
+            dirtyState.set(el, st);
+            if (st.hasInteracted) updateFallback(el);
+          }
+          syncAria(el, true);
+        }, true);
+
+        document.addEventListener("input", (e) => {
+          const el = e.target;
+          if (!el.matches?.("input, select, textarea")) return;
+          if (!supportsUserInvalid) {
+            const st = dirtyState.get(el) || { hasInteracted: false, hasBlurred: false };
+            st.hasInteracted = true;
+            dirtyState.set(el, st);
+            if (st.hasBlurred) updateFallback(el);
+          }
+          if (el.hasAttribute("aria-invalid")) syncAria(el);
+        });
+
+        document.addEventListener("change", (e) => {
+          const el = e.target;
+          if (!el.matches?.("input, select, textarea")) return;
+          if (!supportsUserInvalid) {
+            const st = dirtyState.get(el) || { hasInteracted: true, hasBlurred: true };
+            st.hasInteracted = true;
+            dirtyState.set(el, st);
+            if (st.hasBlurred) updateFallback(el);
+          }
+          syncAria(el, true);
+        }, true);
+
+        document.addEventListener("invalid", (e) => {
+          const el = e.target;
+          if (!supportsUserInvalid && el.checkValidity) {
+            dirtyState.set(el, { hasInteracted: true, hasBlurred: true });
+            updateFallback(el);
+          }
+          announced.add(el);
+          syncAria(el);
+        }, true);
+
+        document.addEventListener("reset", (e) => {
+          setTimeout(() => {
+            [...(e.target.elements || [])].forEach((el) => {
+              dirtyState.delete(el);
+              el.classList.remove("user-invalid-fallback", "user-valid-fallback");
+              syncAria(el);
+            });
+          });
+        }, true);
+      };
+
+      return { init, syncAria, markSubmitInteraction };
+    })();
+
+    /* ================= 11. 导航与顶部控制 ================= */
+    function switchTab(tabId) {
+      document.querySelectorAll(".tab-btn").forEach((btn) => {
+        btn.classList.toggle("active", btn.dataset.tab === tabId);
+      });
+      document.querySelectorAll(".tab-content").forEach((sec) => {
+        sec.classList.toggle("active", sec.id === `tab-${tabId}`);
+      });
+      sound.playClick();
+    }
+
+    function setupGlobalNav() {
+      document.querySelectorAll(".tab-btn").forEach((btn) => {
+        btn.addEventListener("click", () => switchTab(btn.dataset.tab));
+      });
+
+      const btnPinyin = document.getElementById("btn-toggle-pinyin");
+      btnPinyin.addEventListener("click", () => {
+        const hidden = document.body.classList.toggle("hide-pinyin");
+        btnPinyin.classList.toggle("active", !hidden);
+        btnPinyin.setAttribute("aria-pressed", String(!hidden));
+        btnPinyin.textContent = hidden ? "🔤 拼音：关" : "🔤 拼音：开";
+        sound.playClick();
+      });
+
+      const btnSound = document.getElementById("btn-toggle-sound");
+      btnSound.addEventListener("click", () => {
+        sound.enabled = !sound.enabled;
+        btnSound.classList.toggle("active", sound.enabled);
+        btnSound.setAttribute("aria-pressed", String(sound.enabled));
+        btnSound.textContent = sound.enabled ? "🔊 音效：开" : "🔇 音效：关";
+        if (sound.enabled) sound.playClick();
+      });
+
+      // 点击页面任意 .vocab-word 打开生词卡弹窗
+      document.addEventListener("click", (e) => {
+        const wordEl = e.target.closest(".vocab-word");
+        if (!wordEl) return;
+        const word = wordEl.dataset.word;
+        openVocabDialog(word);
+      });
+    }
+
+    function openVocabDialog(word) {
+      const info = VOCAB_DB[word];
+      if (!info) return;
+      document.getElementById("vocab-dialog-title").textContent = `📖 生词精讲：${word} (${info.pinyin})`;
+      document.getElementById("vocab-dialog-body").innerHTML = `
+        <div style="display:flex; align-items:baseline; gap:10px; margin-bottom:10px;">
+          <span style="font-size:1.8rem; font-weight:800; color:#1E3A8A;">${word}</span>
+          <span style="font-size:1.05rem; font-weight:700; color:#2563EB;">${info.pinyin}</span>
+        </div>
+        <p><strong>中文释义：</strong>${info.meaning}</p>
+        <p><strong>英文对照：</strong>${info.english}</p>
+        <p><strong>考场高频搭配：</strong><span style="background:#EFF6FF; padding:2px 8px; border-radius:6px; font-weight:700;">${info.collocations}</span></p>
+        <div class="sticky-note" style="margin-top:12px;">
+          <strong>⚠️ G1 防错字小贴士：</strong>${info.trap}
+        </div>
+      `;
+      sound.playClick();
+      document.getElementById("vocab-dialog").showModal();
+    }
+
+    /* ================= 12. 模块 1：电邮解剖室 ================= */
+    function renderAnatomyInspector(zoneKey) {
+      const data = ANATOMY_DETAILS[zoneKey];
+      if (!data) return;
+
+      document.querySelectorAll(".anatomy-zone").forEach((btn) => {
+        btn.classList.toggle("active", btn.dataset.zone === zoneKey);
+        if (appState.inspectedZones.has(btn.dataset.zone)) {
+          btn.classList.add("inspected");
+        }
+      });
+
+      document.getElementById("anatomy-inspector").innerHTML = `
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px; margin-bottom:8px;">
+          <h3 style="font-size:1.1rem; font-weight:800; color:var(--primary);">${data.title}</h3>
+          <span style="font-size:0.78rem; font-weight:800; background:#DBEAFE; color:#1E3A8A; padding:3px 10px; border-radius:999px;">
+            📏 位置：${data.align}
+          </span>
+        </div>
+        <p style="font-size:0.92rem; color:#1E293B; line-height:1.6;"><strong>评分规范：</strong>${data.rule}</p>
+        <div class="compare-grid">
+          <div class="compare-card good">
+            <strong>✅ 满分标准写法</strong>
+            <div style="white-space:pre-wrap; margin-top:4px;">${data.good}</div>
+          </div>
+          <div class="compare-card bad">
+            <strong>❌ 常见扣分陷阱</strong>
+            <div style="white-space:pre-wrap; margin-top:4px;">${data.bad}</div>
+          </div>
+        </div>
+        <div class="sticky-note" style="margin-top:12px;">
+          <strong>💡 考场速记：</strong>${data.tip}
+        </div>
+      `;
+    }
+
+    function setupAnatomyModule() {
+      document.querySelectorAll(".anatomy-zone").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const z = btn.dataset.zone;
+          const isNew = !appState.inspectedZones.has(z);
+          appState.inspectedZones.add(z);
+          if (isNew) awardScore(5);
+          else sound.playClick();
+          renderAnatomyInspector(z);
+          updateHUD();
+          if (appState.inspectedZones.size >= 6) {
+            unlockBadge("b1");
+          }
+        });
+      });
+
+      // 百搭句式复制
+      document.querySelectorAll(".copy-chip").forEach((btn) => {
+        btn.addEventListener("click", async () => {
+          const txt = btn.dataset.copy;
+          try {
+            await navigator.clipboard.writeText(txt);
+            showToast("📋 已复制句式！可以到“考场实战写作舱”粘贴使用");
+          } catch (_) {
+            showToast("💡 请选中句式复制，或直接在写作舱使用快捷按钮");
+          }
+          sound.playClick();
+        });
+      });
+
+      renderAnatomyInspector("subject");
+    }
+
+    /* ================= 13. 模块 2：审题拆弹厅 ================= */
+    function renderAnalyzerModule() {
+      const promptBtnsRow = document.getElementById("analyzer-prompt-btns");
+      promptBtnsRow.innerHTML = "";
+      PROMPTS.forEach((p, idx) => {
+        const b = document.createElement("button");
+        b.type = "button";
+        b.className = `btn-secondary ${idx === appState.analyzerPromptIdx ? "active" : ""}`;
+        b.textContent = p.tabLabel;
+        b.addEventListener("click", () => {
+          appState.analyzerPromptIdx = idx;
+          sound.playClick();
+          renderAnalyzerModule();
+        });
+        promptBtnsRow.appendChild(b);
+      });
+
+      const prompt = PROMPTS[appState.analyzerPromptIdx];
+      document.getElementById("analyzer-stimulus-box").innerHTML = `
+        <span class="exam-tag">${prompt.unitTag}</span>
+        <h3 style="font-size:1.05rem; font-weight:800; margin-bottom:6px;">📄 试卷一题目情境</h3>
+        <div class="email-stimulus">${prompt.stimulusHTML}</div>
+        <div style="background:#EFF6FF; border-left:4px solid #2563EB; padding:10px 12px; border-radius:6px; font-size:0.9rem;">
+          <strong>作答要求：</strong>${prompt.instruction}
+        </div>
+        <p style="font-size:0.82rem; color:var(--text-muted); margin-top:8px;">
+          💡 提示：点击文中带有<span class="vocab-word" data-word="${prompt.vocabList[0]}">虚线高亮</span>的单元生词，可查看读音、英文与易错字提醒！
+        </p>
+      `;
+
+      const quizBox = document.getElementById("analyzer-quiz-container");
+      quizBox.innerHTML = "";
+      const savedMap = appState.analyzerAnswers[prompt.id] || {};
+      let allCorrect = true;
+
+      prompt.analyzerSteps.forEach((step, sIdx) => {
+        const stepCard = document.createElement("div");
+        stepCard.className = "quiz-step-card";
+        const h3 = document.createElement("h3");
+        h3.textContent = step.q;
+        stepCard.appendChild(h3);
+
+        const optsDiv = document.createElement("div");
+        optsDiv.className = "quiz-options";
+        const chosenIdx = savedMap[sIdx];
+        if (chosenIdx !== step.correctIdx) allCorrect = false;
+
+        step.options.forEach((optText, oIdx) => {
+          const ob = document.createElement("button");
+          ob.type = "button";
+          ob.className = "quiz-opt-btn";
+          ob.textContent = optText;
+          if (chosenIdx !== undefined) {
+            if (oIdx === step.correctIdx) ob.classList.add("correct");
+            else if (oIdx === chosenIdx) ob.classList.add("wrong");
+          }
+          ob.addEventListener("click", () => {
+            if (!appState.analyzerAnswers[prompt.id]) appState.analyzerAnswers[prompt.id] = {};
+            appState.analyzerAnswers[prompt.id][sIdx] = oIdx;
+            if (oIdx === step.correctIdx) {
+              sound.playCorrect();
+              awardScore(10);
+            } else {
+              sound.playWrong();
+              resetCombo();
+            }
+            renderAnalyzerModule();
+          });
+          optsDiv.appendChild(ob);
+        });
+        stepCard.appendChild(optsDiv);
+
+        if (chosenIdx !== undefined) {
+          const exp = document.createElement("p");
+          exp.style.cssText = `margin-top:8px; font-size:0.85rem; font-weight:700; color:${chosenIdx === step.correctIdx ? "#166534" : "#991B1B"};`;
+          exp.textContent = (chosenIdx === step.correctIdx ? "✅ 解析：" : "⚠️ 再看题目：") + step.explain;
+          stepCard.appendChild(exp);
+        }
+
+        quizBox.appendChild(stepCard);
+      });
+
+      const completeBox = document.getElementById("analyzer-complete-note");
+      if (allCorrect) {
+        completeBox.style.display = "block";
+        unlockBadge("b2");
+      } else {
+        completeBox.style.display = "none";
+      }
+    }
+
+    function setupAnalyzerModule() {
+      document.getElementById("btn-go-studio-from-analyzer").addEventListener("click", () => {
+        const p = PROMPTS[appState.analyzerPromptIdx];
+        appState.studioPromptId = p.id;
+        renderStudioModule();
+        switchTab("studio");
+        showToast(`🚀 已为你载入【${p.tabLabel}】！`);
+      });
+      renderAnalyzerModule();
+    }
+
+    /* ================= 14. 模块 3：病邮急诊室 + 黄金三步扩写机 ================= */
+    function renderDoctorDrill() {
+      const idx = appState.doctorIdx;
+      const item = DOCTOR_CASES[idx];
+      document.getElementById("doctor-progress-pill").textContent = `第 ${idx + 1} / ${DOCTOR_CASES.length} 题（已对 ${appState.doctorCorrectCount} 题）`;
+
+      const container = document.getElementById("doctor-case-container");
+      const chosen = appState.doctorAnswered[idx];
+
+      let optsHtml = "";
+      item.options.forEach((opt, oIdx) => {
+        let cls = "quiz-opt-btn";
+        if (chosen !== undefined) {
+          if (oIdx === item.correctIdx) cls += " correct";
+          else if (oIdx === chosen) cls += " wrong";
+        }
+        optsHtml += `<button type="button" class="${cls}" data-doc-opt="${oIdx}">${opt}</button>`;
+      });
+
+      container.innerHTML = `
+        <h3 style="font-size:1.04rem; font-weight:800; color:var(--primary);">${item.title}</h3>
+        <div class="snippet-box">${escapeHtml(item.snippet)}</div>
+        <p style="font-weight:800; font-size:0.94rem; margin-bottom:8px;">${item.question}</p>
+        <div class="quiz-options">${optsHtml}</div>
+        ${chosen !== undefined ? `
+          <div class="sticky-note" style="margin-top:12px;">
+            <strong>${chosen === item.correctIdx ? "✅ 诊断准确！" : "⚠️ 诊断有误："}</strong>${item.explanation}
+          </div>
+        ` : ""}
+        <div style="display:flex; justify-content:space-between; margin-top:14px; gap:10px;">
+          <button type="button" class="btn-secondary" id="btn-doc-prev" ${idx === 0 ? "disabled" : ""}>⬅️ 上一题</button>
+          <button type="button" class="btn-primary" id="btn-doc-next">${idx === DOCTOR_CASES.length - 1 ? "🔄 回到第 1 题" : "下一题 ➡️"}</button>
+        </div>
+      `;
+
+      container.querySelectorAll("[data-doc-opt]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const oIdx = Number(btn.dataset.docOpt);
+          const alreadyCorrect = appState.doctorAnswered[idx] === item.correctIdx;
+          appState.doctorAnswered[idx] = oIdx;
+          if (oIdx === item.correctIdx) {
+            sound.playCorrect();
+            if (!alreadyCorrect) {
+              appState.doctorCorrectCount += 1;
+              awardScore(15);
+            }
+            if (appState.doctorCorrectCount >= 5) unlockBadge("b3");
+          } else {
+            sound.playWrong();
+            resetCombo();
+          }
+          renderDoctorDrill();
+        });
+      });
+
+      document.getElementById("btn-doc-prev").addEventListener("click", () => {
+        if (appState.doctorIdx > 0) {
+          appState.doctorIdx -= 1;
+          sound.playClick();
+          renderDoctorDrill();
+        }
+      });
+
+      document.getElementById("btn-doc-next").addEventListener("click", () => {
+        appState.doctorIdx = (appState.doctorIdx + 1) % DOCTOR_CASES.length;
+        sound.playClick();
+        renderDoctorDrill();
+      });
+    }
+
+    function renderExpanderBuilder() {
+      const topicRow = document.getElementById("expander-topic-btns");
+      topicRow.innerHTML = "";
+      EXPANDER_CHALLENGES.forEach((ch, idx) => {
+        const b = document.createElement("button");
+        b.type = "button";
+        b.className = `btn-secondary ${idx === appState.expanderIdx ? "active" : ""}`;
+        b.textContent = ch.label;
+        b.addEventListener("click", () => {
+          appState.expanderIdx = idx;
+          sound.playClick();
+          renderExpanderBuilder();
+        });
+        topicRow.appendChild(b);
+      });
+
+      const ch = EXPANDER_CHALLENGES[appState.expanderIdx];
+      const s1 = ch.step1[appState.expanderSelections[0]];
+      const s2 = ch.step2[appState.expanderSelections[1]];
+      const s3 = ch.step3[appState.expanderSelections[2]];
+      const combined = `　　${s1}${s2}${s3}`;
+      const charCount = countChineseChars(combined);
+
+      const box = document.getElementById("expander-builder-container");
+      box.innerHTML = `
+        <div style="background:#FEF2F2; border:1.5px solid #FCA5A5; border-radius:10px; padding:10px 12px; font-size:0.88rem; color:#991B1B; margin-bottom:12px;">
+          ${ch.weakSentence}
+        </div>
+        ${renderSlotGroup("① 第一步：回应表态（先说观点或主题）", ch.step1, 0)}
+        ${renderSlotGroup("② 第二步：具体事实或做法（用连接词＋生词）", ch.step2, 1)}
+        ${renderSlotGroup("③ 第三步：好处、原因或感受（升华加分句）", ch.step3, 2)}
+
+        <div class="expanded-preview">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:6px;">
+            <strong style="color:#166534;">✨ 合成的高分段落（约 ${charCount} 字！）</strong>
+            <button type="button" class="btn-primary" id="btn-copy-expanded" style="padding:5px 12px; font-size:0.82rem;">📋 复制这段高分扩写</button>
+          </div>
+          <p>${escapeHtml(combined)}</p>
+        </div>
+      `;
+
+      box.querySelectorAll("[data-slot-step]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const stepIdx = Number(btn.dataset.slotStep);
+          const optIdx = Number(btn.dataset.slotOpt);
+          appState.expanderSelections[stepIdx] = optIdx;
+          sound.playCorrect();
+          awardScore(5);
+          unlockBadge("b4");
+          renderExpanderBuilder();
+        });
+      });
+
+      document.getElementById("btn-copy-expanded").addEventListener("click", async () => {
+        try {
+          await navigator.clipboard.writeText(combined);
+          showToast("📋 已复制高分扩写段落！");
+        } catch (_) {
+          showToast("💡 扩写思路已生成，可直接参考结构写进写作舱！");
+        }
+        unlockBadge("b4");
+        sound.playFanfare();
+      });
+    }
+
+    function renderSlotGroup(title, choices, stepIndex) {
+      let btns = "";
+      choices.forEach((text, i) => {
+        const selected = appState.expanderSelections[stepIndex] === i ? "selected" : "";
+        btns += `<button type="button" class="slot-btn ${selected}" data-slot-step="${stepIndex}" data-slot-opt="${i}">${text}</button>`;
+      });
+      return `
+        <div class="builder-slot">
+          <span class="builder-slot-label">${title}</span>
+          <div class="slot-choices">${btns}</div>
+        </div>
+      `;
+    }
+
+    /* ================= 15. 模块 4：考场实战写作舱 ================= */
+    function getAllPrompts() {
+      return [...PROMPTS, ...appState.customPrompts];
+    }
+
+    function getCurrentPrompt() {
+      return getAllPrompts().find((p) => p.id === appState.studioPromptId) || PROMPTS[0];
+    }
+
+    function countChineseChars(text) {
+      const matches = text.match(/[\u4e00-\u9fff]/g);
+      return matches ? matches.length : 0;
+    }
+
+    function insertAtCursor(textarea, textToInsert) {
+      const start = textarea.selectionStart ?? textarea.value.length;
+      const end = textarea.selectionEnd ?? textarea.value.length;
+      const val = textarea.value;
+      textarea.value = val.slice(0, start) + textToInsert + val.slice(end);
+      const nextPos = start + textToInsert.length;
+      textarea.focus();
+      textarea.setSelectionRange(nextPos, nextPos);
+      textarea.dispatchEvent(new Event("input", { bubbles: true }));
+    }
+
+    function renderStudioModule() {
+      const prompt = getCurrentPrompt();
+      const allPrompts = getAllPrompts();
+
+      // 考题按钮组
+      const promptBar = document.getElementById("studio-prompt-btns");
+      promptBar.innerHTML = "";
+      allPrompts.forEach((p) => {
+        const b = document.createElement("button");
+        b.type = "button";
+        b.className = `btn-secondary ${p.id === prompt.id ? "active" : ""}`;
+        b.textContent = p.tabLabel;
+        b.addEventListener("click", () => {
+          appState.studioPromptId = p.id;
+          sound.playClick();
+          renderStudioModule();
+        });
+        promptBar.appendChild(b);
+      });
+
+      const addCustomBtn = document.createElement("button");
+      addCustomBtn.type = "button";
+      addCustomBtn.className = "btn-secondary";
+      addCustomBtn.textContent = "➕ 自定义考题";
+      addCustomBtn.addEventListener("click", () => {
+        sound.playClick();
+        document.getElementById("custom-prompt-dialog").showModal();
+      });
+      promptBar.appendChild(addCustomBtn);
+
+      // 支架模式切换
+      document.querySelectorAll("#studio-tier-btns button").forEach((btn) => {
+        btn.classList.toggle("active", btn.dataset.tier === appState.studioTier);
+      });
+      document.getElementById("guided-scaffold-panel").style.display = appState.studioTier === "guided" ? "flex" : "none";
+      document.getElementById("studio-quick-panel").style.display = appState.studioTier === "exam" ? "none" : "block";
+
+      // 左侧题目卡片
+      document.getElementById("studio-prompt-card").innerHTML = `
+        <span class="exam-tag">${prompt.unitTag}</span>
+        <h3 style="font-size:1rem; font-weight:800; margin-bottom:6px;">📝 题目要求与得分点</h3>
+        <div class="email-stimulus" style="font-size:0.88rem; padding:10px 12px;">${prompt.stimulusHTML}</div>
+        <div style="display:flex; flex-direction:column; gap:6px; font-size:0.85rem;">
+          <div id="live-task1-status" style="padding:6px 9px; border-radius:8px; background:#EFF6FF; border:1px solid #93C5FD;">
+            🔵 <strong>${prompt.task1Label}</strong>：<span class="t-status">待写作检测</span>
+          </div>
+          <div id="live-task2-status" style="padding:6px 9px; border-radius:8px; background:#FEF3C7; border:1px solid #FCD34D;">
+            🟡 <strong>${prompt.task2Label}</strong>：<span class="t-status">待写作检测</span>
+          </div>
+        </div>
+      `;
+
+      // 左侧词语胶囊
+      const vocabBox = document.getElementById("studio-vocab-chips");
+      vocabBox.innerHTML = "";
+      prompt.vocabList.forEach((word) => {
+        const b = document.createElement("button");
+        b.type = "button";
+        b.className = "vocab-insert-btn";
+        b.dataset.vocabWord = word;
+        b.textContent = word;
+        b.addEventListener("click", () => {
+          const editor = document.getElementById("email-body");
+          insertAtCursor(editor, word);
+          sound.playClick();
+        });
+        vocabBox.appendChild(b);
+      });
+
+      // 元信息
+      document.getElementById("meta-sender-display").textContent = `${prompt.senderName} <${prompt.senderEmail}>`;
+      document.getElementById("meta-recipient-display").textContent = `${prompt.recipientName} <${prompt.recipientEmail}>`;
+
+      // 更新扶手引导 placeholder
+      if (prompt.guidedStarters) {
+        document.getElementById("g-salutation").placeholder = `例如：${prompt.guidedStarters.salutation}`;
+        document.getElementById("g-greeting").placeholder = `例如：${prompt.guidedStarters.greeting}`;
+        document.getElementById("g-task1").placeholder = `示范思路：${prompt.guidedStarters.task1}`;
+        document.getElementById("g-task2").placeholder = `示范思路：${prompt.guidedStarters.task2}`;
+      }
+
+      runLiveDiagnostics();
+    }
+
+    function runLiveDiagnostics() {
+      const prompt = getCurrentPrompt();
+      const subject = document.getElementById("email-subject").value.trim();
+      const body = document.getElementById("email-body").value;
+
+      // 字数统计
+      const hanziCount = countChineseChars(body);
+      const wcBadge = document.getElementById("word-count-badge");
+      wcBadge.textContent = `当前有效汉字：${hanziCount} 字（目标 ≥80 字）`;
+      wcBadge.classList.toggle("ready", hanziCount >= 80);
+
+      // 词汇点亮
+      document.querySelectorAll("#studio-vocab-chips .vocab-insert-btn").forEach((btn) => {
+        const w = btn.dataset.vocabWord;
+        const used = body.includes(w);
+        btn.classList.toggle("used", used);
+        btn.textContent = used ? `✅ ${w}` : w;
+      });
+
+      // 6 项格式实时检查
+      const lines = body.split(/\r?\n/).map((l) => l.replace(/\s+$/, ""));
+      const nonEmptyLines = lines.filter((l) => l.trim().length > 0);
+      const firstLine = nonEmptyLines[0] || "";
+      const lastLine = nonEmptyLines[nonEmptyLines.length - 1] || "";
+
+      const hasSubject = subject.length >= 3 && (prompt.mode !== "reply" || subject.startsWith("回复"));
+      const salutationOk = /^[^\s　]{1,5}[:：]$/.test(firstLine) && !firstLine.includes(" ");
+      const hasGreeting = /(你好|好久不见|收到你的电邮|写这封电邮)/.test(body);
+      const indentedParas = nonEmptyLines.filter((l) => /^(　　| {2,4})/.test(l)).length;
+      const paragraphsOk = indentedParas >= 3;
+      const hasClosing = /(祝|学业进步|生活愉快|身体健康|早日康复|祝好)/.test(body);
+      const signatureOk = lastLine.length >= 1 && lastLine.length <= 4 && !/^(　| )/.test(lastLine) && !/[。！.!？?]$/.test(lastLine);
+
+      setCheckChip("chk-subject", hasSubject, "主题栏");
+      setCheckChip("chk-salutation", salutationOk, "称呼顶格+冒号");
+      setCheckChip("chk-greeting", hasGreeting, "开头问候");
+      setCheckChip("chk-paragraphs", paragraphsOk, "双任务分段");
+      setCheckChip("chk-closing", hasClosing, "结束语+祝语");
+      setCheckChip("chk-signature", signatureOk, "署名顶格去姓");
+
+      // 任务一 & 任务二实时雷达
+      const t1Hits = prompt.task1Keywords.filter((k) => body.includes(k)).length;
+      const t2Hits = prompt.task2Keywords.filter((k) => body.includes(k)).length;
+      const t1El = document.querySelector("#live-task1-status .t-status");
+      const t2El = document.querySelector("#live-task2-status .t-status");
+      if (t1El) {
+        t1El.textContent = t1Hits >= 2 ? `✅ 已覆盖（检测到 ${t1Hits} 个相关要点词）` : "待补充具体内容";
+      }
+      if (t2El) {
+        t2El.textContent = t2Hits >= 2 ? `✅ 已覆盖（检测到 ${t2Hits} 个相关要点词）` : "待补充具体内容";
+      }
+
+      // 错别字预警雷达
+      const foundTypos = detectTypos(body);
+      const engWords = body.match(/[A-Za-z]{3,}/g) || [];
+      const typoBar = document.getElementById("typo-alert-bar");
+      if (foundTypos.length > 0 || engWords.length > 0) {
+        const msgs = foundTypos.map((tp) => `发现易错词【${tp.wrong}】→ 应为【${tp.right}】（${tp.tip}）`);
+        if (engWords.length > 0) {
+          msgs.push(`检测到英文单词（${engWords.slice(0, 3).join(", ")}），考场实用文请尽量使用规范华文！`);
+        }
+        typoBar.innerHTML = `⚠️ <strong>考场错字防坑雷达：</strong><br>${msgs.join("<br>")}`;
+        typoBar.classList.add("show");
+      } else {
+        typoBar.classList.remove("show");
+      }
+    }
+
+    function setCheckChip(id, passed, label) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.classList.toggle("pass", passed);
+      el.textContent = `${passed ? "✅" : "○"} ${label}`;
+    }
+
+    /* ================= 16. 20 分制 MOE 评分引擎 ================= */
+    function evaluateStudentEmail() {
+      const prompt = getCurrentPrompt();
+      const subject = document.getElementById("email-subject").value.trim();
+      const body = document.getElementById("email-body").value;
+      const hanziCount = countChineseChars(body);
+
+      const lines = body.split(/\r?\n/).map((l) => l.replace(/\s+$/, ""));
+      const nonEmptyLines = lines.filter((l) => l.trim().length > 0);
+      const firstLine = nonEmptyLines[0] || "";
+      const lastLine = nonEmptyLines[nonEmptyLines.length - 1] || "";
+
+      // --- A. 内容分（满分 10 分） ---
+      const t1Hits = prompt.task1Keywords.filter((k) => body.includes(k));
+      const t2Hits = prompt.task2Keywords.filter((k) => body.includes(k));
+
+      let task1Score = t1Hits.length >= 3 ? 4 : t1Hits.length === 2 ? 3 : t1Hits.length === 1 ? 2 : 0;
+      let task2Score = t2Hits.length >= 3 ? 4 : t2Hits.length === 2 ? 3 : t2Hits.length === 1 ? 2 : 0;
+      let lengthScore = hanziCount >= 80 ? 2 : hanziCount >= 55 ? 1 : 0;
+      const contentTotal = Math.min(10, task1Score + task2Score + lengthScore);
+
+      // --- B. 语文与结构格式分（满分 10 分） ---
+      const checks = [
+        {
+          name: "① 主题栏",
+          pass: prompt.mode === "reply" ? (subject.startsWith("回复") && subject.length >= 4) : subject.length >= 3,
+          tip: prompt.mode === "reply" ? `回复电邮应写“${prompt.expectedSubject}”` : "请写明写这封电邮的事由"
+        },
+        {
+          name: "② 称呼（顶格＋中文冒号＋去姓）",
+          pass: /^[^\s　]{1,5}：$/.test(firstLine) && firstLine.length <= 5,
+          tip: `第一行应靠左顶格写“${prompt.recipientName}：”（不能空两格，用中文冒号，不带姓氏）`
+        },
+        {
+          name: "③ 开头问候与点题",
+          pass: /(你好|好久不见|收到你的电邮|近来)/.test(body),
+          tip: "应在称呼下一行空两格问候（如：你好！收到你的电邮……）"
+        },
+        {
+          name: "④ 正文分段与缩进",
+          pass: nonEmptyLines.filter((l) => /^(　　| {2,4})/.test(l)).length >= 3,
+          tip: "建议分成“开头段＋任务一段＋任务二段＋结尾段”，每段开头空两格（　　）"
+        },
+        {
+          name: "⑤ 结尾结束语与祝语",
+          pass: /(祝|学业进步|生活愉快|身体健康|早日康复|祝好)/.test(body),
+          tip: `正文后需加结束语，另起一行空两格写“祝”，下一行顶格写“${prompt.wishSuggestion}”`
+        },
+        {
+          name: "⑥ 署名（靠左顶格去姓）",
+          pass: lastLine.length >= 1 && lastLine.length <= 4 && !/^(　| )/.test(lastLine) && !/[。！.!？?]$/.test(lastLine) && lastLine.includes(prompt.senderName),
+          tip: `最后一行应靠左顶格只写名字“${prompt.senderName}”，不加标点也不写日期`
+        }
+      ];
+
+      const passedFormats = checks.filter((c) => c.pass).length;
+      const formatScore = Math.round((passedFormats / 6) * 5);
+
+      const usedVocab = prompt.vocabList.filter((v) => body.includes(v));
+      const usedConnectors = prompt.connectors.filter((c) => {
+        if (c.includes("……")) {
+          const parts = c.split("……").filter(Boolean);
+          return parts.every((pt) => body.includes(pt));
+        }
+        return body.includes(c);
+      });
+      const vocabConnCount = usedVocab.length + usedConnectors.length;
+      const vocabScore = vocabConnCount >= 5 ? 3 : vocabConnCount >= 3 ? 2 : vocabConnCount >= 1 ? 1 : 0;
+
+      const foundTypos = detectTypos(body);
+      const engWords = body.match(/[A-Za-z]{3,}/g) || [];
+      let orthoScore = 2;
+      if (foundTypos.length > 0 || engWords.length > 0) orthoScore = 1;
+      if (foundTypos.length >= 2 || engWords.length >= 3) orthoScore = 0;
+
+      const langTotal = Math.min(10, formatScore + vocabScore + orthoScore);
+      const totalScore = contentTotal + langTotal;
+
+      let band = "D 待加强（建议用扶手填空模式再练一次）";
+      if (totalScore >= 17) band = "A 优异（达到中学 G1 高分水准！）";
+      else if (totalScore >= 14) band = "B 良好（格式规范，内容完整）";
+      else if (totalScore >= 10) band = "C 及格（请补足字数或修正格式问题）";
+
+      const result = {
+        promptId: prompt.id,
+        promptLabel: prompt.tabLabel,
+        subject,
+        body,
+        hanziCount,
+        contentTotal,
+        task1Score,
+        task2Score,
+        lengthScore,
+        langTotal,
+        formatScore,
+        vocabScore,
+        orthoScore,
+        totalScore,
+        band,
+        checks,
+        usedVocab,
+        usedConnectors,
+        foundTypos,
+        engWords,
+        timestamp: new Date().toLocaleString("zh-SG")
+      };
+
+      appState.lastEvaluation = result;
+      showRubricDialog(result, prompt);
+
+      if (totalScore >= 14) {
+        awardScore(30);
+        unlockBadge("b5");
+      } else {
+        awardScore(10);
+      }
+    }
+
+    function showRubricDialog(res, prompt) {
+      const checksRows = res.checks.map((c) => `
+        <tr>
+          <td><strong>${c.name}</strong></td>
+          <td style="color:${c.pass ? "#166534" : "#991B1B"}; font-weight:800;">${c.pass ? "✅ 符合规范" : "⚠️ 需修改"}</td>
+          <td>${c.pass ? "格式正确" : c.tip}</td>
+        </tr>
+      `).join("");
+
+      const typoSummary = res.foundTypos.length === 0 && res.engWords.length === 0
+        ? "✅ 未检测到常见错别字或中英夹杂，卷面很整洁！"
+        : [
+            ...res.foundTypos.map((t) => `❌ 【${t.wrong}】→ 应改写为【${t.right}】（${t.tip}）`),
+            ...(res.engWords.length ? [`⚠️ 夹杂了英文单词（${res.engWords.join(", ")}），请改用规范华文。`] : [])
+          ].join("<br>");
+
+      document.getElementById("rubric-dialog-body").innerHTML = `
+        <div style="background:linear-gradient(135deg,#EFF6FF 0%,#FEF9C3 100%); border:2px solid #334155; border-radius:14px; padding:14px 16px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+          <div>
+            <div style="font-size:0.86rem; font-weight:700; color:#475569;">综合评级：${res.band}</div>
+            <div style="font-size:1.7rem; font-weight:900; color:#1E3A8A;">总分：${res.totalScore} / 20 分</div>
+          </div>
+          <div style="font-size:0.9rem; font-weight:700; display:flex; gap:12px; flex-wrap:wrap;">
+            <span>📝 内容分：<strong>${res.contentTotal} / 10</strong>（任务一 ${res.task1Score}/4 · 任务二 ${res.task2Score}/4 · 字数 ${res.lengthScore}/2）</span>
+            <span>📐 语文与格式：<strong>${res.langTotal} / 10</strong>（格式 ${res.formatScore}/5 · 词句 ${res.vocabScore}/3 · 错字 ${res.orthoScore}/2）</span>
+          </div>
+        </div>
+
+        <h3 style="margin-top:14px; font-size:1rem; font-weight:800; color:#1E3A8A;">📋 1. 私人电邮 6 项格式体检表</h3>
+        <table class="rubric-table">
+          <thead>
+            <tr><th>格式项目</th><th>状态</th><th>修改建议</th></tr>
+          </thead>
+          <tbody>${checksRows}</tbody>
+        </table>
+
+        <div class="sticky-note" style="margin-top:10px;">
+          <strong>🔎 2. 用词与错别字检查（有效汉字：${res.hanziCount} 字）：</strong><br>
+          已运用单元核心词（${res.usedVocab.length} 个）：${res.usedVocab.length ? res.usedVocab.join("、") : "暂无（建议多加入绿色胶囊里的生词）"}<br>
+          已运用连接词/句式（${res.usedConnectors.length} 个）：${res.usedConnectors.length ? res.usedConnectors.join("、") : "暂无（建议加上首先、其次、因为、为了等）"}<br>
+          ${typoSummary}
+        </div>
+
+        <h3 style="margin-top:14px; font-size:1rem; font-weight:800; color:#1E3A8A;">⚖️ 3. 我的作文 vs G1 高分范文对照</h3>
+        <div class="rubric-split">
+          <div>
+            <strong style="font-size:0.88rem; color:#475569;">✍️ 我的作答（主题：${escapeHtml(res.subject)}）</strong>
+            <div class="model-compare-box" style="margin-top:4px;">${escapeHtml(res.body)}</div>
+          </div>
+          <div>
+            <strong style="font-size:0.88rem; color:#166534;">🌟 官方标准高分范文参考</strong>
+            <div class="model-compare-box" style="margin-top:4px; background:#F0FDF4; border-color:#86EFAC;">${escapeHtml(prompt.modelEmail || "（自定义考题无预设范文，请对照上方 6 项格式检查表与两大任务要求自查。）")}</div>
+          </div>
+        </div>
+      `;
+
+      sound.playFanfare();
+      document.getElementById("rubric-dialog").showModal();
+    }
+
+    function setupStudioModule() {
+      // 支架模式切换
+      document.querySelectorAll("#studio-tier-btns button").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          appState.studioTier = btn.dataset.tier;
+          sound.playClick();
+          renderStudioModule();
+        });
+      });
+
+      // 快捷插入按钮
+      document.querySelectorAll(".quick-insert-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const prompt = getCurrentPrompt();
+          const editor = document.getElementById("email-body");
+          const kind = btn.dataset.insertType;
+          let snippet = "";
+          if (kind === "salutation") snippet = `${prompt.recipientName}：\n`;
+          else if (kind === "indent") snippet = "　　";
+          else if (kind === "greeting") snippet = "　　你好！收到你的电邮，我感到很高兴。我写这封电邮是想和你分享我的看法。\n\n";
+          else if (kind === "connector") snippet = "首先，……；其次，……。因为……，所以……。";
+          else if (kind === "closing") snippet = `\n　　时间不早了，我就写到这里。希望早日收到你的回邮！\n　　祝\n${prompt.wishSuggestion}\n`;
+          else if (kind === "signature") snippet = `${prompt.senderName}`;
+          insertAtCursor(editor, snippet);
+          sound.playClick();
+        });
+      });
+
+      // 扶手填空一键合成
+      document.getElementById("btn-assemble-guided").addEventListener("click", () => {
+        const prompt = getCurrentPrompt();
+        const sal = document.getElementById("g-salutation").value.trim().replace(/[:：]+$/, "") || prompt.recipientName;
+        const greet = document.getElementById("g-greeting").value.trim() || prompt.guidedStarters?.greeting || "你好！近来好吗？今天写信想和你分享我的看法。";
+        const t1 = document.getElementById("g-task1").value.trim() || prompt.guidedStarters?.task1 || "";
+        const t2 = document.getElementById("g-task2").value.trim() || prompt.guidedStarters?.task2 || "";
+        const close = document.getElementById("g-closing").value.trim() || "时间不早了，我就写到这里。希望早日收到你的回邮！";
+
+        if (!document.getElementById("email-subject").value.trim()) {
+          document.getElementById("email-subject").value = prompt.expectedSubject;
+          document.getElementById("email-subject").dispatchEvent(new Event("input", { bubbles: true }));
+        }
+
+        const assembled = [
+          `${sal}：`,
+          `　　${greet}`,
+          "",
+          `　　${t1}`,
+          "",
+          `　　${t2}`,
+          "",
+          `　　${close}`,
+          "　　祝",
+          `${prompt.wishSuggestion}`,
+          `${prompt.senderName}`
+        ].join("\n");
+
+        const editor = document.getElementById("email-body");
+        editor.value = assembled;
+        editor.dispatchEvent(new Event("input", { bubbles: true }));
+        sound.playFanfare();
+        showToast("✨ 已合成格式完整的电邮！请检查并修改成你自己的语言");
+      });
+
+      // 填入示范草稿按钮（帮助学生先体会批改或在此基础上修改）
+      document.getElementById("btn-load-sample-draft").addEventListener("click", () => {
+        const prompt = getCurrentPrompt();
+        document.getElementById("email-subject").value = prompt.expectedSubject;
+        document.getElementById("email-subject").dispatchEvent(new Event("input", { bubbles: true }));
+
+        const lines = (prompt.modelEmail || "").split(/\r?\n/);
+        // 去掉范文首行“主题：...”以及随后的空行
+        const bodyOnly = lines.slice(2).join("\n");
+        const editor = document.getElementById("email-body");
+        editor.value = bodyOnly;
+        editor.dispatchEvent(new Event("input", { bubbles: true }));
+        sound.playClick();
+        showToast("📄 已载入示范范文，可以尝试修改或直接点击批阅打分！");
+      });
+
+      // 清空重写
+      document.getElementById("btn-clear-draft").addEventListener("click", () => {
+        document.getElementById("email-subject").value = "";
+        document.getElementById("email-body").value = "";
+        runLiveDiagnostics();
+        sound.playClick();
+      });
+
+      // 实时监听输入
+      document.getElementById("email-subject").addEventListener("input", runLiveDiagnostics);
+      document.getElementById("email-body").addEventListener("input", runLiveDiagnostics);
+
+      // 表单提交与评分
+      const form = document.getElementById("email-composer-form");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        ValidationController.markSubmitInteraction(form);
+        if (!form.checkValidity()) {
+          const firstInvalid = form.querySelector(":invalid");
+          if (firstInvalid) firstInvalid.focus();
+          sound.playWrong();
+          showToast("⚠️ 请先按红色提示填写电邮主题并写满至少 60 字正文！");
+          return;
+        }
+        evaluateStudentEmail();
+      });
+
+      // 25 分钟考场计时器
+      const timerDisplay = document.getElementById("exam-timer-display");
+      const timerBtn = document.getElementById("btn-timer-toggle");
+      const updateTimerText = () => {
+        const m = String(Math.floor(appState.timerSeconds / 60)).padStart(2, "0");
+        const s = String(appState.timerSeconds % 60).padStart(2, "0");
+        timerDisplay.textContent = `${m}:${s}`;
+      };
+      timerBtn.addEventListener("click", () => {
+        if (appState.timerRunning) {
+          clearInterval(appState.timerInterval);
+          appState.timerRunning = false;
+          timerBtn.textContent = "继续";
+        } else {
+          appState.timerRunning = true;
+          timerBtn.textContent = "暂停";
+          appState.timerInterval = setInterval(() => {
+            if (appState.timerSeconds > 0) {
+              appState.timerSeconds -= 1;
+              updateTimerText();
+            } else {
+              clearInterval(appState.timerInterval);
+              appState.timerRunning = false;
+              timerBtn.textContent = "开始";
+              sound.playFanfare();
+              showToast("⏰ 25 分钟考场模拟时间到！请点击提交批阅。");
+            }
+          }, 1000);
+        }
+      });
+      document.getElementById("btn-timer-reset").addEventListener("click", () => {
+        clearInterval(appState.timerInterval);
+        appState.timerRunning = false;
+        appState.timerSeconds = 25 * 60;
+        timerBtn.textContent = "开始";
+        updateTimerText();
+      });
+
+      // 自定义考题表单提交
+      const customForm = document.getElementById("custom-prompt-form");
+      customForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        ValidationController.markSubmitInteraction(customForm);
+        if (!customForm.checkValidity()) {
+          const firstInvalid = customForm.querySelector(":invalid");
+          if (firstInvalid) firstInvalid.focus();
+          sound.playWrong();
+          return;
+        }
+
+        const title = document.getElementById("cp-title").value.trim();
+        const mode = document.getElementById("cp-mode").value;
+        const sender = document.getElementById("cp-sender").value.trim();
+        const recipient = document.getElementById("cp-recipient").value.trim();
+        const origSub = document.getElementById("cp-subject").value.trim();
+        const t1 = document.getElementById("cp-task1").value.trim();
+        const t2 = document.getElementById("cp-task2").value.trim();
+
+        const newId = `custom_${Date.now()}`;
+        const newPrompt = {
+          id: newId,
+          tabLabel: `📌 ${title}`,
+          mode,
+          unitTag: "自定义考题（师生自编实用文）",
+          senderName: sender,
+          senderEmail: "student@school.edu.sg",
+          recipientName: recipient,
+          recipientEmail: "friend@mail.sg",
+          originalSubject: origSub,
+          expectedSubject: mode === "reply" ? `回复：${origSub}` : origSub,
+          wishSuggestion: "学业进步！",
+          stimulusHTML: `
+            <p><strong>原主题：</strong>${escapeHtml(origSub)}</p>
+            <p><span class="task-badge-1">【任务一】</span>${escapeHtml(t1)}</p>
+            <p><span class="task-badge-2">【任务二】</span>${escapeHtml(t2)}</p>
+          `,
+          instruction: `请以 ${sender} 的身份写一封私人电邮给 ${recipient}，完整回应任务一和任务二，字数 80 字以上。`,
+          task1Label: `任务一：${t1}`,
+          task2Label: `任务二：${t2}`,
+          task1Keywords: [t1.slice(0, 2), "首先", "因为", "每天", "可以", "觉得", "认为"],
+          task2Keywords: [t2.slice(0, 2), "其次", "建议", "希望", "好处", "应该", "一起"],
+          vocabList: ["确保", "避免", "贡献", "烦恼", "计划", "珍惜", "克服"],
+          connectors: ["首先", "其次", "然后", "最后", "因为", "所以", "为了"],
+          guidedStarters: {
+            salutation: recipient,
+            greeting: "你好！近来好吗？我写这封电邮是想和你分享我的想法。",
+            task1: `关于${t1}，我想先说……`,
+            task2: `另外，关于${t2}，我认为……`
+          },
+          modelEmail: ""
+        };
+
+        appState.customPrompts.push(newPrompt);
+        appState.studioPromptId = newId;
+        saveProgress();
+        document.getElementById("custom-prompt-dialog").close();
+        customForm.reset();
+        renderStudioModule();
+        sound.playFanfare();
+        showToast(`✅ 已添加自定义考题【${title}】！`);
+      });
+
+      // 批阅弹窗按钮
+      document.getElementById("btn-save-to-portfolio").addEventListener("click", saveCurrentEvaluationToPortfolio);
+      document.getElementById("btn-print-report").addEventListener("click", () => window.print());
+
+      renderStudioModule();
+    }
+
+    /* ================= 17. 模块 5：勋章与作品集 ================= */
+    function renderBadgesGrid() {
+      const container = document.getElementById("badges-grid-container");
+      container.innerHTML = BADGE_DEFS.map((b) => {
+        const unlocked = appState.badges.has(b.id);
+        return `
+          <div class="badge-card ${unlocked ? "unlocked" : ""}">
+            <div class="badge-emoji">${unlocked ? b.emoji : "🔒"}</div>
+            <div class="badge-title">${b.title}</div>
+            <div class="badge-desc">${b.desc}</div>
+            <div style="margin-top:8px; font-size:0.78rem; font-weight:800; color:${unlocked ? "#166534" : "#64748B"};">
+              ${unlocked ? "✅ 已获得" : "待解锁"}
+            </div>
+          </div>
+        `;
+      }).join("");
+    }
+
+    function getSavedPortfolio() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY_PORTFOLIO);
+        return raw ? JSON.parse(raw) : [];
+      } catch (_) {
+        return [];
+      }
+    }
+
+    function saveCurrentEvaluationToPortfolio() {
+      if (!appState.lastEvaluation) return;
+      const list = getSavedPortfolio();
+      list.unshift({ ...appState.lastEvaluation, savedId: Date.now() });
+      try {
+        localStorage.setItem(STORAGE_KEY_PORTFOLIO, JSON.stringify(list.slice(0, 20)));
+        renderPortfolioList();
+        showToast("💾 已保存到“勋章与作品集”！");
+        sound.playCorrect();
+      } catch (_) {
+        showToast("⚠️ 本地保存失败（可能浏览器禁用存储）");
+      }
+    }
+
+    function renderPortfolioList() {
+      const container = document.getElementById("portfolio-list-container");
+      const list = getSavedPortfolio();
+      if (list.length === 0) {
+        container.innerHTML = `
+          <div class="sticky-note">
+            目前还没有保存的作品！请先到 <strong>💻 考场实战写作舱</strong> 完成一封电邮并点击“提交批阅打分”，再保存到作品集吧。
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = "";
+      list.forEach((item) => {
+        const div = document.createElement("div");
+        div.className = "portfolio-item";
+        div.innerHTML = `
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:8px;">
+            <div>
+              <strong style="color:var(--primary); font-size:1rem;">📧 ${escapeHtml(item.subject)}</strong>
+              <span style="font-size:0.8rem; color:var(--text-muted); margin-left:8px;">${escapeHtml(item.promptLabel)} · ${escapeHtml(item.timestamp)}</span>
+            </div>
+            <span class="stat-pill points">得分：${item.totalScore} / 20（${item.hanziCount} 字）</span>
+          </div>
+          <div class="model-compare-box" style="margin-bottom:10px;">${escapeHtml(item.body)}</div>
+          <div style="display:flex; gap:8px; flex-wrap:wrap;">
+            <button type="button" class="btn-secondary" data-load-draft="${item.savedId}" style="padding:6px 12px; font-size:0.84rem;">✏️ 载入写作舱继续修改</button>
+            <button type="button" class="btn-secondary" data-delete-draft="${item.savedId}" style="padding:6px 12px; font-size:0.84rem; color:#DC2626;">🗑️ 删除</button>
+          </div>
+        `;
+        div.querySelector("[data-load-draft]").addEventListener("click", () => {
+          appState.studioPromptId = item.promptId || "p1";
+          renderStudioModule();
+          document.getElementById("email-subject").value = item.subject;
+          document.getElementById("email-body").value = item.body;
+          runLiveDiagnostics();
+          switchTab("studio");
+          showToast("✏️ 已把作品载入写作舱！");
+        });
+        div.querySelector("[data-delete-draft]").addEventListener("click", () => {
+          const next = getSavedPortfolio().filter((x) => x.savedId !== item.savedId);
+          localStorage.setItem(STORAGE_KEY_PORTFOLIO, JSON.stringify(next));
+          renderPortfolioList();
+          showToast("🗑️ 已删除该作品记录");
+        });
+        container.appendChild(div);
+      });
+    }
+
+    function escapeHtml(str) {
+      return String(str)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+    }
+
+    /* ================= 18. 启动初始化 ================= */
+    document.addEventListener("DOMContentLoaded", () => {
+      loadProgress();
+      initDialogEnhancements();
+      ValidationController.init();
+      setupGlobalNav();
+      setupAnatomyModule();
+      setupAnalyzerModule();
+      renderDoctorDrill();
+      renderExpanderBuilder();
+      setupStudioModule();
+      renderPortfolioList();
+      document.getElementById("btn-print-portfolio").addEventListener("click", () => window.print());
+      updateHUD();
+    });
+  })();
+  </script>
+</body>
+</html>
